@@ -1,0 +1,26 @@
+User-agent: *
+Allow: /
+
+# Disallow sensitive areas
+Disallow: /admin/
+Disallow: /admin-dashboard/
+Disallow: /client-dashboard/
+Disallow: /login/
+Disallow: /client-login/
+Disallow: /api/
+Disallow: /_next/
+Disallow: /static/
+
+# Allow important pages
+Allow: /about/
+Allow: /services/
+Allow: /portfolio/
+Allow: /blog/
+Allow: /case-studies/
+Allow: /contact/
+
+# Sitemap location
+Sitemap: https://marktechrover.com/sitemap.xml
+
+# Crawl delay (optional - helps with server load)
+Crawl-delay: 1 

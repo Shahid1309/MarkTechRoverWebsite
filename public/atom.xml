@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MarkTechRover Blog</title>
+  <link href="https://marktechrover.com/blog"/>
+  <link href="https://marktechrover.com/atom.xml" rel="self"/>
+  <updated>2025-11-28T12:51:29.639Z</updated>
+  <id>https://marktechrover.com/blog</id>
+  <author>
+    <name>MarkTechRover</name>
+  </author>
+  
+    <entry>
+      <title><![CDATA[Getting Started with SEO]]></title>
+      <link href="https://marktechrover.com/blog/getting-started-with-seo"/>
+      <id>https://marktechrover.com/blog/getting-started-with-seo</id>
+      <updated>2024-03-20T00:00:00.000Z</updated>
+      <summary><![CDATA[Learn the basics of Search Engine Optimization]]></summary>
+      <author>
+        <name>MarkTechRover Team</name>
+      </author>
+      <content type="html"><![CDATA[Full content here...]]></content>
+    </entry>
+</feed>

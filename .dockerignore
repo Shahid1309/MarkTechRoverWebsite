@@ -1,0 +1,79 @@
+# Dependencies
+node_modules
+node-v20.11.0-darwin-x64
+venv
+lib64
+
+# Build outputs
+dist
+build
+build.zip
+.cache
+
+# Development files
+.vscode
+.idea
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Git
+.git
+.gitignore
+.gitattributes
+
+# MongoDB data
+data/db
+
+# Python virtual environment
+venv/
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Scripts and utilities (not needed in production)
+scripts/*.py
+*.py
+create-admin.*
+cleanup-and-organize.cjs
+fix-*.cjs
+fix-*.js
+print-admins.cjs
+
+# Documentation
+*.md
+!README.md
+
+# Test files
+**/*.test.ts
+**/*.test.tsx
+**/*.spec.ts
+**/*.spec.tsx
+
+# Archive files
+*.zip
+*.tar.gz
+
+# Large unnecessary files
+node.tar.gz
+
+# Editor directories
+.vscode/
+.idea/
+
+# Temporary files
+tmp/
+temp/
+
