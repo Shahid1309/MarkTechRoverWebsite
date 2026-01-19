@@ -102,7 +102,7 @@ const PortfolioPage = () => {
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                Our Creative Portfolio
+                Digital Marketing Results and Case Studies
               </h1>
               
               <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">

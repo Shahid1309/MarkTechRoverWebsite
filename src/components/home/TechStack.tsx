@@ -34,22 +34,22 @@ const TechStack = () => {
       {/* Removed background elements for transparency */}
 
       <div className="container relative">
-        <div className="text-center max-w-2xl mx-auto mb-16">
+        <div className="text-center max-w-2xl mx-auto mb-8 sm:mb-12 md:mb-16 px-2">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
           >
-            <h2 className="mb-4 text-3xl font-bold text-white">Our Tech Stack</h2>
-            <p className="text-gray-300 text-lg">
+            <h2 className="mb-3 sm:mb-4 text-2xl sm:text-3xl font-bold text-white">Our Tech Stack</h2>
+            <p className="text-gray-300 text-base sm:text-lg">
               We use cutting-edge technologies and tools to deliver exceptional results 
               across development, marketing, and analytics.
             </p>
           </motion.div>
         </div>
 
-        <div className="space-y-16">
+        <div className="space-y-10 sm:space-y-12 md:space-y-16">
           {Object.entries(technologies).map(([category, tools], categoryIndex) => (
             <motion.div
               key={category}
@@ -58,23 +58,23 @@ const TechStack = () => {
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: categoryIndex * 0.2 }}
             >
-              <h3 className="text-xl font-semibold mb-8 text-center text-purple-300">{category}</h3>
-              <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+              <h3 className="text-lg sm:text-xl font-semibold mb-6 sm:mb-8 text-center text-purple-300">{category}</h3>
+              <div className="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6 md:gap-8">
                 {tools.map((tool, index) => (
                   <motion.div
                     key={index}
-                    className="bg-white/10 backdrop-blur-sm p-8 rounded-xl flex flex-col items-center text-center hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 group border border-white/20"
+                    className="bg-white/10 backdrop-blur-sm p-4 sm:p-6 md:p-8 rounded-lg sm:rounded-xl flex flex-col items-center text-center hover:shadow-lg hover:shadow-purple-500/20 transition-all duration-300 hover:scale-105 group border border-white/20"
                     whileHover={{ y: -5 }}
                   >
                     {/* Image container with fixed size and gradient background */}
-                    <div className="w-20 h-20 rounded-2xl flex items-center justify-center mb-6 bg-gradient-to-br from-white/20 to-white/10 group-hover:shadow-inner transition-all duration-300">
+                    <div className="w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-xl sm:rounded-2xl flex items-center justify-center mb-3 sm:mb-4 md:mb-6 bg-gradient-to-br from-white/20 to-white/10 group-hover:shadow-inner transition-all duration-300">
                       <img
                         src={tool.icon}
                         alt={tool.name}
-                        className={`${tool.name === 'SEMrush' ? 'w-20 h-20' : 'w-12 h-12'} object-contain transition-transform duration-300 group-hover:scale-110`}
+                        className={`${tool.name === 'SEMrush' ? 'w-14 h-14 sm:w-16 sm:h-16 md:w-20 md:h-20' : 'w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12'} object-contain transition-transform duration-300 group-hover:scale-110`}
                       />
                     </div>
-                    <p className="font-medium text-white">{tool.name}</p>
+                    <p className="font-medium text-white text-sm sm:text-base">{tool.name}</p>
                   </motion.div>
                 ))}
               </div>

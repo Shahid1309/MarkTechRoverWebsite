@@ -97,101 +97,12 @@ const EnterpriseSeoServices = () => {
   const [showTrustBadges, setShowTrustBadges] = useState(false);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Enterprise Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Enterprise Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'Enterprise Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'approach', label: 'Enterprise Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
   ];
 
-  const packages = [
-    {
-      name: 'Enterprise Starter',
-      price: '₹89,000',
-      monthlyPrice: '₹44,500/mo',
-      keyphrases: 'Up to 500',
-      pages: 'Up to 100',
-      contentAssets: '30',
-      originalPrice: '₹99,000',
-      savings: '₹10,000',
-      features: [
-        'Enterprise Technical SEO Audit',
-        'Advanced Keyword Research (500+ keywords)',
-        'Multi-site SEO Strategy',
-        'Enterprise Content Strategy',
-        'Advanced Analytics & Custom Reports',
-        'Weekly Performance Reviews',
-        'Dedicated SEO Team (3 specialists)',
-        '24/7 Priority Support',
-        'Custom SEO Tools & Integrations',
-        'Advanced Schema Implementation',
-        'Voice Search Optimization',
-        'Video SEO Optimization'
-      ],
-      bestFor: 'Large enterprises starting with SEO',
-      limitations: ['Higher investment required', 'Complex implementation timeline']
-    },
-    {
-      name: 'Enterprise Professional',
-      price: '₹149,000',
-      monthlyPrice: '₹74,500/mo',
-      keyphrases: 'Up to 1000',
-      pages: 'Up to 200',
-      contentAssets: '60',
-      originalPrice: '₹159,000',
-      savings: '₹10,000',
-      features: [
-        'Everything in Enterprise Starter',
-        'Advanced Technical SEO Audit',
-        'Comprehensive Keyword Research (1000+ keywords)',
-        'Full-Scale Content Strategy',
-        'Advanced Link Building Campaigns',
-        'International SEO Setup',
-        'E-commerce SEO Optimization',
-        'Advanced Analytics & Custom Reports',
-        'Weekly Performance Reviews',
-        'Dedicated SEO Team (5 specialists)',
-        '24/7 Priority Support',
-        'Custom SEO Tools & Integrations',
-        'Advanced Schema Implementation',
-        'Voice Search Optimization',
-        'Video SEO Optimization',
-        'AI-Powered Content Optimization',
-        'Advanced Competitor Tracking',
-        'Custom SEO Dashboard'
-      ],
-      bestFor: 'Growing enterprises serious about SEO results',
-      exclusiveFeatures: ['Exclusive: AI-Powered Content Optimization', 'Exclusive: Advanced Competitor Tracking', 'Exclusive: Custom SEO Dashboard']
-    },
-    {
-      name: 'Enterprise Premium',
-      price: '₹299,000',
-      monthlyPrice: '₹149,500/mo',
-      keyphrases: 'Unlimited',
-      pages: 'Unlimited',
-      contentAssets: '120',
-      originalPrice: '₹309,000',
-      savings: '₹10,000',
-      features: [
-        'Everything in Enterprise Professional',
-        'Unlimited Keyword Research',
-        'Unlimited Content Creation',
-        'Advanced Link Building Campaigns',
-        'International SEO Setup',
-        'E-commerce SEO Optimization',
-        'Advanced Analytics & Custom Reports',
-        'Daily Performance Reviews',
-        'Dedicated SEO Team (10 specialists)',
-        '24/7 Priority Support',
-        'Custom SEO Tools & Integrations',
-        'Advanced Schema Implementation',
-        'Voice Search Optimization',
-        'Video SEO Optimization'
-      ],
-      bestFor: 'Fortune 500 companies requiring maximum SEO impact',
-      limitations: ['Premium investment required', 'Complex enterprise implementation']
-    }
-  ];
+  
 
   const deliverables = [
     {
@@ -515,7 +426,7 @@ const EnterpriseSeoServices = () => {
             <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000 ${
               heroAnimationComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              MarkTechRover: Enterprise <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">SEO Agency</span> for Delhi, NCR & India
+              Hire Enterprise SEO Agency
             </h1>
 
             {/* Animated Description */}
@@ -586,7 +497,7 @@ const EnterpriseSeoServices = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <button
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection()}
                 className="group inline-flex items-center px-8 py-4 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
               >
                 <span className="relative z-10">View Packages</span>
@@ -639,7 +550,7 @@ const EnterpriseSeoServices = () => {
           
           {/* Main Navigation Container */}
           <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-            <nav className="flex items-center space-x-1 px-6 py-3">
+            <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -648,10 +559,10 @@ const EnterpriseSeoServices = () => {
                     activeSection === item.id
                       ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' 
                       : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'
-                  } px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  } px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg whitespace-nowrap flex-shrink-0`}
                 >
                   {item.icon}
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                 </button>
               ))}
             </nav>
@@ -839,200 +750,7 @@ const EnterpriseSeoServices = () => {
           </div>
         </section>
 
-        {/* Monthly Packages Section */}
-        <section id="packages" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/5 via-transparent to-purple-900/5">
-          <div className="max-w-7xl mx-auto">
-            <div className="text-center mb-16">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-sm font-medium mb-4">
-                <BarChart3 className="h-4 w-4 mr-2" />
-                Enterprise Pricing
-              </div>
-              <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Enterprise SEO Plans Built for Scale</h2>
-              <p className="text-gray-300 max-w-3xl mx-auto">Transparent monthly packages tailored for large organizations in Delhi, NCR, and pan‑India. Each plan includes executive reporting, dashboards, and quarterly strategy reviews.</p>
-            </div>
-            
-            <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`relative rounded-2xl border transition-all duration-300 hover:scale-105 ${
-                  index === 1 
-                    ? 'bg-transparent border-white/40 shadow-lg' 
-                    : index === 0
-                    ? 'bg-transparent border-white/25'
-                    : 'bg-transparent border-white/25'
-                }`}
-              >
-                {/* Popular Badge */}
-                {index === 1 && (
-                  <div className="absolute top-0 left-0 right-0 text-white py-2 text-center text-xs font-bold border-b border-white/30 backdrop-blur-sm">
-                    🔥 MOST POPULAR - 67% CHOOSE THIS
-                  </div>
-                )}
-
-                {/* Discount Badge */}
-                <div className="absolute top-8 right-3">
-                  <div className="bg-transparent text-white px-2 py-1 rounded-full text-xs font-bold border border-white/40">SAVE ₹10,000</div>
-                </div>
-
-                {/* Package Header */}
-                <div className={`p-6 ${index === 1 ? 'pt-12' : 'pt-10'}`}>
-                  <div className="text-center mb-6">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-xl flex items-center justify-center bg-white/10`}>
-                      {index === 0 && <Target className="h-8 w-8 text-white" />}
-                      {index === 1 && <Crown className="h-8 w-8 text-white" />}
-                      {index === 2 && <Trophy className="h-8 w-8 text-white" />}
-                    </div>
-                    <h3 className={`text-2xl font-bold mb-3 ${index === 1 ? 'text-white' : 'text-gray-200'}`}>
-                      {pkg.name}
-                    </h3>
-                    
-                    {/* Best For */}
-                    <div className="mb-3">
-                      <p className="text-xs text-gray-300 italic">{pkg.bestFor}</p>
-                    </div>
-                    
-                    {/* Pricing with Psychological Anchoring */}
-                    <div className="mb-5">
-                      <div className="flex items-center justify-center space-x-2 mb-2">
-                        <span className="text-sm text-gray-400 line-through">{pkg.originalPrice}</span>
-                        <span className="text-xs text-white bg-transparent border border-white/40 px-2 py-1 rounded font-bold">SAVE {pkg.savings}</span>
-                      </div>
-                      <div className="text-4xl font-bold text-white mb-2">
-                        {pkg.price}
-                      </div>
-                      <div className="text-xs text-gray-300 mb-1">Initial Setup</div>
-                      <div className="text-lg font-semibold text-white mb-1">{pkg.monthlyPrice}</div>
-                      <div className="text-xs text-gray-300">Monthly After Setup</div>
-                    </div>
-                  </div>
-                  
-                  {/* Package Details */}
-                  <div className="space-y-4">
-                    {/* Key Metrics */}
-                    <div className="grid grid-cols-3 gap-3 p-3 bg-transparent rounded-lg border border-white/20">
-                      <div className="text-center">
-                        <div className="text-sm font-bold text-white">{pkg.keyphrases}</div>
-                        <div className="text-xs text-gray-300">Keywords</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-sm font-bold text-white">{pkg.pages}</div>
-                        <div className="text-xs text-gray-300">Pages</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-sm font-bold text-white">{pkg.contentAssets}</div>
-                        <div className="text-xs text-gray-300">Assets</div>
-                      </div>
-                    </div>
-                    
-                    {/* Expected Results */}
-                    <div className="p-3 bg-transparent rounded-lg border border-white/20">
-                      <h4 className="text-xs font-semibold text-white mb-2 flex items-center space-x-2">
-                        <TrendingUp className="h-3 w-3" />
-                        <span>Expected Results (3 months)</span>
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="text-center p-2 bg-transparent rounded border border-white/15">
-                          <div className="text-sm font-bold text-white">
-                            {index === 0 ? '+80%' : index === 1 ? '+150%' : '+200%'}
-                          </div>
-                          <div className="text-xs text-gray-300">Organic Traffic</div>
-                        </div>
-                        <div className="text-center p-2 bg-transparent rounded border border-white/15">
-                          <div className="text-sm font-bold text-white">
-                            {index === 0 ? '+120%' : index === 1 ? '+200%' : '+300%'}
-                          </div>
-                          <div className="text-xs text-gray-300">Lead Generation</div>
-                        </div>
-                      </div>
-                    </div>
-                    
-                    {/* Features */}
-                    <div>
-                      <h4 className="text-sm font-semibold text-white mb-3">What's Included:</h4>
-                      <div className="space-y-2">
-                        {pkg.features.slice(0, 6).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-white rounded-full mt-1.5 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-xs leading-relaxed">{feature}</span>
-                          </div>
-                        ))}
-                        {pkg.features.length > 6 && (
-                          <div className="text-center pt-1">
-                            <span className="text-xs text-white/80">+{pkg.features.length - 6} more features</span>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                    {/* Exclusive Features for Middle Option */}
-                    {index === 1 && pkg.exclusiveFeatures && (
-                      <div className="p-3 bg-transparent rounded-lg border border-white/20">
-                        <h4 className="text-xs font-semibold text-white mb-2 flex items-center space-x-2">
-                          <Star className="h-3 w-3" />
-                          <span>Professional Exclusive Features</span>
-                        </h4>
-                        <div className="space-y-1">
-                          {pkg.exclusiveFeatures.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-start space-x-2">
-                              <div className="w-1.5 h-1.5 bg-white rounded-full mt-1.5 flex-shrink-0"></div>
-                              <span className="text-gray-200 text-xs leading-relaxed">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                  </div>
-                </div>
-
-                {/* CTA Section */}
-                <div className="p-6 pt-0">
-                  <Link
-                    to="/contact"
-                    className={`block w-full text-center px-4 py-3 rounded-lg font-bold transition-all duration-300 hover:scale-105 ${
-                      index === 1
-                        ? 'bg-white/10 hover:bg-white/20 text-white'
-                        : 'bg-white/10 hover:bg-white/20 text-white'
-                    }`}
-                  >
-                    {index === 1 ? '🔥 Get Started Now - Most Popular' : 'Choose This Plan'}
-                  </Link>
-                  
-                  {/* Trust Elements */}
-                  <div className="mt-4 text-center">
-                    <div className="flex items-center justify-center space-x-1 text-xs text-gray-400">
-                      <Shield className="h-3 w-3" />
-                      <span>Enterprise Security</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ))}
-          </div>
-
-          {/* Bottom Trust Section */}
-          <div className="mt-16 text-center">
-            <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-300 mb-2">500+</div>
-                <div className="text-gray-400 text-sm">Enterprise Clients</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-300 mb-2">₹3.2B+</div>
-                <div className="text-gray-400 text-sm">Revenue Generated</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-300 mb-2">98%</div>
-                <div className="text-gray-400 text-sm">Client Retention</div>
-              </div>
-              <div className="text-center">
-                <div className="text-2xl font-bold text-purple-300 mb-2">24/7</div>
-                <div className="text-gray-400 text-sm">Enterprise Support</div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+        
 
         {/* Our Approach Section */}
         <section id="approach" className="py-20 px-4 sm:px-6 lg:px-8">

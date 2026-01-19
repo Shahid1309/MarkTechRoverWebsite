@@ -10,7 +10,7 @@ const PrivacyPolicyPage: React.FC = () => {
       <div className={`min-h-screen py-12 px-4 transition-all duration-500 ${theme === 'dark' ? 'dark' : ''}`}>
         <div className="max-w-4xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-4xl font-bold text-foreground mb-4">Privacy Policy & Terms of Use</h1>
+            <h1 className="text-4xl font-bold text-foreground mb-4">Privacy Policy</h1>
             <p className="text-muted-foreground">Last updated: {new Date().toLocaleDateString()}</p>
           </div>
 

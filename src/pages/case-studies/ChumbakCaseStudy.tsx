@@ -65,7 +65,7 @@ const ChumbakCaseStudy = () => {
   return (
     <div>
       <CaseStudyHero
-        title="Chumbak E-commerce Transformation"
+        title="Chumbak Ecommerce Growth Results"
         subtitle="Building a scalable and high-performance e-commerce platform for India's most vibrant lifestyle brand"
         category="E-commerce Development"
         services={["Platform Development", "UI/UX Design", "Marketing Integration"]}

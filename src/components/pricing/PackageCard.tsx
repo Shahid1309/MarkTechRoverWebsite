@@ -17,6 +17,7 @@ interface PackageProps {
   popular?: boolean;
   bestSeller?: boolean;
   isMonthly?: boolean;
+  onAddToCart?: () => void;
 }
 
 const PackageCard: React.FC<PackageProps> = ({
@@ -27,7 +28,8 @@ const PackageCard: React.FC<PackageProps> = ({
   icon,
   popular,
   bestSeller,
-  isMonthly
+  isMonthly,
+  onAddToCart
 }) => {
   const formatPrice = (price: number) => {
     return new Intl.NumberFormat('en-IN', {
@@ -91,15 +93,28 @@ const PackageCard: React.FC<PackageProps> = ({
           ))}
         </ul>
 
-        <Link
-          to="/contact"
-          className={`w-full py-2 px-4 rounded-full flex items-center justify-center ${
-            bestSeller || popular ? 'bg-accent text-white' : 'bg-secondary text-foreground'
-          } hover:opacity-90 transition-opacity`}
-        >
-          Get Started
-          <ArrowRight className="ml-2 h-4 w-4" />
-        </Link>
+        {onAddToCart ? (
+          <button
+            type="button"
+            onClick={onAddToCart}
+            className={`w-full py-2 px-4 rounded-full flex items-center justify-center ${
+              bestSeller || popular ? 'bg-accent text-white' : 'bg-secondary text-foreground'
+            } hover:opacity-90 transition-opacity`}
+          >
+            Add to Cart
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </button>
+        ) : (
+          <Link
+            to="/pricing"
+            className={`w-full py-2 px-4 rounded-full flex items-center justify-center ${
+              bestSeller || popular ? 'bg-accent text-white' : 'bg-secondary text-foreground'
+            } hover:opacity-90 transition-opacity`}
+          >
+            Add to Cart
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        )}
       </div>
     </motion.div>
   );

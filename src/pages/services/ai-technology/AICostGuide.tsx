@@ -80,49 +80,84 @@ import {
   Smartphone as MobileIcon,
   Monitor as DesktopIcon,
   Palette as DesignIcon,
-  Server
+  Server,
+  Workflow,
+  Network,
+  Link2,
+  Building2,
+  Briefcase,
+  LineChart,
+  Gauge,
+  Filter,
+  Bell,
+  Mail as MailIcon,
+  Calculator,
+  CreditCard,
+  TrendingDown,
+  Wallet,
+  Package
 } from 'lucide-react';
 import PageSEO from '../../../components/seo/PageSEO';
 
 const AICostGuide = () => {
-  const [activeSection, setActiveSection] = useState('deliverables');
+  const [activeSection, setActiveSection] = useState('overview');
   const [isNavSticky, setIsNavSticky] = useState(false);
-  const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
+  const [expandedFeature, setExpandedFeature] = useState<number>(0);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Design Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Design Technology', icon: <Cpu className="h-4 w-4" /> },
-    { id: 'case-studies', label: 'Design Case Studies', icon: <Trophy className="h-4 w-4" /> },
-    { id: 'approach', label: 'Design Approach', icon: <Rocket className="h-4 w-4" /> },
-    { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
+    { id: 'overview', label: 'Overview', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'pricing', label: 'Pricing Guide', icon: <DollarSign className="h-4 w-4" /> },
+    { id: 'factors', label: 'Cost Factors', icon: <Calculator className="h-4 w-4" /> },{ id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
   ];
+
+  // Scroll to top on mount and ensure content is visible
+  useEffect(() => {
+    // Immediate scroll to top
+    window.scrollTo(0, 0);
+    // Also use requestAnimationFrame to ensure it happens after render
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+  }, []);
 
   // Handle scroll for sticky navigation and active section detection
   useEffect(() => {
+    const sectionIds = ['overview', 'pricing', 'factors', 'faqs'];
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const heroHeight = 800;
+      const heroHeight = 600;
       setIsNavSticky(scrollPosition > heroHeight);
 
       // Update active section based on scroll position
-      const sections = navItems.map(item => item.id);
-      const currentSection = sections.find(sectionId => {
-        const element = document.getElementById(sectionId);
+      let currentSection = sectionIds[0];
+      
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sectionIds[i]);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          const offset = 150;
+          if (rect.top <= offset) {
+            currentSection = sectionIds[i];
+            break;
+          }
         }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
       }
+      
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const timeoutId = setTimeout(() => {
+      handleScroll();
+    }, 100);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -136,227 +171,265 @@ const AICostGuide = () => {
   };
 
   const seoConfig = {
-    title: "A I Cost Guide Services | MarkTechRover",
-    description: "Professional a i cost guide services. Expert solutions for your business needs. Get started today.",
-    keywords: ["a i cost guide","services","professional","expert","business"],
-    url: "/services/ai-technology/a-i-cost-guide",
-    type: "website" as const,
-    publishedAt: "2025-08-05T06:37:20.462Z",
-    modifiedAt: "2025-08-05T06:37:20.462Z",
-    author: "MarkTechRover",
-    section: "Services",
-    tags: ["a i cost guide","services"],
-    image: "/images/services/a-i-cost-guide.jpg"
+    title: 'AI Services Cost Guide | AI Implementation Pricing | MarkTechRover',
+    description: 'AI Services Cost Guide - Comprehensive pricing guide for AI services, implementation, and consulting. Understand AI service costs, pricing factors, and get transparent pricing for your AI projects. Best AI cost guide in Delhi NCR & India.',
+    keywords: [
+      'AI Services Cost', 'AI Pricing', 'AI Implementation Cost', 'AI Services Pricing',
+      'AI Cost Guide', 'AI Services India', 'AI Cost Delhi', 'AI Pricing Guide',
+      'AI Consulting Cost', 'AI Development Cost', 'AI Services Price', 'AI Cost Calculator',
+      'AI Services Budget', 'AI Investment Guide'
+    ],
+    url: '/services/ai-technology/ai-cost-guide',
+    type: 'website' as const,
+    publishedAt: '2024-01-01',
+    modifiedAt: '2024-12-01',
+    author: 'MarkTechRover',
+    section: 'AI & Technology',
+    tags: ['AI Cost Guide', 'AI Pricing', 'AI Services Cost', 'AI Implementation'],
+    image: '/images/ai-cost-guide.webp'
   };
 
-  const deliverables = [
+  const costFactors = [
     {
       id: 1,
-      title: 'Custom a-i-cost-guide',
-      description: 'Bespoke a-i-cost-guide tailored to your brand and business objectives',
-      icon: <DesignIcon className="h-6 w-6" />,
-      features: [
-        'Custom a-i-cost-guide and layout',
-        'Brand-consistent visual design',
-        'User experience (UX) optimization',
-        'Mobile-first responsive design',
-        'Interactive elements and animations',
-        'Cross-browser compatibility'
+      title: 'Project Scope & Complexity',
+      description: 'The size and complexity of your AI project significantly impacts cost',
+      icon: <Layers className="h-8 w-8" />,
+      factors: [
+        'Number of features and functionalities',
+        'Integration complexity',
+        'Data volume and processing requirements',
+        'Custom AI model development',
+        'Third-party integrations',
+        'Scalability requirements'
       ],
-      expanded: true
+      color: 'from-blue-500 to-blue-600',
+      bgColor: 'from-blue-500/10 to-blue-400/10',
+      borderColor: 'border-blue-500/20',
+      textColor: 'text-blue-300'
     },
     {
       id: 2,
-      title: 'Responsive Web Development',
-      description: 'Modern, responsive website development using latest technologies',
-      icon: <Code className="h-6 w-6" />,
-      features: [
-        'HTML5, CSS3, and JavaScript development',
-        'React.js and Next.js frameworks',
-        'Progressive Web App (PWA) features',
-        'SEO-optimized code structure',
-        'Fast loading and performance optimization',
-        'Security and SSL implementation'
+      title: 'AI Technology Type',
+      description: 'Different AI technologies have varying implementation costs',
+      icon: <Brain className="h-8 w-8" />,
+      factors: [
+        'Machine learning model complexity',
+        'Natural language processing requirements',
+        'Computer vision capabilities',
+        'Predictive analytics needs',
+        'Chatbot and conversational AI',
+        'Custom AI algorithm development'
       ],
-      expanded: false
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-500/10 to-purple-400/10',
+      borderColor: 'border-purple-500/20',
+      textColor: 'text-purple-300'
     },
     {
       id: 3,
-      title: 'E-commerce a-i-cost-guide',
-      description: 'Professional e-commerce a-i-cost-guide for online stores',
-      icon: <ShoppingCart className="h-6 w-6" />,
-      features: [
-        'E-commerce platform integration',
-        'Product catalog and inventory management',
-        'Secure payment gateway integration',
-        'Shopping cart and checkout optimization',
-        'Order management and tracking',
-        'Customer account and review systems'
+      title: 'Data Requirements',
+      description: 'Data collection, processing, and management impact costs',
+      icon: <Database className="h-8 w-8" />,
+      factors: [
+        'Data collection and preparation',
+        'Data cleaning and preprocessing',
+        'Data storage and infrastructure',
+        'Data labeling and annotation',
+        'Data security and compliance',
+        'Data pipeline development'
       ],
-      expanded: false
+      color: 'from-emerald-500 to-emerald-600',
+      bgColor: 'from-emerald-500/10 to-emerald-400/10',
+      borderColor: 'border-emerald-500/20',
+      textColor: 'text-emerald-300'
     },
     {
       id: 4,
-      title: 'Content Management System',
-      description: 'Easy-to-use CMS for content management and updates',
-      icon: <FileText className="h-6 w-6" />,
-      features: [
-        'Custom CMS development',
-        'WordPress or other CMS integration',
-        'Content editing and management tools',
-        'Media library and asset management',
-        'User role and permission management',
-        'Content versioning and backup'
+      title: 'Development & Integration',
+      description: 'Development time and integration complexity affect pricing',
+      icon: <Code className="h-8 w-8" />,
+      factors: [
+        'Development team size and expertise',
+        'Development timeline',
+        'API and system integrations',
+        'Custom development requirements',
+        'Testing and quality assurance',
+        'Deployment and infrastructure setup'
       ],
-      expanded: false
+      color: 'from-rose-500 to-rose-600',
+      bgColor: 'from-rose-500/10 to-rose-400/10',
+      borderColor: 'border-rose-500/20',
+      textColor: 'text-rose-300'
     },
     {
       id: 5,
-      title: 'SEO-Optimized Design',
-      description: 'a-i-cost-guide optimized for search engine visibility',
-      icon: <Search className="h-6 w-6" />,
-      features: [
-        'SEO-friendly URL structure',
-        'Meta tags and schema markup',
-        'Fast loading speed optimization',
-        'Mobile-friendly design',
-        'Structured data implementation',
-        'XML sitemap generation'
+      title: 'Maintenance & Support',
+      description: 'Ongoing maintenance and support services add to total cost',
+      icon: <Settings className="h-8 w-8" />,
+      factors: [
+        'Model retraining and updates',
+        'Performance monitoring',
+        'Bug fixes and updates',
+        'Technical support level',
+        'Feature enhancements',
+        'Infrastructure maintenance'
       ],
-      expanded: false
+      color: 'from-amber-500 to-amber-600',
+      bgColor: 'from-amber-500/10 to-amber-400/10',
+      borderColor: 'border-amber-500/20',
+      textColor: 'text-amber-300'
     },
     {
       id: 6,
-      title: 'Website Maintenance & Support',
-      description: 'Ongoing website maintenance and technical support',
-      icon: <Wrench className="h-6 w-6" />,
-      features: [
-        'Regular website updates and maintenance',
-        'Security monitoring and updates',
-        'Performance optimization',
-        'Content updates and management',
-        'Technical support and troubleshooting',
-        'Backup and disaster recovery'
+      title: 'Business Requirements',
+      description: 'Specific business needs and customization requirements',
+      icon: <Briefcase className="h-8 w-8" />,
+      factors: [
+        'Industry-specific requirements',
+        'Compliance and regulatory needs',
+        'Custom reporting and analytics',
+        'User training and documentation',
+        'White-label options',
+        'SLA and performance guarantees'
       ],
-      expanded: false
+      color: 'from-violet-500 to-violet-600',
+      bgColor: 'from-violet-500/10 to-violet-400/10',
+      borderColor: 'border-violet-500/20',
+      textColor: 'text-violet-300'
     }
   ];
 
-  const designPackages = [
+  const pricingRanges = [
     {
-      name: 'Basic a-i-cost-guide',
-      price: '₹45,000',
-      period: 'one-time',
-      description: 'Perfect for small businesses and startups',
-      features: [
-        '5-page custom a-i-cost-guide',
-        'Responsive mobile design',
-        'Basic SEO optimization',
-        'Contact form integration',
-        'Social media integration',
-        'Basic CMS setup',
-        '1 month of support'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
+      service: 'AI SEO Services',
+      range: '₹25,000 - ₹2,00,000',
+      period: 'per month',
+      description: 'AI-powered SEO optimization and management',
+      features: ['Keyword research', 'Content optimization', 'Technical SEO', 'Analytics']
     },
     {
-      name: 'Professional a-i-cost-guide',
-      price: '₹85,000',
-      period: 'one-time',
-      description: 'Comprehensive a-i-cost-guide for growing businesses',
-      features: [
-        '10-page custom a-i-cost-guide',
-        'Advanced responsive design',
-        'E-commerce functionality',
-        'Advanced SEO optimization',
-        'Custom animations and interactions',
-        'Advanced CMS with admin panel',
-        '3 months of support',
-        'Performance optimization'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
+      service: 'AI Digital Marketing',
+      range: '₹30,000 - ₹2,50,000',
+      period: 'per month',
+      description: 'AI marketing automation and campaign management',
+      features: ['Campaign management', 'Audience targeting', 'Content creation', 'Analytics']
     },
     {
-      name: 'Enterprise a-i-cost-guide',
-      price: '₹1,50,000',
-      period: 'one-time',
-      description: 'Full-featured a-i-cost-guide for large businesses',
-      features: [
-        'Unlimited page custom design',
-        'Advanced e-commerce platform',
-        'Custom functionality development',
-        'Advanced SEO and analytics',
-        'Multi-language support',
-        'Advanced security features',
-        '6 months of support',
-        'Performance monitoring',
-        'Custom integrations'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
+      service: 'AI Consulting',
+      range: '₹50,000 - ₹5,00,000',
+      period: 'per project',
+      description: 'AI strategy and implementation consulting',
+      features: ['Strategy development', 'Technology selection', 'Implementation planning', 'Training']
+    },
+    {
+      service: 'Custom AI Development',
+      range: '₹5,00,000 - ₹50,00,000',
+      period: 'per project',
+      description: 'Custom AI solution development',
+      features: ['Custom AI models', 'Full development', 'Integration', 'Deployment']
+    },
+    {
+      service: 'AI Integration Services',
+      range: '₹2,00,000 - ₹20,00,000',
+      period: 'per project',
+      description: 'AI integration with existing systems',
+      features: ['System integration', 'API development', 'Data migration', 'Testing']
+    },
+    {
+      service: 'AI Maintenance & Support',
+      range: '₹15,000 - ₹1,50,000',
+      period: 'per month',
+      description: 'Ongoing AI maintenance and support',
+      features: ['Model updates', 'Performance monitoring', 'Technical support', 'Updates']
     }
   ];
+
+  
 
   return (
     <PageSEO config={seoConfig}>
-      <div className="min-h-screen ">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-black via-purple-900 to-black text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.3),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.2),transparent_50%)]"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-sm font-medium mb-6">
-                <Layout className="h-4 w-4 mr-2" />
-                a-i-cost-guide Services
+        <section className="relative pt-24 pb-20 overflow-visible">
+          {/* Animated Background */}
+          <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0, opacity: 0.5 }}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(147,51,234,0.15),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(147,51,234,0.02)_50%,transparent_70%)] bg-[length:100px_100px] animate-pulse"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ position: 'relative', zIndex: 10, isolation: 'isolate' }}>
+            <div className="text-center max-w-5xl mx-auto" style={{ position: 'relative', zIndex: 10 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 backdrop-blur-sm mb-8" style={{ position: 'relative', zIndex: 10 }}>
+                <Calculator className="h-4 w-4 text-purple-300" />
+                <span className="text-sm font-medium text-purple-200">Transparent AI Services Pricing</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                a-i-cost-guide Services in Delhi
+              {/* Main Heading */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight" style={{ position: 'relative', zIndex: 10 }}>
+                <span className="block bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', position: 'relative', zIndex: 10 }}>
+                  AI Marketing Implementation Cost Guide
+                </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-purple-200 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Best a-i-cost-guide company in Delhi NCR offering custom a-i-cost-guide. 
-                Professional a-i-cost-guide services India with modern, responsive designs.
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed" style={{ position: 'relative', zIndex: 10 }}>
+                Comprehensive pricing guide for AI services. Understand AI implementation costs, pricing factors, 
+                and get transparent pricing for your AI projects and investments.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                  className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40"
                 >
-                  <Target className="h-5 w-5 mr-2" />
-                  Get a-i-cost-guide Quote
-                  <ArrowRight className="h-5 w-5 ml-2" />
+                  <Rocket className="h-5 w-5 mr-2" />
+                  Get Quote
+                  <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 
-                <button className="inline-flex items-center px-8 py-4 bg-gray-900/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-gray-900/20 hover:scale-105">
-                  <Play className="h-5 w-5 mr-2" />
-                  View Portfolio
+                <button className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-105">
+                  <Calculator className="h-5 w-5 mr-2" />
+                  Calculate Cost
                 </button>
+              </div>
+
+              {/* Key Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                {[
+                  { value: '₹25K+', label: 'Starting Price' },
+                  { value: 'Flexible', label: 'Pricing Models' },
+                  { value: 'Transparent', label: 'No Hidden Costs' },
+                  { value: 'Custom', label: 'Tailored Solutions' }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800 backdrop-blur-sm">
+                    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-16 bg-gradient-to-r from-gray-900 via-purple-900/20 to-gray-900 border-y border-purple-500/10">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">500+</div>
-                <div className="text-gray-300">Websites Designed & Developed</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent mb-2">500+</div>
+                <div className="text-gray-300">AI Projects Delivered</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">98%</div>
-                <div className="text-gray-300">Client Satisfaction Rate</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent mb-2">95%</div>
+                <div className="text-gray-300">Client Satisfaction</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">24/7</div>
-                <div className="text-gray-300">Support & Maintenance</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent mb-2">Flexible</div>
+                <div className="text-gray-300">Pricing Options</div>
               </div>
             </div>
           </div>
@@ -364,21 +437,21 @@ const AICostGuide = () => {
 
         {/* Sticky Navigation */}
         {isNavSticky && (
-          <div className="sticky top-20 z-40 bg-gray-900/95 backdrop-blur-md border-b border-gray-700 shadow-sm">
+          <div className="fixed top-20 left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-md border-b border-purple-500/20 shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <nav className="flex space-x-8 overflow-x-auto py-4">
+              <nav className="flex space-x-2 overflow-x-auto py-3 scrollbar-hide">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 whitespace-nowrap ${
                       activeSection === item.id
-                        ? 'bg-purple-100 text-purple-700'
-                        : 'text-gray-300 hover:text-purple-300 hover:bg-purple-50'
+                        ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg shadow-purple-500/25 scale-105'
+                        : 'text-gray-300 hover:text-purple-300 hover:bg-purple-500/10'
                     }`}
                   >
                     {item.icon}
-                    <span>{item.label}</span>
+                    <span className="text-sm">{item.label}</span>
                   </button>
                 ))}
               </nav>
@@ -387,54 +460,145 @@ const AICostGuide = () => {
         )}
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Deliverables Section */}
-          <section id="deliverables" className="mb-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Overview Section */}
+          <section id="overview" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                a-i-cost-guide Deliverables
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                AI Services Pricing Overview
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Understanding AI service costs helps you make informed decisions. Our transparent pricing guide covers 
+                all aspects of AI implementation, from consultation to ongoing support, with flexible pricing models 
+                to fit your budget and requirements.
+              </p>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-purple-900/40 rounded-2xl border border-purple-500/30 p-8 md:p-12 backdrop-blur-sm mb-12">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Transparent Pricing Matters</h3>
+                  <ul className="space-y-3">
+                    {[
+                      'No hidden costs or surprise charges',
+                      'Clear understanding of investment required',
+                      'Flexible pricing models to fit your budget',
+                      'Transparent breakdown of all costs',
+                      'Custom pricing for unique requirements',
+                      'Value-based pricing for maximum ROI'
+                    ].map((benefit, index) => (
+                      <li key={index} className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-purple-600/20 to-purple-500/20 rounded-xl p-6 border border-purple-500/30">
+                    <h4 className="text-lg font-bold text-white mb-4">Pricing Models</h4>
+                    <div className="space-y-3">
+                      <div className="flex items-center justify-between p-3 bg-black/30 rounded-lg">
+                        <span className="text-gray-300">Monthly Subscription</span>
+                        <span className="text-purple-300 font-semibold">Flexible</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-black/30 rounded-lg">
+                        <span className="text-gray-300">One-Time Project</span>
+                        <span className="text-purple-300 font-semibold">Fixed</span>
+                      </div>
+                      <div className="flex items-center justify-between p-3 bg-black/30 rounded-lg">
+                        <span className="text-gray-300">Custom Enterprise</span>
+                        <span className="text-purple-300 font-semibold">Tailored</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Pricing Ranges Section */}
+          <section id="pricing" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                AI Services Pricing Ranges
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive a-i-cost-guide services designed for business growth. 
-                Best a-i-cost-guide company in Delhi NCR delivering modern, responsive websites.
+                Transparent pricing ranges for different AI services
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {pricingRanges.map((service, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-purple-500/20 p-6 hover:border-purple-500/40 transition-all duration-300 hover:shadow-xl"
+                >
+                  <div className="mb-4">
+                    <h3 className="text-xl font-bold text-white mb-2">{service.service}</h3>
+                    <div className="text-2xl font-bold text-purple-300 mb-1">{service.range}</div>
+                    <div className="text-sm text-gray-400">{service.period}</div>
+                  </div>
+                  <p className="text-gray-300 text-sm mb-4">{service.description}</p>
+                  <ul className="space-y-2">
+                    {service.features.map((feature, featureIndex) => (
+                      <li key={featureIndex} className="flex items-start space-x-2">
+                        <CheckCircle className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-400 text-sm">{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Cost Factors Section */}
+          <section id="factors" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Cost Factors
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Understanding what affects AI service pricing
               </p>
             </div>
 
             <div className="space-y-6">
-              {deliverables.map((deliverable, index) => (
+              {costFactors.map((factor, index) => (
                 <div
-                  key={deliverable.id}
-                  className="bg-gray-900 rounded-2xl border border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
+                  key={factor.id}
+                  className={`bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border ${factor.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
                 >
                   <button
-                    onClick={() => setExpandedDeliverable(expandedDeliverable === index ? -1 : index)}
+                    onClick={() => setExpandedFeature(expandedFeature === index ? -1 : index)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left"
                   >
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                        {deliverable.icon}
+                    <div className="flex items-center space-x-4 flex-1">
+                      <div className={`p-4 rounded-xl bg-gradient-to-br ${factor.color} shadow-lg`}>
+                        {factor.icon}
                       </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white mb-1">
-                          {deliverable.title}
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-white mb-2">
+                          {factor.title}
                         </h3>
-                        <p className="text-gray-300">{deliverable.description}</p>
+                        <p className="text-gray-300">{factor.description}</p>
                       </div>
                     </div>
                     <ChevronDown
-                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 ${
-                        expandedDeliverable === index ? 'rotate-180' : ''
+                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
+                        expandedFeature === index ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   
-                  {expandedDeliverable === index && (
-                    <div className="px-8 pb-6">
+                  {expandedFeature === index && (
+                    <div className="px-8 pb-6 border-t border-gray-700 pt-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {deliverable.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-400">{feature}</span>
+                        {factor.factors.map((item, itemIndex) => (
+                          <div key={itemIndex} className="flex items-start space-x-3">
+                            <CheckCircle className={`h-5 w-5 ${factor.textColor} flex-shrink-0 mt-0.5`} />
+                            <span className="text-gray-300">{item}</span>
                           </div>
                         ))}
                       </div>
@@ -445,299 +609,57 @@ const AICostGuide = () => {
             </div>
           </section>
 
-          {/* Design Packages Section */}
-          <section id="packages" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                a-i-cost-guide Packages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive a-i-cost-guide solutions. Best a-i-cost-guide services in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {designPackages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500"> {pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Technology Section */}
-          <section id="technology" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                a-i-cost-guide Technology
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Advanced a-i-cost-guide technology stack powering modern websites. 
-                Professional a-i-cost-guide services India with cutting-edge tools and frameworks.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Frontend Technologies',
-                  description: 'Modern frontend frameworks and technologies',
-                  icon: <DesktopIcon className="h-8 w-8" />,
-                  features: ['React.js', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Sass/SCSS']
-                },
-                {
-                  title: 'Design Tools',
-                  description: 'Professional design and prototyping tools',
-                  icon: <DesignIcon className="h-8 w-8" />,
-                  features: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Adobe Creative Suite', 'Protopie']
-                },
-                {
-                  title: 'Backend Technologies',
-                  description: 'Robust backend development technologies',
-                  icon: <Server className="h-8 w-8" />,
-                  features: ['Node.js', 'Python/Django', 'PHP/Laravel', 'Ruby on Rails', 'Java/Spring', 'C#/.NET']
-                },
-                {
-                  title: 'CMS Platforms',
-                  description: 'Content management system platforms',
-                  icon: <FileText className="h-8 w-8" />,
-                  features: ['WordPress', 'Drupal', 'Joomla', 'Strapi', 'Contentful', 'Sanity']
-                },
-                {
-                  title: 'E-commerce Platforms',
-                  description: 'E-commerce and online store platforms',
-                  icon: <ShoppingCart className="h-8 w-8" />,
-                  features: ['Shopify', 'WooCommerce', 'Magento', 'BigCommerce', 'PrestaShop', 'OpenCart']
-                },
-                {
-                  title: 'Performance Tools',
-                  description: 'Website performance and optimization tools',
-                  icon: <Zap className="h-8 w-8" />,
-                  features: ['Google PageSpeed', 'GTmetrix', 'WebPageTest', 'Lighthouse', 'Core Web Vitals', 'CDN']
-                }
-              ].map((tech, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6 hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                      {tech.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-purple-300">{tech.title}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-4">{tech.description}</p>
-                  <ul className="space-y-2">
-                    {tech.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-gray-400 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Case Studies Section */}
-          <section id="case-studies" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                a-i-cost-guide Case Studies
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Real results from a-i-cost-guide projects. Best a-i-cost-guide company in Delhi NCR 
-                delivering modern, high-performing websites.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'E-commerce Website',
-                  description: 'Modern e-commerce website with 300% increase in sales',
-                  metrics: ['300% Sales Increase', '450% Traffic Growth', '6 Months'],
-                  image: '/images/case-studies/ecommerce-design.webp'
-                },
-                {
-                  title: 'Corporate Website',
-                  description: 'Professional corporate website with 500% lead generation increase',
-                  metrics: ['500% Lead Increase', '250% Engagement', '8 Months'],
-                  image: '/images/case-studies/corporate-design.webp'
-                },
-                {
-                  title: 'Restaurant Website',
-                  description: 'Beautiful restaurant website with 400% online orders increase',
-                  metrics: ['400% Online Orders', '300% Brand Awareness', '4 Months'],
-                  image: '/images/case-studies/restaurant-design.webp'
-                },
-                {
-                  title: 'SaaS Platform',
-                  description: 'Modern SaaS platform with 600% user registration increase',
-                  metrics: ['600% User Registration', '350% Conversion Rate', '12 Months'],
-                  image: '/images/case-studies/saas-design.webp'
-                }
-              ].map((study, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                    <Trophy className="h-16 w-16 text-white" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
-                    <p className="text-gray-300 mb-4">{study.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {study.metrics.map((metric, metricIndex) => (
-                        <span key={metricIndex} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                          {metric}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Approach Section */}
-          <section id="approach" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                a-i-cost-guide Approach
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Proven methodology for a-i-cost-guide success. a-i-cost-guide experts in Delhi NCR 
-                delivering comprehensive solutions for business growth.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: '01',
-                  title: 'Discovery & Planning',
-                  description: 'Comprehensive analysis and website planning',
-                  icon: <Search className="h-8 w-8" />
-                },
-                {
-                  step: '02',
-                  title: 'Design & Prototyping',
-                  description: 'Creative design and interactive prototyping',
-                  icon: <Palette className="h-8 w-8" />
-                },
-                {
-                  step: '03',
-                  title: 'Development',
-                  description: 'Professional website development and coding',
-                  icon: <Code className="h-8 w-8" />
-                },
-                {
-                  step: '04',
-                  title: 'Launch & Support',
-                  description: 'Website launch and ongoing support',
-                  icon: <Rocket className="h-8 w-8" />
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-xl">{step.step}</span>
-                    </div>
-                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                      <div className="text-purple-300">
-                        {step.icon}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
+          
 
           {/* FAQs Section */}
-          <section id="faqs" className="mb-20">
+          <section id="faqs" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                a-i-cost-guide FAQs
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Frequently Asked Questions
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Common questions about a-i-cost-guide services. Best a-i-cost-guide company in Delhi 
-                providing transparent answers and solutions.
+                Common questions about AI services pricing
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6">
               {[
                 {
-                  question: 'How long does it take to design and develop a website?',
-                  answer: 'a-i-cost-guide and development typically takes 4-8 weeks depending on complexity, number of pages, and features required. Simple websites can be completed in 2-3 weeks, while complex e-commerce or custom applications may take 8-12 weeks.'
+                  question: 'How much do AI services cost?',
+                  answer: 'AI service costs vary based on project scope, complexity, technology requirements, and ongoing support needs. Basic AI services start from ₹25,000/month, while custom AI development can range from ₹5,00,000 to ₹50,00,000+ depending on requirements. We provide transparent pricing with no hidden costs.'
                 },
                 {
-                  question: 'What is the typical cost for a-i-cost-guide services?',
-                  answer: 'a-i-cost-guide costs typically range from ₹45,000 to ₹1,50,000 depending on complexity, features, and scope of work. We provide detailed quotes based on your specific requirements and business goals.'
+                  question: 'What factors affect AI service pricing?',
+                  answer: 'Key factors include project scope and complexity, AI technology type, data requirements, development and integration needs, maintenance and support level, and specific business requirements. We provide detailed cost breakdowns based on your specific needs.'
                 },
                 {
-                  question: 'Do you provide website maintenance and support?',
-                  answer: 'Yes, we provide ongoing website maintenance and support services including regular updates, security monitoring, performance optimization, content updates, and technical support. We offer various maintenance packages to suit your needs.'
+                  question: 'Do you offer flexible pricing models?',
+                  answer: 'Yes, we offer flexible pricing models including monthly subscriptions, one-time project pricing, and custom enterprise pricing. We work with you to find a pricing model that fits your budget and requirements.'
                 },
                 {
-                  question: 'Do you work with businesses outside Delhi NCR?',
-                  answer: 'Yes, we work with businesses across India and internationally. Our a-i-cost-guide services are not limited by geography and can be delivered remotely with excellent results.'
+                  question: 'Are there any hidden costs?',
+                  answer: 'No, we provide transparent pricing with no hidden costs. All costs are clearly outlined in our proposals, including setup, development, integration, and ongoing support. We discuss all potential costs upfront before starting any project.'
                 },
                 {
-                  question: 'What technologies do you use for website development?',
-                  answer: 'We use modern technologies including React.js, Next.js, Node.js, WordPress, and other industry-standard frameworks. We choose the best technology stack based on your specific requirements and business goals.'
+                  question: 'Can I get a custom quote?',
+                  answer: 'Yes, we provide custom quotes based on your specific requirements. Contact us with your project details, and we\'ll provide a detailed proposal with transparent pricing for your AI project.'
                 },
                 {
-                  question: 'Do you provide SEO optimization with a-i-cost-guide?',
-                  answer: 'Yes, we include basic SEO optimization with all a-i-cost-guide packages. This includes SEO-friendly URL structure, meta tags, schema markup, fast loading speed, mobile optimization, and other SEO best practices.'
+                  question: 'What is included in the pricing?',
+                  answer: 'Pricing typically includes consultation, strategy development, implementation, integration, training, and support. Specific inclusions vary by package and project. We provide detailed breakdowns of what\'s included in each package or project quote.'
+                },
+                {
+                  question: 'Do you offer payment plans?',
+                  answer: 'Yes, we offer flexible payment plans for larger projects. Payment terms can be structured based on project milestones or monthly installments. We work with you to create a payment plan that fits your cash flow.'
+                },
+                {
+                  question: 'How do I get started?',
+                  answer: 'Contact us for a free consultation. We\'ll discuss your requirements, provide transparent pricing, and create a customized proposal. Once approved, we\'ll begin implementation with clear milestones and deliverables.'
                 }
               ].map((faq, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                <div key={index} className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-purple-500/20 p-6 hover:border-purple-500/40 transition-all duration-300">
                   <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -745,27 +667,46 @@ const AICostGuide = () => {
         </div>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-4">
-              Ready to Create Your Dream Website?
+        <section className="relative bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Ready to Get Started with AI?
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-              Best a-i-cost-guide company in Delhi NCR offering comprehensive a-i-cost-guide services. 
-              Get started with professional a-i-cost-guide services India today.
+              Get a transparent quote for your AI project. Contact us for a free consultation 
+              and detailed pricing based on your requirements.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gray-900 text-purple-300 font-semibold rounded-xl hover:bg-gray-800 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 bg-white text-purple-700 font-semibold rounded-xl hover:bg-purple-50 transition-all duration-300 shadow-lg hover:scale-105"
               >
-                <Phone className="h-5 w-5 mr-2" />
-                Get a-i-cost-guide Quote
+                <Rocket className="h-5 w-5 mr-2" />
+                Get Quote
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
-              <button className="inline-flex items-center px-8 py-4 bg-purple-700 text-white font-semibold rounded-xl hover:bg-purple-600 transition-all duration-300">
-                <Calendar className="h-5 w-5 mr-2" />
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-4 bg-purple-900/50 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-purple-900/70 transition-all duration-300"
+              >
+                <Calculator className="h-5 w-5 mr-2" />
                 Schedule Consultation
-              </button>
+              </Link>
+            </div>
+            <div className="mt-12 flex flex-wrap justify-center gap-8 text-purple-100">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Free consultation</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Transparent pricing</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>No hidden costs</span>
+              </div>
             </div>
           </div>
         </section>
@@ -774,4 +715,4 @@ const AICostGuide = () => {
   );
 };
 
-export default AICostGuide; 
+export default AICostGuide;

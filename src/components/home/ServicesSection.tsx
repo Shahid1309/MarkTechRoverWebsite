@@ -8,37 +8,37 @@ const ServicesSection = () => {
       title: 'SEO Optimization',
       description: 'Boost your website\'s visibility in search engines with our data-driven SEO strategies that drive organic traffic.',
       icon: <span className="text-3xl">🔍</span>,
-      link: '/services#seo'
+      link: '/services/seo-lead-generation/seo-services'
     },
     {
       title: 'PPC & AI Ads',
       description: 'Maximize ROAS with AI-powered PPC campaigns on Google, Meta, and other platforms to reach your target audience.',
       icon: <span className="text-3xl">📈</span>,
-      link: '/services#ppc'
+      link: '/services/seo-lead-generation/ppc-management'
     },
     {
       title: 'Web Development',
       description: 'Create stunning, responsive websites with modern technologies that engage visitors and drive conversions.',
       icon: <span className="text-3xl">🌐</span>,
-      link: '/services#web'
+      link: '/services/ux-interactive/website-design'
     },
     {
       title: 'Social Media',
       description: 'Build and engage your community with strategic social media marketing that increases brand awareness.',
       icon: <span className="text-3xl">💬</span>,
-      link: '/services#social'
+      link: '/services/ux-interactive/social-media-management'
     },
     {
       title: 'Email Marketing',
       description: 'Drive customer engagement and retention with personalized email campaigns that deliver results.',
       icon: <span className="text-3xl">📧</span>,
-      link: '/services#email'
+      link: '/services/revenue-marketing-cro/email-marketing-management'
     },
     {
       title: 'Content Creation',
       description: 'Develop compelling content that resonates with your audience and establishes thought leadership.',
       icon: <span className="text-3xl">✍️</span>,
-      link: '/services#content'
+      link: '/services/ux-interactive/content-marketing'
     }
   ];
 

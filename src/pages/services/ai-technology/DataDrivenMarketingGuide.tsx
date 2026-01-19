@@ -80,49 +80,85 @@ import {
   Smartphone as MobileIcon,
   Monitor as DesktopIcon,
   Palette as DesignIcon,
-  Server
+  Server,
+  Building2,
+  Briefcase,
+  Network,
+  Link2,
+  Workflow,
+  Filter,
+  Bell,
+  Mail as MailIcon,
+  Repeat,
+  RefreshCcw as RefreshIcon,
+  MousePointerClick,
+  Eye as EyeIcon,
+  Info,
+  Book,
+  GraduationCap,
+  LineChart
 } from 'lucide-react';
 import PageSEO from '../../../components/seo/PageSEO';
 
 const DataDrivenMarketingGuide = () => {
-  const [activeSection, setActiveSection] = useState('deliverables');
+  const [activeSection, setActiveSection] = useState('overview');
   const [isNavSticky, setIsNavSticky] = useState(false);
-  const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
+  const [expandedFeature, setExpandedFeature] = useState<number>(0);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Design Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Design Technology', icon: <Cpu className="h-4 w-4" /> },
-    { id: 'case-studies', label: 'Design Case Studies', icon: <Trophy className="h-4 w-4" /> },
-    { id: 'approach', label: 'Design Approach', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'overview', label: 'Overview', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'features', label: 'Key Features', icon: <Zap className="h-4 w-4" /> },
+    { id: 'benefits', label: 'Benefits', icon: <TrendingUp className="h-4 w-4" /> },
+    { id: 'strategies', label: 'Strategies', icon: <Target className="h-4 w-4" /> },
+    { id: 'implementation', label: 'Implementation', icon: <Settings className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
   ];
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+  }, []);
+
   // Handle scroll for sticky navigation and active section detection
   useEffect(() => {
+    const sectionIds = ['overview', 'features', 'benefits', 'strategies', 'implementation', 'faqs'];
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const heroHeight = 800;
+      const heroHeight = 600;
       setIsNavSticky(scrollPosition > heroHeight);
 
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.id);
-      const currentSection = sections.find(sectionId => {
-        const element = document.getElementById(sectionId);
+      let currentSection = sectionIds[0];
+      
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sectionIds[i]);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          const offset = 150;
+          if (rect.top <= offset) {
+            currentSection = sectionIds[i];
+            break;
+          }
         }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
       }
+      
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const timeoutId = setTimeout(() => {
+      handleScroll();
+    }, 100);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -136,227 +172,384 @@ const DataDrivenMarketingGuide = () => {
   };
 
   const seoConfig = {
-    title: "Data Driven Marketing Guide Services | MarkTechRover",
-    description: "Professional data driven marketing guide services. Expert solutions for your business needs. Get started today.",
-    keywords: ["data driven marketing guide","services","professional","expert","business"],
-    url: "/services/ai-technology/data-driven-marketing-guide",
-    type: "website" as const,
-    publishedAt: "2025-08-05T06:37:20.480Z",
-    modifiedAt: "2025-08-05T06:37:20.480Z",
-    author: "MarkTechRover",
-    section: "Services",
-    tags: ["data driven marketing guide","services"],
-    image: "/images/services/data-driven-marketing-guide.jpg"
+    title: 'Data-Driven Marketing Guide | Complete Guide to Data-Driven Marketing | MarkTechRover',
+    description: 'Learn what data-driven marketing is, how it works, and why businesses need it. Complete guide to data-driven marketing strategies, features, benefits, and implementation. Best data-driven marketing guide in Delhi NCR & India.',
+    keywords: [
+      'Data-Driven Marketing', 'Data-Driven Marketing Guide', 'Marketing Analytics', 'Marketing Data',
+      'Data-Driven Strategy', 'Marketing Intelligence', 'Customer Data Analytics', 'Marketing Metrics',
+      'Data-Driven Marketing India', 'Marketing Analytics Delhi', 'Best Data-Driven Marketing',
+      'Marketing Data Analysis', 'Customer Insights', 'Marketing Performance Analytics'
+    ],
+    url: '/services/ai-technology/data-driven-marketing-guide',
+    type: 'website' as const,
+    publishedAt: '2024-01-01',
+    modifiedAt: '2024-12-01',
+    author: 'MarkTechRover',
+    section: 'AI & Technology',
+    tags: ['Data-Driven Marketing', 'Marketing Analytics', 'Marketing Strategy', 'Data Analytics'],
+    image: '/images/data-driven-marketing-guide.webp'
   };
 
-  const deliverables = [
+  const keyFeatures = [
     {
       id: 1,
-      title: 'Custom data-driven-marketing-guide',
-      description: 'Bespoke data-driven-marketing-guide tailored to your brand and business objectives',
-      icon: <DesignIcon className="h-6 w-6" />,
+      title: 'Data Collection & Integration',
+      description: 'Collect and integrate data from multiple marketing channels and customer touchpoints',
+      icon: <Database className="h-8 w-8" />,
       features: [
-        'Custom data-driven-marketing-guide and layout',
-        'Brand-consistent visual design',
-        'User experience (UX) optimization',
-        'Mobile-first responsive design',
-        'Interactive elements and animations',
-        'Cross-browser compatibility'
+        'Multi-channel data collection',
+        'Customer behavior tracking',
+        'Campaign performance data',
+        'Website analytics integration',
+        'Social media metrics',
+        'Email marketing data'
       ],
-      expanded: true
+      color: 'from-blue-500 to-blue-600',
+      bgColor: 'from-blue-500/10 to-blue-400/10',
+      borderColor: 'border-blue-500/20',
+      textColor: 'text-blue-300'
     },
     {
       id: 2,
-      title: 'Responsive Web Development',
-      description: 'Modern, responsive website development using latest technologies',
-      icon: <Code className="h-6 w-6" />,
+      title: 'Advanced Analytics & Insights',
+      description: 'Analyze marketing data to uncover insights and identify optimization opportunities',
+      icon: <BarChart3 className="h-8 w-8" />,
       features: [
-        'HTML5, CSS3, and JavaScript development',
-        'React.js and Next.js frameworks',
-        'Progressive Web App (PWA) features',
-        'SEO-optimized code structure',
-        'Fast loading and performance optimization',
-        'Security and SSL implementation'
+        'Customer segmentation analysis',
+        'Campaign performance analysis',
+        'ROI and attribution modeling',
+        'Predictive analytics',
+        'Trend identification',
+        'Competitive benchmarking'
       ],
-      expanded: false
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-500/10 to-purple-400/10',
+      borderColor: 'border-purple-500/20',
+      textColor: 'text-purple-300'
     },
     {
       id: 3,
-      title: 'E-commerce data-driven-marketing-guide',
-      description: 'Professional e-commerce data-driven-marketing-guide for online stores',
-      icon: <ShoppingCart className="h-6 w-6" />,
+      title: 'Customer Journey Mapping',
+      description: 'Map customer journeys using data to understand touchpoints and optimize experiences',
+      icon: <Network className="h-8 w-8" />,
       features: [
-        'E-commerce platform integration',
-        'Product catalog and inventory management',
-        'Secure payment gateway integration',
-        'Shopping cart and checkout optimization',
-        'Order management and tracking',
-        'Customer account and review systems'
+        'Journey visualization',
+        'Touchpoint analysis',
+        'Conversion funnel tracking',
+        'Drop-off identification',
+        'Path optimization',
+        'Experience enhancement'
       ],
-      expanded: false
+      color: 'from-emerald-500 to-emerald-600',
+      bgColor: 'from-emerald-500/10 to-emerald-400/10',
+      borderColor: 'border-emerald-500/20',
+      textColor: 'text-emerald-300'
     },
     {
       id: 4,
-      title: 'Content Management System',
-      description: 'Easy-to-use CMS for content management and updates',
-      icon: <FileText className="h-6 w-6" />,
+      title: 'Marketing Attribution',
+      description: 'Measure marketing attribution and calculate ROI across all channels and campaigns',
+      icon: <DollarSign className="h-8 w-8" />,
       features: [
-        'Custom CMS development',
-        'WordPress or other CMS integration',
-        'Content editing and management tools',
-        'Media library and asset management',
-        'User role and permission management',
-        'Content versioning and backup'
+        'Multi-touch attribution',
+        'Channel ROI analysis',
+        'Campaign effectiveness',
+        'Budget optimization',
+        'Revenue attribution',
+        'Cost per acquisition tracking'
       ],
-      expanded: false
+      color: 'from-rose-500 to-rose-600',
+      bgColor: 'from-rose-500/10 to-rose-400/10',
+      borderColor: 'border-rose-500/20',
+      textColor: 'text-rose-300'
     },
     {
       id: 5,
-      title: 'SEO-Optimized Design',
-      description: 'data-driven-marketing-guide optimized for search engine visibility',
-      icon: <Search className="h-6 w-6" />,
+      title: 'Real-Time Dashboards',
+      description: 'Access real-time marketing dashboards and automated reports for data-driven decisions',
+      icon: <Monitor className="h-8 w-8" />,
       features: [
-        'SEO-friendly URL structure',
-        'Meta tags and schema markup',
-        'Fast loading speed optimization',
-        'Mobile-friendly design',
-        'Structured data implementation',
-        'XML sitemap generation'
+        'Real-time dashboards',
+        'Custom report generation',
+        'Automated reporting',
+        'KPI tracking',
+        'Performance monitoring',
+        'Executive summaries'
       ],
-      expanded: false
+      color: 'from-amber-500 to-amber-600',
+      bgColor: 'from-amber-500/10 to-amber-400/10',
+      borderColor: 'border-amber-500/20',
+      textColor: 'text-amber-300'
     },
     {
       id: 6,
-      title: 'Website Maintenance & Support',
-      description: 'Ongoing website maintenance and technical support',
-      icon: <Wrench className="h-6 w-6" />,
+      title: 'Predictive Analytics',
+      description: 'Use predictive analytics to forecast trends and optimize future marketing efforts',
+      icon: <TrendingUp className="h-8 w-8" />,
       features: [
-        'Regular website updates and maintenance',
-        'Security monitoring and updates',
-        'Performance optimization',
-        'Content updates and management',
-        'Technical support and troubleshooting',
-        'Backup and disaster recovery'
+        'Trend forecasting',
+        'Customer lifetime value prediction',
+        'Churn prediction',
+        'Demand forecasting',
+        'Campaign performance prediction',
+        'Market opportunity analysis'
       ],
-      expanded: false
+      color: 'from-violet-500 to-violet-600',
+      bgColor: 'from-violet-500/10 to-violet-400/10',
+      borderColor: 'border-violet-500/20',
+      textColor: 'text-violet-300'
     }
   ];
 
-  const designPackages = [
+  const benefits = [
     {
-      name: 'Basic data-driven-marketing-guide',
-      price: '₹45,000',
-      period: 'one-time',
-      description: 'Perfect for small businesses and startups',
-      features: [
-        '5-page custom data-driven-marketing-guide',
-        'Responsive mobile design',
-        'Basic SEO optimization',
-        'Contact form integration',
-        'Social media integration',
-        'Basic CMS setup',
-        '1 month of support'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
+      title: 'Improved Marketing ROI',
+      description: 'Increase marketing ROI by making data-driven decisions and optimizing campaigns',
+      icon: <TrendingUp className="h-8 w-8" />,
+      metric: '65%',
+      label: 'ROI Improvement'
     },
     {
-      name: 'Professional data-driven-marketing-guide',
-      price: '₹85,000',
-      period: 'one-time',
-      description: 'Comprehensive data-driven-marketing-guide for growing businesses',
-      features: [
-        '10-page custom data-driven-marketing-guide',
-        'Advanced responsive design',
-        'E-commerce functionality',
-        'Advanced SEO optimization',
-        'Custom animations and interactions',
-        'Advanced CMS with admin panel',
-        '3 months of support',
-        'Performance optimization'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
+      title: 'Better Customer Targeting',
+      description: 'Target the right customers with precision using data-driven segmentation',
+      icon: <Target className="h-8 w-8" />,
+      metric: '58%',
+      label: 'Targeting Accuracy'
     },
     {
-      name: 'Enterprise data-driven-marketing-guide',
-      price: '₹1,50,000',
-      period: 'one-time',
-      description: 'Full-featured data-driven-marketing-guide for large businesses',
-      features: [
-        'Unlimited page custom design',
-        'Advanced e-commerce platform',
-        'Custom functionality development',
-        'Advanced SEO and analytics',
-        'Multi-language support',
-        'Advanced security features',
-        '6 months of support',
+      title: 'Enhanced Campaign Performance',
+      description: 'Improve campaign performance through data-driven optimization and insights',
+      icon: <BarChart className="h-8 w-8" />,
+      metric: '72%',
+      label: 'Performance Boost'
+    },
+    {
+      title: 'Informed Decision Making',
+      description: 'Make informed marketing decisions backed by comprehensive data and analytics',
+      icon: <Brain className="h-8 w-8" />,
+      metric: '80%',
+      label: 'Better Decisions'
+    }
+  ];
+
+  const strategies = [
+    {
+      type: 'Customer Segmentation',
+      description: 'Divide your customer base into distinct groups based on data-driven insights',
+      icon: <Users className="h-8 w-8" />,
+      benefits: [
+        'Personalized marketing messages',
+        'Improved targeting accuracy',
+        'Better resource allocation',
+        'Higher conversion rates',
+        'Increased customer satisfaction',
+        'Optimized marketing spend'
+      ],
+      challenges: [
+        'Requires quality data',
+        'Needs regular updates',
+        'Can be complex to implement'
+      ],
+      bestFor: 'Businesses with diverse customer bases'
+    },
+    {
+      type: 'Attribution Modeling',
+      description: 'Understand which marketing touchpoints contribute to conversions',
+      icon: <Link2 className="h-8 w-8" />,
+      benefits: [
+        'Accurate ROI measurement',
+        'Better budget allocation',
+        'Optimized channel mix',
+        'Improved campaign planning',
+        'Data-driven decisions',
+        'Reduced wasted spend'
+      ],
+      challenges: [
+        'Complex to set up',
+        'Requires multiple data sources',
+        'Needs ongoing refinement'
+      ],
+      bestFor: 'Multi-channel marketing campaigns'
+    },
+    {
+      type: 'Predictive Analytics',
+      description: 'Use machine learning to predict customer behavior and optimize marketing',
+      icon: <Brain className="h-8 w-8" />,
+      benefits: [
+        'Forecast trends',
+        'Predict customer lifetime value',
+        'Identify churn risks',
+        'Optimize timing',
+        'Improve targeting',
+        'Increase efficiency'
+      ],
+      challenges: [
+        'Requires technical expertise',
+        'Needs historical data',
+        'Ongoing model refinement'
+      ],
+      bestFor: 'Businesses with sufficient historical data'
+    }
+  ];
+
+  const implementationSteps = [
+    {
+      step: '01',
+      title: 'Data Collection Setup',
+      description: 'Set up data collection from all marketing channels and touchpoints',
+      icon: <Database className="h-6 w-6" />,
+      details: [
+        'Configure data sources',
+        'Set up tracking tools',
+        'Integrate marketing platforms',
+        'Establish data pipelines'
+      ]
+    },
+    {
+      step: '02',
+      title: 'Data Analysis & Processing',
+      description: 'Analyze collected data to extract insights and identify patterns',
+      icon: <BarChart className="h-6 w-6" />,
+      details: [
+        'Data cleaning and processing',
+        'Statistical analysis',
+        'Pattern identification',
+        'Insight extraction'
+      ]
+    },
+    {
+      step: '03',
+      title: 'Strategy Development',
+      description: 'Develop data-driven marketing strategies based on insights',
+      icon: <Target className="h-6 w-6" />,
+      details: [
+        'Strategy formulation',
+        'Channel optimization',
+        'Budget allocation',
+        'Campaign planning'
+      ]
+    },
+    {
+      step: '04',
+      title: 'Implementation & Testing',
+      description: 'Implement strategies and test their effectiveness',
+      icon: <Rocket className="h-6 w-6" />,
+      details: [
+        'Campaign execution',
+        'A/B testing',
         'Performance monitoring',
-        'Custom integrations'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
+        'Initial optimization'
+      ]
+    },
+    {
+      step: '05',
+      title: 'Measurement & Analysis',
+      description: 'Measure results and analyze performance data',
+      icon: <LineChart className="h-6 w-6" />,
+      details: [
+        'KPI tracking',
+        'Performance analysis',
+        'ROI calculation',
+        'Attribution analysis'
+      ]
+    },
+    {
+      step: '06',
+      title: 'Optimization & Scaling',
+      description: 'Continuously optimize based on data and scale successful strategies',
+      icon: <TrendingUp className="h-6 w-6" />,
+      details: [
+        'Performance optimization',
+        'Strategy refinement',
+        'Scale successful campaigns',
+        'Continuous improvement'
+      ]
     }
   ];
 
   return (
     <PageSEO config={seoConfig}>
-      <div className="min-h-screen ">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-black via-purple-900 to-black text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.3),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.2),transparent_50%)]"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-sm font-medium mb-6">
-                <Layout className="h-4 w-4 mr-2" />
-                data-driven-marketing-guide Services
+        <section className="relative pt-24 pb-20 overflow-visible">
+          {/* Animated Background */}
+          <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0, opacity: 0.5 }}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(59,130,246,0.15),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(147,51,234,0.1),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(59,130,246,0.02)_50%,transparent_70%)] bg-[length:100px_100px] animate-pulse"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ position: 'relative', zIndex: 10, isolation: 'isolate' }}>
+            <div className="text-center max-w-5xl mx-auto" style={{ position: 'relative', zIndex: 10 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-blue-500/20 to-purple-500/20 border border-blue-500/30 backdrop-blur-sm mb-8" style={{ position: 'relative', zIndex: 10 }}>
+                <BarChart className="h-4 w-4 text-blue-300" />
+                <span className="text-sm font-medium text-blue-200">Complete Data-Driven Marketing Guide</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                data-driven-marketing-guide Services in Delhi
+              {/* Main Heading */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                <span className="block bg-gradient-to-r from-white via-blue-200 to-purple-200 bg-clip-text text-transparent" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  Data Driven Marketing Strategy Guide
+                </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-purple-200 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Best data-driven-marketing-guide company in Delhi NCR offering custom data-driven-marketing-guide. 
-                Professional data-driven-marketing-guide services India with modern, responsive designs.
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Learn everything about data-driven marketing - what it is, how it works, key strategies, 
+                and how to implement it for your business success.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                  className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-blue-500/25 hover:shadow-xl hover:shadow-blue-500/40"
                 >
-                  <Target className="h-5 w-5 mr-2" />
-                  Get data-driven-marketing-guide Quote
-                  <ArrowRight className="h-5 w-5 ml-2" />
+                  <Rocket className="h-5 w-5 mr-2" />
+                  Get Marketing Consultation
+                  <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 
-                <button className="inline-flex items-center px-8 py-4 bg-gray-900/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-gray-900/20 hover:scale-105">
-                  <Play className="h-5 w-5 mr-2" />
-                  View Portfolio
+                <button className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-105">
+                  <Book className="h-5 w-5 mr-2" />
+                  Read More
                 </button>
+              </div>
+
+              {/* Key Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                {[
+                  { value: '65%', label: 'ROI Improvement' },
+                  { value: '58%', label: 'Targeting Accuracy' },
+                  { value: '72%', label: 'Performance Boost' },
+                  { value: '80%', label: 'Better Decisions' }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800 backdrop-blur-sm">
+                    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-blue-400 to-purple-400 bg-clip-text text-transparent mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-16 bg-gradient-to-r from-gray-900 via-blue-900/20 to-gray-900 border-y border-blue-500/10">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">500+</div>
-                <div className="text-gray-300">Websites Designed & Developed</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent mb-2">73%</div>
+                <div className="text-gray-300">Marketers Using Data-Driven Approach</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">98%</div>
-                <div className="text-gray-300">Client Satisfaction Rate</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent mb-2">$45B</div>
+                <div className="text-gray-300">Marketing Analytics Market Size</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">24/7</div>
-                <div className="text-gray-300">Support & Maintenance</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-blue-300 to-blue-400 bg-clip-text text-transparent mb-2">3x</div>
+                <div className="text-gray-300">Better ROI vs Traditional Marketing</div>
               </div>
             </div>
           </div>
@@ -364,21 +557,21 @@ const DataDrivenMarketingGuide = () => {
 
         {/* Sticky Navigation */}
         {isNavSticky && (
-          <div className="sticky top-20 z-40 bg-gray-900/95 backdrop-blur-md border-b border-gray-700 shadow-sm">
+          <div className="fixed top-20 left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-md border-b border-blue-500/20 shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <nav className="flex space-x-8 overflow-x-auto py-4">
+              <nav className="flex space-x-2 overflow-x-auto py-3 scrollbar-hide">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 whitespace-nowrap ${
                       activeSection === item.id
-                        ? 'bg-purple-100 text-purple-700'
-                        : 'text-gray-300 hover:text-purple-300 hover:bg-purple-50'
+                        ? 'bg-gradient-to-r from-blue-600 to-blue-700 text-white shadow-lg shadow-blue-500/25 scale-105'
+                        : 'text-gray-300 hover:text-blue-300 hover:bg-blue-500/10'
                     }`}
                   >
                     {item.icon}
-                    <span>{item.label}</span>
+                    <span className="text-sm">{item.label}</span>
                   </button>
                 ))}
               </nav>
@@ -387,54 +580,144 @@ const DataDrivenMarketingGuide = () => {
         )}
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Deliverables Section */}
-          <section id="deliverables" className="mb-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Overview Section */}
+          <section id="overview" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                data-driven-marketing-guide Deliverables
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-white to-blue-200 bg-clip-text text-transparent">
+                What is Data-Driven Marketing?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                Data-driven marketing is an approach that uses data analytics, customer insights, and marketing 
+                intelligence to create and optimize marketing strategies. It involves collecting data from various 
+                sources, analyzing it to extract insights, and using those insights to make informed marketing decisions.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <Database className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Data Collection</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Collect and integrate data from multiple marketing channels and customer touchpoints.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <BarChart3 className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Analytics & Insights</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Analyze marketing data to uncover insights and identify optimization opportunities.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-4">
+                  <Target className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Strategy Optimization</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Use data insights to optimize marketing strategies and improve campaign performance.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-blue-900/40 via-blue-800/30 to-blue-900/40 rounded-2xl border border-blue-500/30 p-8 md:p-12 backdrop-blur-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Businesses Need Data-Driven Marketing</h3>
+                  <ul className="space-y-3">
+                    {[
+                      'Make informed marketing decisions based on data',
+                      'Improve ROI through optimization',
+                      'Better understand your customers',
+                      'Optimize marketing spend and budget allocation',
+                      'Measure and track marketing performance',
+                      'Identify trends and opportunities'
+                    ].map((benefit, index) => (
+                      <li key={index} className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-blue-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-blue-600/20 to-blue-500/20 rounded-xl p-6 border border-blue-500/30">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-blue-300 mb-1">73%</div>
+                        <div className="text-xs text-gray-400">Using Data-Driven</div>
+                      </div>
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-blue-300 mb-1">65%</div>
+                        <div className="text-xs text-gray-400">ROI Improvement</div>
+                      </div>
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-blue-300 mb-1">72%</div>
+                        <div className="text-xs text-gray-400">Performance Boost</div>
+                      </div>
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-blue-300 mb-1">80%</div>
+                        <div className="text-xs text-gray-400">Better Decisions</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section id="features" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Key Data-Driven Marketing Features
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive data-driven-marketing-guide services designed for business growth. 
-                Best data-driven-marketing-guide company in Delhi NCR delivering modern, responsive websites.
+                Essential features that make data-driven marketing powerful for business growth
               </p>
             </div>
 
             <div className="space-y-6">
-              {deliverables.map((deliverable, index) => (
+              {keyFeatures.map((feature, index) => (
                 <div
-                  key={deliverable.id}
-                  className="bg-gray-900 rounded-2xl border border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
+                  key={feature.id}
+                  className={`bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border ${feature.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
                 >
                   <button
-                    onClick={() => setExpandedDeliverable(expandedDeliverable === index ? -1 : index)}
+                    onClick={() => setExpandedFeature(expandedFeature === index ? -1 : index)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left"
                   >
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                        {deliverable.icon}
+                    <div className="flex items-center space-x-4 flex-1">
+                      <div className={`p-4 rounded-xl bg-gradient-to-br ${feature.color} shadow-lg`}>
+                        {feature.icon}
                       </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white mb-1">
-                          {deliverable.title}
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-white mb-2">
+                          {feature.title}
                         </h3>
-                        <p className="text-gray-300">{deliverable.description}</p>
+                        <p className="text-gray-300">{feature.description}</p>
                       </div>
                     </div>
                     <ChevronDown
-                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 ${
-                        expandedDeliverable === index ? 'rotate-180' : ''
+                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
+                        expandedFeature === index ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   
-                  {expandedDeliverable === index && (
-                    <div className="px-8 pb-6">
+                  {expandedFeature === index && (
+                    <div className="px-8 pb-6 border-t border-gray-700 pt-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {deliverable.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-400">{feature}</span>
+                        {feature.features.map((item, itemIndex) => (
+                          <div key={itemIndex} className="flex items-start space-x-3">
+                            <CheckCircle className={`h-5 w-5 ${feature.textColor} flex-shrink-0 mt-0.5`} />
+                            <span className="text-gray-300">{item}</span>
                           </div>
                         ))}
                       </div>
@@ -445,299 +728,185 @@ const DataDrivenMarketingGuide = () => {
             </div>
           </section>
 
-          {/* Design Packages Section */}
-          <section id="packages" className="mb-20">
+          {/* Benefits Section */}
+          <section id="benefits" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                data-driven-marketing-guide Packages
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Key Benefits of Data-Driven Marketing
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive data-driven-marketing-guide solutions. Best data-driven-marketing-guide services in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {designPackages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500"> {pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Technology Section */}
-          <section id="technology" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                data-driven-marketing-guide Technology
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Advanced data-driven-marketing-guide technology stack powering modern websites. 
-                Professional data-driven-marketing-guide services India with cutting-edge tools and frameworks.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Frontend Technologies',
-                  description: 'Modern frontend frameworks and technologies',
-                  icon: <DesktopIcon className="h-8 w-8" />,
-                  features: ['React.js', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Sass/SCSS']
-                },
-                {
-                  title: 'Design Tools',
-                  description: 'Professional design and prototyping tools',
-                  icon: <DesignIcon className="h-8 w-8" />,
-                  features: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Adobe Creative Suite', 'Protopie']
-                },
-                {
-                  title: 'Backend Technologies',
-                  description: 'Robust backend development technologies',
-                  icon: <Server className="h-8 w-8" />,
-                  features: ['Node.js', 'Python/Django', 'PHP/Laravel', 'Ruby on Rails', 'Java/Spring', 'C#/.NET']
-                },
-                {
-                  title: 'CMS Platforms',
-                  description: 'Content management system platforms',
-                  icon: <FileText className="h-8 w-8" />,
-                  features: ['WordPress', 'Drupal', 'Joomla', 'Strapi', 'Contentful', 'Sanity']
-                },
-                {
-                  title: 'E-commerce Platforms',
-                  description: 'E-commerce and online store platforms',
-                  icon: <ShoppingCart className="h-8 w-8" />,
-                  features: ['Shopify', 'WooCommerce', 'Magento', 'BigCommerce', 'PrestaShop', 'OpenCart']
-                },
-                {
-                  title: 'Performance Tools',
-                  description: 'Website performance and optimization tools',
-                  icon: <Zap className="h-8 w-8" />,
-                  features: ['Google PageSpeed', 'GTmetrix', 'WebPageTest', 'Lighthouse', 'Core Web Vitals', 'CDN']
-                }
-              ].map((tech, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6 hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                      {tech.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-purple-300">{tech.title}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-4">{tech.description}</p>
-                  <ul className="space-y-2">
-                    {tech.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-gray-400 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Case Studies Section */}
-          <section id="case-studies" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                data-driven-marketing-guide Case Studies
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Real results from data-driven-marketing-guide projects. Best data-driven-marketing-guide company in Delhi NCR 
-                delivering modern, high-performing websites.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'E-commerce Website',
-                  description: 'Modern e-commerce website with 300% increase in sales',
-                  metrics: ['300% Sales Increase', '450% Traffic Growth', '6 Months'],
-                  image: '/images/case-studies/ecommerce-design.webp'
-                },
-                {
-                  title: 'Corporate Website',
-                  description: 'Professional corporate website with 500% lead generation increase',
-                  metrics: ['500% Lead Increase', '250% Engagement', '8 Months'],
-                  image: '/images/case-studies/corporate-design.webp'
-                },
-                {
-                  title: 'Restaurant Website',
-                  description: 'Beautiful restaurant website with 400% online orders increase',
-                  metrics: ['400% Online Orders', '300% Brand Awareness', '4 Months'],
-                  image: '/images/case-studies/restaurant-design.webp'
-                },
-                {
-                  title: 'SaaS Platform',
-                  description: 'Modern SaaS platform with 600% user registration increase',
-                  metrics: ['600% User Registration', '350% Conversion Rate', '12 Months'],
-                  image: '/images/case-studies/saas-design.webp'
-                }
-              ].map((study, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                    <Trophy className="h-16 w-16 text-white" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
-                    <p className="text-gray-300 mb-4">{study.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {study.metrics.map((metric, metricIndex) => (
-                        <span key={metricIndex} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                          {metric}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Approach Section */}
-          <section id="approach" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                data-driven-marketing-guide Approach
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Proven methodology for data-driven-marketing-guide success. data-driven-marketing-guide experts in Delhi NCR 
-                delivering comprehensive solutions for business growth.
+                How data-driven marketing transforms businesses and drives growth
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: '01',
-                  title: 'Discovery & Planning',
-                  description: 'Comprehensive analysis and website planning',
-                  icon: <Search className="h-8 w-8" />
-                },
-                {
-                  step: '02',
-                  title: 'Design & Prototyping',
-                  description: 'Creative design and interactive prototyping',
-                  icon: <Palette className="h-8 w-8" />
-                },
-                {
-                  step: '03',
-                  title: 'Development',
-                  description: 'Professional website development and coding',
-                  icon: <Code className="h-8 w-8" />
-                },
-                {
-                  step: '04',
-                  title: 'Launch & Support',
-                  description: 'Website launch and ongoing support',
-                  icon: <Rocket className="h-8 w-8" />
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-xl">{step.step}</span>
-                    </div>
-                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                      <div className="text-purple-300">
-                        {step.icon}
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-blue-500/20 p-6 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl"
+                >
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-400/20 border border-blue-500/30 mb-4 inline-block">
+                    {benefit.icon}
+                  </div>
+                  <div className="text-right mb-3">
+                    <div className="text-2xl font-bold text-blue-300">{benefit.metric}</div>
+                    <div className="text-xs text-gray-400">{benefit.label}</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Strategies Section */}
+          <section id="strategies" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Data-Driven Marketing Strategies
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Key strategies to implement data-driven marketing effectively
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+              {strategies.map((strategy, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-blue-500/20 p-8 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl"
+                >
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-400/20 border border-blue-500/30 mb-6 inline-block">
+                    {strategy.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{strategy.type}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{strategy.description}</p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-blue-300 mb-3">Benefits:</h4>
+                    <ul className="space-y-2">
+                      {strategy.benefits.map((benefit, benefitIndex) => (
+                        <li key={benefitIndex} className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-green-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-400 text-sm">{benefit}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-rose-300 mb-3">Challenges:</h4>
+                    <ul className="space-y-2">
+                      {strategy.challenges.map((challenge, challengeIndex) => (
+                        <li key={challengeIndex} className="flex items-start space-x-2">
+                          <AlertCircle className="h-4 w-4 text-rose-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-400 text-sm">{challenge}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-gray-700">
+                    <p className="text-sm text-gray-400">
+                      <span className="font-semibold text-blue-300">Best for: </span>
+                      {strategy.bestFor}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Implementation Section */}
+          <section id="implementation" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Data-Driven Marketing Implementation
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Step-by-step guide to successfully implementing data-driven marketing
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {implementationSteps.map((step, index) => (
+                <div key={index} className="relative">
+                  <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-blue-500/20 p-6 hover:border-blue-500/40 transition-all duration-300 hover:shadow-xl">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-blue-600 to-blue-700 rounded-xl flex items-center justify-center shadow-lg">
+                        <span className="text-white font-bold text-xl">{step.step}</span>
+                      </div>
+                      <div className="p-3 rounded-xl bg-gradient-to-br from-blue-500/20 to-blue-400/20 border border-blue-500/30">
+                        <div className="text-blue-300">
+                          {step.icon}
+                        </div>
                       </div>
                     </div>
+                    <h3 className="text-xl font-bold text-white mb-3">{step.title}</h3>
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">{step.description}</p>
+                    <ul className="space-y-2">
+                      {step.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-blue-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-400 text-sm">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* FAQs Section */}
-          <section id="faqs" className="mb-20">
+          <section id="faqs" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                data-driven-marketing-guide FAQs
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Frequently Asked Questions
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Common questions about data-driven-marketing-guide services. Best data-driven-marketing-guide company in Delhi 
-                providing transparent answers and solutions.
+                Common questions about data-driven marketing
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6">
               {[
                 {
-                  question: 'How long does it take to design and develop a website?',
-                  answer: 'data-driven-marketing-guide and development typically takes 4-8 weeks depending on complexity, number of pages, and features required. Simple websites can be completed in 2-3 weeks, while complex e-commerce or custom applications may take 8-12 weeks.'
+                  question: 'What is data-driven marketing and why do I need it?',
+                  answer: 'Data-driven marketing is an approach that uses data analytics, customer insights, and marketing intelligence to create and optimize marketing strategies. You need it to make informed decisions, improve ROI, better understand customers, optimize marketing spend, and measure performance effectively.'
                 },
                 {
-                  question: 'What is the typical cost for data-driven-marketing-guide services?',
-                  answer: 'data-driven-marketing-guide costs typically range from ₹45,000 to ₹1,50,000 depending on complexity, features, and scope of work. We provide detailed quotes based on your specific requirements and business goals.'
+                  question: 'What data sources are used in data-driven marketing?',
+                  answer: 'Data-driven marketing uses data from multiple sources including website analytics, CRM systems, social media platforms, email marketing tools, advertising platforms, customer surveys, sales data, and third-party data providers. The key is integrating all these sources for a comprehensive view.'
                 },
                 {
-                  question: 'Do you provide website maintenance and support?',
-                  answer: 'Yes, we provide ongoing website maintenance and support services including regular updates, security monitoring, performance optimization, content updates, and technical support. We offer various maintenance packages to suit your needs.'
+                  question: 'How does data-driven marketing improve ROI?',
+                  answer: 'Data-driven marketing improves ROI by enabling better targeting, optimizing campaign performance, reducing wasted spend, identifying high-value customers, improving conversion rates, and making informed budget allocation decisions based on actual performance data.'
                 },
                 {
-                  question: 'Do you work with businesses outside Delhi NCR?',
-                  answer: 'Yes, we work with businesses across India and internationally. Our data-driven-marketing-guide services are not limited by geography and can be delivered remotely with excellent results.'
+                  question: 'What metrics are important in data-driven marketing?',
+                  answer: 'Important metrics include customer acquisition cost (CAC), customer lifetime value (CLV), return on ad spend (ROAS), conversion rates, attribution metrics, engagement rates, retention rates, and various channel-specific performance metrics. The specific metrics depend on your business goals.'
                 },
                 {
-                  question: 'What technologies do you use for website development?',
-                  answer: 'We use modern technologies including React.js, Next.js, Node.js, WordPress, and other industry-standard frameworks. We choose the best technology stack based on your specific requirements and business goals.'
+                  question: 'How long does it take to see results from data-driven marketing?',
+                  answer: 'Results can vary, but most businesses start seeing improvements within 4-8 weeks of implementing data-driven marketing. Significant improvements typically occur within 3-6 months as data accumulates and strategies are optimized based on insights.'
                 },
                 {
-                  question: 'Do you provide SEO optimization with data-driven-marketing-guide?',
-                  answer: 'Yes, we include basic SEO optimization with all data-driven-marketing-guide packages. This includes SEO-friendly URL structure, meta tags, schema markup, fast loading speed, mobile optimization, and other SEO best practices.'
+                  question: 'Do I need technical expertise for data-driven marketing?',
+                  answer: 'While technical expertise helps, it\'s not always required. Many data-driven marketing platforms provide user-friendly interfaces and automated analytics. However, working with experts can help you get the most value from your data and avoid common pitfalls.'
+                },
+                {
+                  question: 'How is data privacy handled in data-driven marketing?',
+                  answer: 'Data privacy is critical. We ensure compliance with GDPR, CCPA, and other privacy regulations. This includes obtaining proper consent, implementing data security measures, providing transparency about data usage, and giving users control over their data.'
+                },
+                {
+                  question: 'Can data-driven marketing work for small businesses?',
+                  answer: 'Yes, data-driven marketing can work for businesses of all sizes. While large enterprises may have more data, small businesses can start with basic analytics and gradually build their data-driven capabilities. The key is starting with available data and tools.'
                 }
               ].map((faq, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                <div key={index} className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-blue-500/20 p-6 hover:border-blue-500/40 transition-all duration-300">
                   <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -745,27 +914,46 @@ const DataDrivenMarketingGuide = () => {
         </div>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-4">
-              Ready to Create Your Dream Website?
+        <section className="relative bg-gradient-to-r from-blue-600 via-blue-700 to-purple-800 text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Ready to Implement Data-Driven Marketing?
             </h2>
-            <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-              Best data-driven-marketing-guide company in Delhi NCR offering comprehensive data-driven-marketing-guide services. 
-              Get started with professional data-driven-marketing-guide services India today.
+            <p className="text-xl text-blue-100 mb-8 max-w-3xl mx-auto">
+              Get expert data-driven marketing consultation and implementation services. 
+              Transform your marketing with data intelligence and measurable results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gray-900 text-purple-300 font-semibold rounded-xl hover:bg-gray-800 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 bg-white text-blue-700 font-semibold rounded-xl hover:bg-blue-50 transition-all duration-300 shadow-lg hover:scale-105"
               >
-                <Phone className="h-5 w-5 mr-2" />
-                Get data-driven-marketing-guide Quote
+                <Rocket className="h-5 w-5 mr-2" />
+                Get Marketing Consultation
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
-              <button className="inline-flex items-center px-8 py-4 bg-purple-700 text-white font-semibold rounded-xl hover:bg-purple-600 transition-all duration-300">
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-4 bg-blue-900/50 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-blue-900/70 transition-all duration-300"
+              >
                 <Calendar className="h-5 w-5 mr-2" />
-                Schedule Consultation
-              </button>
+                Schedule Demo
+              </Link>
+            </div>
+            <div className="mt-12 flex flex-wrap justify-center gap-8 text-blue-100">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Free consultation</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Expert guidance</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Ongoing support</span>
+              </div>
             </div>
           </div>
         </section>
@@ -774,4 +962,4 @@ const DataDrivenMarketingGuide = () => {
   );
 };
 
-export default DataDrivenMarketingGuide; 
+export default DataDrivenMarketingGuide;

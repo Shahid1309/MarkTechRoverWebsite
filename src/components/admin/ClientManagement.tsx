@@ -112,6 +112,8 @@ const ClientManagement: React.FC = () => {
       {error && <div className="text-red-500 mb-2">{error}</div>}
       <form onSubmit={handleAdd} className="mb-6 flex flex-col md:flex-row gap-2 items-center">
         <input
+          id="client-name"
+          name="name"
           type="text"
           placeholder="Name"
           value={form.name}
@@ -120,6 +122,8 @@ const ClientManagement: React.FC = () => {
           required
         />
         <input
+          id="client-email"
+          name="email"
           type="email"
           placeholder="Email"
           value={form.email}
@@ -128,6 +132,8 @@ const ClientManagement: React.FC = () => {
           required
         />
         <input
+          id="client-company"
+          name="company"
           type="text"
           placeholder="Company"
           value={form.company}
@@ -136,6 +142,8 @@ const ClientManagement: React.FC = () => {
           required
         />
         <input
+          id="client-password"
+          name="password"
           type="password"
           placeholder="Password"
           value={form.password}

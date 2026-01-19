@@ -80,38 +80,44 @@ import {
   Smartphone as MobileIcon,
   Monitor as DesktopIcon,
   Palette as DesignIcon,
-  Server
+  Server,
+  Sparkle,
+  Wand2,
+  Image as ImageIcon,
+  Video,
+  Music,
+  Camera
 } from 'lucide-react';
 import PageSEO from '../../../components/seo/PageSEO';
 
 const SeoCopywriting = () => {
-  const [activeSection, setActiveSection] = useState('deliverables');
+  const [activeSection, setActiveSection] = useState('overview');
   const [isNavSticky, setIsNavSticky] = useState(false);
-  const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
+  const [hoveredFeature, setHoveredFeature] = useState<number | null>(null);
+  const [activeProcessStep, setActiveProcessStep] = useState(0);
+  const [hoveredStep, setHoveredStep] = useState<number | null>(null);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Design Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Design Technology', icon: <Cpu className="h-4 w-4" /> },
-    { id: 'case-studies', label: 'Design Case Studies', icon: <Trophy className="h-4 w-4" /> },
-    { id: 'approach', label: 'Design Approach', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'overview', label: 'Overview', icon: <Eye className="h-4 w-4" /> },
+    { id: 'features', label: 'Features', icon: <Sparkle className="h-4 w-4" /> },
+    { id: 'process', label: 'Our Process', icon: <Rocket className="h-4 w-4" /> },{ id: 'portfolio', label: 'Portfolio', icon: <Trophy className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
   ];
 
-  // Handle scroll for sticky navigation and active section detection
   useEffect(() => {
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const heroHeight = 800;
-      setIsNavSticky(scrollPosition > heroHeight);
+      // Show nav after scrolling past 200px
+      const shouldShow = scrollPosition > 200;
+      setIsNavSticky(shouldShow);
 
-      // Update active section based on scroll position
       const sections = navItems.map(item => item.id);
       const currentSection = sections.find(sectionId => {
         const element = document.getElementById(sectionId);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          const offset = 200;
+          return rect.top <= offset && rect.bottom >= offset;
         }
         return false;
       });
@@ -121,9 +127,16 @@ const SeoCopywriting = () => {
       }
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
+    // Initial check on mount
+    handleScroll();
+
+    // Add scroll listener
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [navItems]);
 
   const scrollToSection = (sectionId: string) => {
     const element = document.getElementById(sectionId);
@@ -136,499 +149,587 @@ const SeoCopywriting = () => {
   };
 
   const seoConfig = {
-    title: "Seo Copywriting Services | MarkTechRover",
-    description: "Professional seo copywriting services. Expert solutions for your business needs. Get started today.",
-    keywords: ["seo copywriting","services","professional","expert","business"],
-    url: "/services/ux-interactive/seo-copywriting",
-    type: "website" as const,
-    publishedAt: "2025-08-05T06:37:20.370Z",
-    modifiedAt: "2025-08-05T06:37:20.370Z",
-    author: "MarkTechRover",
-    section: "Services",
-    tags: ["seo copywriting","services"],
-    image: "/images/services/seo-copywriting.jpg"
+    title: 'SEO Copywriting Services in Delhi | Professional SEO Content Writing | MarkTechRover',
+    description: 'Expert SEO copywriting services in Delhi NCR. Professional SEO content writing that ranks and converts. Best SEO copywriting company in India.',
+    keywords: [
+      'SEO Copywriting Services Delhi',
+      'SEO Content Writing NCR',
+      'Best SEO Copywriting Company',
+      'Professional SEO Writing Services',
+      'SEO Content Writing India',
+      'SEO Copywriting Experts Delhi',
+      'Content Writing for SEO',
+      'SEO Optimized Content',
+      'SEO Content Strategy',
+      'SEO Writing Services'
+    ],
+    url: '/services/ux-interactive/seo-copywriting',
+    type: 'website' as const,
+    publishedAt: '2024-01-01',
+    modifiedAt: '2024-12-01',
+    author: 'MarkTechRover',
+    section: 'SEO Copywriting Services',
+    tags: ['SEO Copywriting', 'Content Writing', 'SEO Content', 'Content Marketing'],
+    image: '/images/seo-copywriting-services.webp'
   };
 
-  const deliverables = [
+  const features = [
     {
       id: 1,
-      title: 'Custom seo-copywriting',
-      description: 'Bespoke seo-copywriting tailored to your brand and business objectives',
-      icon: <DesignIcon className="h-6 w-6" />,
-      features: [
-        'Custom seo-copywriting and layout',
-        'Brand-consistent visual design',
-        'User experience (UX) optimization',
-        'Mobile-first responsive design',
-        'Interactive elements and animations',
-        'Cross-browser compatibility'
-      ],
-      expanded: true
+      title: 'Keyword-Optimized Content',
+      description: 'Strategic keyword integration that ranks without compromising readability',
+      icon: <Search className="h-8 w-8" />,
+      color: 'from-purple-500 to-indigo-500',
+      benefits: ['Keyword research', 'Natural integration', 'SEO-friendly structure', 'Search intent matching']
     },
     {
       id: 2,
-      title: 'Responsive Web Development',
-      description: 'Modern, responsive website development using latest technologies',
-      icon: <Code className="h-6 w-6" />,
-      features: [
-        'HTML5, CSS3, and JavaScript development',
-        'React.js and Next.js frameworks',
-        'Progressive Web App (PWA) features',
-        'SEO-optimized code structure',
-        'Fast loading and performance optimization',
-        'Security and SSL implementation'
-      ],
-      expanded: false
+      title: 'Conversion-Focused Writing',
+      description: 'Content that not only ranks but also drives action and conversions',
+      icon: <Target className="h-8 w-8" />,
+      color: 'from-indigo-500 to-blue-500',
+      benefits: ['CTA optimization', 'Persuasive copy', 'User journey mapping', 'Conversion tracking']
     },
     {
       id: 3,
-      title: 'E-commerce seo-copywriting',
-      description: 'Professional e-commerce seo-copywriting for online stores',
-      icon: <ShoppingCart className="h-6 w-6" />,
-      features: [
-        'E-commerce platform integration',
-        'Product catalog and inventory management',
-        'Secure payment gateway integration',
-        'Shopping cart and checkout optimization',
-        'Order management and tracking',
-        'Customer account and review systems'
-      ],
-      expanded: false
+      title: 'Content Strategy & Planning',
+      description: 'Comprehensive content strategies aligned with your business goals',
+      icon: <Brain className="h-8 w-8" />,
+      color: 'from-purple-600 to-indigo-600',
+      benefits: ['Content calendar', 'Topic research', 'Competitor analysis', 'Content gap analysis']
     },
     {
       id: 4,
-      title: 'Content Management System',
-      description: 'Easy-to-use CMS for content management and updates',
-      icon: <FileText className="h-6 w-6" />,
-      features: [
-        'Custom CMS development',
-        'WordPress or other CMS integration',
-        'Content editing and management tools',
-        'Media library and asset management',
-        'User role and permission management',
-        'Content versioning and backup'
-      ],
-      expanded: false
+      title: 'On-Page SEO Optimization',
+      description: 'Complete on-page SEO including meta tags, headers, and structure',
+      icon: <FileText className="h-8 w-8" />,
+      color: 'from-indigo-600 to-purple-600',
+      benefits: ['Meta optimization', 'Header structure', 'Internal linking', 'Schema markup']
     },
     {
       id: 5,
-      title: 'SEO-Optimized Design',
-      description: 'seo-copywriting optimized for search engine visibility',
-      icon: <Search className="h-6 w-6" />,
-      features: [
-        'SEO-friendly URL structure',
-        'Meta tags and schema markup',
-        'Fast loading speed optimization',
-        'Mobile-friendly design',
-        'Structured data implementation',
-        'XML sitemap generation'
-      ],
-      expanded: false
+      title: 'Content Performance Tracking',
+      description: 'Analytics and reporting to measure content performance and ROI',
+      icon: <BarChart3 className="h-8 w-8" />,
+      color: 'from-purple-500 to-fuchsia-500',
+      benefits: ['Performance metrics', 'Ranking tracking', 'Traffic analysis', 'ROI reporting']
     },
     {
       id: 6,
-      title: 'Website Maintenance & Support',
-      description: 'Ongoing website maintenance and technical support',
-      icon: <Wrench className="h-6 w-6" />,
-      features: [
-        'Regular website updates and maintenance',
-        'Security monitoring and updates',
-        'Performance optimization',
-        'Content updates and management',
-        'Technical support and troubleshooting',
-        'Backup and disaster recovery'
-      ],
-      expanded: false
+      title: 'Ongoing Content Support',
+      description: 'Continuous content updates and optimization for sustained results',
+      icon: <RefreshCw className="h-8 w-8" />,
+      color: 'from-indigo-500 to-purple-500',
+      benefits: ['Regular updates', 'Content refresh', 'Performance optimization', 'Strategy refinement']
     }
   ];
 
-  const designPackages = [
+  const processSteps = [
     {
-      name: 'Basic seo-copywriting',
-      price: '₹45,000',
-      period: 'one-time',
-      description: 'Perfect for small businesses and startups',
-      features: [
-        '5-page custom seo-copywriting',
-        'Responsive mobile design',
-        'Basic SEO optimization',
-        'Contact form integration',
-        'Social media integration',
-        'Basic CMS setup',
-        '1 month of support'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
+      step: '01',
+      title: 'Research & Strategy',
+      description: 'Comprehensive keyword and competitor research to create winning content strategy',
+      detailedDescription: 'We conduct in-depth keyword research, analyze competitor content, and understand your target audience to create a strategic content plan. This includes identifying content gaps, keyword opportunities, and creating a content calendar aligned with your business goals.',
+      icon: <Search className="h-6 w-6" />,
+      deliverables: ['Keyword research', 'Competitor analysis', 'Content strategy', 'Content calendar'],
+      duration: '1 week',
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-500/20 to-purple-600/20'
     },
     {
-      name: 'Professional seo-copywriting',
-      price: '₹85,000',
-      period: 'one-time',
-      description: 'Comprehensive seo-copywriting for growing businesses',
-      features: [
-        '10-page custom seo-copywriting',
-        'Advanced responsive design',
-        'E-commerce functionality',
-        'Advanced SEO optimization',
-        'Custom animations and interactions',
-        'Advanced CMS with admin panel',
-        '3 months of support',
-        'Performance optimization'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
+      step: '02',
+      title: 'Content Creation',
+      description: 'High-quality, SEO-optimized content creation that ranks and converts',
+      detailedDescription: 'Our expert copywriters create compelling, SEO-optimized content that balances search engine requirements with user engagement. We focus on creating valuable, informative content that answers user queries while naturally incorporating target keywords.',
+      icon: <PenTool className="h-6 w-6" />,
+      deliverables: ['SEO-optimized content', 'Meta tags & descriptions', 'Header optimization', 'Internal linking'],
+      duration: '2-3 weeks',
+      color: 'from-indigo-500 to-indigo-600',
+      bgColor: 'from-indigo-500/20 to-indigo-600/20'
     },
     {
-      name: 'Enterprise seo-copywriting',
-      price: '₹1,50,000',
-      period: 'one-time',
-      description: 'Full-featured seo-copywriting for large businesses',
-      features: [
-        'Unlimited page custom design',
-        'Advanced e-commerce platform',
-        'Custom functionality development',
-        'Advanced SEO and analytics',
-        'Multi-language support',
-        'Advanced security features',
-        '6 months of support',
-        'Performance monitoring',
-        'Custom integrations'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
+      step: '03',
+      title: 'Optimization & Review',
+      description: 'Thorough optimization and quality review to ensure maximum impact',
+      detailedDescription: 'We optimize all content for search engines and user experience. This includes on-page SEO optimization, readability improvements, conversion optimization, and quality assurance to ensure every piece of content meets our high standards.',
+      icon: <Settings className="h-6 w-6" />,
+      deliverables: ['SEO optimization', 'Quality review', 'Conversion optimization', 'Final edits'],
+      duration: '1 week',
+      color: 'from-purple-600 to-indigo-600',
+      bgColor: 'from-purple-600/20 to-indigo-600/20'
+    },
+    {
+      step: '04',
+      title: 'Publish & Monitor',
+      description: 'Content publication and continuous monitoring for performance optimization',
+      detailedDescription: 'We handle content publication and set up tracking to monitor performance. Post-publication, we continuously monitor rankings, traffic, and engagement metrics, making data-driven optimizations to improve results over time.',
+      icon: <Rocket className="h-6 w-6" />,
+      deliverables: ['Content publication', 'Performance tracking', 'Analytics setup', 'Ongoing optimization'],
+      duration: 'Ongoing',
+      color: 'from-indigo-600 to-purple-600',
+      bgColor: 'from-indigo-600/20 to-purple-600/20'
     }
   ];
+
+  
 
   return (
     <PageSEO config={seoConfig}>
-      <div className="min-h-screen ">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-black via-purple-900 to-black text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.3),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.2),transparent_50%)]"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-sm font-medium mb-6">
-                <Layout className="h-4 w-4 mr-2" />
-                seo-copywriting Services
+        <section className="relative overflow-hidden pt-32 pb-20">
+          {/* Animated Background */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(147,51,234,0.3),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(99,102,241,0.2),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(147,51,234,0.05)_50%,transparent_70%)] bg-[length:100px_100px] animate-pulse"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center max-w-5xl mx-auto">
+              {/* Badge */}
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 backdrop-blur-sm mb-8">
+                <PenTool className="h-4 w-4 text-purple-300" />
+                <span className="text-sm font-medium text-purple-200">Professional SEO Copywriting Services</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                seo-copywriting Services in Delhi
+              {/* Main Heading */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                <span className="bg-gradient-to-r from-white via-purple-200 to-indigo-200 bg-clip-text text-transparent">
+                  Hire SEO Copywriting Services
+                </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-purple-200 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Best seo-copywriting company in Delhi NCR offering custom seo-copywriting. 
-                Professional seo-copywriting services India with modern, responsive designs.
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Expert SEO copywriting services that combine search optimization with compelling storytelling. 
+                Best SEO copywriting company in Delhi NCR delivering content that ranks and converts.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                  className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-700 hover:to-indigo-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40"
                 >
                   <Target className="h-5 w-5 mr-2" />
-                  Get seo-copywriting Quote
-                  <ArrowRight className="h-5 w-5 ml-2" />
+                  Get Free Consultation
+                  <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 
-                <button className="inline-flex items-center px-8 py-4 bg-gray-900/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-gray-900/20 hover:scale-105">
+                <button className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-105">
                   <Play className="h-5 w-5 mr-2" />
                   View Portfolio
+                </button>
+              </div>
+
+              {/* Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto">
+                {[
+                  { value: '1000+', label: 'Articles Written' },
+                  { value: '95%', label: 'Client Satisfaction' },
+                  { value: '24/7', label: 'Support Available' },
+                  { value: '4.9/5', label: 'Average Rating' }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center">
+                    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Floating Sticky Sub Menu */}
+        <div className={`fixed left-1/2 transform -translate-x-1/2 z-[60] transition-all duration-500 ${
+          isNavSticky 
+            ? 'top-24 opacity-100 scale-100 pointer-events-auto' 
+            : 'top-0 opacity-0 scale-95 pointer-events-none'
+        }`}>
+          {/* Floating Background Element */}
+          <div className="relative">
+            {/* Animated Background Ring */}
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-indigo-500/10 to-purple-500/10 rounded-full blur-xl animate-pulse"></div>
+            <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5 rounded-full"></div>
+            
+            {/* Main Navigation Container */}
+            <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
+              <nav className="flex items-center space-x-1 px-6 py-3">
+                {navItems.map((item) => (
+                  <button
+                    key={item.id}
+                    onClick={() => scrollToSection(item.id)}
+                    className={`${
+                      activeSection === item.id
+                        ? 'text-purple-200 bg-gradient-to-r from-purple-500/30 to-indigo-500/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' 
+                        : 'text-gray-300 hover:text-purple-200 hover:bg-gradient-to-r from-purple-500/20 to-indigo-500/20 hover:border-purple-300/30'
+                    } px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  >
+                    {item.icon}
+                    <span className="hidden sm:inline">{item.label}</span>
+                  </button>
+                ))}
+              </nav>
+            </div>
+            
+            {/* Floating Decorative Elements */}
+            <div className="absolute -top-2 -left-2 w-4 h-4 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full animate-bounce"></div>
+            <div className="absolute -top-1 -right-1 w-3 h-3 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-full animate-pulse"></div>
+            <div className="absolute -bottom-1 -left-1 w-2 h-2 bg-gradient-to-r from-purple-600 to-indigo-600 rounded-full animate-ping"></div>
+            <div className="absolute -bottom-2 -right-2 w-3 h-3 bg-gradient-to-r from-purple-400 to-indigo-400 rounded-full animate-bounce" style={{animationDelay: '0.5s'}}></div>
+          </div>
+        </div>
+
+        {/* Overview Section */}
+        <section id="overview" className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Why Choose Our <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">SEO Copywriting</span> Services?
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                We combine SEO expertise with compelling storytelling to create content that ranks and converts.
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 mb-16">
+              {[
+                {
+                  icon: <TrendingUp className="h-6 w-6" />,
+                  title: 'Results-Driven',
+                  description: 'Every piece of content is optimized for rankings and conversions'
+                },
+                {
+                  icon: <Users className="h-6 w-6" />,
+                  title: 'User-Focused',
+                  description: 'Content that answers user queries while ranking for target keywords'
+                },
+                {
+                  icon: <Zap className="h-6 w-6" />,
+                  title: 'Fast Turnaround',
+                  description: 'Quick content delivery without compromising quality'
+                }
+              ].map((item, index) => (
+                <div key={index} className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-800 hover:border-purple-500/50 transition-all duration-300">
+                  <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-indigo-500 rounded-xl flex items-center justify-center text-white mb-4">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{item.title}</h3>
+                  <p className="text-gray-400">{item.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Features Section */}
+        <section id="features" className="py-20 bg-gradient-to-b from-transparent via-gray-900/50 to-transparent">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Comprehensive <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Content Features</span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Everything you need for successful SEO content marketing
+              </p>
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {features.map((feature) => (
+                <div
+                  key={feature.id}
+                  onMouseEnter={() => setHoveredFeature(feature.id)}
+                  onMouseLeave={() => setHoveredFeature(null)}
+                  className={`group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl p-6 border border-gray-800 transition-all duration-300 ${
+                    hoveredFeature === feature.id ? 'border-purple-500/50 scale-105 shadow-2xl shadow-purple-500/20' : 'hover:border-gray-700'
+                  }`}
+                >
+                  <div className={`w-14 h-14 bg-gradient-to-r ${feature.color} rounded-xl flex items-center justify-center text-white mb-4 transform transition-transform duration-300 ${hoveredFeature === feature.id ? 'scale-110 rotate-3' : ''}`}>
+                    {feature.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-white mb-2">{feature.title}</h3>
+                  <p className="text-gray-400 mb-4">{feature.description}</p>
+                  <ul className="space-y-2">
+                    {feature.benefits.map((benefit, index) => (
+                      <li key={index} className="flex items-center text-sm text-gray-300">
+                        <CheckCircle className="h-4 w-4 text-green-400 mr-2 flex-shrink-0" />
+                        {benefit}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Process Section */}
+        <section id="process" className="py-20 relative">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Our <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Content Process</span>
+              </h2>
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                A proven methodology that ensures your content ranks and converts
+              </p>
+            </div>
+
+            {/* Interactive Progress Bar */}
+            <div className="mb-12">
+              <div className="flex justify-between items-center mb-4">
+                <span className="text-sm text-gray-400">Progress through our process</span>
+                <span className="text-sm text-purple-300 font-semibold">Step {activeProcessStep + 1} of {processSteps.length}</span>
+              </div>
+              <div className="w-full bg-gray-700 rounded-full h-2">
+                <div 
+                  className="bg-gradient-to-r from-purple-500 to-indigo-500 h-2 rounded-full transition-all duration-500 ease-out"
+                  style={{ width: `${((activeProcessStep + 1) / processSteps.length) * 100}%` }}
+                ></div>
+              </div>
+            </div>
+
+            {/* Interactive Steps Grid */}
+            <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-12">
+              {processSteps.map((step, index) => (
+                <div
+                  key={index}
+                  className={`relative cursor-pointer transition-all duration-500 transform ${
+                    activeProcessStep === index 
+                      ? 'scale-105' 
+                      : hoveredStep === index 
+                      ? 'scale-102' 
+                      : 'scale-100'
+                  }`}
+                  onClick={() => setActiveProcessStep(index)}
+                  onMouseEnter={() => setHoveredStep(index)}
+                  onMouseLeave={() => setHoveredStep(null)}
+                >
+                  <div 
+                    className={`p-4 rounded-2xl border-2 transition-all duration-300 relative ${
+                      activeProcessStep === index
+                        ? `bg-gradient-to-br ${step.bgColor} border-purple-400 shadow-lg shadow-purple-500/25`
+                        : 'bg-gray-800/50 border-gray-600 hover:border-purple-500/50'
+                    }`}
+                  >
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center mb-3 transition-all duration-300 ${
+                      activeProcessStep === index
+                        ? `bg-gradient-to-br ${step.color} shadow-lg`
+                        : 'bg-gray-700'
+                    }`}>
+                      <div className={`transition-all duration-300 ${
+                        activeProcessStep === index ? 'text-white' : 'text-gray-400'
+                      }`}>
+                        {step.icon}
+                      </div>
+                    </div>
+                    <h3 className={`text-sm font-bold mb-2 transition-all duration-300 ${
+                      activeProcessStep === index ? 'text-white' : 'text-gray-300'
+                    }`}>
+                      {step.title}
+                    </h3>
+                    <div className={`text-xs transition-all duration-300 ${
+                      activeProcessStep === index ? 'text-purple-200' : 'text-gray-500'
+                    }`}>
+                      {step.duration}
+                    </div>
+                    
+                    {/* Active indicator */}
+                    {activeProcessStep === index && (
+                      <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-br from-purple-500 to-indigo-500 rounded-full flex items-center justify-center shadow-lg animate-bounce">
+                        <CheckCircle className="h-4 w-4 text-white" />
+                      </div>
+                    )}
+                  </div>
+                  
+                  {/* Progress indicator */}
+                  <div className="absolute -bottom-1 left-1/2 transform -translate-x-1/2 w-full px-2">
+                    <div className="w-full bg-gray-700 rounded-full h-1">
+                      <div 
+                        className={`h-1 rounded-full transition-all duration-500 ${
+                          index <= activeProcessStep 
+                            ? 'bg-gradient-to-r from-purple-500 to-indigo-500' 
+                            : 'bg-gray-600'
+                        }`}
+                        style={{ 
+                          width: index <= activeProcessStep ? '100%' : '0%',
+                          animationDelay: `${index * 200}ms`
+                        }}
+                      ></div>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* Detailed Step Content */}
+            <div className="bg-gradient-to-r from-gray-800/50 via-gray-900/50 to-gray-800/50 rounded-3xl p-8 border border-gray-700/50 backdrop-blur-sm">
+              <div className="flex items-start space-x-6 mb-6">
+                <div className={`w-16 h-16 bg-gradient-to-br ${processSteps[activeProcessStep].color} rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25 flex-shrink-0`}>
+                  <div className="text-white">
+                    {processSteps[activeProcessStep].icon}
+                  </div>
+                </div>
+                <div className="flex-1">
+                  <h3 className="text-2xl font-bold text-white mb-2">
+                    {processSteps[activeProcessStep].step}: {processSteps[activeProcessStep].title}
+                  </h3>
+                  <p className="text-gray-300 text-lg mb-4">
+                    {processSteps[activeProcessStep].detailedDescription}
+                  </p>
+                  <div className="flex items-center space-x-4 text-sm text-gray-400">
+                    <div className="flex items-center space-x-2">
+                      <Clock className="h-4 w-4" />
+                      <span>Duration: {processSteps[activeProcessStep].duration}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Deliverables Grid */}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
+                    <CheckCircle className="h-5 w-5 text-green-500 mr-2" />
+                    Key Deliverables
+                  </h4>
+                  <ul className="space-y-2">
+                    {processSteps[activeProcessStep].deliverables.map((deliverable, idx) => (
+                      <li key={idx} className="flex items-center text-gray-300">
+                        <div className="w-2 h-2 bg-purple-500 rounded-full mr-3"></div>
+                        {deliverable}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                
+                <div className="bg-gradient-to-r from-purple-900/20 to-indigo-900/20 rounded-2xl p-6 border border-purple-500/20">
+                  <h4 className="text-lg font-semibold text-white mb-3 flex items-center">
+                    <TrendingUp className="h-5 w-5 text-purple-300 mr-2" />
+                    Expected Outcomes
+                  </h4>
+                  <div className="space-y-3">
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-300">Ranking Improvement</span>
+                      <span className="text-green-400 font-semibold">Top 10</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-300">Traffic Growth</span>
+                      <span className="text-indigo-300 font-semibold">+200%</span>
+                    </div>
+                    <div className="flex items-center justify-between">
+                      <span className="text-gray-300">Conversion Rate</span>
+                      <span className="text-purple-300 font-semibold">+150%</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Interactive Navigation */}
+              <div className="flex justify-between items-center mt-8 pt-6 border-t border-gray-700/50">
+                <button
+                  onClick={() => setActiveProcessStep(Math.max(0, activeProcessStep - 1))}
+                  disabled={activeProcessStep === 0}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                    activeProcessStep === 0
+                      ? 'text-gray-500 cursor-not-allowed'
+                      : 'text-purple-300 hover:text-white hover:bg-purple-500/20'
+                  }`}
+                >
+                  <ChevronDown className="h-4 w-4 rotate-90" />
+                  <span>Previous Step</span>
+                </button>
+                
+                <div className="flex space-x-2">
+                  {processSteps.map((_, index) => (
+                    <button
+                      key={index}
+                      onClick={() => setActiveProcessStep(index)}
+                      className={`w-3 h-3 rounded-full transition-all duration-300 ${
+                        activeProcessStep === index
+                          ? 'bg-purple-500'
+                          : 'bg-gray-600 hover:bg-gray-500'
+                      }`}
+                    />
+                  ))}
+                </div>
+                
+                <button
+                  onClick={() => setActiveProcessStep(Math.min(processSteps.length - 1, activeProcessStep + 1))}
+                  disabled={activeProcessStep === processSteps.length - 1}
+                  className={`flex items-center space-x-2 px-4 py-2 rounded-lg transition-all duration-300 ${
+                    activeProcessStep === processSteps.length - 1
+                      ? 'text-gray-500 cursor-not-allowed'
+                      : 'text-purple-300 hover:text-white hover:bg-purple-500/20'
+                  }`}
+                >
+                  <span>Next Step</span>
+                  <ChevronDown className="h-4 w-4 -rotate-90" />
                 </button>
               </div>
             </div>
           </div>
         </section>
 
-        {/* Stats Section */}
-        <section className="py-16 bg-gray-900">
+        
+
+        {/* Portfolio Section */}
+        <section id="portfolio" className="py-20 relative">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">500+</div>
-                <div className="text-gray-300">Websites Designed & Developed</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">98%</div>
-                <div className="text-gray-300">Client Satisfaction Rate</div>
-              </div>
-              <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">24/7</div>
-                <div className="text-gray-300">Support & Maintenance</div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Sticky Navigation */}
-        {isNavSticky && (
-          <div className="sticky top-20 z-40 bg-gray-900/95 backdrop-blur-md border-b border-gray-700 shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <nav className="flex space-x-8 overflow-x-auto py-4">
-                {navItems.map((item) => (
-                  <button
-                    key={item.id}
-                    onClick={() => scrollToSection(item.id)}
-                    className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 whitespace-nowrap ${
-                      activeSection === item.id
-                        ? 'bg-purple-100 text-purple-700'
-                        : 'text-gray-300 hover:text-purple-300 hover:bg-purple-50'
-                    }`}
-                  >
-                    {item.icon}
-                    <span>{item.label}</span>
-                  </button>
-                ))}
-              </nav>
-            </div>
-          </div>
-        )}
-
-        {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Deliverables Section */}
-          <section id="deliverables" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                seo-copywriting Deliverables
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Our <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Success Stories</span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive seo-copywriting services designed for business growth. 
-                Best seo-copywriting company in Delhi NCR delivering modern, responsive websites.
+              <p className="text-xl text-gray-400 max-w-3xl mx-auto">
+                Real results from real clients
               </p>
             </div>
 
-            <div className="space-y-6">
-              {deliverables.map((deliverable, index) => (
-                <div
-                  key={deliverable.id}
-                  className="bg-gray-900 rounded-2xl border border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <button
-                    onClick={() => setExpandedDeliverable(expandedDeliverable === index ? -1 : index)}
-                    className="w-full px-8 py-6 flex items-center justify-between text-left"
-                  >
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                        {deliverable.icon}
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white mb-1">
-                          {deliverable.title}
-                        </h3>
-                        <p className="text-gray-300">{deliverable.description}</p>
-                      </div>
-                    </div>
-                    <ChevronDown
-                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 ${
-                        expandedDeliverable === index ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  
-                  {expandedDeliverable === index && (
-                    <div className="px-8 pb-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {deliverable.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-400">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Design Packages Section */}
-          <section id="packages" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                seo-copywriting Packages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive seo-copywriting solutions. Best seo-copywriting services in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {designPackages.map((pkg, index) => (
+            <div className="grid md:grid-cols-2 gap-8">
+              {[
+                {
+                  title: 'E-commerce Content',
+                  description: 'SEO content strategy that increased organic traffic by 400%',
+                  metrics: ['400% Traffic Increase', '250% Sales Growth', '6 Months'],
+                  gradient: 'from-purple-500 to-indigo-500'
+                },
+                {
+                  title: 'B2B Content Marketing',
+                  description: 'Professional content that generated 300% more qualified leads',
+                  metrics: ['300% Lead Increase', '200% Engagement', '8 Months'],
+                  gradient: 'from-indigo-500 to-purple-500'
+                },
+                {
+                  title: 'Blog Content Strategy',
+                  description: 'Comprehensive blog strategy driving 500% traffic growth',
+                  metrics: ['500% Traffic Growth', '350% Rankings', '12 Months'],
+                  gradient: 'from-purple-600 to-indigo-600'
+                },
+                {
+                  title: 'SaaS Content',
+                  description: 'Technical content that increased user signups by 450%',
+                  metrics: ['450% Signups', '280% Conversion', '10 Months'],
+                  gradient: 'from-indigo-600 to-purple-600'
+                }
+              ].map((project, index) => (
                 <div
                   key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
+                  className="group relative bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-2xl overflow-hidden border border-gray-800 hover:border-purple-500/50 transition-all duration-300"
                 >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500"> {pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Technology Section */}
-          <section id="technology" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                seo-copywriting Technology
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Advanced seo-copywriting technology stack powering modern websites. 
-                Professional seo-copywriting services India with cutting-edge tools and frameworks.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Frontend Technologies',
-                  description: 'Modern frontend frameworks and technologies',
-                  icon: <DesktopIcon className="h-8 w-8" />,
-                  features: ['React.js', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Sass/SCSS']
-                },
-                {
-                  title: 'Design Tools',
-                  description: 'Professional design and prototyping tools',
-                  icon: <DesignIcon className="h-8 w-8" />,
-                  features: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Adobe Creative Suite', 'Protopie']
-                },
-                {
-                  title: 'Backend Technologies',
-                  description: 'Robust backend development technologies',
-                  icon: <Server className="h-8 w-8" />,
-                  features: ['Node.js', 'Python/Django', 'PHP/Laravel', 'Ruby on Rails', 'Java/Spring', 'C#/.NET']
-                },
-                {
-                  title: 'CMS Platforms',
-                  description: 'Content management system platforms',
-                  icon: <FileText className="h-8 w-8" />,
-                  features: ['WordPress', 'Drupal', 'Joomla', 'Strapi', 'Contentful', 'Sanity']
-                },
-                {
-                  title: 'E-commerce Platforms',
-                  description: 'E-commerce and online store platforms',
-                  icon: <ShoppingCart className="h-8 w-8" />,
-                  features: ['Shopify', 'WooCommerce', 'Magento', 'BigCommerce', 'PrestaShop', 'OpenCart']
-                },
-                {
-                  title: 'Performance Tools',
-                  description: 'Website performance and optimization tools',
-                  icon: <Zap className="h-8 w-8" />,
-                  features: ['Google PageSpeed', 'GTmetrix', 'WebPageTest', 'Lighthouse', 'Core Web Vitals', 'CDN']
-                }
-              ].map((tech, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6 hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                      {tech.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-purple-300">{tech.title}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-4">{tech.description}</p>
-                  <ul className="space-y-2">
-                    {tech.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-gray-400 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Case Studies Section */}
-          <section id="case-studies" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                seo-copywriting Case Studies
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Real results from seo-copywriting projects. Best seo-copywriting company in Delhi NCR 
-                delivering modern, high-performing websites.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'E-commerce Website',
-                  description: 'Modern e-commerce website with 300% increase in sales',
-                  metrics: ['300% Sales Increase', '450% Traffic Growth', '6 Months'],
-                  image: '/images/case-studies/ecommerce-design.webp'
-                },
-                {
-                  title: 'Corporate Website',
-                  description: 'Professional corporate website with 500% lead generation increase',
-                  metrics: ['500% Lead Increase', '250% Engagement', '8 Months'],
-                  image: '/images/case-studies/corporate-design.webp'
-                },
-                {
-                  title: 'Restaurant Website',
-                  description: 'Beautiful restaurant website with 400% online orders increase',
-                  metrics: ['400% Online Orders', '300% Brand Awareness', '4 Months'],
-                  image: '/images/case-studies/restaurant-design.webp'
-                },
-                {
-                  title: 'SaaS Platform',
-                  description: 'Modern SaaS platform with 600% user registration increase',
-                  metrics: ['600% User Registration', '350% Conversion Rate', '12 Months'],
-                  image: '/images/case-studies/saas-design.webp'
-                }
-              ].map((study, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                    <Trophy className="h-16 w-16 text-white" />
+                  <div className={`h-48 bg-gradient-to-br ${project.gradient} flex items-center justify-center`}>
+                    <Trophy className="h-16 w-16 text-white opacity-50" />
                   </div>
                   <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
-                    <p className="text-gray-300 mb-4">{study.description}</p>
+                    <h3 className="text-xl font-semibold text-white mb-2">{project.title}</h3>
+                    <p className="text-gray-400 mb-4">{project.description}</p>
                     <div className="flex flex-wrap gap-2">
-                      {study.metrics.map((metric, metricIndex) => (
-                        <span key={metricIndex} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
+                      {project.metrics.map((metric, metricIndex) => (
+                        <span
+                          key={metricIndex}
+                          className="px-3 py-1 bg-gradient-to-r from-purple-500/20 to-indigo-500/20 border border-purple-500/30 rounded-full text-sm font-medium text-purple-200"
+                        >
                           {metric}
                         </span>
                       ))}
@@ -637,141 +738,90 @@ const SeoCopywriting = () => {
                 </div>
               ))}
             </div>
-          </section>
+          </div>
+        </section>
 
-          {/* Approach Section */}
-          <section id="approach" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                seo-copywriting Approach
+        {/* FAQs Section */}
+        <section id="faqs" className="py-20 bg-gradient-to-b from-transparent via-gray-900/50 to-transparent">
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-16">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Frequently Asked <span className="bg-gradient-to-r from-purple-400 to-indigo-400 bg-clip-text text-transparent">Questions</span>
               </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Proven methodology for seo-copywriting success. seo-copywriting experts in Delhi NCR 
-                delivering comprehensive solutions for business growth.
+              <p className="text-xl text-gray-400">
+                Everything you need to know about our SEO copywriting services
               </p>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="space-y-4">
               {[
                 {
-                  step: '01',
-                  title: 'Discovery & Planning',
-                  description: 'Comprehensive analysis and website planning',
-                  icon: <Search className="h-8 w-8" />
+                  question: 'How long does it take to see results from SEO copywriting?',
+                  answer: 'SEO copywriting results typically start appearing within 2-4 months. Initial ranking improvements can be seen in 4-8 weeks, while significant traffic and conversion increases usually occur within 3-6 months of consistent content publication.'
                 },
                 {
-                  step: '02',
-                  title: 'Design & Prototyping',
-                  description: 'Creative design and interactive prototyping',
-                  icon: <Palette className="h-8 w-8" />
+                  question: 'What is the typical cost for SEO copywriting services?',
+                  answer: 'SEO copywriting costs typically range from ₹25,000 to ₹1,00,000 per month depending on content volume, complexity, and scope. We provide detailed quotes based on your specific requirements and content goals.'
                 },
                 {
-                  step: '03',
-                  title: 'Development',
-                  description: 'Professional website development and coding',
-                  icon: <Code className="h-8 w-8" />
-                },
-                {
-                  step: '04',
-                  title: 'Launch & Support',
-                  description: 'Website launch and ongoing support',
-                  icon: <Rocket className="h-8 w-8" />
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-xl">{step.step}</span>
-                    </div>
-                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                      <div className="text-purple-300">
-                        {step.icon}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* FAQs Section */}
-          <section id="faqs" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                seo-copywriting FAQs
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Common questions about seo-copywriting services. Best seo-copywriting company in Delhi 
-                providing transparent answers and solutions.
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto space-y-6">
-              {[
-                {
-                  question: 'How long does it take to design and develop a website?',
-                  answer: 'seo-copywriting and development typically takes 4-8 weeks depending on complexity, number of pages, and features required. Simple websites can be completed in 2-3 weeks, while complex e-commerce or custom applications may take 8-12 weeks.'
-                },
-                {
-                  question: 'What is the typical cost for seo-copywriting services?',
-                  answer: 'seo-copywriting costs typically range from ₹45,000 to ₹1,50,000 depending on complexity, features, and scope of work. We provide detailed quotes based on your specific requirements and business goals.'
-                },
-                {
-                  question: 'Do you provide website maintenance and support?',
-                  answer: 'Yes, we provide ongoing website maintenance and support services including regular updates, security monitoring, performance optimization, content updates, and technical support. We offer various maintenance packages to suit your needs.'
+                  question: 'Do you provide content for all industries?',
+                  answer: 'Yes, we create SEO-optimized content for all industries including technology, healthcare, finance, e-commerce, B2B, SaaS, and more. Our team has expertise across various sectors and can adapt to your industry requirements.'
                 },
                 {
                   question: 'Do you work with businesses outside Delhi NCR?',
-                  answer: 'Yes, we work with businesses across India and internationally. Our seo-copywriting services are not limited by geography and can be delivered remotely with excellent results.'
+                  answer: 'Yes, we work with businesses across India and internationally. Our SEO copywriting services are not limited by geography and can be delivered remotely with excellent results.'
                 },
                 {
-                  question: 'What technologies do you use for website development?',
-                  answer: 'We use modern technologies including React.js, Next.js, Node.js, WordPress, and other industry-standard frameworks. We choose the best technology stack based on your specific requirements and business goals.'
+                  question: 'What SEO tools do you use for content optimization?',
+                  answer: 'We use industry-leading SEO tools including SEMrush, Ahrefs, Google Keyword Planner, and other advanced tools for keyword research, competitor analysis, and content optimization.'
                 },
                 {
-                  question: 'Do you provide SEO optimization with seo-copywriting?',
-                  answer: 'Yes, we include basic SEO optimization with all seo-copywriting packages. This includes SEO-friendly URL structure, meta tags, schema markup, fast loading speed, mobile optimization, and other SEO best practices.'
+                  question: 'Do you provide content in multiple languages?',
+                  answer: 'Yes, we provide SEO copywriting services in multiple languages including English, Hindi, and other regional languages. We can create multilingual content strategies to target diverse audiences.'
                 }
               ].map((faq, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 rounded-xl p-6 border border-gray-800 hover:border-purple-500/50 transition-all duration-300"
+                >
                   <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-400 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
-          </section>
-        </div>
+          </div>
+        </section>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-4">
-              Ready to Create Your Dream Website?
+        <section className="py-20 relative overflow-hidden">
+          <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-indigo-600 to-purple-600"></div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+          
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+              Ready to Rank Higher with Quality Content?
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-              Best seo-copywriting company in Delhi NCR offering comprehensive seo-copywriting services. 
-              Get started with professional seo-copywriting services India today.
+              Let's create SEO-optimized content that not only ranks but also drives real business results.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gray-900 text-purple-300 font-semibold rounded-xl hover:bg-gray-800 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-white text-purple-600 font-semibold rounded-xl hover:bg-gray-100 transition-all duration-300 hover:scale-105 shadow-lg"
               >
                 <Phone className="h-5 w-5 mr-2" />
-                Get seo-copywriting Quote
+                Get Free Consultation
               </Link>
-              <button className="inline-flex items-center px-8 py-4 bg-purple-700 text-white font-semibold rounded-xl hover:bg-purple-600 transition-all duration-300">
+              <button className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/30 text-white font-semibold rounded-xl hover:bg-white/20 transition-all duration-300">
                 <Calendar className="h-5 w-5 mr-2" />
-                Schedule Consultation
+                Schedule a Call
               </button>
             </div>
           </div>
         </section>
       </div>
-      </PageSEO>
+    </PageSEO>
   );
 };
 
-export default SeoCopywriting; 
+export default SeoCopywriting;

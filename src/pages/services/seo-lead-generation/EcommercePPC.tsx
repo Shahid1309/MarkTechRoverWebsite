@@ -104,9 +104,7 @@ const EcommercePPC = () => {
   const [showTrustBadges, setShowTrustBadges] = useState(false);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Monthly Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Our Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'Our Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'case-studies', label: 'Case Studies', icon: <Trophy className="h-4 w-4" /> },
     { id: 'approach', label: 'Our Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
@@ -120,7 +118,7 @@ const EcommercePPC = () => {
       setIsNavSticky(scrollPosition > heroHeight);
 
       // Detect active section based on scroll position
-      const sections = ['deliverables', 'packages', 'technology', 'case-studies', 'approach', 'faqs'];
+      const sections = ['deliverables', 'technology', 'case-studies', 'approach', 'faqs'];
       const sectionElements = sections.map(id => document.getElementById(id));
       
       let currentSection = 'deliverables';
@@ -182,7 +180,7 @@ const EcommercePPC = () => {
 
   // Section reveal animations
   useEffect(() => {
-    const sectionIds = ['deliverables', 'packages', 'technology', 'case-studies', 'approach', 'faqs'];
+    const sectionIds = ['deliverables', 'technology', 'case-studies', 'approach', 'faqs'];
     const observers: IntersectionObserver[] = [];
 
     sectionIds.forEach((id) => {
@@ -321,87 +319,7 @@ const EcommercePPC = () => {
     }
   ];
 
-  const packages = [
-    {
-      name: 'Starter',
-      price: '₹49,000',
-      monthlyPrice: '₹24,500/mo',
-      campaigns: 'Up to 10',
-      adGroups: 'Up to 50',
-      adCreatives: '30',
-      originalPrice: '₹59,000',
-      savings: '₹10,000',
-      features: [
-        'Google Shopping Ads Setup',
-        'Basic Search Campaigns (10 campaigns)',
-        'Product Feed Optimization',
-        'Basic Display & Remarketing',
-        'Monthly Performance Reports',
-        'Email Support',
-        'Basic Conversion Tracking',
-        'Monthly Optimization'
-      ],
-      bestFor: 'Small ecommerce stores starting with PPC',
-      limitations: ['Limited campaign management', 'Basic reporting only', 'No priority support']
-    },
-    {
-      name: 'Professional',
-      price: '₹89,000',
-      monthlyPrice: '₹44,500/mo',
-      campaigns: 'Up to 30',
-      adGroups: 'Up to 150',
-      adCreatives: '80',
-      originalPrice: '₹99,000',
-      savings: '₹10,000',
-      features: [
-        'Comprehensive Google Shopping Management',
-        'Advanced Search Campaigns (30 campaigns)',
-        'Performance Max Campaigns',
-        'Advanced Display & Remarketing',
-        'Product Listing Ads (PLAs)',
-        'Advanced Bid Management',
-        'Landing Page Optimization',
-        'Advanced Conversion Tracking',
-        'A/B Testing & Experimentation',
-        'Monthly & Quarterly Detailed Reports',
-        'Competitor Analysis',
-        'Dedicated Ecommerce PPC Manager',
-        'Priority Phone & Email Support',
-        'Budget Optimization & Scaling',
-        'Cross-Platform Campaign Management'
-      ],
-      bestFor: 'Growing ecommerce businesses serious about PPC results',
-      exclusiveFeatures: ['Exclusive: AI-Powered Bid Optimization', 'Exclusive: Advanced Attribution Modeling', 'Exclusive: Custom Ecommerce PPC Dashboard']
-    },
-    {
-      name: 'Enterprise',
-      price: '₹1,59,000',
-      monthlyPrice: '₹79,500/mo',
-      campaigns: 'Unlimited',
-      adGroups: 'Unlimited',
-      adCreatives: '200',
-      originalPrice: '₹1,69,000',
-      savings: '₹10,000',
-      features: [
-        'Everything in Professional',
-        'Unlimited Campaign Management',
-        'Full-Scale Shopping & Search Campaigns',
-        'International Ecommerce PPC Setup',
-        'Multi-Platform Campaign Management',
-        'Advanced Analytics & Custom Reports',
-        'Weekly Performance Reviews',
-        'Dedicated Ecommerce PPC Team (3 specialists)',
-        '24/7 Priority Support',
-        'Custom Integrations & Automation',
-        'Advanced Video Ads',
-        'Enterprise-Level Budget Management',
-        'Strategic Consulting & Advisory',
-        'Executive Reporting & Dashboards'
-      ],
-      bestFor: 'Large ecommerce businesses requiring maximum PPC impact',
-      limitations: ['Higher investment required', 'Complex implementation timeline']
-    }
-  ];
+  
 
   const technologyFeatures = [
     {
@@ -522,7 +440,7 @@ const EcommercePPC = () => {
       question: 'Which ecommerce PPC plan should I pick?',
       answer: 'Pick an ecommerce PPC plan that matches your store size and growth goals, or ask for a free, custom ecommerce audit and recommendation from our team.',
       category: 'pricing',
-      tags: ['packages', 'pricing', 'selection']
+      tags: ['pricing', 'selection']
     },
     {
       question: 'Can I scale my ecommerce PPC package later?',
@@ -599,7 +517,7 @@ const EcommercePPC = () => {
             <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000 ${
               heroAnimationComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              MarkTechRover: Delhi's <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">Ecommerce PPC Agency</span> for Revenue Growth
+              Hire Ecommerce PPC Agency
             </h1>
 
             {/* Animated Description */}
@@ -670,7 +588,7 @@ const EcommercePPC = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <button
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection()}
                 className="group inline-flex items-center px-8 py-4 border border-blue-500/40 text-blue-200 hover:text-white hover:bg-blue-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
               >
                 <span className="relative z-10">View Packages</span>
@@ -757,15 +675,15 @@ const EcommercePPC = () => {
           
           {/* Main Navigation Container */}
           <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-            <nav className="flex items-center space-x-1 px-6 py-3">
+            <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg whitespace-nowrap flex-shrink-0`}
                 >
                   {item.icon}
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                 </button>
               ))}
             </nav>
@@ -993,244 +911,7 @@ const EcommercePPC = () => {
             </div>
           </section>
 
-      {/* Monthly Packages Section */}
-      <section id="packages" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/5 via-transparent to-purple-900/5">
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-sm font-medium mb-4">
-              <BarChart3 className="h-4 w-4 mr-2" />
-              Pricing
-            </div>
-            <h2 className="text-3xl md:text-5xl font-bold text-white mb-4">Ecommerce PPC Plans Built for Growth</h2>
-            <p className="text-gray-300 max-w-3xl mx-auto">Transparent monthly packages tailored for ecommerce businesses in Delhi & pan-India. Upgrade anytime. Every plan includes reporting, dashboards, and quarterly strategy reviews.</p>
-            </div>
-
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-            {packages.map((pkg, index) => (
-                <div
-                  key={index}
-                className={`relative rounded-2xl border transition-all duration-300 hover:scale-105 ${
-                  index === 1 
-                    ? 'bg-transparent border-white/40 shadow-lg' 
-                    : index === 0
-                    ? 'bg-transparent border-white/25'
-                    : 'bg-transparent border-white/25'
-                }`}
-              >
-                {/* Popular Badge */}
-                {index === 1 && (
-                  <div className="absolute top-0 left-0 right-0 bg-transparent text-white py-2 text-center text-xs font-bold border-b border-white/30 backdrop-blur-sm">
-                    🔥 MOST POPULAR - 67% CHOOSE THIS
-                    </div>
-                  )}
-                  
-                {/* Discount Badge */}
-                <div className="absolute top-8 right-3">
-                  <div className="bg-transparent text-white px-2 py-1 rounded-full text-xs font-bold border border-white/40">
-                    SAVE ₹10,000
-                  </div>
-                </div>
-                
-                {/* Package Header */}
-                <div className={`p-6 ${index === 1 ? 'pt-12' : 'pt-10'}`}>
-                  <div className="text-center mb-6">
-                    <div className={`w-16 h-16 mx-auto mb-4 rounded-xl flex items-center justify-center ${
-                      index === 1 
-                        ? 'bg-white/10' 
-                        : 'bg-white/10'
-                    }`}>
-                      {index === 0 && <Target className="h-8 w-8 text-white" />}
-                      {index === 1 && <Crown className="h-8 w-8 text-white" />}
-                      {index === 2 && <Trophy className="h-8 w-8 text-white" />}
-                    </div>
-                    <h3 className={`text-2xl font-bold mb-3 ${index === 1 ? 'text-white' : 'text-gray-200'}`}>
-                      {pkg.name}
-                    </h3>
-                    
-                    {/* Best For */}
-                    <div className="mb-3">
-                      <p className="text-xs text-gray-300 italic">{pkg.bestFor}</p>
-                  </div>
-                  
-                    {/* Pricing with Psychological Anchoring */}
-                    <div className="mb-5">
-                      <div className="flex items-center justify-center space-x-2 mb-2">
-                        <span className="text-sm text-gray-400 line-through">{pkg.originalPrice}</span>
-                        <span className="text-xs text-white bg-transparent border border-white/40 px-2 py-1 rounded font-bold">SAVE {pkg.savings}</span>
-                      </div>
-                      <div className="text-4xl font-bold text-white mb-2">
-                        {pkg.price}
-                      </div>
-                      <div className="text-xs text-gray-300 mb-1">Initial Setup</div>
-                      <div className="text-lg font-semibold text-white mb-1">{pkg.monthlyPrice}</div>
-                      <div className="text-xs text-gray-300">Monthly After Setup</div>
-                    </div>
-                  </div>
-                  
-                  {/* Package Details */}
-                  <div className="space-y-4">
-                    {/* Key Metrics */}
-                    <div className="grid grid-cols-3 gap-3 p-3 bg-transparent rounded-lg border border-white/20">
-                      <div className="text-center">
-                        <div className="text-sm font-bold text-white">{pkg.campaigns}</div>
-                        <div className="text-xs text-gray-300">Campaigns</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-sm font-bold text-white">{pkg.adGroups}</div>
-                        <div className="text-xs text-gray-300">Ad Groups</div>
-                      </div>
-                      <div className="text-center">
-                        <div className="text-sm font-bold text-white">{pkg.adCreatives}</div>
-                        <div className="text-xs text-gray-300">Creatives</div>
-                      </div>
-                    </div>
-                    
-                    {/* Features */}
-                    <div>
-                      <h4 className="text-sm font-semibold text-white mb-3 flex items-center space-x-2">
-                        <CheckCircle className="h-4 w-4 text-white" />
-                        <span>What's Included</span>
-                      </h4>
-                      <div className="space-y-2">
-                        {pkg.features.slice(0, 6).map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-start space-x-2">
-                            <div className="w-1.5 h-1.5 bg-white rounded-full mt-1.5 flex-shrink-0"></div>
-                            <span className="text-gray-200 text-xs leading-relaxed">{feature}</span>
-                          </div>
-                        ))}
-                        {pkg.features.length > 6 && (
-                          <div className="text-center pt-1">
-                            <button className="text-white/90 hover:text-white text-xs font-medium transition-colors duration-200">
-                              +{pkg.features.length - 6} more features
-                            </button>
-                          </div>
-                        )}
-                      </div>
-                    </div>
-                    
-                    {/* Exclusive Features for Middle Option */}
-                    {index === 1 && pkg.exclusiveFeatures && (
-                      <div className="p-3 bg-transparent rounded-lg border border-white/20">
-                        <h4 className="text-xs font-semibold text-white mb-2 flex items-center space-x-2">
-                          <Star className="h-3 w-3" />
-                          <span>Professional Exclusive Features</span>
-                        </h4>
-                        <div className="space-y-1">
-                          {pkg.exclusiveFeatures.map((feature, featureIndex) => (
-                            <div key={featureIndex} className="flex items-start space-x-2">
-                              <div className="w-1.5 h-1.5 bg-white rounded-full mt-1.5 flex-shrink-0"></div>
-                              <span className="text-gray-200 text-xs leading-relaxed">{feature}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Limitations for Side Options */}
-                    {index !== 1 && pkg.limitations && (
-                      <div className="p-3 bg-gradient-to-r from-sky-900/20 to-blue-800/20 rounded-lg border border-blue-500/20">
-                        <h4 className="text-xs font-semibold text-blue-300 mb-2 flex items-center space-x-2">
-                          <AlertTriangle className="h-3 w-3" />
-                          <span>Limitations</span>
-                        </h4>
-                        <div className="space-y-1">
-                          {pkg.limitations.map((limitation, limitationIndex) => (
-                            <div key={limitationIndex} className="flex items-start space-x-2">
-                              <div className="w-1.5 h-1.5 bg-blue-400 rounded-full mt-1.5 flex-shrink-0"></div>
-                              <span className="text-blue-200 text-xs leading-relaxed">{limitation}</span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    )}
-                    
-                    {/* Expected Results */}
-                    <div className="p-3 bg-transparent rounded-lg border border-white/20">
-                      <h4 className="text-xs font-semibold text-white mb-2 flex items-center space-x-2">
-                        <TrendingUp className="h-3 w-3" />
-                        <span>Expected Results (3 months)</span>
-                      </h4>
-                      <div className="grid grid-cols-2 gap-2">
-                        <div className="text-center p-2 bg-transparent rounded border border-white/15">
-                          <div className="text-sm font-bold text-white">
-                            {index === 0 ? '+200%' : index === 1 ? '+300%' : '+400%'}
-                          </div>
-                          <div className="text-xs text-gray-300">Traffic Increase</div>
-                        </div>
-                        <div className="text-center p-2 bg-transparent rounded border border-white/15">
-                          <div className="text-sm font-bold text-white">
-                            {index === 0 ? '+250%' : index === 1 ? '+350%' : '+450%'}
-                          </div>
-                          <div className="text-xs text-gray-300">Ecommerce Sales</div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                
-                {/* CTA Section */}
-                <div className="p-6 pt-0">
-                  <Link
-                    to="/contact"
-                    className={`block w-full text-center px-4 py-3 rounded-lg font-bold transition-all duration-300 hover:scale-105 ${
-                      index === 1
-                        ? 'bg-gradient-to-r from-teal-500 to-blue-600 hover:from-teal-400 hover:to-blue-500 text-black'
-                        : 'bg-blue-600 hover:bg-blue-500 text-white'
-                    }`}
-                  >
-                    {index === 1 ? '🔥 Get Started Now - Most Popular' : 'Choose This Plan'}
-                  </Link>
-                  
-                  {/* Trust Elements */}
-                  <div className="mt-3 space-y-1">
-                    <div className="flex items-center justify-center space-x-2 text-xs text-gray-300">
-                      <Shield className="h-3 w-3" />
-                      <span>30-Day Money Back Guarantee</span>
-                    </div>
-                    <div className="flex items-center justify-center space-x-2 text-xs text-gray-300">
-                      <CheckCircle className="h-3 w-3" />
-                      <span>No Setup Fees</span>
-                    </div>
-                    <div className="flex items-center justify-center space-x-2 text-xs text-gray-300">
-                      <Users className="h-3 w-3" />
-                      <span>Dedicated Account Manager</span>
-                    </div>
-                  </div>
-                </div>
-                </div>
-              ))}
-          </div>
-          
-          {/* Bottom Trust Section */}
-          <div className="mt-16 text-center">
-            <div className="bg-gradient-to-r from-purple-900/20 to-purple-800/20 rounded-2xl p-8 border border-purple-500/20">
-              <h3 className="text-2xl font-bold text-white mb-6">Why 500+ Ecommerce Businesses Trust Us</h3>
-              <div className="grid grid-cols-1 md:grid-cols-4 gap-6">
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent mb-2">91%</div>
-                  <div className="text-white font-semibold">Client Retention</div>
-                  <div className="text-gray-400 text-sm">Industry average: 65%</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent mb-2">4.9/5</div>
-                  <div className="text-white font-semibold">Client Rating</div>
-                  <div className="text-gray-400 text-sm">Based on 200+ reviews</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-purple-400 to-purple-600 bg-clip-text text-transparent mb-2">5+</div>
-                  <div className="text-white font-semibold">Years Experience</div>
-                  <div className="text-gray-400 text-sm">Ecommerce PPC</div>
-                </div>
-                <div className="text-center">
-                  <div className="text-3xl font-bold bg-gradient-to-r from-yellow-400 to-orange-600 bg-clip-text text-transparent mb-2">24/7</div>
-                  <div className="text-white font-semibold">Support Available</div>
-                  <div className="text-gray-400 text-sm">Phone, Email, Chat</div>
-                </div>
-              </div>
-            </div>
-          </div>
-            </div>
-          </section>
+      
 
           {/* Technology Section */}
       <section id="technology" className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-purple-900/5 via-transparent to-purple-900/5">

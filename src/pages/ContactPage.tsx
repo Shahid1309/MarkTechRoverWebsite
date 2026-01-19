@@ -41,7 +41,7 @@ const ContactPage = () => {
       <Section className="pt-20 bg-secondary">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="mb-4">Contact Us</h1>
+            <h1 className="mb-4">Contact Digital Marketing Agency India</h1>
             <p className="text-muted-foreground text-lg">
               Have a question or ready to get started? Reach out to our team today.
             </p>

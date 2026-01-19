@@ -50,7 +50,7 @@ const CaseStudyContent = ({
                 >
                   <img
                     src={challenge.image}
-                    alt="Challenge visualization"
+                    alt={`${challenge.title} - Digital marketing challenge illustration`}
                     className="w-full rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   />
                 </motion.div>
@@ -84,7 +84,7 @@ const CaseStudyContent = ({
                 >
                   <img
                     src={solution.image}
-                    alt="Solution visualization"
+                    alt={`${solution.title} - Digital marketing solution implementation`}
                     className="w-full rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   />
                 </motion.div>
@@ -161,7 +161,7 @@ const CaseStudyContent = ({
                 >
                   <img
                     src={results.image}
-                    alt="Results visualization"
+                    alt={`${results.title} - Digital marketing results and metrics dashboard`}
                     className="w-full rounded-xl shadow-lg hover:shadow-xl transition-shadow duration-300"
                   />
                 </motion.div>

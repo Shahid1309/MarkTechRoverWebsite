@@ -88,7 +88,7 @@ const AboutPage = () => {
         <div className="container">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <h1 className="mb-6">About MarkTechRover</h1>
+              <h1 className="mb-6">About Digital Marketing Agency India</h1>
               <p className="text-muted-foreground text-lg mb-6">
                 We are a team of digital marketing experts passionate about helping businesses 
                 grow through innovative, data-driven strategies that deliver measurable results.
@@ -114,7 +114,7 @@ const AboutPage = () => {
             <div className="relative">
               <img
                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzM3NDE1MSIvPgo8dGV4dCB4PSIyMCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkljb248L3RleHQ+Cjwvc3ZnPgo=?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="MarkTechRover Team"
+                alt="MarkTechRover digital marketing team working on client projects in India"
                 className="rounded-lg w-full"
               />
               <div className="absolute -bottom-6 -left-6 bg-accent text-white p-4 rounded-lg">
@@ -157,7 +157,7 @@ const AboutPage = () => {
             <div className="order-1 md:order-2">
               <img
                 src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAiIGhlaWdodD0iNDAiIHZpZXdCb3g9IjAgMCA0MCA0MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjQwIiBoZWlnaHQ9IjQwIiByeD0iOCIgZmlsbD0iIzM3NDE1MSIvPgo8dGV4dCB4PSIyMCIgeT0iMjQiIGZvbnQtZmFtaWx5PSJBcmlhbCIgZm9udC1zaXplPSIxMiIgZmlsbD0id2hpdGUiIHRleHQtYW5jaG9yPSJtaWRkbGUiPkljb248L3RleHQ+Cjwvc3ZnPgo=?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1"
-                alt="MarkTechRover Office"
+                alt="MarkTechRover digital marketing agency office workspace in India"
                 className="rounded-lg w-full"
               />
             </div>
@@ -259,7 +259,7 @@ const AboutPage = () => {
               <div className="relative overflow-hidden rounded-2xl shadow-xl bg-gradient-to-br from-purple-500 to-purple-800 p-1">
                 <img 
                   src={ritikImg} 
-                  alt="Ritik Kumar Poddar" 
+                  alt="Ritik Kumar Poddar, Founder and CEO of MarkTechRover digital marketing agency India" 
                   className="w-64 md:w-80 aspect-[3/4] object-cover object-center rounded-xl"
                 />
               </div>

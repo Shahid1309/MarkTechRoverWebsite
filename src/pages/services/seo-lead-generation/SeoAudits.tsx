@@ -91,9 +91,7 @@ const SeoAudits = () => {
   const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'SEO Audit Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'SEO Audit Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'SEO Audit Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'case-studies', label: 'SEO Audit Case Studies', icon: <Trophy className="h-4 w-4" /> },
     { id: 'approach', label: 'SEO Audit Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
@@ -254,64 +252,6 @@ const SeoAudits = () => {
     }
   ];
 
-  const seoAuditPackages = [
-    {
-      name: 'Basic SEO Audit',
-      price: '₹25,000',
-      period: '/audit',
-      description: 'Essential SEO audit for small businesses and startups',
-      features: [
-        'Technical SEO analysis',
-        'On-page SEO review',
-        'Basic content analysis',
-        'Keyword research (50 keywords)',
-        'Competitive analysis (3 competitors)',
-        'Detailed audit report',
-        'Action plan and recommendations'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
-    },
-    {
-      name: 'Comprehensive SEO Audit',
-      price: '₹50,000',
-      period: '/audit',
-      description: 'Complete SEO audit for growing businesses',
-      features: [
-        'Everything in Basic, plus:',
-        'Advanced technical analysis',
-        'Comprehensive content audit',
-        'Local SEO analysis',
-        'Keyword research (150 keywords)',
-        'Competitive analysis (5 competitors)',
-        'Performance analysis',
-        'Implementation roadmap',
-        '30-day support'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
-    },
-    {
-      name: 'Enterprise SEO Audit',
-      price: '₹1,00,000',
-      period: '/audit',
-      description: 'Full-service SEO audit for large businesses',
-      features: [
-        'Everything in Comprehensive, plus:',
-        'Advanced competitive analysis',
-        'Custom keyword research (500+ keywords)',
-        'Multi-location SEO analysis',
-        'E-commerce SEO audit',
-        'Advanced performance analysis',
-        'Custom implementation plan',
-        '90-day support and consultation',
-        'Priority support'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
-    }
-  ];
-
   return (
     <>
       <PageSEO config={seoConfig} />
@@ -337,7 +277,7 @@ const SeoAudits = () => {
 
             {/* Animated Title */}
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000">
-              Marktechrover: Best <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">Seo Audits</span> in Delhi, NCR & India
+              Hire SEO Audit Services
             </h1>
 
             {/* Animated Description */}
@@ -408,7 +348,7 @@ const SeoAudits = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <button
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection()}
                 className="group inline-flex items-center px-8 py-4 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
               >
                 <span className="relative z-10">View Packages</span>
@@ -443,15 +383,15 @@ const SeoAudits = () => {
           
           {/* Main Navigation Container */}
           <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-            <nav className="flex items-center space-x-1 px-6 py-3">
+            <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg whitespace-nowrap flex-shrink-0`}
                 >
                   {item.icon}
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                 </button>
               ))}
             </nav>
@@ -521,68 +461,7 @@ const SeoAudits = () => {
             </div>
           </section>
 
-          {/* SEO Audit Packages Section */}
-          <section id="packages" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                SEO Audit Packages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive SEO audit services. Best SEO audit company in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {seoAuditPackages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500">{pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
+          
 
           {/* Technology Section */}
           <section id="technology" className="mb-20">

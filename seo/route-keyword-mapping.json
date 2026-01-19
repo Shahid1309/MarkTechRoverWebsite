@@ -1,0 +1,1010 @@
+{
+  "/": {
+    "primary": "MarkTechRover",
+    "secondary": [
+      "MarkTechRover digital marketing",
+      "MarkTechRover India",
+      "growth marketing agency",
+      "digital transformation partner"
+    ]
+  },
+  "/services": {
+    "primary": "hire digital marketing agency",
+    "secondary": [
+      "get digital marketing services",
+      "marketing agency services pricing",
+      "book marketing consultation",
+      "digital marketing packages"
+    ]
+  },
+  "/services/seo-lead-generation": {
+    "primary": "hire SEO lead generation agency",
+    "secondary": [
+      "get organic leads through SEO",
+      "SEO services pricing India",
+      "buy SEO lead generation",
+      "SEO agency for lead generation"
+    ]
+  },
+  "/services/seo-lead-generation/seo-services": {
+    "primary": "hire SEO agency India",
+    "secondary": [
+      "get SEO services pricing",
+      "buy professional SEO services",
+      "SEO company for startups",
+      "book SEO consultation"
+    ]
+  },
+  "/services/enterprise-seo": {
+    "primary": "hire enterprise SEO agency",
+    "secondary": [
+      "get enterprise SEO pricing",
+      "buy corporate SEO services",
+      "enterprise SEO consultation",
+      "large scale SEO packages"
+    ]
+  },
+  "/services/digital-marketing": {
+    "primary": "hire full service digital marketing agency",
+    "secondary": [
+      "get digital marketing packages",
+      "buy integrated marketing services",
+      "digital marketing agency pricing",
+      "book marketing strategy consultation"
+    ]
+  },
+  "/services/local-seo": {
+    "primary": "hire local SEO agency",
+    "secondary": [
+      "get local SEO services pricing",
+      "buy Google My Business optimization",
+      "local SEO for small business",
+      "book local SEO consultation"
+    ]
+  },
+  "/services/local-seo-services": {
+    "primary": "get local SEO optimization",
+    "secondary": [
+      "hire local business SEO expert",
+      "local SEO services cost",
+      "location based SEO packages",
+      "local search ranking services"
+    ]
+  },
+  "/services/local-services-ads": {
+    "primary": "hire Google LSA management",
+    "secondary": [
+      "get local services ads setup",
+      "buy LSA optimization services",
+      "Google LSA agency pricing",
+      "book local ads consultation"
+    ]
+  },
+  "/services/seo-audits": {
+    "primary": "hire SEO audit services",
+    "secondary": [
+      "get website SEO analysis",
+      "buy technical SEO audit",
+      "SEO audit pricing",
+      "book SEO health check"
+    ]
+  },
+  "/services/chat-optimization": {
+    "primary": "hire chat optimization services",
+    "secondary": [
+      "get chatbot conversion optimization",
+      "buy live chat optimization",
+      "chat widget setup services",
+      "chat optimization pricing"
+    ]
+  },
+  "/services/seo-lead-generation/ppc-management": {
+    "primary": "hire PPC management agency",
+    "secondary": [
+      "get Google Ads management pricing",
+      "buy PPC campaign management",
+      "PPC services cost India",
+      "book PPC consultation"
+    ]
+  },
+  "/services/seo-lead-generation/enterprise-ppc": {
+    "primary": "hire enterprise PPC agency",
+    "secondary": [
+      "get enterprise PPC pricing",
+      "buy corporate Google Ads management",
+      "enterprise paid advertising packages",
+      "large scale PPC consultation"
+    ]
+  },
+  "/services/seo-lead-generation/social-media-ads": {
+    "primary": "hire social media ads agency",
+    "secondary": [
+      "get Facebook Instagram ads pricing",
+      "buy social media advertising",
+      "social ads management cost",
+      "book social media ads consultation"
+    ]
+  },
+  "/services/seo-lead-generation/enterprise-social-ads": {
+    "primary": "hire enterprise social ads agency",
+    "secondary": [
+      "get enterprise social media ads pricing",
+      "buy corporate social advertising",
+      "large scale social ads packages",
+      "enterprise social ads consultation"
+    ]
+  },
+  "/services/programmatic-ads": {
+    "primary": "hire programmatic advertising agency",
+    "secondary": [
+      "get programmatic ads pricing",
+      "buy automated advertising platform",
+      "programmatic media buying services",
+      "programmatic advertising consultation"
+    ]
+  },
+  "/services/geofencing": {
+    "primary": "hire geofencing marketing agency",
+    "secondary": [
+      "get location based advertising pricing",
+      "buy geofencing ad campaigns",
+      "proximity marketing services cost",
+      "geofencing setup consultation"
+    ]
+  },
+  "/services/connected-tv": {
+    "primary": "hire connected TV advertising agency",
+    "secondary": [
+      "get CTV ad campaign pricing",
+      "buy streaming TV advertising",
+      "OTT advertising services cost",
+      "smart TV ads consultation"
+    ]
+  },
+  "/services/seo-lead-generation/ecommerce-seo": {
+    "primary": "hire ecommerce SEO agency",
+    "secondary": [
+      "get online store SEO pricing",
+      "buy product page SEO services",
+      "ecommerce SEO optimization cost",
+      "book ecommerce SEO consultation"
+    ]
+  },
+  "/services/seo-lead-generation/ecommerce-ppc": {
+    "primary": "hire ecommerce PPC agency",
+    "secondary": [
+      "get ecommerce PPC pricing",
+      "buy online store Google Ads management",
+      "product advertising campaign cost",
+      "ecommerce paid search consultation"
+    ]
+  },
+  "/services/seo-lead-generation/ecommerce-social": {
+    "primary": "hire ecommerce social media agency",
+    "secondary": [
+      "get ecommerce social ads pricing",
+      "buy online store social advertising",
+      "product social media marketing cost",
+      "ecommerce social campaigns consultation"
+    ]
+  },
+  "/services/seo-lead-generation/b2b-ecommerce": {
+    "primary": "hire B2B ecommerce marketing agency",
+    "secondary": [
+      "get B2B ecommerce marketing pricing",
+      "buy B2B online store SEO",
+      "B2B ecommerce advertising cost",
+      "B2B digital commerce consultation"
+    ]
+  },
+  "/services/shopping-feeds": {
+    "primary": "hire shopping feed optimization agency",
+    "secondary": [
+      "get Google Shopping feed pricing",
+      "buy product feed optimization",
+      "shopping ads feed setup cost",
+      "ecommerce feed management consultation"
+    ]
+  },
+  "/services/ecommerce-marketing": {
+    "primary": "hire ecommerce marketing agency",
+    "secondary": [
+      "get ecommerce marketing packages",
+      "buy online store marketing strategy",
+      "ecommerce growth marketing pricing",
+      "book ecommerce marketing consultation"
+    ]
+  },
+  "/services/ecommerce-resources": {
+    "primary": "ecommerce marketing resources guide",
+    "secondary": [
+      "online store marketing tips",
+      "ecommerce growth resources",
+      "ecommerce marketing best practices",
+      "online retail marketing guide"
+    ]
+  },
+  "/services/web-channel-call-tracking": {
+    "primary": "hire call tracking services",
+    "secondary": [
+      "get call tracking software pricing",
+      "buy website call tracking",
+      "call attribution setup cost",
+      "call tracking integration consultation"
+    ]
+  },
+  "/services/seo-reporting-forecasting": {
+    "primary": "hire SEO reporting services",
+    "secondary": [
+      "get SEO analytics reporting pricing",
+      "buy SEO performance forecasting",
+      "SEO metrics dashboard cost",
+      "SEO ROI reporting consultation"
+    ]
+  },
+  "/services/channel-attribution": {
+    "primary": "hire marketing attribution services",
+    "secondary": [
+      "get channel attribution pricing",
+      "buy multi channel attribution analysis",
+      "attribution modeling setup cost",
+      "marketing attribution consultation"
+    ]
+  },
+  "/services/competitor-analysis": {
+    "primary": "hire competitor analysis services",
+    "secondary": [
+      "get competitor SEO analysis pricing",
+      "buy competitive marketing research",
+      "competitor strategy analysis cost",
+      "competitive intelligence consultation"
+    ]
+  },
+  "/services/conversion-rate-optimization": {
+    "primary": "hire CRO agency India",
+    "secondary": [
+      "get conversion optimization pricing",
+      "buy CRO testing services",
+      "landing page optimization cost",
+      "CRO consultation services"
+    ]
+  },
+  "/services/email-marketing-management": {
+    "primary": "hire email marketing agency",
+    "secondary": [
+      "get email marketing pricing",
+      "buy email campaign management",
+      "email automation setup cost",
+      "email marketing consultation"
+    ]
+  },
+  "/services/facebook-marketplace": {
+    "primary": "hire Facebook Marketplace agency",
+    "secondary": [
+      "get Facebook Marketplace pricing",
+      "buy Facebook shop management",
+      "Marketplace optimization cost",
+      "Facebook Marketplace consultation"
+    ]
+  },
+  "/services/influencer-marketing": {
+    "primary": "hire influencer marketing agency",
+    "secondary": [
+      "get influencer campaign pricing",
+      "buy influencer partnership services",
+      "influencer marketing cost India",
+      "influencer marketing consultation"
+    ]
+  },
+  "/services/landing-pages-funnels": {
+    "primary": "hire landing page design agency",
+    "secondary": [
+      "get landing page pricing",
+      "buy conversion funnel development",
+      "sales funnel creation cost",
+      "landing page consultation"
+    ]
+  },
+  "/services/lead-nurture-email": {
+    "primary": "hire lead nurturing services",
+    "secondary": [
+      "get lead nurture email pricing",
+      "buy automated drip campaigns",
+      "lead nurturing automation cost",
+      "email nurture consultation"
+    ]
+  },
+  "/services/microsoft-dynamics-automation": {
+    "primary": "hire Dynamics marketing automation",
+    "secondary": [
+      "get Dynamics CRM integration pricing",
+      "buy marketing automation setup",
+      "Dynamics marketing cloud cost",
+      "Dynamics automation consultation"
+    ]
+  },
+  "/services/online-review-acceleration": {
+    "primary": "hire review management services",
+    "secondary": [
+      "get Google reviews generation pricing",
+      "buy review acceleration strategies",
+      "customer review management cost",
+      "reputation management consultation"
+    ]
+  },
+  "/services/private-equity-due-diligence": {
+    "primary": "hire marketing due diligence services",
+    "secondary": [
+      "get PE marketing assessment pricing",
+      "buy marketing audit for acquisitions",
+      "due diligence analysis cost",
+      "investment marketing evaluation consultation"
+    ]
+  },
+  "/services/recruiting-marketing": {
+    "primary": "hire recruitment marketing agency",
+    "secondary": [
+      "get talent acquisition marketing pricing",
+      "buy employer branding services",
+      "recruitment advertising cost",
+      "hiring marketing consultation"
+    ]
+  },
+  "/services/revenue-operations": {
+    "primary": "hire RevOps consulting services",
+    "secondary": [
+      "get revenue operations pricing",
+      "buy RevOps optimization",
+      "revenue operations strategy cost",
+      "RevOps consultation India"
+    ]
+  },
+  "/services/salesforce-marketing-automation": {
+    "primary": "hire Salesforce Marketing Cloud agency",
+    "secondary": [
+      "get Salesforce Pardot pricing",
+      "buy Marketing Cloud implementation",
+      "Salesforce automation setup cost",
+      "Salesforce marketing consultation"
+    ]
+  },
+  "/services/shopify-optimization": {
+    "primary": "hire Shopify optimization agency",
+    "secondary": [
+      "get Shopify SEO pricing",
+      "buy Shopify conversion optimization",
+      "Shopify store performance cost",
+      "Shopify optimization consultation"
+    ]
+  },
+  "/services/ux-testing": {
+    "primary": "hire UX testing services",
+    "secondary": [
+      "get UX usability testing pricing",
+      "buy website UX testing",
+      "user testing services cost",
+      "UX testing consultation"
+    ]
+  },
+  "/services/walmart-marketplace": {
+    "primary": "hire Walmart Marketplace agency",
+    "secondary": [
+      "get Walmart Marketplace pricing",
+      "buy Walmart seller optimization",
+      "Walmart Marketplace advertising cost",
+      "Walmart ecommerce consultation"
+    ]
+  },
+  "/services/website-personalization": {
+    "primary": "hire website personalization services",
+    "secondary": [
+      "get website personalization pricing",
+      "buy dynamic personalization",
+      "personalized web experience cost",
+      "website personalization consultation"
+    ]
+  },
+  "/services/account-based-marketing": {
+    "primary": "hire ABM agency India",
+    "secondary": [
+      "get ABM services pricing",
+      "buy account based marketing strategy",
+      "ABM campaign management cost",
+      "B2B ABM consultation"
+    ]
+  },
+  "/services/amazon-advertising": {
+    "primary": "hire Amazon advertising agency",
+    "secondary": [
+      "get Amazon PPC pricing",
+      "buy Amazon sponsored ads management",
+      "Amazon advertising optimization cost",
+      "Amazon seller advertising consultation"
+    ]
+  },
+  "/services/amazon-seo": {
+    "primary": "hire Amazon SEO agency",
+    "secondary": [
+      "get Amazon listing optimization pricing",
+      "buy Amazon product SEO",
+      "Amazon search ranking cost",
+      "Amazon SEO consultation"
+    ]
+  },
+  "/services/channel-partner-pipeline": {
+    "primary": "hire channel partner marketing agency",
+    "secondary": [
+      "get partner pipeline pricing",
+      "buy channel partner enablement",
+      "partner marketing programs cost",
+      "channel partner consultation"
+    ]
+  },
+  "/services/ai-technology": {
+    "primary": "hire AI marketing agency",
+    "secondary": [
+      "get AI marketing technology pricing",
+      "buy AI powered marketing solutions",
+      "artificial intelligence marketing cost",
+      "AI marketing consultation"
+    ]
+  },
+  "/services/ai-ad-editing": {
+    "primary": "hire AI ad editing services",
+    "secondary": [
+      "get AI ad editing pricing",
+      "buy automated ad creative editing",
+      "AI ad optimization cost",
+      "AI ad design consultation"
+    ]
+  },
+  "/services/ai-ad-generation": {
+    "primary": "hire AI ad generation services",
+    "secondary": [
+      "get AI ad creation pricing",
+      "buy automated ad generation",
+      "AI ad copywriting cost",
+      "AI advertising consultation"
+    ]
+  },
+  "/services/ai-consulting": {
+    "primary": "hire AI marketing consulting",
+    "secondary": [
+      "get AI consulting pricing",
+      "buy AI strategy consulting",
+      "AI implementation cost",
+      "AI transformation consultation"
+    ]
+  },
+  "/services/ai-content-creation": {
+    "primary": "hire AI content creation services",
+    "secondary": [
+      "get AI content writing pricing",
+      "buy automated content generation",
+      "AI content marketing cost",
+      "AI content consultation"
+    ]
+  },
+  "/services/ai-cost-guide": {
+    "primary": "AI marketing implementation cost guide",
+    "secondary": [
+      "AI marketing pricing guide",
+      "AI technology costs",
+      "AI implementation expenses",
+      "AI marketing investment guide"
+    ]
+  },
+  "/services/ai-digital-marketing": {
+    "primary": "hire AI digital marketing agency",
+    "secondary": [
+      "get AI marketing services pricing",
+      "buy AI powered marketing",
+      "intelligent marketing automation cost",
+      "AI marketing solutions consultation"
+    ]
+  },
+  "/services/ai-gpt-integration-tech": {
+    "primary": "hire GPT integration services",
+    "secondary": [
+      "get ChatGPT integration pricing",
+      "buy GPT API integration",
+      "AI chatbot integration cost",
+      "GPT marketing tools consultation"
+    ]
+  },
+  "/services/ai-seo-services": {
+    "primary": "hire AI SEO agency",
+    "secondary": [
+      "get AI SEO pricing",
+      "buy AI powered SEO",
+      "intelligent SEO services cost",
+      "AI SEO consultation"
+    ]
+  },
+  "/services/ai-software-development": {
+    "primary": "hire AI software development agency",
+    "secondary": [
+      "get AI software pricing",
+      "buy custom AI development",
+      "AI application development cost",
+      "AI platform consultation"
+    ]
+  },
+  "/services/ai-video-production": {
+    "primary": "hire AI video production services",
+    "secondary": [
+      "get AI video pricing",
+      "buy automated video creation",
+      "AI video editing cost",
+      "AI video production consultation"
+    ]
+  },
+  "/services/ai-website-generation": {
+    "primary": "hire AI website generation services",
+    "secondary": [
+      "get AI website pricing",
+      "buy automated website creation",
+      "AI website builder cost",
+      "AI web design consultation"
+    ]
+  },
+  "/services/closed-loop-analytics": {
+    "primary": "hire closed loop analytics services",
+    "secondary": [
+      "get closed loop analytics pricing",
+      "buy marketing attribution analytics",
+      "revenue attribution tracking cost",
+      "closed loop reporting consultation"
+    ]
+  },
+  "/services/contact-enrichment": {
+    "primary": "hire contact enrichment services",
+    "secondary": [
+      "get contact enrichment pricing",
+      "buy lead data enrichment",
+      "contact database enrichment cost",
+      "data enrichment consultation"
+    ]
+  },
+  "/services/crm-integrations": {
+    "primary": "hire CRM integration services",
+    "secondary": [
+      "get CRM integration pricing",
+      "buy marketing CRM integration",
+      "CRM automation integration cost",
+      "CRM integration consultation"
+    ]
+  },
+  "/services/crm-retargeting": {
+    "primary": "hire CRM retargeting services",
+    "secondary": [
+      "get CRM retargeting pricing",
+      "buy customer retargeting campaigns",
+      "CRM audience retargeting cost",
+      "CRM retargeting consultation"
+    ]
+  },
+  "/services/customer-data-platform": {
+    "primary": "hire CDP implementation services",
+    "secondary": [
+      "get CDP setup pricing",
+      "buy customer data platform",
+      "CDP integration cost",
+      "CDP implementation consultation"
+    ]
+  },
+  "/services/data-driven-marketing-guide": {
+    "primary": "data driven marketing strategy guide",
+    "secondary": [
+      "data based marketing approach",
+      "analytics driven marketing",
+      "data marketing best practices",
+      "marketing data analysis guide"
+    ]
+  },
+  "/services/how-to-write-ai-prompts": {
+    "primary": "AI prompt writing guide for marketing",
+    "secondary": [
+      "marketing AI prompts tutorial",
+      "effective AI prompt writing",
+      "AI prompt engineering guide",
+      "writing prompts for AI marketing"
+    ]
+  },
+  "/services/lead-management-scheduling": {
+    "primary": "hire lead management services",
+    "secondary": [
+      "get lead scheduling pricing",
+      "buy automated lead scheduling",
+      "lead management software cost",
+      "appointment scheduling consultation"
+    ]
+  },
+  "/services/revenue-cloud-fx-platform": {
+    "primary": "hire Revenue Cloud FX services",
+    "secondary": [
+      "get Revenue Cloud FX pricing",
+      "buy revenue marketing platform",
+      "Revenue Cloud implementation cost",
+      "revenue platform consultation"
+    ]
+  },
+  "/services/track-ai-search-visibility": {
+    "primary": "hire AI search tracking services",
+    "secondary": [
+      "get AI visibility tracking pricing",
+      "buy AI search ranking tracking",
+      "AI visibility monitoring cost",
+      "AI search tracking consultation"
+    ]
+  },
+  "/services/what-are-crm-integrations": {
+    "primary": "what are CRM integrations explained",
+    "secondary": [
+      "CRM integration guide",
+      "understanding CRM integrations",
+      "CRM marketing integrations explained",
+      "CRM integration benefits"
+    ]
+  },
+  "/services/what-is-ai-marketing": {
+    "primary": "what is AI marketing explained",
+    "secondary": [
+      "AI marketing definition",
+      "artificial intelligence in marketing",
+      "AI marketing guide",
+      "understanding AI marketing"
+    ]
+  },
+  "/services/what-is-crm": {
+    "primary": "what is CRM system explained",
+    "secondary": [
+      "CRM definition guide",
+      "customer relationship management explained",
+      "CRM software overview",
+      "understanding CRM systems"
+    ]
+  },
+  "/services/ux-interactive": {
+    "primary": "hire UX design agency",
+    "secondary": [
+      "get UX design pricing",
+      "buy interactive web design",
+      "UX UI design services cost",
+      "UX design consultation"
+    ]
+  },
+  "/services/ux-interactive/website-design": {
+    "primary": "hire website design agency India",
+    "secondary": [
+      "get website design pricing",
+      "buy custom website design",
+      "responsive web design cost",
+      "website design consultation"
+    ]
+  },
+  "/services/ux-interactive/website-redesign": {
+    "primary": "hire website redesign agency",
+    "secondary": [
+      "get website redesign pricing",
+      "buy website makeover services",
+      "website redesign cost",
+      "website redesign consultation"
+    ]
+  },
+  "/services/ux-interactive/rapid-web-design": {
+    "primary": "hire rapid web design agency",
+    "secondary": [
+      "get rapid web design pricing",
+      "buy fast website design",
+      "quick web design cost",
+      "rapid design consultation"
+    ]
+  },
+  "/services/ux-interactive/social-media-design": {
+    "primary": "hire social media design agency",
+    "secondary": [
+      "get social media design pricing",
+      "buy social media graphics",
+      "social media creative cost",
+      "social media design consultation"
+    ]
+  },
+  "/services/ux-interactive/seo-copywriting": {
+    "primary": "hire SEO copywriting services",
+    "secondary": [
+      "get SEO copywriting pricing",
+      "buy SEO content writing",
+      "search optimized copywriting cost",
+      "SEO copywriting consultation"
+    ]
+  },
+  "/services/ux-interactive/content-marketing": {
+    "primary": "hire content marketing agency",
+    "secondary": [
+      "get content marketing pricing",
+      "buy content creation services",
+      "content marketing strategy cost",
+      "content marketing consultation"
+    ]
+  },
+  "/services/ux-interactive/social-media-management": {
+    "primary": "hire social media management agency",
+    "secondary": [
+      "get SMM services pricing",
+      "buy social media management",
+      "social media packages cost",
+      "SMM consultation"
+    ]
+  },
+  "/services/ux-interactive/infographics-motion-graphics": {
+    "primary": "hire infographic design agency",
+    "secondary": [
+      "get infographic design pricing",
+      "buy motion graphics services",
+      "animated infographic cost",
+      "visual content design consultation"
+    ]
+  },
+  "/services/ux-interactive/digital-experience-development": {
+    "primary": "hire digital experience agency",
+    "secondary": [
+      "get DX development pricing",
+      "buy digital experience platform",
+      "customer experience development cost",
+      "DX development consultation"
+    ]
+  },
+  "/services/ux-interactive/shopify-ecommerce-development": {
+    "primary": "hire Shopify development agency",
+    "secondary": [
+      "get Shopify development pricing",
+      "buy Shopify store development",
+      "Shopify customization cost",
+      "Shopify development consultation"
+    ]
+  },
+  "/services/ux-interactive/web-infrastructure-maintenance": {
+    "primary": "hire website maintenance services",
+    "secondary": [
+      "get website maintenance pricing",
+      "buy web infrastructure support",
+      "website maintenance packages cost",
+      "website maintenance consultation"
+    ]
+  },
+  "/services/ux-interactive/content-management-systems": {
+    "primary": "hire CMS development agency",
+    "secondary": [
+      "get CMS development pricing",
+      "buy WordPress development",
+      "CMS customization cost",
+      "CMS implementation consultation"
+    ]
+  },
+  "/services/ux-interactive/website-lead-generation": {
+    "primary": "hire website lead generation services",
+    "secondary": [
+      "get lead generation website pricing",
+      "buy website conversion optimization",
+      "lead capture website cost",
+      "website lead generation consultation"
+    ]
+  },
+  "/services/ux-interactive/website-traffic-recovery": {
+    "primary": "hire traffic recovery services",
+    "secondary": [
+      "get traffic recovery pricing",
+      "buy website traffic restoration",
+      "traffic drop recovery cost",
+      "traffic recovery consultation"
+    ]
+  },
+  "/services/ux-interactive/website-conversion-optimization": {
+    "primary": "hire conversion optimization agency",
+    "secondary": [
+      "get CRO services pricing",
+      "buy website conversion optimization",
+      "conversion rate improvement cost",
+      "CRO consultation"
+    ]
+  },
+  "/services/ux-interactive/website-roi-improvement": {
+    "primary": "hire website ROI improvement services",
+    "secondary": [
+      "get website ROI pricing",
+      "buy website performance optimization",
+      "website revenue optimization cost",
+      "ROI improvement consultation"
+    ]
+  },
+  "/portfolio": {
+    "primary": "digital marketing results and case studies",
+    "secondary": [
+      "marketing agency proven results",
+      "client success metrics",
+      "marketing campaign performance",
+      "real marketing results"
+    ]
+  },
+  "/portfolio/:id": {
+    "primary": "marketing campaign results and metrics",
+    "secondary": [
+      "client ROI results",
+      "marketing performance data",
+      "campaign success metrics",
+      "proven marketing results"
+    ]
+  },
+  "/case-studies": {
+    "primary": "digital marketing success stories with results",
+    "secondary": [
+      "marketing ROI case studies",
+      "proven marketing results",
+      "client success metrics",
+      "marketing performance data"
+    ]
+  },
+  "/case-studies/chumbak": {
+    "primary": "Chumbak ecommerce growth results",
+    "secondary": [
+      "lifestyle brand sales increase",
+      "ecommerce revenue growth metrics",
+      "Chumbak marketing ROI",
+      "online sales improvement results"
+    ]
+  },
+  "/case-studies/dentinics": {
+    "primary": "Dentinics local SEO results and metrics",
+    "secondary": [
+      "dental practice patient increase",
+      "healthcare SEO traffic growth",
+      "local SEO ranking improvements",
+      "dental clinic lead generation results"
+    ]
+  },
+  "/case-studies/idesign": {
+    "primary": "iDesign website traffic and conversion results",
+    "secondary": [
+      "architecture firm organic traffic growth",
+      "interior design inquiry increase",
+      "website performance improvements",
+      "design firm SEO ranking results"
+    ]
+  },
+  "/case-studies/seo-results": {
+    "primary": "SEO ranking improvements and traffic growth",
+    "secondary": [
+      "SEO performance metrics",
+      "organic traffic increase results",
+      "SEO ROI data",
+      "search ranking success stories"
+    ]
+  },
+  "/about": {
+    "primary": "about digital marketing agency India",
+    "secondary": [
+      "digital marketing company story",
+      "marketing agency team",
+      "about our marketing agency",
+      "marketing agency background"
+    ]
+  },
+  "/who-are-we": {
+    "primary": "who we are digital marketing agency",
+    "secondary": [
+      "marketing agency introduction",
+      "our company story",
+      "marketing agency team",
+      "about our agency"
+    ]
+  },
+  "/contact": {
+    "primary": "contact digital marketing agency India",
+    "secondary": [
+      "get in touch marketing agency",
+      "marketing agency contact",
+      "digital marketing consultation",
+      "marketing agency inquiry"
+    ]
+  },
+  "/blog": {
+    "primary": "digital marketing blog India",
+    "secondary": [
+      "marketing tips and insights",
+      "digital marketing articles",
+      "marketing blog posts",
+      "SEO and marketing blog"
+    ]
+  },
+  "/blog/how-to-optimize-react-websites-for-seo": {
+    "primary": "React SEO optimization guide",
+    "secondary": [
+      "React website SEO tips",
+      "React SSR for SEO",
+      "React SEO best practices",
+      "optimizing React apps for search"
+    ]
+  },
+  "/blog/local-vs-regional-seo-comparison": {
+    "primary": "local vs regional SEO comparison",
+    "secondary": [
+      "local SEO vs regional SEO",
+      "which SEO strategy is better",
+      "local SEO benefits",
+      "regional SEO advantages"
+    ]
+  },
+  "/blog/content-marketing-strategies-digital-agencies": {
+    "primary": "content marketing strategies for agencies",
+    "secondary": [
+      "digital agency content marketing",
+      "agency content strategy",
+      "content marketing for agencies",
+      "agency content creation"
+    ]
+  },
+  "/blog/build-strong-brand-presence-online": {
+    "primary": "build online brand presence guide",
+    "secondary": [
+      "online branding strategies",
+      "digital brand building",
+      "online brand visibility",
+      "building brand online"
+    ]
+  },
+  "/blog/leveraging-ai-marketing-automation": {
+    "primary": "AI marketing automation guide",
+    "secondary": [
+      "AI in marketing automation",
+      "artificial intelligence marketing",
+      "AI marketing tools",
+      "automated marketing with AI"
+    ]
+  },
+  "/pricing": {
+    "primary": "digital marketing pricing India",
+    "secondary": [
+      "marketing agency pricing",
+      "digital marketing packages",
+      "marketing services cost",
+      "affordable marketing services"
+    ]
+  },
+  "/cart": {
+    "primary": "marketing services cart",
+    "secondary": [
+      "service selection cart",
+      "marketing package cart",
+      "service checkout",
+      "marketing services order"
+    ]
+  },
+  "/privacy-policy": {
+    "primary": "privacy policy",
+    "secondary": [
+      "data privacy policy",
+      "privacy statement",
+      "user privacy policy",
+      "website privacy policy"
+    ]
+  },
+  "/learn/what-is-seo-company": {
+    "primary": "what is SEO company explained",
+    "secondary": [
+      "SEO company definition",
+      "understanding SEO companies",
+      "what does SEO company do",
+      "SEO agency explained"
+    ]
+  },
+  "/learn/best-seo-companies": {
+    "primary": "best SEO companies in India",
+    "secondary": [
+      "top SEO agencies India",
+      "leading SEO companies",
+      "best SEO services India",
+      "top rated SEO agencies"
+    ]
+  }
+}

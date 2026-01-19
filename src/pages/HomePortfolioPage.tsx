@@ -54,48 +54,48 @@ const HomePortfolioPage = () => {
 
   return (
     <div className="min-h-screen">
-      <div className="container mx-auto py-20 px-4">
-        <div className="flex flex-col items-center mb-16">
-          <h1 className="text-5xl font-bold text-white mb-6 text-center">
+      <div className="container mx-auto py-12 sm:py-16 md:py-20 px-3 sm:px-4">
+        <div className="flex flex-col items-center mb-10 sm:mb-12 md:mb-16">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-white mb-4 sm:mb-6 text-center">
             Our Portfolio
-          </h1>
-          <p className="text-xl text-slate-200 text-center max-w-3xl mb-8">
+          </h2>
+          <p className="text-base sm:text-lg md:text-xl text-slate-200 text-center max-w-3xl mb-6 sm:mb-8 px-2">
             Explore our diverse collection of successful projects across various industries
           </p>
           
           {/* Industry Expert Badges */}
-          <div className="flex flex-wrap justify-center gap-4 mb-8">
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 border border-emerald-500/30 rounded-full backdrop-blur-sm">
-              <Award className="h-4 w-4 text-emerald-400" />
-              <span className="text-emerald-300 font-medium text-sm">Architecture Expert</span>
-              <Star className="h-3 w-3 text-emerald-400" />
+          <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mb-6 sm:mb-8 px-2">
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-emerald-500/20 to-emerald-600/20 border border-emerald-500/30 rounded-full backdrop-blur-sm">
+              <Award className="h-3 w-3 sm:h-4 sm:w-4 text-emerald-400 flex-shrink-0" />
+              <span className="text-emerald-300 font-medium text-xs sm:text-sm">Architecture Expert</span>
+              <Star className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-emerald-400 flex-shrink-0" />
             </div>
             
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-full backdrop-blur-sm">
-              <Award className="h-4 w-4 text-blue-400" />
-              <span className="text-blue-300 font-medium text-sm">Real Estate Expert</span>
-              <Star className="h-3 w-3 text-blue-400" />
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-blue-500/20 to-blue-600/20 border border-blue-500/30 rounded-full backdrop-blur-sm">
+              <Award className="h-3 w-3 sm:h-4 sm:w-4 text-blue-400 flex-shrink-0" />
+              <span className="text-blue-300 font-medium text-xs sm:text-sm">Real Estate Expert</span>
+              <Star className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-blue-400 flex-shrink-0" />
             </div>
             
-            <div className="flex items-center gap-2 px-4 py-2 bg-gradient-to-r from-purple-500/20 to-purple-600/20 border border-purple-500/30 rounded-full backdrop-blur-sm">
-              <Award className="h-4 w-4 text-purple-400" />
-              <span className="text-purple-300 font-medium text-sm">Healthcare Expert</span>
-              <Star className="h-3 w-3 text-purple-400" />
+            <div className="flex items-center gap-1.5 sm:gap-2 px-3 sm:px-4 py-1.5 sm:py-2 bg-gradient-to-r from-purple-500/20 to-purple-600/20 border border-purple-500/30 rounded-full backdrop-blur-sm">
+              <Award className="h-3 w-3 sm:h-4 sm:w-4 text-purple-400 flex-shrink-0" />
+              <span className="text-purple-300 font-medium text-xs sm:text-sm">Healthcare Expert</span>
+              <Star className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-purple-400 flex-shrink-0" />
             </div>
           </div>
         </div>
 
-        <div className="flex flex-wrap justify-center gap-3 mb-16">
+        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-10 sm:mb-12 md:mb-16 px-2">
           <button
             key="all"
-            className={`flex items-center px-6 py-3 rounded-full transition-all duration-300 ${
+            className={`flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full transition-all duration-300 ${
               activeNiche === 'all'
                 ? 'bg-purple-600 text-white shadow-lg shadow-purple-500/25 scale-105'
                 : 'bg-white/10 backdrop-blur-sm text-white hover:bg-white/20 hover:shadow-md border border-white/20'
             }`}
             onClick={() => setActiveNiche('all')}
           >
-            <span className="text-base font-medium">All Projects</span>
+            <span className="text-sm sm:text-base font-medium">All Projects</span>
           </button>
           {niches.filter(niche => niche.id !== 'others').map(niche => (
             <button

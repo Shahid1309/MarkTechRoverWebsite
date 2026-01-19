@@ -1,0 +1,1475 @@
+{
+  "metadata": {
+    "createdAt": "2024-12-19",
+    "targetAudience": "Business owners and startups in India",
+    "keywordStrategy": "Long-tail, low-medium competition keywords with no cannibalization",
+    "totalPages": 102
+  },
+  "homepage": [
+    {
+      "route": "/",
+      "pageTitle": "Homepage",
+      "primaryKeyword": "MarkTechRover",
+      "secondaryKeywords": [
+        "MarkTechRover digital marketing",
+        "MarkTechRover India",
+        "growth marketing agency",
+        "digital transformation partner"
+      ],
+      "searchIntent": "commercial",
+      "category": "Homepage"
+    }
+  ],
+  "services": [
+    {
+      "route": "/services",
+      "pageTitle": "Services Overview",
+      "primaryKeyword": "hire digital marketing agency",
+      "secondaryKeywords": [
+        "get digital marketing services",
+        "marketing agency services pricing",
+        "book marketing consultation",
+        "digital marketing packages"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation",
+      "pageTitle": "SEO & Lead Generation Services",
+      "primaryKeyword": "hire SEO lead generation agency",
+      "secondaryKeywords": [
+        "get organic leads through SEO",
+        "SEO services pricing India",
+        "buy SEO lead generation",
+        "SEO agency for lead generation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/seo-services",
+      "pageTitle": "SEO Services",
+      "primaryKeyword": "hire SEO agency India",
+      "secondaryKeywords": [
+        "get SEO services pricing",
+        "buy professional SEO services",
+        "SEO company for startups",
+        "book SEO consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/enterprise-seo",
+      "pageTitle": "Enterprise SEO Services",
+      "primaryKeyword": "hire enterprise SEO agency",
+      "secondaryKeywords": [
+        "get enterprise SEO pricing",
+        "buy corporate SEO services",
+        "enterprise SEO consultation",
+        "large scale SEO packages"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/digital-marketing",
+      "pageTitle": "Digital Marketing Services",
+      "primaryKeyword": "hire full service digital marketing agency",
+      "secondaryKeywords": [
+        "get digital marketing packages",
+        "buy integrated marketing services",
+        "digital marketing agency pricing",
+        "book marketing strategy consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/local-seo",
+      "pageTitle": "Local SEO Services",
+      "primaryKeyword": "hire local SEO agency",
+      "secondaryKeywords": [
+        "get local SEO services pricing",
+        "buy Google My Business optimization",
+        "local SEO for small business",
+        "book local SEO consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/local-seo-services",
+      "pageTitle": "Local SEO Services Page",
+      "primaryKeyword": "get local SEO optimization",
+      "secondaryKeywords": [
+        "hire local business SEO expert",
+        "local SEO services cost",
+        "location based SEO packages",
+        "local search ranking services"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/local-services-ads",
+      "pageTitle": "Local Services Ads",
+      "primaryKeyword": "hire Google LSA management",
+      "secondaryKeywords": [
+        "get local services ads setup",
+        "buy LSA optimization services",
+        "Google LSA agency pricing",
+        "book local ads consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-audits",
+      "pageTitle": "SEO Audits",
+      "primaryKeyword": "hire SEO audit services",
+      "secondaryKeywords": [
+        "get website SEO analysis",
+        "buy technical SEO audit",
+        "SEO audit pricing",
+        "book SEO health check"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/chat-optimization",
+      "pageTitle": "Chat Optimization",
+      "primaryKeyword": "hire chat optimization services",
+      "secondaryKeywords": [
+        "get chatbot conversion optimization",
+        "buy live chat optimization",
+        "chat widget setup services",
+        "chat optimization pricing"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/ppc-management",
+      "pageTitle": "PPC Management Services",
+      "primaryKeyword": "hire PPC management agency",
+      "secondaryKeywords": [
+        "get Google Ads management pricing",
+        "buy PPC campaign management",
+        "PPC services cost India",
+        "book PPC consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/enterprise-ppc",
+      "pageTitle": "Enterprise PPC Services",
+      "primaryKeyword": "hire enterprise PPC agency",
+      "secondaryKeywords": [
+        "get enterprise PPC pricing",
+        "buy corporate Google Ads management",
+        "enterprise paid advertising packages",
+        "large scale PPC consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/social-media-ads",
+      "pageTitle": "Social Media Ads",
+      "primaryKeyword": "hire social media ads agency",
+      "secondaryKeywords": [
+        "get Facebook Instagram ads pricing",
+        "buy social media advertising",
+        "social ads management cost",
+        "book social media ads consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/enterprise-social-ads",
+      "pageTitle": "Enterprise Social Media Ads",
+      "primaryKeyword": "hire enterprise social ads agency",
+      "secondaryKeywords": [
+        "get enterprise social media ads pricing",
+        "buy corporate social advertising",
+        "large scale social ads packages",
+        "enterprise social ads consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/programmatic-ads",
+      "pageTitle": "Programmatic Advertising",
+      "primaryKeyword": "hire programmatic advertising agency",
+      "secondaryKeywords": [
+        "get programmatic ads pricing",
+        "buy automated advertising platform",
+        "programmatic media buying services",
+        "programmatic advertising consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/geofencing",
+      "pageTitle": "Geofencing Services",
+      "primaryKeyword": "hire geofencing marketing agency",
+      "secondaryKeywords": [
+        "get location based advertising pricing",
+        "buy geofencing ad campaigns",
+        "proximity marketing services cost",
+        "geofencing setup consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/connected-tv",
+      "pageTitle": "Connected TV Advertising",
+      "primaryKeyword": "hire connected TV advertising agency",
+      "secondaryKeywords": [
+        "get CTV ad campaign pricing",
+        "buy streaming TV advertising",
+        "OTT advertising services cost",
+        "smart TV ads consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/ecommerce-seo",
+      "pageTitle": "E-commerce SEO",
+      "primaryKeyword": "hire ecommerce SEO agency",
+      "secondaryKeywords": [
+        "get online store SEO pricing",
+        "buy product page SEO services",
+        "ecommerce SEO optimization cost",
+        "book ecommerce SEO consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/ecommerce-ppc",
+      "pageTitle": "E-commerce PPC",
+      "primaryKeyword": "hire ecommerce PPC agency",
+      "secondaryKeywords": [
+        "get ecommerce PPC pricing",
+        "buy online store Google Ads management",
+        "product advertising campaign cost",
+        "ecommerce paid search consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/ecommerce-social",
+      "pageTitle": "E-commerce Social Media",
+      "primaryKeyword": "hire ecommerce social media agency",
+      "secondaryKeywords": [
+        "get ecommerce social ads pricing",
+        "buy online store social advertising",
+        "product social media marketing cost",
+        "ecommerce social campaigns consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-lead-generation/b2b-ecommerce",
+      "pageTitle": "B2B E-commerce Services",
+      "primaryKeyword": "hire B2B ecommerce marketing agency",
+      "secondaryKeywords": [
+        "get B2B ecommerce marketing pricing",
+        "buy B2B online store SEO",
+        "B2B ecommerce advertising cost",
+        "B2B digital commerce consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/shopping-feeds",
+      "pageTitle": "Shopping Feeds Management",
+      "primaryKeyword": "hire shopping feed optimization agency",
+      "secondaryKeywords": [
+        "get Google Shopping feed pricing",
+        "buy product feed optimization",
+        "shopping ads feed setup cost",
+        "ecommerce feed management consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ecommerce-marketing",
+      "pageTitle": "E-commerce Marketing",
+      "primaryKeyword": "hire ecommerce marketing agency",
+      "secondaryKeywords": [
+        "get ecommerce marketing packages",
+        "buy online store marketing strategy",
+        "ecommerce growth marketing pricing",
+        "book ecommerce marketing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ecommerce-resources",
+      "pageTitle": "E-commerce Resources",
+      "primaryKeyword": "ecommerce marketing resources guide",
+      "secondaryKeywords": [
+        "online store marketing tips",
+        "ecommerce growth resources",
+        "ecommerce marketing best practices",
+        "online retail marketing guide"
+      ],
+      "searchIntent": "informational",
+      "category": "Services"
+    },
+    {
+      "route": "/services/web-channel-call-tracking",
+      "pageTitle": "Web Channel Call Tracking",
+      "primaryKeyword": "hire call tracking services",
+      "secondaryKeywords": [
+        "get call tracking software pricing",
+        "buy website call tracking",
+        "call attribution setup cost",
+        "call tracking integration consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/seo-reporting-forecasting",
+      "pageTitle": "SEO Reporting & Forecasting",
+      "primaryKeyword": "hire SEO reporting services",
+      "secondaryKeywords": [
+        "get SEO analytics reporting pricing",
+        "buy SEO performance forecasting",
+        "SEO metrics dashboard cost",
+        "SEO ROI reporting consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/channel-attribution",
+      "pageTitle": "Channel Attribution",
+      "primaryKeyword": "hire marketing attribution services",
+      "secondaryKeywords": [
+        "get channel attribution pricing",
+        "buy multi channel attribution analysis",
+        "attribution modeling setup cost",
+        "marketing attribution consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/competitor-analysis",
+      "pageTitle": "Competitor Analysis",
+      "primaryKeyword": "hire competitor analysis services",
+      "secondaryKeywords": [
+        "get competitor SEO analysis pricing",
+        "buy competitive marketing research",
+        "competitor strategy analysis cost",
+        "competitive intelligence consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/conversion-rate-optimization",
+      "pageTitle": "Conversion Rate Optimization",
+      "primaryKeyword": "hire CRO agency India",
+      "secondaryKeywords": [
+        "get conversion optimization pricing",
+        "buy CRO testing services",
+        "landing page optimization cost",
+        "CRO consultation services"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/email-marketing-management",
+      "pageTitle": "Email Marketing Management",
+      "primaryKeyword": "hire email marketing agency",
+      "secondaryKeywords": [
+        "get email marketing pricing",
+        "buy email campaign management",
+        "email automation setup cost",
+        "email marketing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/facebook-marketplace",
+      "pageTitle": "Facebook Marketplace Services",
+      "primaryKeyword": "hire Facebook Marketplace agency",
+      "secondaryKeywords": [
+        "get Facebook Marketplace pricing",
+        "buy Facebook shop management",
+        "Marketplace optimization cost",
+        "Facebook Marketplace consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/influencer-marketing",
+      "pageTitle": "Influencer Marketing",
+      "primaryKeyword": "hire influencer marketing agency",
+      "secondaryKeywords": [
+        "get influencer campaign pricing",
+        "buy influencer partnership services",
+        "influencer marketing cost India",
+        "influencer marketing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/landing-pages-funnels",
+      "pageTitle": "Landing Pages & Funnels",
+      "primaryKeyword": "hire landing page design agency",
+      "secondaryKeywords": [
+        "get landing page pricing",
+        "buy conversion funnel development",
+        "sales funnel creation cost",
+        "landing page consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/lead-nurture-email",
+      "pageTitle": "Lead Nurture Email",
+      "primaryKeyword": "hire lead nurturing services",
+      "secondaryKeywords": [
+        "get lead nurture email pricing",
+        "buy automated drip campaigns",
+        "lead nurturing automation cost",
+        "email nurture consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/microsoft-dynamics-automation",
+      "pageTitle": "Microsoft Dynamics Automation",
+      "primaryKeyword": "hire Dynamics marketing automation",
+      "secondaryKeywords": [
+        "get Dynamics CRM integration pricing",
+        "buy marketing automation setup",
+        "Dynamics marketing cloud cost",
+        "Dynamics automation consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/online-review-acceleration",
+      "pageTitle": "Online Review Acceleration",
+      "primaryKeyword": "hire review management services",
+      "secondaryKeywords": [
+        "get Google reviews generation pricing",
+        "buy review acceleration strategies",
+        "customer review management cost",
+        "reputation management consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/private-equity-due-diligence",
+      "pageTitle": "Private Equity Due Diligence",
+      "primaryKeyword": "hire marketing due diligence services",
+      "secondaryKeywords": [
+        "get PE marketing assessment pricing",
+        "buy marketing audit for acquisitions",
+        "due diligence analysis cost",
+        "investment marketing evaluation consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/recruiting-marketing",
+      "pageTitle": "Recruiting Marketing",
+      "primaryKeyword": "hire recruitment marketing agency",
+      "secondaryKeywords": [
+        "get talent acquisition marketing pricing",
+        "buy employer branding services",
+        "recruitment advertising cost",
+        "hiring marketing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/revenue-operations",
+      "pageTitle": "Revenue Operations",
+      "primaryKeyword": "hire RevOps consulting services",
+      "secondaryKeywords": [
+        "get revenue operations pricing",
+        "buy RevOps optimization",
+        "revenue operations strategy cost",
+        "RevOps consultation India"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/salesforce-marketing-automation",
+      "pageTitle": "Salesforce Marketing Automation",
+      "primaryKeyword": "hire Salesforce Marketing Cloud agency",
+      "secondaryKeywords": [
+        "get Salesforce Pardot pricing",
+        "buy Marketing Cloud implementation",
+        "Salesforce automation setup cost",
+        "Salesforce marketing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/shopify-optimization",
+      "pageTitle": "Shopify Optimization",
+      "primaryKeyword": "hire Shopify optimization agency",
+      "secondaryKeywords": [
+        "get Shopify SEO pricing",
+        "buy Shopify conversion optimization",
+        "Shopify store performance cost",
+        "Shopify optimization consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-testing",
+      "pageTitle": "UX Testing Services",
+      "primaryKeyword": "hire UX testing services",
+      "secondaryKeywords": [
+        "get UX usability testing pricing",
+        "buy website UX testing",
+        "user testing services cost",
+        "UX testing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/walmart-marketplace",
+      "pageTitle": "Walmart Marketplace Services",
+      "primaryKeyword": "hire Walmart Marketplace agency",
+      "secondaryKeywords": [
+        "get Walmart Marketplace pricing",
+        "buy Walmart seller optimization",
+        "Walmart Marketplace advertising cost",
+        "Walmart ecommerce consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/website-personalization",
+      "pageTitle": "Website Personalization",
+      "primaryKeyword": "hire website personalization services",
+      "secondaryKeywords": [
+        "get website personalization pricing",
+        "buy dynamic personalization",
+        "personalized web experience cost",
+        "website personalization consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/account-based-marketing",
+      "pageTitle": "Account Based Marketing",
+      "primaryKeyword": "hire ABM agency India",
+      "secondaryKeywords": [
+        "get ABM services pricing",
+        "buy account based marketing strategy",
+        "ABM campaign management cost",
+        "B2B ABM consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/amazon-advertising",
+      "pageTitle": "Amazon Advertising",
+      "primaryKeyword": "hire Amazon advertising agency",
+      "secondaryKeywords": [
+        "get Amazon PPC pricing",
+        "buy Amazon sponsored ads management",
+        "Amazon advertising optimization cost",
+        "Amazon seller advertising consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/amazon-seo",
+      "pageTitle": "Amazon SEO",
+      "primaryKeyword": "hire Amazon SEO agency",
+      "secondaryKeywords": [
+        "get Amazon listing optimization pricing",
+        "buy Amazon product SEO",
+        "Amazon search ranking cost",
+        "Amazon SEO consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/channel-partner-pipeline",
+      "pageTitle": "Channel Partner Pipeline",
+      "primaryKeyword": "hire channel partner marketing agency",
+      "secondaryKeywords": [
+        "get partner pipeline pricing",
+        "buy channel partner enablement",
+        "partner marketing programs cost",
+        "channel partner consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-technology",
+      "pageTitle": "AI Technology Services",
+      "primaryKeyword": "hire AI marketing agency",
+      "secondaryKeywords": [
+        "get AI marketing technology pricing",
+        "buy AI powered marketing solutions",
+        "artificial intelligence marketing cost",
+        "AI marketing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-ad-editing",
+      "pageTitle": "AI Ad Editing",
+      "primaryKeyword": "hire AI ad editing services",
+      "secondaryKeywords": [
+        "get AI ad editing pricing",
+        "buy automated ad creative editing",
+        "AI ad optimization cost",
+        "AI ad design consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-ad-generation",
+      "pageTitle": "AI Ad Generation",
+      "primaryKeyword": "hire AI ad generation services",
+      "secondaryKeywords": [
+        "get AI ad creation pricing",
+        "buy automated ad generation",
+        "AI ad copywriting cost",
+        "AI advertising consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-consulting",
+      "pageTitle": "AI Consulting",
+      "primaryKeyword": "hire AI marketing consulting",
+      "secondaryKeywords": [
+        "get AI consulting pricing",
+        "buy AI strategy consulting",
+        "AI implementation cost",
+        "AI transformation consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-content-creation",
+      "pageTitle": "AI Content Creation",
+      "primaryKeyword": "hire AI content creation services",
+      "secondaryKeywords": [
+        "get AI content writing pricing",
+        "buy automated content generation",
+        "AI content marketing cost",
+        "AI content consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-cost-guide",
+      "pageTitle": "AI Cost Guide",
+      "primaryKeyword": "AI marketing implementation cost guide",
+      "secondaryKeywords": [
+        "AI marketing pricing guide",
+        "AI technology costs",
+        "AI implementation expenses",
+        "AI marketing investment guide"
+      ],
+      "searchIntent": "informational",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-digital-marketing",
+      "pageTitle": "AI Digital Marketing",
+      "primaryKeyword": "hire AI digital marketing agency",
+      "secondaryKeywords": [
+        "get AI marketing services pricing",
+        "buy AI powered marketing",
+        "intelligent marketing automation cost",
+        "AI marketing solutions consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-gpt-integration-tech",
+      "pageTitle": "AI GPT Integration",
+      "primaryKeyword": "hire GPT integration services",
+      "secondaryKeywords": [
+        "get ChatGPT integration pricing",
+        "buy GPT API integration",
+        "AI chatbot integration cost",
+        "GPT marketing tools consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-seo-services",
+      "pageTitle": "AI SEO Services",
+      "primaryKeyword": "hire AI SEO agency",
+      "secondaryKeywords": [
+        "get AI SEO pricing",
+        "buy AI powered SEO",
+        "intelligent SEO services cost",
+        "AI SEO consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-software-development",
+      "pageTitle": "AI Software Development",
+      "primaryKeyword": "hire AI software development agency",
+      "secondaryKeywords": [
+        "get AI software pricing",
+        "buy custom AI development",
+        "AI application development cost",
+        "AI platform consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-video-production",
+      "pageTitle": "AI Video Production",
+      "primaryKeyword": "hire AI video production services",
+      "secondaryKeywords": [
+        "get AI video pricing",
+        "buy automated video creation",
+        "AI video editing cost",
+        "AI video production consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ai-website-generation",
+      "pageTitle": "AI Website Generation",
+      "primaryKeyword": "hire AI website generation services",
+      "secondaryKeywords": [
+        "get AI website pricing",
+        "buy automated website creation",
+        "AI website builder cost",
+        "AI web design consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/closed-loop-analytics",
+      "pageTitle": "Closed Loop Analytics",
+      "primaryKeyword": "hire closed loop analytics services",
+      "secondaryKeywords": [
+        "get closed loop analytics pricing",
+        "buy marketing attribution analytics",
+        "revenue attribution tracking cost",
+        "closed loop reporting consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/contact-enrichment",
+      "pageTitle": "Contact Enrichment",
+      "primaryKeyword": "hire contact enrichment services",
+      "secondaryKeywords": [
+        "get contact enrichment pricing",
+        "buy lead data enrichment",
+        "contact database enrichment cost",
+        "data enrichment consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/crm-integrations",
+      "pageTitle": "CRM Integrations",
+      "primaryKeyword": "hire CRM integration services",
+      "secondaryKeywords": [
+        "get CRM integration pricing",
+        "buy marketing CRM integration",
+        "CRM automation integration cost",
+        "CRM integration consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/crm-retargeting",
+      "pageTitle": "CRM Retargeting",
+      "primaryKeyword": "hire CRM retargeting services",
+      "secondaryKeywords": [
+        "get CRM retargeting pricing",
+        "buy customer retargeting campaigns",
+        "CRM audience retargeting cost",
+        "CRM retargeting consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/customer-data-platform",
+      "pageTitle": "Customer Data Platform",
+      "primaryKeyword": "hire CDP implementation services",
+      "secondaryKeywords": [
+        "get CDP setup pricing",
+        "buy customer data platform",
+        "CDP integration cost",
+        "CDP implementation consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/data-driven-marketing-guide",
+      "pageTitle": "Data Driven Marketing Guide",
+      "primaryKeyword": "data driven marketing strategy guide",
+      "secondaryKeywords": [
+        "data based marketing approach",
+        "analytics driven marketing",
+        "data marketing best practices",
+        "marketing data analysis guide"
+      ],
+      "searchIntent": "informational",
+      "category": "Services"
+    },
+    {
+      "route": "/services/how-to-write-ai-prompts",
+      "pageTitle": "How to Write AI Prompts",
+      "primaryKeyword": "AI prompt writing guide for marketing",
+      "secondaryKeywords": [
+        "marketing AI prompts tutorial",
+        "effective AI prompt writing",
+        "AI prompt engineering guide",
+        "writing prompts for AI marketing"
+      ],
+      "searchIntent": "informational",
+      "category": "Services"
+    },
+    {
+      "route": "/services/lead-management-scheduling",
+      "pageTitle": "Lead Management & Scheduling",
+      "primaryKeyword": "hire lead management services",
+      "secondaryKeywords": [
+        "get lead scheduling pricing",
+        "buy automated lead scheduling",
+        "lead management software cost",
+        "appointment scheduling consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/revenue-cloud-fx-platform",
+      "pageTitle": "Revenue Cloud FX Platform",
+      "primaryKeyword": "hire Revenue Cloud FX services",
+      "secondaryKeywords": [
+        "get Revenue Cloud FX pricing",
+        "buy revenue marketing platform",
+        "Revenue Cloud implementation cost",
+        "revenue platform consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/track-ai-search-visibility",
+      "pageTitle": "Track AI Search Visibility",
+      "primaryKeyword": "hire AI search tracking services",
+      "secondaryKeywords": [
+        "get AI visibility tracking pricing",
+        "buy AI search ranking tracking",
+        "AI visibility monitoring cost",
+        "AI search tracking consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/what-are-crm-integrations",
+      "pageTitle": "What Are CRM Integrations",
+      "primaryKeyword": "what are CRM integrations explained",
+      "secondaryKeywords": [
+        "CRM integration guide",
+        "understanding CRM integrations",
+        "CRM marketing integrations explained",
+        "CRM integration benefits"
+      ],
+      "searchIntent": "informational",
+      "category": "Services"
+    },
+    {
+      "route": "/services/what-is-ai-marketing",
+      "pageTitle": "What Is AI Marketing",
+      "primaryKeyword": "what is AI marketing explained",
+      "secondaryKeywords": [
+        "AI marketing definition",
+        "artificial intelligence in marketing",
+        "AI marketing guide",
+        "understanding AI marketing"
+      ],
+      "searchIntent": "informational",
+      "category": "Services"
+    },
+    {
+      "route": "/services/what-is-crm",
+      "pageTitle": "What Is CRM",
+      "primaryKeyword": "what is CRM system explained",
+      "secondaryKeywords": [
+        "CRM definition guide",
+        "customer relationship management explained",
+        "CRM software overview",
+        "understanding CRM systems"
+      ],
+      "searchIntent": "informational",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive",
+      "pageTitle": "UX & Interactive Services",
+      "primaryKeyword": "hire UX design agency",
+      "secondaryKeywords": [
+        "get UX design pricing",
+        "buy interactive web design",
+        "UX UI design services cost",
+        "UX design consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/website-design",
+      "pageTitle": "Website Design Services",
+      "primaryKeyword": "hire website design agency India",
+      "secondaryKeywords": [
+        "get website design pricing",
+        "buy custom website design",
+        "responsive web design cost",
+        "website design consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/website-redesign",
+      "pageTitle": "Website Redesign Services",
+      "primaryKeyword": "hire website redesign agency",
+      "secondaryKeywords": [
+        "get website redesign pricing",
+        "buy website makeover services",
+        "website redesign cost",
+        "website redesign consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/rapid-web-design",
+      "pageTitle": "Rapid Web Design",
+      "primaryKeyword": "hire rapid web design agency",
+      "secondaryKeywords": [
+        "get rapid web design pricing",
+        "buy fast website design",
+        "quick web design cost",
+        "rapid design consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/social-media-design",
+      "pageTitle": "Social Media Design",
+      "primaryKeyword": "hire social media design agency",
+      "secondaryKeywords": [
+        "get social media design pricing",
+        "buy social media graphics",
+        "social media creative cost",
+        "social media design consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/seo-copywriting",
+      "pageTitle": "SEO Copywriting",
+      "primaryKeyword": "hire SEO copywriting services",
+      "secondaryKeywords": [
+        "get SEO copywriting pricing",
+        "buy SEO content writing",
+        "search optimized copywriting cost",
+        "SEO copywriting consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/content-marketing",
+      "pageTitle": "Content Marketing",
+      "primaryKeyword": "hire content marketing agency",
+      "secondaryKeywords": [
+        "get content marketing pricing",
+        "buy content creation services",
+        "content marketing strategy cost",
+        "content marketing consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/social-media-management",
+      "pageTitle": "Social Media Management",
+      "primaryKeyword": "hire social media management agency",
+      "secondaryKeywords": [
+        "get SMM services pricing",
+        "buy social media management",
+        "social media packages cost",
+        "SMM consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/infographics-motion-graphics",
+      "pageTitle": "Infographics & Motion Graphics",
+      "primaryKeyword": "hire infographic design agency",
+      "secondaryKeywords": [
+        "get infographic design pricing",
+        "buy motion graphics services",
+        "animated infographic cost",
+        "visual content design consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/digital-experience-development",
+      "pageTitle": "Digital Experience Development",
+      "primaryKeyword": "hire digital experience agency",
+      "secondaryKeywords": [
+        "get DX development pricing",
+        "buy digital experience platform",
+        "customer experience development cost",
+        "DX development consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/shopify-ecommerce-development",
+      "pageTitle": "Shopify E-commerce Development",
+      "primaryKeyword": "hire Shopify development agency",
+      "secondaryKeywords": [
+        "get Shopify development pricing",
+        "buy Shopify store development",
+        "Shopify customization cost",
+        "Shopify development consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/web-infrastructure-maintenance",
+      "pageTitle": "Web Infrastructure Maintenance",
+      "primaryKeyword": "hire website maintenance services",
+      "secondaryKeywords": [
+        "get website maintenance pricing",
+        "buy web infrastructure support",
+        "website maintenance packages cost",
+        "website maintenance consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/content-management-systems",
+      "pageTitle": "Content Management Systems",
+      "primaryKeyword": "hire CMS development agency",
+      "secondaryKeywords": [
+        "get CMS development pricing",
+        "buy WordPress development",
+        "CMS customization cost",
+        "CMS implementation consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/website-lead-generation",
+      "pageTitle": "Website Lead Generation",
+      "primaryKeyword": "hire website lead generation services",
+      "secondaryKeywords": [
+        "get lead generation website pricing",
+        "buy website conversion optimization",
+        "lead capture website cost",
+        "website lead generation consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/website-traffic-recovery",
+      "pageTitle": "Website Traffic Recovery",
+      "primaryKeyword": "hire traffic recovery services",
+      "secondaryKeywords": [
+        "get traffic recovery pricing",
+        "buy website traffic restoration",
+        "traffic drop recovery cost",
+        "traffic recovery consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/website-conversion-optimization",
+      "pageTitle": "Website Conversion Optimization",
+      "primaryKeyword": "hire conversion optimization agency",
+      "secondaryKeywords": [
+        "get CRO services pricing",
+        "buy website conversion optimization",
+        "conversion rate improvement cost",
+        "CRO consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    },
+    {
+      "route": "/services/ux-interactive/website-roi-improvement",
+      "pageTitle": "Website ROI Improvement",
+      "primaryKeyword": "hire website ROI improvement services",
+      "secondaryKeywords": [
+        "get website ROI pricing",
+        "buy website performance optimization",
+        "website revenue optimization cost",
+        "ROI improvement consultation"
+      ],
+      "searchIntent": "commercial",
+      "category": "Services"
+    }
+  ],
+  "portfolioCaseStudies": [
+    {
+      "route": "/portfolio",
+      "pageTitle": "Portfolio",
+      "primaryKeyword": "digital marketing results and case studies",
+      "secondaryKeywords": [
+        "marketing agency proven results",
+        "client success metrics",
+        "marketing campaign performance",
+        "real marketing results"
+      ],
+      "searchIntent": "informational",
+      "category": "Portfolio/Case Studies"
+    },
+    {
+      "route": "/portfolio/:id",
+      "pageTitle": "Portfolio Item",
+      "primaryKeyword": "marketing campaign results and metrics",
+      "secondaryKeywords": [
+        "client ROI results",
+        "marketing performance data",
+        "campaign success metrics",
+        "proven marketing results"
+      ],
+      "searchIntent": "informational",
+      "category": "Portfolio/Case Studies"
+    },
+    {
+      "route": "/case-studies",
+      "pageTitle": "Case Studies",
+      "primaryKeyword": "digital marketing success stories with results",
+      "secondaryKeywords": [
+        "marketing ROI case studies",
+        "proven marketing results",
+        "client success metrics",
+        "marketing performance data"
+      ],
+      "searchIntent": "informational",
+      "category": "Portfolio/Case Studies"
+    },
+    {
+      "route": "/case-studies/chumbak",
+      "pageTitle": "Chumbak Case Study",
+      "primaryKeyword": "Chumbak ecommerce growth results",
+      "secondaryKeywords": [
+        "lifestyle brand sales increase",
+        "ecommerce revenue growth metrics",
+        "Chumbak marketing ROI",
+        "online sales improvement results"
+      ],
+      "searchIntent": "informational",
+      "category": "Portfolio/Case Studies"
+    },
+    {
+      "route": "/case-studies/dentinics",
+      "pageTitle": "Dentinics Case Study",
+      "primaryKeyword": "Dentinics local SEO results and metrics",
+      "secondaryKeywords": [
+        "dental practice patient increase",
+        "healthcare SEO traffic growth",
+        "local SEO ranking improvements",
+        "dental clinic lead generation results"
+      ],
+      "searchIntent": "informational",
+      "category": "Portfolio/Case Studies"
+    },
+    {
+      "route": "/case-studies/idesign",
+      "pageTitle": "iDesign Case Study",
+      "primaryKeyword": "iDesign website traffic and conversion results",
+      "secondaryKeywords": [
+        "architecture firm organic traffic growth",
+        "interior design inquiry increase",
+        "website performance improvements",
+        "design firm SEO ranking results"
+      ],
+      "searchIntent": "informational",
+      "category": "Portfolio/Case Studies"
+    },
+    {
+      "route": "/case-studies/seo-results",
+      "pageTitle": "SEO Results",
+      "primaryKeyword": "SEO ranking improvements and traffic growth",
+      "secondaryKeywords": [
+        "SEO performance metrics",
+        "organic traffic increase results",
+        "SEO ROI data",
+        "search ranking success stories"
+      ],
+      "searchIntent": "informational",
+      "category": "Portfolio/Case Studies"
+    }
+  ],
+  "aboutCompany": [
+    {
+      "route": "/about",
+      "pageTitle": "About Us",
+      "primaryKeyword": "about digital marketing agency India",
+      "secondaryKeywords": [
+        "digital marketing company story",
+        "marketing agency team",
+        "about our marketing agency",
+        "marketing agency background"
+      ],
+      "searchIntent": "informational",
+      "category": "About/Company"
+    },
+    {
+      "route": "/who-are-we",
+      "pageTitle": "Who Are We",
+      "primaryKeyword": "who we are digital marketing agency",
+      "secondaryKeywords": [
+        "marketing agency introduction",
+        "our company story",
+        "marketing agency team",
+        "about our agency"
+      ],
+      "searchIntent": "informational",
+      "category": "About/Company"
+    },
+    {
+      "route": "/contact",
+      "pageTitle": "Contact Us",
+      "primaryKeyword": "contact digital marketing agency India",
+      "secondaryKeywords": [
+        "get in touch marketing agency",
+        "marketing agency contact",
+        "digital marketing consultation",
+        "marketing agency inquiry"
+      ],
+      "searchIntent": "transactional",
+      "category": "About/Company"
+    }
+  ],
+  "blogsOther": [
+    {
+      "route": "/blog",
+      "pageTitle": "Blog",
+      "primaryKeyword": "digital marketing blog India",
+      "secondaryKeywords": [
+        "marketing tips and insights",
+        "digital marketing articles",
+        "marketing blog posts",
+        "SEO and marketing blog"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/blog/how-to-optimize-react-websites-for-seo",
+      "pageTitle": "How to Optimize React Websites for SEO",
+      "primaryKeyword": "React SEO optimization guide",
+      "secondaryKeywords": [
+        "React website SEO tips",
+        "React SSR for SEO",
+        "React SEO best practices",
+        "optimizing React apps for search"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/blog/local-vs-regional-seo-comparison",
+      "pageTitle": "Local SEO vs Regional SEO",
+      "primaryKeyword": "local vs regional SEO comparison",
+      "secondaryKeywords": [
+        "local SEO vs regional SEO",
+        "which SEO strategy is better",
+        "local SEO benefits",
+        "regional SEO advantages"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/blog/content-marketing-strategies-digital-agencies",
+      "pageTitle": "Content Marketing Strategies for Digital Agencies",
+      "primaryKeyword": "content marketing strategies for agencies",
+      "secondaryKeywords": [
+        "digital agency content marketing",
+        "agency content strategy",
+        "content marketing for agencies",
+        "agency content creation"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/blog/build-strong-brand-presence-online",
+      "pageTitle": "How to Build a Strong Brand Presence Online",
+      "primaryKeyword": "build online brand presence guide",
+      "secondaryKeywords": [
+        "online branding strategies",
+        "digital brand building",
+        "online brand visibility",
+        "building brand online"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/blog/leveraging-ai-marketing-automation",
+      "pageTitle": "Leveraging AI for Marketing Automation",
+      "primaryKeyword": "AI marketing automation guide",
+      "secondaryKeywords": [
+        "AI in marketing automation",
+        "artificial intelligence marketing",
+        "AI marketing tools",
+        "automated marketing with AI"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/pricing",
+      "pageTitle": "Pricing",
+      "primaryKeyword": "digital marketing pricing India",
+      "secondaryKeywords": [
+        "marketing agency pricing",
+        "digital marketing packages",
+        "marketing services cost",
+        "affordable marketing services"
+      ],
+      "searchIntent": "commercial",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/cart",
+      "pageTitle": "Cart",
+      "primaryKeyword": "marketing services cart",
+      "secondaryKeywords": [
+        "service selection cart",
+        "marketing package cart",
+        "service checkout",
+        "marketing services order"
+      ],
+      "searchIntent": "transactional",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/privacy-policy",
+      "pageTitle": "Privacy Policy",
+      "primaryKeyword": "privacy policy",
+      "secondaryKeywords": [
+        "data privacy policy",
+        "privacy statement",
+        "user privacy policy",
+        "website privacy policy"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/learn/what-is-seo-company",
+      "pageTitle": "What Is SEO Company",
+      "primaryKeyword": "what is SEO company explained",
+      "secondaryKeywords": [
+        "SEO company definition",
+        "understanding SEO companies",
+        "what does SEO company do",
+        "SEO agency explained"
+      ],
+      "searchIntent": "informational",
+      "category": "Blogs/Other"
+    },
+    {
+      "route": "/learn/best-seo-companies",
+      "pageTitle": "Best SEO Companies",
+      "primaryKeyword": "best SEO companies in India",
+      "secondaryKeywords": [
+        "top SEO agencies India",
+        "leading SEO companies",
+        "best SEO services India",
+        "top rated SEO agencies"
+      ],
+      "searchIntent": "commercial",
+      "category": "Blogs/Other"
+    }
+  ]
+}
+

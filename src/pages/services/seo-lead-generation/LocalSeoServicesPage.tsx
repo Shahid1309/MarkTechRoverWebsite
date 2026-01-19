@@ -76,7 +76,7 @@ const LocalSeoServicesPage = () => {
                 <MapPin className="h-10 w-10 text-white" />
               </div>
             </div>
-            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Local SEO Services</h1>
+            <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">Get Local SEO Optimization</h1>
             <p className="text-xl text-gray-300 mb-8 max-w-3xl mx-auto">
               Dominate local search results and attract customers in your area. 
               Our local SEO services help businesses appear in "near me" searches and Google Maps.

@@ -10,8 +10,8 @@ import Button from '../ui/Button';
 const CtaSection = () => {
   return (
     <Section className="text-white py-20">
-      <div className="container">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <div className="container px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 items-center">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -19,13 +19,13 @@ const CtaSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.6 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold mb-6 leading-tight">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 leading-tight">
               Ready to Accelerate Your Digital Growth?
             </h2>
-            <p className="text-gray-300 text-lg mb-8">
-              Let's discuss how our tailored digital marketing strategies can help your business reach its full potential. Schedule a call with our experts today.
+            <p className="text-gray-300 text-base sm:text-lg mb-6 sm:mb-8">
+              Let's discuss how our tailored <Link to="/services/digital-marketing" className="text-accent hover:underline font-medium">digital marketing strategies</Link> can help your business reach its full potential. Schedule a call with our experts today.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4">
               {/* <Link to="/contact">
                 <Button
                   variant="primary"
@@ -68,10 +68,10 @@ const CtaSection = () => {
             whileInView={{ opacity: 1, scale: 1 }}
             viewport={{ once: true }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="bg-white/10 backdrop-blur-lg p-8 rounded-xl border border-white/20"
+            className="bg-white/10 backdrop-blur-lg p-4 sm:p-6 md:p-8 rounded-xl border border-white/20"
           >
-            <h3 className="text-xl font-semibold mb-6 text-purple-300">Why Choose MarkTechRover?</h3>
-            <ul className="space-y-5">
+            <h3 className="text-lg sm:text-xl font-semibold mb-4 sm:mb-6 text-purple-300">Why Choose MarkTechRover?</h3>
+            <ul className="space-y-3 sm:space-y-4 md:space-y-5">
               {[
                 'Data-driven strategies tailored to your business goals',
                 'Transparent reporting and measurable results',

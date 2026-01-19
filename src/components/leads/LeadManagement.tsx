@@ -467,8 +467,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                 {/* Basic Information */}
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Name *</label>
+                    <label htmlFor="lead-name" className="block text-sm font-medium text-gray-400 mb-1">Name *</label>
                     <input
+                      id="lead-name"
+                      name="name"
                       type="text"
                       value={newLead.name}
                       onChange={(e) => setNewLead({ ...newLead, name: e.target.value })}
@@ -477,8 +479,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Email *</label>
+                    <label htmlFor="lead-email" className="block text-sm font-medium text-gray-400 mb-1">Email *</label>
                     <input
+                      id="lead-email"
+                      name="email"
                       type="email"
                       value={newLead.email}
                       onChange={(e) => setNewLead({ ...newLead, email: e.target.value })}
@@ -487,8 +491,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Phone</label>
+                    <label htmlFor="lead-phone" className="block text-sm font-medium text-gray-400 mb-1">Phone</label>
                     <input
+                      id="lead-phone"
+                      name="phone"
                       type="tel"
                       value={newLead.phone}
                       onChange={(e) => setNewLead({ ...newLead, phone: e.target.value })}
@@ -497,8 +503,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                     />
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Company *</label>
+                    <label htmlFor="lead-company" className="block text-sm font-medium text-gray-400 mb-1">Company *</label>
                     <input
+                      id="lead-company"
+                      name="company"
                       type="text"
                       value={newLead.company}
                       onChange={(e) => setNewLead({ ...newLead, company: e.target.value })}
@@ -511,8 +519,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                 {/* Lead Details */}
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Source</label>
+                    <label htmlFor="lead-source" className="block text-sm font-medium text-gray-400 mb-1">Source</label>
                     <select
+                      id="lead-source"
+                      name="source"
                       value={newLead.source}
                       onChange={(e) => setNewLead({ ...newLead, source: e.target.value as any })}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -523,8 +533,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Priority</label>
+                    <label htmlFor="lead-priority" className="block text-sm font-medium text-gray-400 mb-1">Priority</label>
                     <select
+                      id="lead-priority"
+                      name="priority"
                       value={newLead.priority}
                       onChange={(e) => setNewLead({ ...newLead, priority: e.target.value as any })}
                       className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -535,8 +547,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                     </select>
                   </div>
                   <div>
-                    <label className="block text-sm font-medium text-gray-400 mb-1">Value (INR)</label>
+                    <label htmlFor="lead-value" className="block text-sm font-medium text-gray-400 mb-1">Value (INR)</label>
                     <input
+                      id="lead-value"
+                      name="value"
                       type="number"
                       value={newLead.value}
                       onChange={(e) => setNewLead({ ...newLead, value: parseInt(e.target.value) || 0 })}
@@ -553,6 +567,8 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
                     {services.map(service => (
                       <label key={service.id} className="flex items-center gap-2 p-2 border border-gray-200 rounded-lg hover:bg-gray-50 cursor-pointer">
                         <input
+                          id={`lead-service-${service.id}`}
+                          name={`service-${service.id}`}
                           type="checkbox"
                           checked={newLead.services.includes(service.id)}
                           onChange={() => handleServiceToggle(service.id)}
@@ -566,8 +582,10 @@ const LeadManagement: React.FC<LeadManagementProps> = ({
 
                 {/* Notes */}
                 <div>
-                  <label className="block text-sm font-medium text-gray-400 mb-1">Notes</label>
+                  <label htmlFor="lead-notes" className="block text-sm font-medium text-gray-400 mb-1">Notes</label>
                   <textarea
+                    id="lead-notes"
+                    name="notes"
                     value={newLead.notes}
                     onChange={(e) => setNewLead({ ...newLead, notes: e.target.value })}
                     className="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500"

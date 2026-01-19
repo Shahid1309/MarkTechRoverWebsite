@@ -12,6 +12,8 @@ const ContactPage = lazy(() => import('./pages/ContactPage'));
 const BlogPage = lazy(() => import('./pages/BlogPage'));
 const BlogPostPage = lazy(() => import('./pages/BlogPostPage'));
 const CalculatorPage = lazy(() => import('./pages/CalculatorPage'));
+const PricingPage = lazy(() => import('./pages/pricing/pricing'));
+const CartPage = lazy(() => import('./pages/cart/CartPage'));
 const NotFoundPage = lazy(() => import('./pages/NotFoundPage'));
 const PrivacyPolicyPage = lazy(() => import('./pages/PrivacyPolicyPage'));
 const WhoAreWePage = lazy(() => import('./pages/WhoAreWePage'));
@@ -67,6 +69,7 @@ const AmazonSEO = lazy(() => import('./pages/services/revenue-marketing-cro/Amaz
 const ChannelPartnerPipeline = lazy(() => import('./pages/services/revenue-marketing-cro/ChannelPartnerPipeline'));
 
 // Lazy load service pages - AI Technology
+const AiTechnologyPage = lazy(() => import('./pages/services/AiTechnologyPage'));
 const AIAdEditing = lazy(() => import('./pages/services/ai-technology/AIAdEditing'));
 const AIAdGeneration = lazy(() => import('./pages/services/ai-technology/AIAdGeneration'));
 const AIConsulting = lazy(() => import('./pages/services/ai-technology/AIConsulting'));
@@ -94,12 +97,41 @@ const WhatIsCRM = lazy(() => import('./pages/services/ai-technology/WhatIsCRM'))
 
 // Lazy load service pages - UX & Interactive
 const UxInteractivePage = lazy(() => import('./pages/services/UxInteractivePage'));
+// Design
+const WebsiteDesign = lazy(() => import('./pages/services/ux-interactive/WebsiteDesign'));
+const WebsiteRedesign = lazy(() => import('./pages/services/ux-interactive/WebsiteRedesign'));
+const RapidWebDesign = lazy(() => import('./pages/services/ux-interactive/RapidWebDesign'));
+const SocialMediaDesign = lazy(() => import('./pages/services/ux-interactive/SocialMediaDesign'));
+// Content Marketing
+const SeoCopywriting = lazy(() => import('./pages/services/ux-interactive/SeoCopywriting'));
+const ContentMarketing = lazy(() => import('./pages/services/ux-interactive/ContentMarketing'));
+const SocialMediaManagement = lazy(() => import('./pages/services/ux-interactive/SocialMediaManagement'));
+const InfographicsMotionGraphics = lazy(() => import('./pages/services/ux-interactive/InfographicsMotionGraphics'));
+// Development
+const DigitalExperienceDevelopment = lazy(() => import('./pages/services/ux-interactive/DigitalExperienceDevelopment'));
+const ShopifyEcommerceDevelopment = lazy(() => import('./pages/services/ux-interactive/ShopifyEcommerceDevelopment'));
+const WebInfrastructureMaintenance = lazy(() => import('./pages/services/ux-interactive/WebInfrastructureMaintenance'));
+const ContentManagementSystems = lazy(() => import('./pages/services/ux-interactive/ContentManagementSystems'));
+// Challenges We Solve
+const WebsiteLeadGeneration = lazy(() => import('./pages/services/ux-interactive/WebsiteLeadGeneration'));
+const WebsiteTrafficRecovery = lazy(() => import('./pages/services/ux-interactive/WebsiteTrafficRecovery'));
+const WebsiteConversionOptimization = lazy(() => import('./pages/services/ux-interactive/WebsiteConversionOptimization'));
+const WebsiteROIImprovement = lazy(() => import('./pages/services/ux-interactive/WebsiteROIImprovement'));
 
 // Lazy load case studies
 const CaseStudyPage = lazy(() => import('./pages/CaseStudyPage'));
 const ChumbakCaseStudy = lazy(() => import('./pages/case-studies/ChumbakCaseStudy'));
 const DentinicsCaseStudy = lazy(() => import('./pages/case-studies/DentinicsCaseStudy'));
 const IDesignCaseStudy = lazy(() => import('./pages/case-studies/IDesignCaseStudy'));
+const SeoResultsPage = lazy(() => import('./pages/case-studies/SeoResultsPage'));
+const SeoCaseStudiesPage = lazy(() => import('./pages/case-studies/SeoCaseStudiesPage'));
+
+// Lazy load learn pages
+const WhatIsSeoCompany = lazy(() => import('./pages/learn/WhatIsSeoCompany'));
+const BestSeoCompanies = lazy(() => import('./pages/learn/BestSeoCompanies'));
+
+// Lazy load portfolio item page
+const PortfolioItemPage = lazy(() => import('./pages/PortfolioItemPage'));
 
 const App: React.FC = () => {
   return (
@@ -114,7 +146,9 @@ const App: React.FC = () => {
           <Route path="/contact" element={<Layout><ContactPage /></Layout>} />
           <Route path="/blog" element={<Layout><BlogPage /></Layout>} />
           <Route path="/blog/:slug" element={<Layout><BlogPostPage /></Layout>} />
-          <Route path="/calculator" element={<Layout><CalculatorPage /></Layout>} />
+          <Route path="/calculator" element={<Navigate to="/pricing" replace />} />
+          <Route path="/pricing" element={<Layout><PricingPage /></Layout>} />
+          <Route path="/cart" element={<Layout><CartPage /></Layout>} />
           <Route path="/privacy-policy" element={<Layout><PrivacyPolicyPage /></Layout>} />
           <Route path="/who-are-we" element={<Layout><WhoAreWePage /></Layout>} />
           
@@ -178,39 +212,92 @@ const App: React.FC = () => {
           <Route path="/services/channel-partner-pipeline" element={<Layout><ChannelPartnerPipeline /></Layout>} />
           
           {/* Service Pages - AI Technology */}
+          <Route path="/services/ai-technology" element={<Layout><AiTechnologyPage /></Layout>} />
           <Route path="/services/ai-ad-editing" element={<Layout><AIAdEditing /></Layout>} />
+          <Route path="/services/ai-technology/ai-ad-editing" element={<Layout><AIAdEditing /></Layout>} />
           <Route path="/services/ai-ad-generation" element={<Layout><AIAdGeneration /></Layout>} />
+          <Route path="/services/ai-technology/ai-ad-generation" element={<Layout><AIAdGeneration /></Layout>} />
           <Route path="/services/ai-consulting" element={<Layout><AIConsulting /></Layout>} />
+          <Route path="/services/ai-technology/ai-consulting" element={<Layout><AIConsulting /></Layout>} />
           <Route path="/services/ai-content-creation" element={<Layout><AIContentCreation /></Layout>} />
+          <Route path="/services/ai-technology/ai-content-creation" element={<Layout><AIContentCreation /></Layout>} />
           <Route path="/services/ai-cost-guide" element={<Layout><AICostGuide /></Layout>} />
+          <Route path="/services/ai-technology/ai-cost-guide" element={<Layout><AICostGuide /></Layout>} />
           <Route path="/services/ai-digital-marketing" element={<Layout><AIDigitalMarketing /></Layout>} />
+          <Route path="/services/ai-technology/ai-digital-marketing" element={<Layout><AIDigitalMarketing /></Layout>} />
           <Route path="/services/ai-gpt-integration-tech" element={<Layout><AIGPTIntegrationTech /></Layout>} />
+          <Route path="/services/ai-technology/ai-gpt-integration" element={<Layout><AIGPTIntegrationTech /></Layout>} />
           <Route path="/services/ai-seo-services" element={<Layout><AISeoServices /></Layout>} />
+          <Route path="/services/ai-technology/ai-seo-services" element={<Layout><AISeoServices /></Layout>} />
           <Route path="/services/ai-software-development" element={<Layout><AISoftwareDevelopment /></Layout>} />
+          <Route path="/services/ai-technology/ai-software-development" element={<Layout><AISoftwareDevelopment /></Layout>} />
           <Route path="/services/ai-video-production" element={<Layout><AIVideoProduction /></Layout>} />
+          <Route path="/services/ai-technology/ai-video-production" element={<Layout><AIVideoProduction /></Layout>} />
           <Route path="/services/ai-website-generation" element={<Layout><AIWebsiteGeneration /></Layout>} />
+          <Route path="/services/ai-technology/ai-website-generation" element={<Layout><AIWebsiteGeneration /></Layout>} />
           <Route path="/services/closed-loop-analytics" element={<Layout><ClosedLoopAnalytics /></Layout>} />
+          <Route path="/services/ai-technology/closed-loop-analytics" element={<Layout><ClosedLoopAnalytics /></Layout>} />
           <Route path="/services/contact-enrichment" element={<Layout><ContactEnrichment /></Layout>} />
+          <Route path="/services/ai-technology/contact-enrichment" element={<Layout><ContactEnrichment /></Layout>} />
           <Route path="/services/crm-integrations" element={<Layout><CRMIntegrations /></Layout>} />
+          <Route path="/services/ai-technology/crm-integrations" element={<Layout><CRMIntegrations /></Layout>} />
           <Route path="/services/crm-retargeting" element={<Layout><CRMRetargeting /></Layout>} />
+          <Route path="/services/ai-technology/crm-retargeting" element={<Layout><CRMRetargeting /></Layout>} />
           <Route path="/services/customer-data-platform" element={<Layout><CustomerDataPlatform /></Layout>} />
+          <Route path="/services/ai-technology/customer-data-platform" element={<Layout><CustomerDataPlatform /></Layout>} />
           <Route path="/services/data-driven-marketing-guide" element={<Layout><DataDrivenMarketingGuide /></Layout>} />
+          <Route path="/services/ai-technology/data-driven-marketing-guide" element={<Layout><DataDrivenMarketingGuide /></Layout>} />
           <Route path="/services/how-to-write-ai-prompts" element={<Layout><HowToWriteAIPrompts /></Layout>} />
+          <Route path="/services/ai-technology/how-to-write-ai-prompts" element={<Layout><HowToWriteAIPrompts /></Layout>} />
           <Route path="/services/lead-management-scheduling" element={<Layout><LeadManagementScheduling /></Layout>} />
+          <Route path="/services/ai-technology/lead-management-scheduling" element={<Layout><LeadManagementScheduling /></Layout>} />
           <Route path="/services/revenue-cloud-fx-platform" element={<Layout><RevenueCloudFXPlatform /></Layout>} />
+          <Route path="/services/ai-technology/revenuecloudfx-platform" element={<Layout><RevenueCloudFXPlatform /></Layout>} />
           <Route path="/services/track-ai-search-visibility" element={<Layout><TrackAISearchVisibility /></Layout>} />
+          <Route path="/services/ai-technology/track-ai-search-visibility" element={<Layout><TrackAISearchVisibility /></Layout>} />
           <Route path="/services/what-are-crm-integrations" element={<Layout><WhatAreCRMIntegrations /></Layout>} />
+          <Route path="/services/ai-technology/what-are-crm-integrations" element={<Layout><WhatAreCRMIntegrations /></Layout>} />
           <Route path="/services/what-is-ai-marketing" element={<Layout><WhatIsAIMarketing /></Layout>} />
+          <Route path="/services/ai-technology/what-is-ai-marketing" element={<Layout><WhatIsAIMarketing /></Layout>} />
           <Route path="/services/what-is-crm" element={<Layout><WhatIsCRM /></Layout>} />
+          <Route path="/services/ai-technology/what-is-crm" element={<Layout><WhatIsCRM /></Layout>} />
           
           {/* Service Pages - UX & Interactive */}
           <Route path="/services/ux-interactive" element={<Layout><UxInteractivePage /></Layout>} />
+          {/* Design */}
+          <Route path="/services/ux-interactive/website-design" element={<Layout><WebsiteDesign /></Layout>} />
+          <Route path="/services/ux-interactive/website-redesign" element={<Layout><WebsiteRedesign /></Layout>} />
+          <Route path="/services/ux-interactive/rapid-web-design" element={<Layout><RapidWebDesign /></Layout>} />
+          <Route path="/services/ux-interactive/social-media-design" element={<Layout><SocialMediaDesign /></Layout>} />
+          {/* Content Marketing */}
+          <Route path="/services/ux-interactive/seo-copywriting" element={<Layout><SeoCopywriting /></Layout>} />
+          <Route path="/services/ux-interactive/content-marketing" element={<Layout><ContentMarketing /></Layout>} />
+          <Route path="/services/ux-interactive/social-media-management" element={<Layout><SocialMediaManagement /></Layout>} />
+          <Route path="/services/ux-interactive/infographics-motion-graphics" element={<Layout><InfographicsMotionGraphics /></Layout>} />
+          {/* Development */}
+          <Route path="/services/ux-interactive/digital-experience-development" element={<Layout><DigitalExperienceDevelopment /></Layout>} />
+          <Route path="/services/ux-interactive/shopify-ecommerce-development" element={<Layout><ShopifyEcommerceDevelopment /></Layout>} />
+          <Route path="/services/ux-interactive/web-infrastructure-maintenance" element={<Layout><WebInfrastructureMaintenance /></Layout>} />
+          <Route path="/services/ux-interactive/content-management-systems" element={<Layout><ContentManagementSystems /></Layout>} />
+          {/* Challenges We Solve */}
+          <Route path="/services/ux-interactive/website-lead-generation" element={<Layout><WebsiteLeadGeneration /></Layout>} />
+          <Route path="/services/ux-interactive/website-traffic-recovery" element={<Layout><WebsiteTrafficRecovery /></Layout>} />
+          <Route path="/services/ux-interactive/website-conversion-optimization" element={<Layout><WebsiteConversionOptimization /></Layout>} />
+          <Route path="/services/ux-interactive/website-roi-improvement" element={<Layout><WebsiteROIImprovement /></Layout>} />
           
           {/* Case Studies */}
-          <Route path="/case-studies" element={<Layout><CaseStudyPage /></Layout>} />
+          <Route path="/case-studies" element={<Layout><SeoCaseStudiesPage /></Layout>} />
           <Route path="/case-studies/chumbak" element={<Layout><ChumbakCaseStudy /></Layout>} />
           <Route path="/case-studies/dentinics" element={<Layout><DentinicsCaseStudy /></Layout>} />
           <Route path="/case-studies/idesign" element={<Layout><IDesignCaseStudy /></Layout>} />
+          <Route path="/case-studies/seo-results" element={<Layout><SeoResultsPage /></Layout>} />
+          
+          {/* Learn Pages */}
+          <Route path="/learn/what-is-seo-company" element={<Layout><WhatIsSeoCompany /></Layout>} />
+          <Route path="/learn/best-seo-companies" element={<Layout><BestSeoCompanies /></Layout>} />
+          
+          {/* Portfolio Item Routes */}
+          <Route path="/portfolio/:id" element={<Layout><PortfolioItemPage /></Layout>} />
           
           {/* 404 */}
           <Route path="*" element={<Layout><NotFoundPage /></Layout>} />

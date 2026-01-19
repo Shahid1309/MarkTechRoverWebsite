@@ -41,9 +41,7 @@ const PPCManagementServices = () => {
   const [selectedFaqCategory, setSelectedFaqCategory] = useState('all');
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'PPC Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'PPC Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'PPC Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'case-studies', label: 'PPC Case Studies', icon: <Trophy className="h-4 w-4" /> },
     { id: 'approach', label: 'PPC Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
@@ -57,7 +55,7 @@ const PPCManagementServices = () => {
       setIsNavSticky(scrollPosition > heroHeight);
 
       // Detect active section based on scroll position
-      const sections = ['deliverables', 'packages', 'technology', 'case-studies', 'approach', 'faqs'];
+      const sections = ['deliverables', 'technology', 'case-studies', 'approach', 'faqs'];
       const sectionElements = sections.map(id => document.getElementById(id));
       
       let currentSection = 'deliverables';
@@ -242,62 +240,6 @@ const PPCManagementServices = () => {
     }
   ];
 
-  const ppcPackages = [
-    {
-      name: 'PPC Starter',
-      price: '₹35,000',
-      period: '/month',
-      description: 'Perfect for small businesses starting their PPC journey',
-      features: [
-        'Google Ads account setup',
-        'Basic campaign management',
-        'Keyword research and optimization',
-        'Ad copy creation and testing',
-        'Monthly performance reporting',
-        'Dedicated PPC specialist',
-        '₹50,000 ad spend management'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
-    },
-    {
-      name: 'PPC Professional',
-      price: '₹65,000',
-      period: '/month',
-      description: 'Comprehensive PPC solutions for growing businesses',
-      features: [
-        'Everything in Starter, plus:',
-        'Advanced campaign optimization',
-        'Remarketing campaigns',
-        'Display network advertising',
-        'Shopping campaigns',
-        'Video advertising',
-        '₹1,00,000 ad spend management',
-        'Weekly optimization calls'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
-    },
-    {
-      name: 'PPC Enterprise',
-      price: '₹1,25,000',
-      period: '/month',
-      description: 'Full-service PPC management for large businesses',
-      features: [
-        'Everything in Professional, plus:',
-        'Multi-platform PPC management',
-        'Advanced audience targeting',
-        'Custom automation scripts',
-        'Competitive analysis',
-        'Custom reporting dashboard',
-        'Unlimited ad spend management',
-        '24/7 priority support'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
-    }
-  ];
-
   return (
     <PageSEO config={seoConfig}>
       <div className="min-h-screen bg-gradient-to-br from-black via-purple-950 to-purple-900">
@@ -321,13 +263,13 @@ const PPCManagementServices = () => {
 
               {/* Animated Title */}
               <h1 className="text-4xl md:text-6xl font-bold text-white mb-6">
-                PPC Management Services in <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">Delhi</span>
+                Hire PPC Management Agency
               </h1>
 
               {/* Animated Description */}
               <p className="text-xl text-gray-300 mb-8 max-w-4xl mx-auto">
                 Best PPC company in Delhi NCR offering Google Ads management. 
-                Professional PPC services India with proven ROI and immediate results.
+                Professional PPC services India with proven ROI and immediate results. Combine with our <Link to="/services/seo-lead-generation/seo-services" className="text-purple-300 hover:text-purple-200 underline">SEO services</Link> for comprehensive search marketing coverage.
               </p>
               
               {/* Interactive CTA Buttons */}
@@ -341,7 +283,7 @@ const PPCManagementServices = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
                 <button
-                  onClick={() => scrollToSection('packages')}
+                  onClick={() => scrollToSection()}
                   className="group inline-flex items-center px-8 py-4 border border-blue-500/40 text-blue-200 hover:text-white hover:bg-blue-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
                 >
                   <span className="relative z-10">View Packages</span>
@@ -462,15 +404,15 @@ const PPCManagementServices = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-purple-400/10 to-purple-500/10 rounded-full blur-xl animate-pulse"></div>
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 via-transparent to-purple-500/5 rounded-full"></div>
             <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-              <nav className="flex items-center space-x-1 px-6 py-3">
+              <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
-                    className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                    className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg whitespace-nowrap flex-shrink-0`}
                   >
                     {item.icon}
-                    <span className="hidden sm:inline">{item.label}</span>
+                    <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                   </button>
                 ))}
               </nav>
@@ -528,74 +470,7 @@ const PPCManagementServices = () => {
             </div>
           </section>
 
-          {/* PPC Packages Section */}
-          <section id="packages" className="mb-20 py-16 px-4 sm:px-6 lg:px-8">
-            <div className="max-w-7xl mx-auto">
-              <div className="text-center mb-16">
-                <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-sm font-medium mb-4">
-                  <DollarSign className="h-4 w-4 mr-2" />
-                  PPC Management Packages
-                </div>
-                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-                  Choose Your PPC Package
-                </h2>
-                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                  Comprehensive PPC solutions designed for businesses of all sizes and budgets. 
-                  Best PPC services in India with flexible packages.
-                </p>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                {ppcPackages.map((pkg, index) => (
-                  <div
-                    key={index}
-                    className={`relative rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl transform hover:scale-105 ${
-                      pkg.highlighted
-                        ? 'bg-gradient-to-br from-purple-900/30 via-purple-800/20 to-purple-900/30 border-purple-400/50 shadow-lg shadow-purple-500/25'
-                        : 'bg-gradient-to-br from-gray-900/50 via-gray-800/30 to-gray-900/50 border-gray-600/50 hover:border-purple-400/30'
-                    }`}
-                  >
-                    {pkg.highlighted && (
-                      <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                        <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-6 py-2 rounded-full text-sm font-semibold shadow-lg shadow-purple-500/25">
-                          {pkg.cta}
-                        </span>
-                      </div>
-                    )}
-                    
-                    <div className="text-center mb-6">
-                      <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                      <div className="mb-4">
-                        <span className="text-4xl font-bold bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent">{pkg.price}</span>
-                        <span className="text-gray-400 ml-2">{pkg.period}</span>
-                      </div>
-                      <p className="text-gray-300">{pkg.description}</p>
-                    </div>
-                    
-                    <ul className="space-y-3 mb-8">
-                      {pkg.features.map((feature, featureIndex) => (
-                        <li key={featureIndex} className="flex items-start space-x-3">
-                          <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
-                          <span className="text-gray-300">{feature}</span>
-                        </li>
-                      ))}
-                    </ul>
-                    
-                    <Link
-                      to="/contact"
-                      className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                        pkg.highlighted
-                          ? 'bg-gradient-to-r from-purple-500 to-purple-600 text-white hover:from-purple-600 hover:to-purple-700 shadow-lg shadow-purple-500/25'
-                          : 'bg-gradient-to-r from-gray-700 to-gray-800 text-white hover:from-gray-600 hover:to-gray-700 border border-gray-600'
-                      }`}
-                    >
-                      {pkg.cta}
-                    </Link>
-                  </div>
-                ))}
-              </div>
-            </div>
-          </section>
+          
 
           {/* Technology Section */}
           <section id="technology" className="mb-20 py-16 px-4 sm:px-6 lg:px-8">

@@ -65,7 +65,7 @@ const DentinicsCaseStudy = () => {
   return (
     <div>
       <CaseStudyHero
-        title="Dentinics SEO Transformation"
+        title="Dentinics Local SEO Results and Metrics"
         subtitle="Establishing digital dominance for a multi-location dental clinic through comprehensive SEO optimization"
         category="SEO Optimization"
         services={["Local SEO", "Content Marketing", "Technical SEO"]}

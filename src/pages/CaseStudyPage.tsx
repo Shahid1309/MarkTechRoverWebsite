@@ -115,7 +115,7 @@ const CaseStudyPage = () => {
     return (
       <Section className="pt-32">
         <div className="container text-center">
-          <h1>Case Study Not Found</h1>
+          <h2>Case Study Not Found</h2>
           <p className="mt-4">The requested case study could not be found.</p>
           <Link to="/portfolio" className="btn-accent btn-md mt-8">
             View All Case Studies

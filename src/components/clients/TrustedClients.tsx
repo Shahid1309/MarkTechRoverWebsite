@@ -91,7 +91,7 @@ const TrustedClients = () => {
                 <source srcSet={logo.src.replace('.png', '.webp')} type="image/webp" />
               <img
                 src={logo.src}
-                alt={`Client Logo ${logo.id}`}
+                alt={`Trusted client company logo ${logo.id} - MarkTechRover digital marketing agency`}
                 className="max-w-[150px] max-h-[60px] object-contain"
                 srcSet={generateSrcSet(logo.src)}
                 sizes="(max-width: 200px) 100vw, 200px"
@@ -120,7 +120,7 @@ const TrustedClients = () => {
                 <source srcSet={logo.src.replace('.png', '.webp')} type="image/webp" />
               <img
                 src={logo.src}
-                alt={`Client Logo ${logo.id}`}
+                alt={`Trusted client company logo ${logo.id} - MarkTechRover digital marketing agency`}
                 className="max-w-[150px] max-h-[60px] object-contain"
                 srcSet={generateSrcSet(logo.src)}
                 sizes="(max-width: 200px) 100vw, 200px"

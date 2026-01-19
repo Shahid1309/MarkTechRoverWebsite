@@ -90,9 +90,7 @@ const AIGPTIntegrationTech = () => {
   const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Design Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Design Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'Design Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'case-studies', label: 'Design Case Studies', icon: <Trophy className="h-4 w-4" /> },
     { id: 'approach', label: 'Design Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
@@ -242,63 +240,6 @@ const AIGPTIntegrationTech = () => {
     }
   ];
 
-  const designPackages = [
-    {
-      name: 'Basic a-i-g-p-t-integration-tech',
-      price: '₹45,000',
-      period: 'one-time',
-      description: 'Perfect for small businesses and startups',
-      features: [
-        '5-page custom a-i-g-p-t-integration-tech',
-        'Responsive mobile design',
-        'Basic SEO optimization',
-        'Contact form integration',
-        'Social media integration',
-        'Basic CMS setup',
-        '1 month of support'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
-    },
-    {
-      name: 'Professional a-i-g-p-t-integration-tech',
-      price: '₹85,000',
-      period: 'one-time',
-      description: 'Comprehensive a-i-g-p-t-integration-tech for growing businesses',
-      features: [
-        '10-page custom a-i-g-p-t-integration-tech',
-        'Advanced responsive design',
-        'E-commerce functionality',
-        'Advanced SEO optimization',
-        'Custom animations and interactions',
-        'Advanced CMS with admin panel',
-        '3 months of support',
-        'Performance optimization'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
-    },
-    {
-      name: 'Enterprise a-i-g-p-t-integration-tech',
-      price: '₹1,50,000',
-      period: 'one-time',
-      description: 'Full-featured a-i-g-p-t-integration-tech for large businesses',
-      features: [
-        'Unlimited page custom design',
-        'Advanced e-commerce platform',
-        'Custom functionality development',
-        'Advanced SEO and analytics',
-        'Multi-language support',
-        'Advanced security features',
-        '6 months of support',
-        'Performance monitoring',
-        'Custom integrations'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
-    }
-  ];
-
   return (
     <PageSEO config={seoConfig}>
       <div className="min-h-screen ">
@@ -315,7 +256,7 @@ const AIGPTIntegrationTech = () => {
               </div>
               
               <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                a-i-g-p-t-integration-tech Services in Delhi
+                Hire GPT Integration Services
               </h1>
               
               <p className="text-xl md:text-2xl text-purple-200 mb-8 max-w-4xl mx-auto leading-relaxed">
@@ -445,68 +386,7 @@ const AIGPTIntegrationTech = () => {
             </div>
           </section>
 
-          {/* Design Packages Section */}
-          <section id="packages" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                a-i-g-p-t-integration-tech Packages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive a-i-g-p-t-integration-tech solutions. Best a-i-g-p-t-integration-tech services in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {designPackages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500"> {pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
+          
 
           {/* Technology Section */}
           <section id="technology" className="mb-20">

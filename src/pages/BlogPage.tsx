@@ -29,7 +29,7 @@ const BlogPage = () => {
       <Section className="pt-32 bg-secondary">
         <div className="container">
           <div className="max-w-3xl mx-auto text-center mb-12">
-            <h1 className="mb-4">Our Blog</h1>
+            <h1 className="mb-4">Digital Marketing Blog India</h1>
             <p className="text-muted-foreground text-lg">
               Discover insights, tutorials, and best practices about SEO, marketing, and web development
               to help grow your business online.

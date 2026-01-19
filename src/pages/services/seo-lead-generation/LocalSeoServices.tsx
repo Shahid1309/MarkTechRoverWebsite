@@ -97,9 +97,7 @@ const LocalSeoServices = () => {
   const [showTrustBadges, setShowTrustBadges] = useState(false);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Local SEO Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'approach', label: 'Local SEO Approach', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'approach', label: 'Local SEO Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
   ];
 
@@ -190,88 +188,7 @@ const LocalSeoServices = () => {
     }
   ];
 
-  const packages = [
-    {
-      name: 'Local SEO Starter',
-      price: '₹25,000',
-      monthlyPrice: '₹12,500/mo',
-      keyphrases: 'Up to 50',
-      pages: 'Up to 15',
-      contentAssets: '6',
-      originalPrice: '₹35,000',
-      savings: '₹10,000',
-      features: [
-        'Basic Local SEO Strategy',
-        'Google My Business Setup',
-        'Local Keyword Research (50 keywords)',
-        'Basic Local Citation Building',
-        'Local Content Creation (3 pieces/month)',
-        'Basic Local Analytics Setup',
-        'Monthly Local Performance Reports',
-        'Email Support'
-      ],
-      bestFor: 'Small local businesses starting with local SEO',
-      limitations: ['Limited location coverage', 'Basic reporting only', 'No priority support']
-    },
-    {
-      name: 'Local SEO Professional',
-      price: '₹45,000',
-      monthlyPrice: '₹22,500/mo',
-      keyphrases: 'Up to 100',
-      pages: 'Up to 30',
-      contentAssets: '15',
-      originalPrice: '₹55,000',
-      savings: '₹10,000',
-      features: [
-        'Comprehensive Local SEO Strategy',
-        'Advanced Google My Business Management',
-        'Local Keyword Research (100 keywords)',
-        'Complete Local Citation Building',
-        'Local Content Marketing Strategy',
-        'Local Link Building Campaigns',
-        'Advanced Local Analytics & Reporting',
-        'Local Competitor Analysis',
-        'Dedicated Local SEO Manager',
-        'Priority Phone & Email Support',
-        'Local Review Management',
-        'Local Schema Implementation',
-        'Local Social Media Integration',
-        'Local Mobile Optimization',
-        'Local Voice Search Optimization'
-      ],
-      bestFor: 'Growing local businesses serious about local SEO results',
-      exclusiveFeatures: ['Exclusive: AI-Powered Local Optimization', 'Exclusive: Advanced Local Competitor Tracking', 'Exclusive: Custom Local SEO Dashboard']
-    },
-    {
-      name: 'Local SEO Enterprise',
-      price: '₹85,000',
-      monthlyPrice: '₹42,500/mo',
-      keyphrases: 'Up to 200',
-      pages: 'Up to 60',
-      contentAssets: '30',
-      originalPrice: '₹95,000',
-      savings: '₹10,000',
-      features: [
-        'Everything in Professional',
-        'Enterprise Local SEO Strategy',
-        'Advanced Local Keyword Research (200+ keywords)',
-        'Multi-location Local SEO Management',
-        'Advanced Local Content Marketing',
-        'Local PR and Community Building',
-        'Advanced Local Analytics & Custom Reports',
-        'Weekly Local Performance Reviews',
-        'Dedicated Local SEO Team (3 specialists)',
-        '24/7 Priority Support',
-        'Custom Local SEO Tools & Integrations',
-        'Advanced Local Schema Implementation',
-        'Local Voice Search Strategy',
-        'Local Video SEO Optimization',
-        'Local Influencer Marketing'
-      ],
-      bestFor: 'Large local businesses requiring maximum local SEO impact',
-      limitations: ['Higher investment required', 'Complex implementation timeline']
-    }
-  ];
+  
 
   const approachSteps = [
     {
@@ -444,7 +361,7 @@ const LocalSeoServices = () => {
       setIsNavSticky(scrollY > 200);
 
       // Determine active section based on scroll position
-      const sections = ['deliverables', 'packages', 'approach', 'faqs'];
+      const sections = ['deliverables', 'approach', 'faqs'];
       let currentSection = 'deliverables';
 
       sections.forEach(sectionId => {
@@ -527,7 +444,7 @@ const LocalSeoServices = () => {
             <h1 className={`text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000 ${
               heroAnimationComplete ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'
             }`}>
-              Marktechrover: Best <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">Local SEO Services</span> in Delhi, NCR & India
+              Hire Local SEO Agency
             </h1>
 
             {/* Animated Description */}
@@ -598,7 +515,7 @@ const LocalSeoServices = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <button
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection()}
                 className="group inline-flex items-center px-8 py-4 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
               >
                 <span className="relative z-10">View Packages</span>
@@ -651,7 +568,7 @@ const LocalSeoServices = () => {
           
           {/* Main Navigation Container */}
           <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-            <nav className="flex items-center space-x-1 px-6 py-3">
+            <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -660,10 +577,10 @@ const LocalSeoServices = () => {
                     activeSection === item.id
                       ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' 
                       : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'
-                  } px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  } px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg whitespace-nowrap flex-shrink-0`}
                 >
                   {item.icon}
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                 </button>
               ))}
             </nav>

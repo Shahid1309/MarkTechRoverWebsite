@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, ChevronDown, Sun, Moon, User, Phone, TrendingUp, Star, Target, Zap, Palette, Cpu, ShoppingCart, BookOpen, ArrowRight, CheckCircle, PenTool, Code, Lightbulb } from 'lucide-react';
+import { Menu, X, ChevronDown, Sun, Moon, User, Phone, TrendingUp, Star, Target, Zap, Palette, Cpu, ShoppingCart, BookOpen, ArrowRight, CheckCircle, PenTool, Code, Lightbulb, IndianRupee } from 'lucide-react';
 import Logo from '../../assets/Main.png';
 
 interface SubmenuItem {
@@ -90,36 +90,36 @@ const Header = () => {
       icon: <TrendingUp className="h-4 w-4" />,
       submenu: [
         // Digital Intelligence
-        { name: 'Web Channel Call Tracking', href: '/services/revenue-marketing-cro/web-channel-call-tracking', description: 'Track and analyze call performance across channels', category: 'Digital Intelligence' },
-        { name: 'SEO Reporting & Forecasting', href: '/services/revenue-marketing-cro/seo-reporting-forecasting', description: 'Advanced SEO analytics and future predictions', category: 'Digital Intelligence' },
-        { name: 'Channel Attribution & Forecasting', href: '/services/revenue-marketing-cro/channel-attribution', description: 'Multi-channel attribution and revenue forecasting', category: 'Digital Intelligence' },
-        { name: 'Digital Marketing Competitor Analysis', href: '/services/revenue-marketing-cro/competitor-analysis', description: 'Comprehensive competitive intelligence', category: 'Digital Intelligence' },
-        { name: 'Private Equity Due Diligence', href: '/services/revenue-marketing-cro/private-equity-due-diligence', description: 'Marketing due diligence for PE investments', category: 'Digital Intelligence' },
-        { name: 'Revenue Operations', href: '/services/revenue-marketing-cro/revenue-operations', description: 'Optimize revenue operations and processes', category: 'Digital Intelligence' },
+        { name: 'Web Channel Call Tracking', href: '/services/web-channel-call-tracking', description: 'Track and analyze call performance across channels', category: 'Digital Intelligence' },
+        { name: 'SEO Reporting & Forecasting', href: '/services/seo-reporting-forecasting', description: 'Advanced SEO analytics and future predictions', category: 'Digital Intelligence' },
+        { name: 'Channel Attribution & Forecasting', href: '/services/channel-attribution', description: 'Multi-channel attribution and revenue forecasting', category: 'Digital Intelligence' },
+        { name: 'Digital Marketing Competitor Analysis', href: '/services/competitor-analysis', description: 'Comprehensive competitive intelligence', category: 'Digital Intelligence' },
+        { name: 'Private Equity Due Diligence', href: '/services/private-equity-due-diligence', description: 'Marketing due diligence for PE investments', category: 'Digital Intelligence' },
+        { name: 'Revenue Operations', href: '/services/revenue-operations', description: 'Optimize revenue operations and processes', category: 'Digital Intelligence' },
         
         // Conversion
-        { name: 'Conversion Rate Optimization', href: '/services/revenue-marketing-cro/conversion-rate-optimization', description: 'Systematic CRO to boost conversion rates', category: 'Conversion' },
-        { name: 'User Experience Testing', href: '/services/revenue-marketing-cro/ux-testing', description: 'A/B testing and UX optimization', category: 'Conversion' },
-        { name: 'Landing Pages & Funnels', href: '/services/revenue-marketing-cro/landing-pages-funnels', description: 'High-converting landing pages and sales funnels', category: 'Conversion' },
-        { name: 'Online Review Acceleration', href: '/services/revenue-marketing-cro/online-review-acceleration', description: 'Boost online reviews and reputation', category: 'Conversion' },
-        { name: 'Channel Partner Sales Pipeline Management', href: '/services/revenue-marketing-cro/channel-partner-pipeline', description: 'Optimize partner sales pipelines', category: 'Conversion' },
-        { name: 'Website Personalization', href: '/services/revenue-marketing-cro/website-personalization', description: 'Dynamic website personalization solutions', category: 'Conversion' },
+        { name: 'Conversion Rate Optimization', href: '/services/conversion-rate-optimization', description: 'Systematic CRO to boost conversion rates', category: 'Conversion' },
+        { name: 'User Experience Testing', href: '/services/ux-testing', description: 'A/B testing and UX optimization', category: 'Conversion' },
+        { name: 'Landing Pages & Funnels', href: '/services/landing-pages-funnels', description: 'High-converting landing pages and sales funnels', category: 'Conversion' },
+        { name: 'Online Review Acceleration', href: '/services/online-review-acceleration', description: 'Boost online reviews and reputation', category: 'Conversion' },
+        { name: 'Channel Partner Sales Pipeline Management', href: '/services/channel-partner-pipeline', description: 'Optimize partner sales pipelines', category: 'Conversion' },
+        { name: 'Website Personalization', href: '/services/website-personalization', description: 'Dynamic website personalization solutions', category: 'Conversion' },
         
         // Marketing Automation
-        { name: 'Account-Based Marketing Services', href: '/services/revenue-marketing-cro/account-based-marketing', description: 'Targeted ABM strategies for B2B growth', category: 'Marketing Automation' },
-        { name: 'Lead Nurture Email Marketing', href: '/services/revenue-marketing-cro/lead-nurture-email', description: 'Automated email nurturing campaigns', category: 'Marketing Automation' },
-        { name: 'Email Marketing Management', href: '/services/revenue-marketing-cro/email-marketing-management', description: 'Complete email marketing solutions', category: 'Marketing Automation' },
-        { name: 'Salesforce Marketing Automation', href: '/services/revenue-marketing-cro/salesforce-marketing-automation', description: 'Salesforce marketing automation setup', category: 'Marketing Automation' },
-        { name: 'Microsoft Dynamics Marketing Automation', href: '/services/revenue-marketing-cro/microsoft-dynamics-automation', description: 'Dynamics 365 marketing automation', category: 'Marketing Automation' },
-        { name: 'Employment & Recruiting Marketing', href: '/services/revenue-marketing-cro/recruiting-marketing', description: 'Marketing automation for recruitment', category: 'Marketing Automation' },
+        { name: 'Account-Based Marketing Services', href: '/services/account-based-marketing', description: 'Targeted ABM strategies for B2B growth', category: 'Marketing Automation' },
+        { name: 'Lead Nurture Email Marketing', href: '/services/lead-nurture-email', description: 'Automated email nurturing campaigns', category: 'Marketing Automation' },
+        { name: 'Email Marketing Management', href: '/services/email-marketing-management', description: 'Complete email marketing solutions', category: 'Marketing Automation' },
+        { name: 'Salesforce Marketing Automation', href: '/services/salesforce-marketing-automation', description: 'Salesforce marketing automation setup', category: 'Marketing Automation' },
+        { name: 'Microsoft Dynamics Marketing Automation', href: '/services/microsoft-dynamics-automation', description: 'Dynamics 365 marketing automation', category: 'Marketing Automation' },
+        { name: 'Employment & Recruiting Marketing', href: '/services/recruiting-marketing', description: 'Marketing automation for recruitment', category: 'Marketing Automation' },
         
         // B2B Commerce Platforms
-        { name: 'SEO for Amazon', href: '/services/revenue-marketing-cro/amazon-seo', description: 'Amazon marketplace SEO optimization', category: 'B2B Commerce Platforms' },
-        { name: 'Advertising Management for Amazon', href: '/services/revenue-marketing-cro/amazon-advertising', description: 'Amazon PPC and advertising management', category: 'B2B Commerce Platforms' },
-        { name: 'Shopify Optimization Services', href: '/services/revenue-marketing-cro/shopify-optimization', description: 'Complete Shopify store optimization', category: 'B2B Commerce Platforms' },
-        { name: 'Facebook Marketplace for Business', href: '/services/revenue-marketing-cro/facebook-marketplace', description: 'Facebook Marketplace business solutions', category: 'B2B Commerce Platforms' },
-        { name: 'Influencer Marketing Services', href: '/services/revenue-marketing-cro/influencer-marketing', description: 'Strategic influencer marketing campaigns', category: 'B2B Commerce Platforms' },
-        { name: 'Walmart Marketplace Advertising', href: '/services/revenue-marketing-cro/walmart-marketplace', description: 'Walmart Marketplace advertising management', category: 'B2B Commerce Platforms' }
+        { name: 'SEO for Amazon', href: '/services/amazon-seo', description: 'Amazon marketplace SEO optimization', category: 'B2B Commerce Platforms' },
+        { name: 'Advertising Management for Amazon', href: '/services/amazon-advertising', description: 'Amazon PPC and advertising management', category: 'B2B Commerce Platforms' },
+        { name: 'Shopify Optimization Services', href: '/services/shopify-optimization', description: 'Complete Shopify store optimization', category: 'B2B Commerce Platforms' },
+        { name: 'Facebook Marketplace for Business', href: '/services/facebook-marketplace', description: 'Facebook Marketplace business solutions', category: 'B2B Commerce Platforms' },
+        { name: 'Influencer Marketing Services', href: '/services/influencer-marketing', description: 'Strategic influencer marketing campaigns', category: 'B2B Commerce Platforms' },
+        { name: 'Walmart Marketplace Advertising', href: '/services/walmart-marketplace', description: 'Walmart Marketplace advertising management', category: 'B2B Commerce Platforms' }
       ]
     },
     {
@@ -265,31 +265,42 @@ const Header = () => {
           <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_50%,rgba(147,51,234,0.15),transparent_60%)] animate-pulse"></div>
           <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_25%,rgba(147,51,234,0.05)_25%,rgba(147,51,234,0.05)_75%,transparent_75%)] bg-[length:20px_20px]"></div>
           
-          <div className="relative w-full px-4">
-            <div className="flex justify-between items-center h-10 text-xs mac-13:text-sm mac-15:text-base">
-              <div className="flex items-center space-x-6">
-                <div className="flex items-center space-x-2 bg-gradient-to-r from-purple-400 via-purple-400 to-purple-300 bg-clip-text text-transparent">
-                  <div className="p-1 rounded-full bg-gradient-to-r from-purple-400 to-purple-500 shadow-lg shadow-purple-500/25">
-                    <TrendingUp className="h-3 w-3 text-white" />
+          <div className="relative w-full px-2 sm:px-4">
+            <div className="flex justify-between items-center h-8 sm:h-10 text-xs mac-13:text-sm mac-15:text-base">
+              <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-6 flex-1 min-w-0">
+                <div className="flex items-center space-x-1 sm:space-x-2 bg-gradient-to-r from-purple-400 via-purple-400 to-purple-300 bg-clip-text text-transparent">
+                  <div className="p-0.5 sm:p-1 rounded-full bg-gradient-to-r from-purple-400 to-purple-500 shadow-lg shadow-purple-500/25 flex-shrink-0">
+                    <TrendingUp className="h-2.5 w-2.5 sm:h-3 sm:w-3 text-white" />
                   </div>
-                  <span className="font-bold tracking-wide">REVENUE DRIVEN: ₹3,021,182,299</span>
+                  <span className="font-bold tracking-wide truncate">
+                    <span className="hidden sm:inline">REVENUE DRIVEN: </span>
+                    <span className="sm:hidden">₹3,021Cr</span>
+                    <span className="hidden sm:inline">₹3,021,182,299</span>
+                  </span>
                 </div>
               </div>
-              <div className="flex items-center space-x-6">
-                <button
-                  onClick={toggleTheme}
-                  className="p-1.5 rounded-lg transition-all duration-300 hover:scale-105 bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:from-purple-500/30 hover:to-purple-400/30 border border-purple-500/30 shadow-lg backdrop-blur-sm"
-                  title="Toggle theme"
+              <div className="flex items-center space-x-2 sm:space-x-4 md:space-x-6 flex-shrink-0">
+                <Link
+                  to="/pricing"
+                  className="flex sm:hidden items-center justify-center p-1 ml-auto rounded-lg transition-all duration-300 hover:scale-105 bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:from-purple-500/30 hover:to-purple-400/30 border border-purple-500/30 shadow-lg backdrop-blur-sm"
+                  aria-label="Pricing"
                 >
-                  {isDarkMode ? <Sun className="h-4 w-4 text-yellow-400" /> : <Moon className="h-4 w-4 text-purple-300" />}
-                </button>
+                  <IndianRupee className="h-5 w-5 text-purple-300" />
+                </Link>
+                <Link
+                  to="/pricing"
+                  className="hidden sm:flex items-center space-x-1 sm:space-x-2 font-medium transition-all duration-300 hover:scale-105 text-purple-300 hover:text-purple-200"
+                >
+                  <IndianRupee className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="text-xs sm:text-sm">Pricing</span>
+                </Link>
                 <Link
                   to="/client-login"
-                  className="flex items-center space-x-2 font-medium transition-all duration-300 hover:scale-105 text-purple-300 hover:text-purple-200"
+                  className="hidden md:flex items-center space-x-1 sm:space-x-2 font-medium transition-all duration-300 hover:scale-105 text-purple-300 hover:text-purple-200"
                 >
-                  <User className="h-4 w-4" />
-                  <span>Client Login</span>
-        </Link>
+                  <User className="h-3 w-3 sm:h-4 sm:w-4" />
+                  <span className="text-xs sm:text-sm">Client Login</span>
+                </Link>
               </div>
             </div>
           </div>
@@ -307,20 +318,24 @@ const Header = () => {
           <div className="absolute inset-0 bg-gradient-to-r from-black/10 via-transparent to-purple-900/20"></div>
         )}
         
-        <div className="relative w-full px-1">
-          <div className={`flex justify-between items-center overflow-visible transition-all duration-500 ${isScrolled ? 'h-14' : 'h-16'}`}>
+        <div className="relative w-full px-3 sm:px-4 lg:px-6">
+          <div className={`flex justify-between items-center overflow-visible transition-all duration-500 h-14 sm:h-16`}>
             {/* Logo - Keeping original */}
-            <div className="flex-shrink-0 ml-8">
-              <Link to="/" className="flex items-center space-x-3 group">
+            <div className="flex-shrink-0">
+              <Link to="/" className="flex items-center space-x-2 group">
                 <div className="relative">
-                  <div className={`absolute inset-0  rounded-xl blur-lg transition-all duration-300 group-hover:blur-xl bg-gradient-to-r from-purple-500/30 to-purple-400/30`}></div>
-                  <img src={Logo} alt="MarkTechRover" className={`relative transition-all duration-500 ${isScrolled ? 'h-9' : 'h-11'} w-auto`} />
+                  <div className="absolute inset-0 rounded-xl blur-lg transition-all duration-300 group-hover:blur-xl bg-gradient-to-r from-purple-500/30 to-purple-400/30"></div>
+                  <img
+                    src={Logo}
+                    alt="MarkTechRover - Digital Marketing Agency India"
+                    className="relative h-7 w-auto sm:h-9 transition-all duration-500"
+                  />
                 </div>
               </Link>
             </div>
 
         {/* Desktop Navigation */}
-            <nav className="hidden lg:flex items-center  space-x-0 relative p-0.5 mac-13:space-x-0 mac-15:space-x-0 mac-16:space-x-0">
+            <nav className="hidden lg:flex items-center space-x-1 relative">
               {services.map((service) => (
                 <div key={service.name} className="relative group">
                   <button
@@ -339,12 +354,12 @@ const Header = () => {
                         ? 'text-purple-300 bg-gradient-to-r from-purple-500/20 to-purple-400/20 border-purple-400' 
                         : hoveredService === service.name
                         ? 'text-purple-300 bg-gradient-to-r from-purple-500/20 to-purple-400/20 border-purple-400'
-                        : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/10 to-purple-400/10'
-                    } px-5 py-2.5 text-xs font-semibold transition-all duration-300 flex items-center space-x-2 rounded-lg mx-0 backdrop-blur-sm border border-transparent hover:border-purple-300/30 border-b-2 border-transparent focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 mac-13:px-7 mac-13:py-3.5 mac-13:text-sm mac-15:px-9 mac-15:py-4.5 mac-15:text-base mac-16:px-11 mac-16:py-5.5 mac-16:text-lg`}
+                        : 'text-white hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/10 to-purple-400/10'
+                    } px-4 py-2.5 text-sm font-medium transition-all duration-300 flex items-center space-x-1.5 rounded-lg mx-0.5 backdrop-blur-sm border border-transparent hover:border-purple-300/30 focus:outline-none focus-visible:outline-none ring-0 focus:ring-0 whitespace-nowrap`}
                   >
                     {service.icon}
                     <span>{service.name}</span>
-                    <ChevronDown className="h-4 w-4 transition-transform duration-300 group-hover:rotate-180" />
+                    <ChevronDown className="h-3.5 w-3.5 transition-transform duration-300 group-hover:rotate-180" />
                   </button>
                 </div>
               ))}
@@ -352,7 +367,7 @@ const Header = () => {
               {/* Fixed Position Mega Menu - Centered */}
               {hoveredService && (
                 <div 
-                  className="fixed left-1/2 transform -translate-x-1/2 top-full bg-black/95 backdrop-blur-xl border border-purple-500/20 shadow-2xl rounded-b-2xl w-screen z-50 mega-menu"
+                  className="fixed left-1/2 transform -translate-x-1/2 top-full bg-black/95 backdrop-blur-xl border border-purple-500/20 shadow-2xl rounded-b-2xl w-full max-w-7xl z-50 mega-menu"
                   onMouseEnter={() => {
                     if (hoverTimeoutRef.current) {
                       clearTimeout(hoverTimeoutRef.current);
@@ -363,35 +378,35 @@ const Header = () => {
                     hoverTimeoutRef.current = setTimeout(() => setHoveredService(null), 100);
                   }}
                 >
-                  <div className="w-full px-4 sm:px-6 lg:px-8 py-12">
+                  <div className="w-full px-6 sm:px-8 lg:px-10 py-8">
                     <div className="max-w-none mx-auto">
                       {/* Service Header */}
-                      <div className="flex items-center space-x-4 mb-8 pb-6 border-b border-purple-500/20">
-                        <div className="w-16 h-16 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-2xl flex items-center justify-center shadow-lg shadow-purple-500/25">
+                      <div className="flex items-center space-x-3 mb-6 pb-4 border-b border-purple-500/20">
+                        <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-lg flex items-center justify-center shadow-lg shadow-purple-500/25">
                           {getCurrentService().icon}
                         </div>
                         <div>
-                          <h2 className="text-3xl font-bold text-white mb-2">{getCurrentService().name}</h2>
-                          <p className="text-gray-400 text-lg">Comprehensive solutions to drive your business growth</p>
+                          <h2 className="text-xl font-bold text-white mb-0.5">{getCurrentService().name}</h2>
+                          <p className="text-gray-400 text-sm">Comprehensive solutions to drive your business growth</p>
                         </div>
                       </div>
 
                       {/* Professional & Creative SEO Services Layout */}
-                      <div className="grid grid-cols-1 lg:grid-cols-5 gap-6">
+                      <div className="grid grid-cols-1 lg:grid-cols-4 gap-6">
                         {hoveredService === 'SEO & Lead Generation' && (
                           <>
                             {/* Column 1: Organic Search */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-green-500 via-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/25">
-                                  <Target className="h-5 w-5 text-white" />
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-green-500 via-green-400 to-green-600 rounded-lg flex items-center justify-center shadow-lg shadow-green-500/25">
+                                  <Target className="h-3.5 w-3.5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Organic Search</h3>
+                                  <h3 className="text-sm font-bold text-white">Organic Search</h3>
                                   <p className="text-gray-400 text-xs">Drive sustainable traffic growth</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Organic Search')
                                   .slice(0, 4)
@@ -399,7 +414,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-green-500/10 to-green-400/10 rounded-lg p-3 border border-transparent hover:border-green-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-green-500/10 to-green-400/10 rounded-lg p-2 border border-transparent hover:border-green-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -407,10 +422,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-green-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-green-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-green-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-green-500/20 to-green-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-green-500/30 group-hover/item:to-green-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-green-300" />
@@ -422,17 +436,17 @@ const Header = () => {
           </div>
 
                             {/* Column 2: Digital Advertising */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25">
-                                  <TrendingUp className="h-5 w-5 text-white" />
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/25">
+                                  <TrendingUp className="h-3.5 w-3.5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Digital Advertising</h3>
+                                  <h3 className="text-sm font-bold text-white">Digital Advertising</h3>
                                   <p className="text-gray-400 text-xs">Maximize ROI with targeted campaigns</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Digital Advertising')
                                   .slice(0, 4)
@@ -440,7 +454,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-blue-500/10 to-blue-400/10 rounded-lg p-3 border border-transparent hover:border-blue-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-blue-500/10 to-blue-400/10 rounded-lg p-2 border border-transparent hover:border-blue-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -448,10 +462,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-blue-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-blue-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-blue-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-blue-500/20 to-blue-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-blue-500/30 group-hover/item:to-blue-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-blue-300" />
@@ -463,17 +476,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 3: Ecommerce */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/25">
-                                  <ShoppingCart className="h-5 w-5 text-white" />
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 rounded-lg flex items-center justify-center shadow-lg shadow-orange-500/25">
+                                  <ShoppingCart className="h-3.5 w-3.5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Ecommerce</h3>
+                                  <h3 className="text-sm font-bold text-white">Ecommerce</h3>
                                   <p className="text-gray-400 text-xs">Boost online sales & conversions</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Ecommerce')
                                   .slice(0, 4)
@@ -481,7 +494,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-orange-500/10 to-orange-400/10 rounded-lg p-3 border border-transparent hover:border-orange-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-orange-500/10 to-orange-400/10 rounded-lg p-2 border border-transparent hover:border-orange-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -489,10 +502,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-orange-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-orange-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-orange-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-orange-500/30 group-hover/item:to-orange-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-orange-300" />
@@ -504,17 +516,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 4: Learn */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25">
-                                  <BookOpen className="h-5 w-5 text-white" />
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-indigo-500 via-indigo-400 to-indigo-600 rounded-lg flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                                  <BookOpen className="h-3.5 w-3.5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Learn</h3>
+                                  <h3 className="text-sm font-bold text-white">Learn</h3>
                                   <p className="text-gray-400 text-xs">Resources & insights</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Learn')
                                   .slice(0, 4)
@@ -522,7 +534,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-indigo-500/10 to-indigo-400/10 rounded-lg p-3 border border-transparent hover:border-indigo-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-indigo-500/10 to-indigo-400/10 rounded-lg p-2 border border-transparent hover:border-indigo-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -530,10 +542,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-indigo-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-indigo-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-indigo-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-indigo-500/20 to-indigo-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-indigo-500/30 group-hover/item:to-indigo-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-indigo-300" />
@@ -544,77 +555,23 @@ const Header = () => {
                               </div>
                             </div>
 
-                            {/* Column 5: Interactive CTA Section */}
-                            <div className="space-y-6">
-                              {/* Featured CTA Card */}
-                              <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-br from-purple-900/40 via-purple-800/40 to-purple-900/40 border border-purple-500/30 backdrop-blur-sm group/cta">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
-                                <div className="relative z-10">
-                                  <div className="text-center mb-4">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-purple-500/25 group-hover/cta:scale-110 transition-transform duration-300">
-                                      <Target className="h-5 w-5 text-white" />
-                                    </div>
-                                    <h4 className="text-lg font-bold text-white mb-2">Free SEO Audit</h4>
-                                    <p className="text-gray-300 text-sm mb-3">Get a comprehensive analysis of your website's SEO potential</p>
-                                    <div className="flex items-center justify-center space-x-4 text-xs text-gray-400 mb-3">
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>15-min setup</span>
-                                      </div>
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>No commitment</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <Link
-                                    to="/schedule-call"
-                                    className="block w-full text-center px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 shadow-purple-500/25 hover:scale-105 transform text-sm group-hover/cta:shadow-xl group-hover/cta:shadow-purple-500/30"
-                                  >
-                                    Start Free Audit
-                                  </Link>
-                                </div>
-                              </div>
-
-                              {/* Success Metrics */}
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-green-900/20 via-green-800/20 to-green-900/20 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">247%</div>
-                                  <div className="text-xs text-gray-400 mt-1">Avg. Traffic Increase</div>
-                                </div>
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-blue-900/20 via-blue-800/20 to-blue-900/20 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">85%</div>
-                                  <div className="text-xs text-gray-400 mt-1">Top 3 Rankings</div>
-                                </div>
-                              </div>
-
-                              {/* Quick Action Links */}
-                              <div className="space-y-2">
-                                <Link
-                                  to="/case-studies"
-                                  className="block w-full text-center px-3 py-2.5 rounded-lg font-medium transition-all duration-300 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 text-sm hover:scale-105 transform"
-                                >
-                                  View Case Studies
-                                </Link>
-                              </div>
-                            </div>
                           </>
                         )}
 
                         {hoveredService === 'Revenue Marketing & CRO' && (
                           <>
                             {/* Column 1: Digital Intelligence */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25">
-                                  <Cpu className="h-5 w-5 text-white" />
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-600 rounded-lg flex items-center justify-center shadow-lg shadow-blue-500/25">
+                                  <Cpu className="h-3.5 w-3.5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Digital Intelligence</h3>
+                                  <h3 className="text-sm font-bold text-white">Digital Intelligence</h3>
                                   <p className="text-gray-400 text-xs">Data-driven insights & analytics</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Digital Intelligence')
                                   .slice(0, 4)
@@ -622,7 +579,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-blue-500/10 to-blue-400/10 rounded-lg p-3 border border-transparent hover:border-blue-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-blue-500/10 to-blue-400/10 rounded-lg p-2 border border-transparent hover:border-blue-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -630,10 +587,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-blue-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-blue-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-blue-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-blue-500/20 to-blue-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-blue-500/30 group-hover/item:to-blue-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-blue-300" />
@@ -645,17 +601,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 2: Conversion */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-green-500 via-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/25">
-                                  <TrendingUp className="h-5 w-5 text-white" />
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-green-500 via-green-400 to-green-600 rounded-lg flex items-center justify-center shadow-lg shadow-green-500/25">
+                                  <TrendingUp className="h-3.5 w-3.5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Conversion</h3>
+                                  <h3 className="text-sm font-bold text-white">Conversion</h3>
                                   <p className="text-gray-400 text-xs">Optimize conversion rates</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Conversion')
                                   .slice(0, 4)
@@ -663,7 +619,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-green-500/10 to-green-400/10 rounded-lg p-3 border border-transparent hover:border-green-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-green-500/10 to-green-400/10 rounded-lg p-2 border border-transparent hover:border-green-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -671,10 +627,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-green-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-green-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-green-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-green-500/20 to-green-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-green-500/30 group-hover/item:to-green-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-green-300" />
@@ -686,17 +641,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 3: Marketing Automation */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/25">
                                   <Palette className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Marketing Automation</h3>
+                                  <h3 className="text-sm font-bold text-white">Marketing Automation</h3>
                                   <p className="text-gray-400 text-xs">Automate & scale marketing</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Marketing Automation')
                                   .slice(0, 4)
@@ -704,7 +659,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-orange-500/10 to-orange-400/10 rounded-lg p-3 border border-transparent hover:border-orange-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-orange-500/10 to-orange-400/10 rounded-lg p-2 border border-transparent hover:border-orange-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -712,10 +667,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-orange-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-orange-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-orange-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-orange-500/30 group-hover/item:to-orange-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-orange-300" />
@@ -727,17 +681,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 4: B2B Commerce Platforms */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-indigo-500 via-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-indigo-500 via-indigo-400 to-indigo-600 rounded-xl flex items-center justify-center shadow-lg shadow-indigo-500/25">
                                   <ShoppingCart className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">B2B Commerce Platforms</h3>
+                                  <h3 className="text-sm font-bold text-white">B2B Commerce Platforms</h3>
                                   <p className="text-gray-400 text-xs">Marketplace optimization</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'B2B Commerce Platforms')
                                   .slice(0, 4)
@@ -745,7 +699,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-indigo-500/10 to-indigo-400/10 rounded-lg p-3 border border-transparent hover:border-indigo-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-indigo-500/10 to-indigo-400/10 rounded-lg p-2 border border-transparent hover:border-indigo-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -753,10 +707,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-indigo-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-indigo-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-indigo-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-indigo-500/20 to-indigo-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-indigo-500/30 group-hover/item:to-indigo-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-indigo-300" />
@@ -767,77 +720,23 @@ const Header = () => {
                               </div>
                             </div>
 
-                            {/* Column 5: Interactive CTA Section */}
-                            <div className="space-y-6">
-                              {/* Featured CTA Card */}
-                              <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-br from-purple-900/40 via-purple-800/40 to-purple-900/40 border border-purple-500/30 backdrop-blur-sm group/cta">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
-                                <div className="relative z-10">
-                                  <div className="text-center mb-4">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-purple-500/25 group-hover/cta:scale-110 transition-transform duration-300">
-                                      <Target className="h-5 w-5 text-white" />
-                                    </div>
-                                    <h4 className="text-lg font-bold text-white mb-2">Free CRO Audit</h4>
-                                    <p className="text-gray-300 text-sm mb-3">Analyze your conversion optimization potential</p>
-                                    <div className="flex items-center justify-center space-x-4 text-xs text-gray-400 mb-3">
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>Quick setup</span>
-                                      </div>
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>No commitment</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <Link
-                                    to="/schedule-call"
-                                    className="block w-full text-center px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 shadow-purple-500/25 hover:scale-105 transform text-sm group-hover/cta:shadow-xl group-hover/cta:shadow-purple-500/30"
-                                  >
-                                    Start Free Audit
-                                  </Link>
-                                </div>
-                              </div>
-
-                              {/* Success Metrics */}
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-green-900/20 via-green-800/20 to-green-900/20 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">156%</div>
-                                  <div className="text-xs text-gray-400 mt-1">Avg. Conversion Increase</div>
-                                </div>
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-blue-900/20 via-blue-800/20 to-blue-900/20 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">89%</div>
-                                  <div className="text-xs text-gray-400 mt-1">Revenue Growth</div>
-                                </div>
-                              </div>
-
-                              {/* Quick Action Links */}
-                              <div className="space-y-2">
-                                <Link
-                                  to="/case-studies"
-                                  className="block w-full text-center px-3 py-2.5 rounded-lg font-medium transition-all duration-300 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 text-sm hover:scale-105 transform"
-                                >
-                                  View Case Studies
-                                </Link>
-                              </div>
-                            </div>
                           </>
                         )}
 
                         {hoveredService === 'UX & Interactive' && (
                           <>
                             {/* Column 1: Design */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-pink-500 via-pink-400 to-pink-600 rounded-xl flex items-center justify-center shadow-lg shadow-pink-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-pink-500 via-pink-400 to-pink-600 rounded-xl flex items-center justify-center shadow-lg shadow-pink-500/25">
                                   <Palette className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Design</h3>
+                                  <h3 className="text-sm font-bold text-white">Design</h3>
                                   <p className="text-gray-400 text-xs">Visual & interactive design</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Design')
                                   .slice(0, 4)
@@ -845,7 +744,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-pink-500/10 to-pink-400/10 rounded-lg p-3 border border-transparent hover:border-pink-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-pink-500/10 to-pink-400/10 rounded-lg p-2 border border-transparent hover:border-pink-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -853,10 +752,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-pink-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-pink-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-pink-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-pink-500/20 to-pink-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-pink-500/30 group-hover/item:to-pink-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-pink-300" />
@@ -868,17 +766,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 2: Content Marketing */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-teal-500 via-teal-400 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-teal-500 via-teal-400 to-teal-600 rounded-xl flex items-center justify-center shadow-lg shadow-teal-500/25">
                                   <PenTool className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Content Marketing</h3>
+                                  <h3 className="text-sm font-bold text-white">Content Marketing</h3>
                                   <p className="text-gray-400 text-xs">Engaging content & storytelling</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Content Marketing')
                                   .slice(0, 4)
@@ -886,7 +784,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-teal-500/10 to-teal-400/10 rounded-lg p-3 border border-transparent hover:border-teal-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-teal-500/10 to-teal-400/10 rounded-lg p-2 border border-transparent hover:border-teal-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -897,7 +795,6 @@ const Header = () => {
                                         <h4 className="text-white font-medium group-hover/item:text-teal-300 transition-colors duration-300 text-sm mb-1">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-teal-500/20 to-teal-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-teal-500/30 group-hover/item:to-teal-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-teal-300" />
@@ -909,17 +806,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 3: Development */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-cyan-500 via-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-cyan-500 via-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center shadow-lg shadow-cyan-500/25">
                                   <Code className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Development</h3>
+                                  <h3 className="text-sm font-bold text-white">Development</h3>
                                   <p className="text-gray-400 text-xs">Technical implementation</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Development')
                                   .slice(0, 4)
@@ -927,7 +824,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-cyan-500/10 to-cyan-400/10 rounded-lg p-3 border border-transparent hover:border-cyan-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-cyan-500/10 to-cyan-400/10 rounded-lg p-2 border border-transparent hover:border-cyan-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -935,10 +832,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-cyan-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-cyan-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-cyan-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-cyan-500/20 to-cyan-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-cyan-500/30 group-hover/item:to-cyan-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-cyan-300" />
@@ -950,17 +846,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 4: Learn (Challenges We Solve) */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg shadow-yellow-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-yellow-500 via-yellow-400 to-yellow-600 rounded-xl flex items-center justify-center shadow-lg shadow-yellow-500/25">
                                   <Lightbulb className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Challenges We Solve</h3>
+                                  <h3 className="text-sm font-bold text-white">Challenges We Solve</h3>
                                   <p className="text-gray-400 text-xs">Common website problems</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Learn')
                                   .slice(0, 4)
@@ -968,7 +864,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-yellow-500/10 to-yellow-400/10 rounded-lg p-3 border border-transparent hover:border-yellow-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-yellow-500/10 to-yellow-400/10 rounded-lg p-2 border border-transparent hover:border-yellow-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -976,10 +872,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-yellow-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-yellow-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-yellow-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-yellow-500/20 to-yellow-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-yellow-500/30 group-hover/item:to-yellow-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-yellow-300" />
@@ -990,77 +885,23 @@ const Header = () => {
                               </div>
                             </div>
 
-                            {/* Column 5: Interactive CTA Section */}
-                            <div className="space-y-6">
-                              {/* Featured CTA Card */}
-                              <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-br from-purple-900/40 via-purple-800/40 to-purple-900/40 border border-purple-500/30 backdrop-blur-sm group/cta">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
-                                <div className="relative z-10">
-                                  <div className="text-center mb-4">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-purple-500/25 group-hover/cta:scale-110 transition-transform duration-300">
-                                      <Palette className="h-5 w-5 text-white" />
-                                    </div>
-                                    <h4 className="text-lg font-bold text-white mb-2">Free UX Audit</h4>
-                                    <p className="text-gray-300 text-sm mb-3">Analyze your website's user experience potential</p>
-                                    <div className="flex items-center justify-center space-x-4 text-xs text-gray-400 mb-3">
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>Quick review</span>
-                                      </div>
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>No commitment</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <Link
-                                    to="/schedule-call"
-                                    className="block w-full text-center px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 shadow-purple-500/25 hover:scale-105 transform text-sm group-hover/cta:shadow-xl group-hover/cta:shadow-purple-500/30"
-                                  >
-                                    Start Free Audit
-                                  </Link>
-                                </div>
-                              </div>
-
-                              {/* Success Metrics */}
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-pink-900/20 via-pink-800/20 to-pink-900/20 border border-pink-500/20 hover:border-pink-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-pink-400 to-pink-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">187%</div>
-                                  <div className="text-xs text-gray-400 mt-1">UX Improvement</div>
-                                </div>
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-teal-900/20 via-teal-800/20 to-teal-900/20 border border-teal-500/20 hover:border-teal-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-teal-400 to-teal-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">92%</div>
-                                  <div className="text-xs text-gray-400 mt-1">User Satisfaction</div>
-                                </div>
-                              </div>
-
-                              {/* Quick Action Links */}
-                              <div className="space-y-2">
-                                <Link
-                                  to="/case-studies"
-                                  className="block w-full text-center px-3 py-2.5 rounded-lg font-medium transition-all duration-300 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 text-sm hover:scale-105 transform"
-                                >
-                                  View Case Studies
-                                </Link>
-                              </div>
-                            </div>
                           </>
                         )}
 
                         {hoveredService === 'AI & Technology' && (
                           <>
                             {/* Column 1: Revenue Acceleration Platform */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-emerald-500 via-emerald-400 to-emerald-600 rounded-xl flex items-center justify-center shadow-lg shadow-emerald-500/25">
                                   <TrendingUp className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Revenue Acceleration Platform</h3>
+                                  <h3 className="text-sm font-bold text-white">Revenue Acceleration Platform</h3>
                                   <p className="text-gray-400 text-xs">Boost revenue with AI-powered tools</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Revenue Acceleration Platform')
                                   .slice(0, 4)
@@ -1068,7 +909,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-emerald-500/10 to-emerald-400/10 rounded-lg p-3 border border-transparent hover:border-emerald-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-emerald-500/10 to-emerald-400/10 rounded-lg p-2 border border-transparent hover:border-emerald-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1079,7 +920,6 @@ const Header = () => {
                                         <h4 className="text-white font-medium group-hover/item:text-emerald-300 transition-colors duration-300 text-sm mb-1">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-emerald-500/20 to-emerald-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-emerald-500/30 group-hover/item:to-emerald-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-emerald-300" />
@@ -1091,17 +931,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 2: AI */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-violet-500 via-violet-400 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-violet-500 via-violet-400 to-violet-600 rounded-xl flex items-center justify-center shadow-lg shadow-violet-500/25">
                                   <Cpu className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">AI</h3>
+                                  <h3 className="text-sm font-bold text-white">AI</h3>
                                   <p className="text-gray-400 text-xs">Intelligent automation & insights</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'AI')
                                   .slice(0, 4)
@@ -1109,7 +949,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-violet-500/10 to-violet-400/10 rounded-lg p-3 border border-transparent hover:border-violet-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-violet-500/10 to-violet-400/10 rounded-lg p-2 border border-transparent hover:border-violet-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1120,7 +960,6 @@ const Header = () => {
                                         <h4 className="text-white font-medium group-hover/item:text-violet-300 transition-colors duration-300 text-sm mb-1">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-violet-500/20 to-violet-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-violet-500/30 group-hover/item:to-violet-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-violet-300" />
@@ -1132,17 +971,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 3: Creative AI Tools */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-rose-500 via-rose-400 to-rose-600 rounded-xl flex items-center justify-center shadow-lg shadow-rose-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-rose-500 via-rose-400 to-rose-600 rounded-xl flex items-center justify-center shadow-lg shadow-rose-500/25">
                                   <Palette className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Creative AI Tools</h3>
+                                  <h3 className="text-sm font-bold text-white">Creative AI Tools</h3>
                                   <p className="text-gray-400 text-xs">AI-powered creative solutions</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Creative AI Tools')
                                   .slice(0, 4)
@@ -1150,7 +989,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-rose-500/10 to-rose-400/10 rounded-lg p-3 border border-transparent hover:border-rose-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-rose-500/10 to-rose-400/10 rounded-lg p-2 border border-transparent hover:border-rose-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1161,7 +1000,6 @@ const Header = () => {
                                         <h4 className="text-white font-medium group-hover/item:text-rose-300 transition-colors duration-300 text-sm mb-1">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-rose-500/20 to-rose-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-rose-500/30 group-hover/item:to-rose-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-rose-300" />
@@ -1173,17 +1011,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 4: Learn */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-amber-500 via-amber-400 to-amber-600 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-amber-500 via-amber-400 to-amber-600 rounded-xl flex items-center justify-center shadow-lg shadow-amber-500/25">
                                   <Lightbulb className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Learn</h3>
+                                  <h3 className="text-sm font-bold text-white">Learn</h3>
                                   <p className="text-gray-400 text-xs">AI & tech education</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Learn')
                                   .slice(0, 4)
@@ -1191,7 +1029,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-amber-500/10 to-amber-400/10 rounded-lg p-3 border border-transparent hover:border-amber-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-amber-500/10 to-amber-400/10 rounded-lg p-2 border border-transparent hover:border-amber-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1202,7 +1040,6 @@ const Header = () => {
                                         <h4 className="text-white font-medium group-hover/item:text-amber-300 transition-colors duration-300 text-sm mb-1">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-amber-500/20 to-amber-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-amber-500/30 group-hover/item:to-amber-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-amber-300" />
@@ -1213,77 +1050,23 @@ const Header = () => {
                               </div>
                             </div>
 
-                            {/* Column 5: Interactive CTA Section */}
-                            <div className="space-y-6">
-                              {/* Featured CTA Card */}
-                              <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-br from-purple-900/40 via-purple-800/40 to-purple-900/40 border border-purple-500/30 backdrop-blur-sm group/cta">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
-                                <div className="relative z-10">
-                                  <div className="text-center mb-4">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-purple-500/25 group-hover/cta:scale-110 transition-transform duration-300">
-                                      <Cpu className="h-5 w-5 text-white" />
-                                    </div>
-                                    <h4 className="text-lg font-bold text-white mb-2">Free AI Assessment</h4>
-                                    <p className="text-gray-300 text-sm mb-3">Discover AI opportunities for your business</p>
-                                    <div className="flex items-center justify-center space-x-4 text-xs text-gray-400 mb-3">
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>AI analysis</span>
-                                      </div>
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>No commitment</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <Link
-                                    to="/schedule-call"
-                                    className="block w-full text-center px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 shadow-purple-500/25 hover:scale-105 transform text-sm group-hover/cta:shadow-xl group-hover/cta:shadow-purple-500/30"
-                                  >
-                                    Start Free Assessment
-                                  </Link>
-                                </div>
-                              </div>
-
-                              {/* Success Metrics */}
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-emerald-900/20 via-emerald-800/20 to-emerald-900/20 border border-emerald-500/20 hover:border-emerald-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-emerald-400 to-emerald-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">234%</div>
-                                  <div className="text-xs text-gray-400 mt-1">AI Efficiency Gain</div>
-                                </div>
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-violet-900/20 via-violet-800/20 to-violet-900/20 border border-violet-500/20 hover:border-violet-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-violet-400 to-violet-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">91%</div>
-                                  <div className="text-xs text-gray-400 mt-1">Automation Rate</div>
-                                </div>
-                              </div>
-
-                              {/* Quick Action Links */}
-                              <div className="space-y-2">
-                                <Link
-                                  to="/case-studies"
-                                  className="block w-full text-center px-3 py-2.5 rounded-lg font-medium transition-all duration-300 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 text-sm hover:scale-105 transform"
-                                >
-                                  View AI Case Studies
-                                </Link>
-                              </div>
-                            </div>
                           </>
                         )}
 
                         {hoveredService === 'Who Are We' && (
                           <>
                             {/* Column 1: Who We Are */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-blue-500 via-blue-400 to-blue-600 rounded-xl flex items-center justify-center shadow-lg shadow-blue-500/25">
                                   <User className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Who We Are</h3>
+                                  <h3 className="text-sm font-bold text-white">Who We Are</h3>
                                   <p className="text-gray-400 text-xs">Our story & mission</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Who We Are')
                                   .slice(0, 4)
@@ -1291,7 +1074,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-blue-500/10 to-blue-400/10 rounded-lg p-3 border border-transparent hover:border-blue-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-blue-500/10 to-blue-400/10 rounded-lg p-2 border border-transparent hover:border-blue-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1299,10 +1082,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-blue-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-blue-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-blue-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-blue-500/20 to-blue-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-blue-500/30 group-hover/item:to-blue-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-blue-300" />
@@ -1314,17 +1096,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 2: Community Impact */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-green-500 via-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-green-500 via-green-400 to-green-600 rounded-xl flex items-center justify-center shadow-lg shadow-green-500/25">
                                   <Star className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Community Impact</h3>
+                                  <h3 className="text-sm font-bold text-white">Community Impact</h3>
                                   <p className="text-gray-400 text-xs">Values & social responsibility</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Community Impact')
                                   .slice(0, 4)
@@ -1332,7 +1114,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-green-500/10 to-green-400/10 rounded-lg p-3 border border-transparent hover:border-green-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-green-500/10 to-green-400/10 rounded-lg p-2 border border-transparent hover:border-green-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1340,10 +1122,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-green-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-green-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-green-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-green-500/20 to-green-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-green-500/30 group-hover/item:to-green-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-green-300" />
@@ -1355,17 +1136,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 3: Pricing Guides */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-orange-500 via-orange-400 to-orange-600 rounded-xl flex items-center justify-center shadow-lg shadow-orange-500/25">
                                   <TrendingUp className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Pricing Guides</h3>
+                                  <h3 className="text-sm font-bold text-white">Pricing Guides</h3>
                                   <p className="text-gray-400 text-xs">Transparent pricing information</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Pricing Guides')
                                   .slice(0, 4)
@@ -1373,7 +1154,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-orange-500/10 to-orange-400/10 rounded-lg p-3 border border-transparent hover:border-orange-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-orange-500/10 to-orange-400/10 rounded-lg p-2 border border-transparent hover:border-orange-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1381,10 +1162,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-orange-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-orange-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-orange-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-orange-500/20 to-orange-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-orange-500/30 group-hover/item:to-orange-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-orange-300" />
@@ -1396,17 +1176,17 @@ const Header = () => {
                             </div>
 
                             {/* Column 4: Content Library */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/25">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center shadow-lg shadow-purple-500/25">
                                   <BookOpen className="h-5 w-5 text-white" />
                                 </div>
                                 <div>
-                                  <h3 className="text-lg font-bold text-white">Content Library</h3>
+                                  <h3 className="text-sm font-bold text-white">Content Library</h3>
                                   <p className="text-gray-400 text-xs">Free tools & resources</p>
                                 </div>
                               </div>
-                              <div className="space-y-3">
+                              <div className="space-y-2">
                                 {getCurrentService().submenu
                                   .filter(item => item.category === 'Content Library')
                                   .slice(0, 4)
@@ -1414,7 +1194,7 @@ const Header = () => {
                                   <Link
                                     key={item.name}
                                     to={item.href}
-                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-purple-500/10 to-purple-400/10 rounded-lg p-3 border border-transparent hover:border-purple-500/20"
+                                    className="group/item block transition-all duration-300 hover:bg-gradient-to-r from-purple-500/10 to-purple-400/10 rounded-lg p-2 border border-transparent hover:border-purple-500/20"
                                     onClick={handleDropdownClose}
                                   >
                                     <div className="flex items-start space-x-2">
@@ -1422,10 +1202,9 @@ const Header = () => {
                                         <Zap className="h-3 w-3 text-purple-300" />
                                       </div>
                                       <div className="flex-1">
-                                        <h4 className="text-white font-medium group-hover/item:text-purple-300 transition-colors duration-300 text-sm mb-1">
+                                        <h4 className="text-white font-medium group-hover/item:text-purple-300 transition-colors duration-300 text-sm">
                                           {item.name}
                                         </h4>
-                                        <p className="text-gray-400 text-xs leading-relaxed">{item.description}</p>
                                       </div>
                                       <div className="w-5 h-5 bg-gradient-to-br from-purple-500/20 to-purple-400/20 rounded-md flex items-center justify-center group-hover/item:bg-gradient-to-br group-hover/item:from-purple-500/30 group-hover/item:to-purple-400/30 transition-all duration-300 opacity-0 group-hover/item:opacity-100 flex-shrink-0">
                                         <ArrowRight className="h-3 w-3 text-purple-300" />
@@ -1436,69 +1215,15 @@ const Header = () => {
                               </div>
                             </div>
 
-                            {/* Column 5: Interactive CTA Section */}
-                            <div className="space-y-6">
-                              {/* Featured CTA Card */}
-                              <div className="relative overflow-hidden p-4 rounded-xl bg-gradient-to-br from-purple-900/40 via-purple-800/40 to-purple-900/40 border border-purple-500/30 backdrop-blur-sm group/cta">
-                                <div className="absolute inset-0 bg-gradient-to-r from-purple-500/5 to-transparent opacity-0 group-hover/cta:opacity-100 transition-opacity duration-500"></div>
-                                <div className="relative z-10">
-                                  <div className="text-center mb-4">
-                                    <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center mx-auto mb-3 shadow-lg shadow-purple-500/25 group-hover/cta:scale-110 transition-transform duration-300">
-                                      <User className="h-5 w-5 text-white" />
-                                    </div>
-                                    <h4 className="text-lg font-bold text-white mb-2">Join Our Team</h4>
-                                    <p className="text-gray-300 text-sm mb-3">We\'re hiring! Explore career opportunities</p>
-                                    <div className="flex items-center justify-center space-x-4 text-xs text-gray-400 mb-3">
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>Remote work</span>
-                                      </div>
-                                      <div className="flex items-center space-x-1">
-                                        <CheckCircle className="h-3 w-3 text-green-400" />
-                                        <span>Great benefits</span>
-                                      </div>
-                                    </div>
-                                  </div>
-                                  <Link
-                                    to="/careers"
-                                    className="block w-full text-center px-4 py-2.5 rounded-lg font-semibold transition-all duration-300 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 shadow-purple-500/25 hover:scale-105 transform text-sm group-hover/cta:shadow-xl group-hover/cta:shadow-purple-500/30"
-                                  >
-                                    View Open Positions
-                                  </Link>
-                                </div>
-                              </div>
-
-                              {/* Success Metrics */}
-                              <div className="grid grid-cols-2 gap-3">
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-blue-900/20 via-blue-800/20 to-blue-900/20 border border-blue-500/20 hover:border-blue-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-blue-400 to-blue-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">500+</div>
-                                  <div className="text-xs text-gray-400 mt-1">Happy Clients</div>
-                                </div>
-                                <div className="text-center p-3 rounded-xl bg-gradient-to-r from-green-900/20 via-green-800/20 to-green-900/20 border border-green-500/20 hover:border-green-500/40 transition-all duration-300 group">
-                                  <div className="text-xl font-bold bg-gradient-to-r from-green-400 to-green-600 bg-clip-text text-transparent group-hover:scale-110 transition-transform duration-300">50+</div>
-                                  <div className="text-xs text-gray-400 mt-1">Team Members</div>
-                                </div>
-                              </div>
-
-                              {/* Quick Action Links */}
-                              <div className="space-y-2">
-          <Link 
-            to="/contact" 
-                                  className="block w-full text-center px-3 py-2.5 rounded-lg font-medium transition-all duration-300 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 text-sm hover:scale-105 transform"
-          >
-                                  Get In Touch
-          </Link>
-                              </div>
-                            </div>
                           </>
                         )}
 
                         {hoveredService !== 'SEO & Lead Generation' && hoveredService !== 'Revenue Marketing & CRO' && hoveredService !== 'UX & Interactive' && hoveredService !== 'AI & Technology' && hoveredService !== 'Who Are We' && (
                           <>
                             {/* Column 1: Core Services */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
                                   <Target className="h-5 w-5 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white">Core Services</h3>
@@ -1517,7 +1242,6 @@ const Header = () => {
                                       </div>
                                       <div>
                                         <h4 className="text-white font-semibold group-hover/item:text-purple-300 transition-colors duration-300">{item.name}</h4>
-                                        <p className="text-gray-400 text-xs mt-1">{item.description}</p>
                                       </div>
                                     </div>
           </Link>
@@ -1526,9 +1250,9 @@ const Header = () => {
         </div>
 
                             {/* Column 2: Advanced Solutions */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
                                   <TrendingUp className="h-5 w-5 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white">Advanced Solutions</h3>
@@ -1547,7 +1271,6 @@ const Header = () => {
                                       </div>
                                       <div>
                                         <h4 className="text-white font-semibold group-hover/item:text-purple-300 transition-colors duration-300">{item.name}</h4>
-                                        <p className="text-gray-400 text-xs mt-1">{item.description}</p>
                                       </div>
                                     </div>
                                   </Link>
@@ -1556,9 +1279,9 @@ const Header = () => {
                             </div>
 
                             {/* Column 3: CTA Section */}
-                            <div className="space-y-6">
-                              <div className="flex items-center space-x-3 mb-6">
-                                <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
+                            <div className="space-y-3">
+                              <div className="flex items-center space-x-2 mb-3">
+                                <div className="w-7 h-7 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-xl flex items-center justify-center">
                                   <Star className="h-5 w-5 text-white" />
                                 </div>
                                 <h3 className="text-xl font-bold text-white">Get Started</h3>
@@ -1608,10 +1331,10 @@ const Header = () => {
             </nav>
 
             {/* Desktop CTA Button - Purple theme */}
-             <div className="hidden lg:flex items-center mr-2 lg:mr-4 xl:mr-6">
+             <div className="hidden lg:flex items-center">
               <Link
                 to="/schedule-call"
-                className="px-3 py-2 lg:px-4 lg:py-2.5 xl:px-6 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 text-white rounded-xl font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform shadow-purple-500/25 text-sm lg:text-base"
+                className="px-5 py-2.5 bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 hover:from-purple-500 hover:via-purple-400 hover:to-purple-500 text-white rounded-lg font-semibold transition-all duration-300 shadow-lg hover:shadow-xl hover:scale-105 transform shadow-purple-500/25 text-sm whitespace-nowrap"
               >
                 Schedule a Call
               </Link>
@@ -1619,88 +1342,90 @@ const Header = () => {
 
             {/* Mobile menu button */}
             <div className="lg:hidden">
-        <button
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-                className="p-3 rounded-xl transition-all duration-300 hover:scale-105 bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:from-purple-500/30 hover:to-purple-400/30 border border-purple-500/30 shadow-lg backdrop-blur-sm"
-        >
-          {isMenuOpen ? (
-                  <X className="h-6 w-6 text-purple-300" />
-          ) : (
-                  <Menu className="h-6 w-6 text-purple-300" />
-          )}
-        </button>
+              <button
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                className="p-2 rounded-lg transition-all duration-200 hover:scale-105 bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:from-purple-500/30 hover:to-purple-400/30 border border-purple-500/30 shadow-md backdrop-blur-sm"
+                aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
+              >
+                {isMenuOpen ? (
+                  <X className="h-5 w-5 text-purple-200" />
+                ) : (
+                  <Menu className="h-5 w-5 text-purple-200" />
+                )}
+              </button>
             </div>
-      </div>
+          </div>
 
           {/* Mobile Navigation */}
-      {isMenuOpen && (
-            <div className="lg:hidden border-t border-purple-500/20 bg-black/95 backdrop-blur-xl rounded-b-2xl shadow-2xl">
-              <div className="px-4 py-6 space-y-4">
+          <div
+            className={`lg:hidden absolute left-0 right-0 top-full origin-top transition-all duration-300 ease-in-out ${
+              isMenuOpen
+                ? 'opacity-100 translate-y-0 max-h-[calc(100vh-90px)] pointer-events-auto'
+                : 'opacity-0 -translate-y-3 max-h-0 pointer-events-none'
+            }`}
+          >
+            <div className="bg-black/95 backdrop-blur-xl border-t border-purple-500/20 shadow-2xl overflow-hidden w-full">
+              <div className="px-4 sm:px-5 py-5 sm:py-6 space-y-3 sm:space-y-4">
                 {services.map((service) => (
                   <div key={service.name}>
-                  <button
+                    <button
                       onClick={() => handleDropdownToggle(service.name)}
                       className={`${
                         location.pathname.startsWith(service.href)
-                          ? 'bg-gradient-to-r from-purple-500/20 to-purple-400/20 text-purple-300' 
+                          ? 'bg-gradient-to-r from-purple-500/20 to-purple-400/20 text-purple-300'
                           : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/10 to-purple-400/10'
-                      } w-full text-left px-4 py-3 rounded-xl text-base font-semibold transition-all duration-300 flex items-center justify-between backdrop-blur-sm border border-transparent hover:border-purple-300/30`}
+                      } w-full text-left px-3 sm:px-4 py-2.5 sm:py-3 rounded-xl text-sm sm:text-base font-semibold transition-all duration-300 flex items-center justify-between backdrop-blur-sm border border-transparent hover:border-purple-300/30`}
                     >
-                      <div className="flex items-center space-x-3">
-                        {service.icon}
-                        <span>{service.name}</span>
+                      <div className="flex items-center space-x-2 sm:space-x-3 min-w-0 flex-1">
+                        <div className="flex-shrink-0">{service.icon}</div>
+                        <span className="truncate">{service.name}</span>
                       </div>
-                      <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${
-                        activeDropdown === service.name ? 'rotate-180' : ''
-                      }`} />
-                  </button>
-                    
+                      <ChevronDown
+                        className={`h-4 w-4 sm:h-5 sm:w-5 transition-transform duration-300 flex-shrink-0 ml-2 ${
+                          activeDropdown === service.name ? 'rotate-180' : ''
+                        }`}
+                      />
+                    </button>
+
                     {activeDropdown === service.name && (
-                      <div className="ml-4 mt-3 space-y-3 rounded-xl p-4 shadow-lg backdrop-blur-sm border bg-black/80 border-purple-500/20">
+                      <div className="ml-1 sm:ml-2 mt-2 sm:mt-3 space-y-2 sm:space-y-3 rounded-xl p-3 sm:p-4 shadow-lg backdrop-blur-sm border bg-black/80 border-purple-500/20 max-h-[60vh] overflow-y-auto">
                         {service.submenu.map((item) => (
                           <Link
                             key={item.name}
                             to={item.href}
-                            className="block p-4 rounded-lg transition-all duration-300 font-medium text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/10 to-purple-400/10"
+                            className="block p-3 sm:p-4 rounded-lg transition-all duration-300 font-medium text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/10 to-purple-400/10"
                             onClick={() => {
                               setIsMenuOpen(false);
                               setActiveDropdown(null);
                             }}
                           >
-                            <div className="flex items-start space-x-3">
-                              <div className="w-10 h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
-                                <Zap className="h-5 w-5 text-white" />
+                            <div className="flex items-start space-x-2 sm:space-x-3">
+                              <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-br from-purple-500 via-purple-400 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                                <Zap className="h-4 w-4 sm:h-5 sm:w-5 text-white" />
                               </div>
                               <div className="flex-1 min-w-0">
-                                <div className="font-semibold text-white mb-1">{item.name}</div>
-                                <div className="text-xs text-gray-500 leading-relaxed">{item.description}</div>
-                                <div className="flex items-center space-x-1 mt-2 text-purple-400 text-xs font-medium opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                                  <span>Learn More</span>
-                                  <svg className="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                                  </svg>
-                                </div>
+                                <div className="font-semibold text-white mb-1 text-sm sm:text-base break-words">{item.name}</div>
                               </div>
                             </div>
                           </Link>
-                ))}
-              </div>
+                        ))}
+                      </div>
                     )}
-            </div>
+                  </div>
                 ))}
 
                 <div className="pt-6 border-t border-purple-300/30">
-            <Link
+                  <Link
                     to="/schedule-call"
                     className="block text-center px-6 py-3 rounded-xl font-semibold transition-all duration-300 shadow-lg bg-gradient-to-r from-purple-600 via-purple-500 to-purple-600 shadow-purple-500/25"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Schedule a Call
-            </Link>
-          </div>
+                    onClick={() => setIsMenuOpen(false)}
+                  >
+                    Schedule a Call
+                  </Link>
+                </div>
               </div>
             </div>
-      )}
+          </div>
         </div>
       </div>
     </header>

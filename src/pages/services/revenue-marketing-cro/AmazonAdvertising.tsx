@@ -80,6 +80,7 @@ import {
   Share2,
   Video,
   Image,
+  Scissors,
   Mail as MailIcon,
   Smartphone as MobileIcon
 } from 'lucide-react';
@@ -89,11 +90,9 @@ const AmazonAdvertising = () => {
   const [activeSection, setActiveSection] = useState('deliverables');
   const [isNavSticky, setIsNavSticky] = useState(false);
   const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
-
+  const [expandedFaq, setExpandedFaq] = useState<number | null>(null);
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Advertising Management for Amazon Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Advertising Management for Amazon Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'Advertising Management for Amazon Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'case-studies', label: 'Advertising Management for Amazon Case Studies', icon: <Trophy className="h-4 w-4" /> },
     { id: 'approach', label: 'Advertising Management for Amazon Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
@@ -245,59 +244,6 @@ const AmazonAdvertising = () => {
     }
   ];
 
-  const localServicesPackages = [
-    {
-      name: 'Local Services Starter',
-      price: '₹45,000',
-      period: '/month',
-      description: 'Perfect for small businesses starting with Local Services Ads',
-      features: [
-        'Local Services Ads setup',
-        'Basic campaign management',
-        'Lead tracking and reporting',
-        'Monthly optimization',
-        'Email support',
-        'Basic analytics dashboard'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
-    },
-    {
-      name: 'Local Services Professional',
-      price: '₹85,000',
-      period: '/month',
-      description: 'Comprehensive Local Services management for growing businesses',
-      features: [
-        'Everything in Starter, plus:',
-        'Advanced campaign optimization',
-        'Daily monitoring and management',
-        'Lead quality optimization',
-        'Competitive analysis',
-        'Weekly progress calls',
-        'Priority support'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
-    },
-    {
-      name: 'Local Services Enterprise',
-      price: '₹1,50,000',
-      period: '/month',
-      description: 'Full-service Local Services management for large businesses',
-      features: [
-        'Everything in Professional, plus:',
-        'Multi-location management',
-        'Advanced analytics and reporting',
-        'Custom lead management systems',
-        'Strategic consulting',
-        'Dedicated account manager',
-        '24/7 priority support'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
-    }
-  ];
-
   return (
     <>
       <PageSEO config={seoConfig} />
@@ -323,7 +269,7 @@ const AmazonAdvertising = () => {
 
             {/* Animated Title */}
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000">
-              Marktechrover: Best <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">Amazon Advertising</span> in Delhi, NCR & India
+              Hire Amazon Advertising Agency
             </h1>
 
             {/* Animated Description */}
@@ -369,15 +315,15 @@ const AmazonAdvertising = () => {
 
             {/* Trust Badges */}
             <div className="flex flex-wrap justify-center gap-6 mb-8 transition-all duration-1000 delay-700">
-              <div className="flex items-center space-x-2 bg-gray-800/50 px-4 py-2 rounded-lg border border-gray-700">
+              <div className="flex items-center space-x-2 whitespace-nowrap flex-shrink-0 bg-gray-800/50 px-4 py-2 rounded-lg border border-gray-700">
                 <Shield className="h-5 w-5 text-green-400" />
                 <span className="text-gray-300 text-sm">Google Partner</span>
               </div>
-              <div className="flex items-center space-x-2 bg-gray-800/50 px-4 py-2 rounded-lg border border-gray-700">
+              <div className="flex items-center space-x-2 whitespace-nowrap flex-shrink-0 bg-gray-800/50 px-4 py-2 rounded-lg border border-gray-700">
                 <Award className="h-5 w-5 text-yellow-400" />
                 <span className="text-gray-300 text-sm">Certified Agency</span>
               </div>
-              <div className="flex items-center space-x-2 bg-gray-800/50 px-4 py-2 rounded-lg border border-gray-700">
+              <div className="flex items-center space-x-2 whitespace-nowrap flex-shrink-0 bg-gray-800/50 px-4 py-2 rounded-lg border border-gray-700">
                 <CheckCircle className="h-5 w-5 text-blue-400" />
                 <span className="text-gray-300 text-sm">5+ Years Experience</span>
               </div>
@@ -394,7 +340,7 @@ const AmazonAdvertising = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <button
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection()}
                 className="group inline-flex items-center px-8 py-4 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
               >
                 <span className="relative z-10">View Packages</span>
@@ -404,14 +350,12 @@ const AmazonAdvertising = () => {
 
             {/* Floating Action Button */}
             <div className="mt-8 transition-all duration-1000 delay-1200">
-              <button className="group inline-flex items-center space-x-2 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:text-white transition-all duration-300 hover:bg-gray-700/50">
+              <button className="group inline-flex items-center space-x-2 whitespace-nowrap flex-shrink-0 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-gray-300 hover:text-white transition-all duration-300 hover:bg-gray-700/50">
                 <Play className="h-4 w-4" />
                 <span>Watch Demo</span>
               </button>
             </div>
           </div>
-        </div>
-
         </div>
         <div className="absolute top-20 left-10 w-4 h-4 bg-gradient-to-r from-purple-400 to-purple-600 rounded-full animate-bounce"></div>
         <div className="absolute top-40 right-20 w-3 h-3 bg-gradient-to-r from-purple-500 to-purple-400 rounded-full animate-pulse"></div>
@@ -429,20 +373,18 @@ const AmazonAdvertising = () => {
           
           {/* Main Navigation Container */}
           <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-            <nav className="flex items-center space-x-1 px-6 py-3">
+            <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 whitespace-nowrap flex-shrink-0 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
                 >
                   {item.icon}
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                 </button>
               ))}
             </nav>
-          </div>
-          
           </div>
           
           {/* Floating Decorative Elements */}
@@ -453,357 +395,634 @@ const AmazonAdvertising = () => {
         </div>
       </div>
           {/* Deliverables Section */}
-          <section id="deliverables" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Advertising Management for Amazon Deliverables
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive Google Local Services Ads management designed for business growth. 
-                Best local services agency in Delhi NCR delivering measurable results.
-              </p>
-            </div>
+          <section id="deliverables" className="py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
+                  Deliverables: What You Get Each Month
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Comprehensive Amazon advertising management solutions designed for business growth. 
+                  Best Amazon advertising agency in Delhi NCR delivering measurable results.
+                </p>
+              </div>
 
-            <div className="space-y-6">
-              {deliverables.map((deliverable, index) => (
-                <div
-                  key={deliverable.id}
-                  className="bg-gray-900 rounded-2xl border border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
-                >
-                  <button
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {deliverables.map((deliverable, index) => (
+                  <div
+                    key={deliverable.id}
+                    className={`bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/40 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300 transform hover:-translate-y-2 cursor-pointer ${
+                      expandedDeliverable === index ? 'ring-2 ring-purple-500 shadow-lg shadow-purple-500/25' : ''
+                    }`}
                     onClick={() => setExpandedDeliverable(expandedDeliverable === index ? -1 : index)}
-                    className="w-full px-8 py-6 flex items-center justify-between text-left"
                   >
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
+                    <div className="flex items-center gap-4 mb-6">
+                      <div className="p-3 bg-gradient-to-br from-purple-500/20 to-purple-600/20 rounded-xl border border-purple-500/30">
                         {deliverable.icon}
                       </div>
                       <div>
-                        <h3 className="text-xl font-semibold text-white mb-1">
-                          {deliverable.title}
-                        </h3>
-                        <p className="text-gray-300">{deliverable.description}</p>
+                        <h3 className="text-xl font-bold text-white">{deliverable.title}</h3>
+                        <p className="text-purple-300 text-sm">Amazon Advertising Service</p>
                       </div>
                     </div>
-                    <ChevronDown
-                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 ${
-                        expandedDeliverable === index ? 'rotate-180' : ''
-                      }`}
-                    />
-                  </button>
-                  
-                  {expandedDeliverable === index && (
-                    <div className="px-8 pb-6">
-                      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {deliverable.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-400">{feature}</span>
-                          </div>
-                        ))}
-                      </div>
+                    
+                    <p className="text-gray-300 mb-6">{deliverable.description}</p>
+                    
+                    <div className="space-y-3">
+                      {deliverable.features.map((feature, featureIndex) => (
+                        <div key={featureIndex} className="flex items-center gap-3">
+                          <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
+                          <span className="text-gray-300 text-sm">{feature}</span>
+                        </div>
+                      ))}
                     </div>
-                  )}
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Local Services Packages Section */}
-          <section id="packages" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Advertising Management for Amazon Packages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive Google Local Services Ads management. Best local services agency in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {localServicesPackages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500">{pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
                   </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </section>
+
+          
 
           {/* Technology Section */}
-          <section id="technology" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Advertising Management for Amazon Technology
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Advanced Google Local Services technology stack powering results. 
-                Professional local services management India with cutting-edge tools and platforms.
-              </p>
-            </div>
+          <section id="technology" className="py-20 px-4 sm:px-6 lg:px-8">
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-white mb-4">
+                  Advertising Management for Amazon Technology
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Advanced Amazon Ads technology stack powering results. 
+                  Professional Amazon advertising management India with cutting-edge tools and platforms.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Google Local Services',
-                  description: 'Advanced Google Local Services platform management',
-                  icon: <Target className="h-8 w-8" />,
-                  features: ['Google Local Services Ads', 'Business Profile Optimization', 'Local Services Verification', 'Lead Management', 'Performance Tracking']
-                },
-                {
-                  title: 'Local SEO Tools',
-                  description: 'Comprehensive local SEO and optimization tools',
-                  icon: <Search className="h-8 w-8" />,
-                  features: ['Google My Business', 'Local Citation Management', 'Review Management', 'Local Keyword Research', 'Local Analytics']
-                },
-                {
-                  title: 'Lead Management',
-                  description: 'Advanced lead management and tracking systems',
-                  icon: <Users className="h-8 w-8" />,
-                  features: ['CRM Integration', 'Lead Scoring', 'Automated Follow-up', 'Lead Tracking', 'Conversion Analytics']
-                },
-                {
-                  title: 'Analytics & Reporting',
-                  description: 'Comprehensive analytics and reporting solutions',
-                  icon: <BarChart3 className="h-8 w-8" />,
-                  features: ['Google Analytics 4', 'Local Services Analytics', 'Custom Dashboards', 'ROI Tracking', 'Performance Reports']
-                },
-                {
-                  title: 'Competitive Analysis',
-                  description: 'Local competitive intelligence and analysis',
-                  icon: <Eye className="h-8 w-8" />,
-                  features: ['Competitor Monitoring', 'Market Analysis', 'Pricing Intelligence', 'Strategy Development', 'Performance Benchmarking']
-                },
-                {
-                  title: 'Local Marketing',
-                  description: 'Integrated local marketing solutions',
-                  icon: <MapPin className="h-8 w-8" />,
-                  features: ['Local PPC Campaigns', 'Local Social Media', 'Local Content Marketing', 'Local Email Marketing', 'Local Influencer Marketing']
-                }
-              ].map((tech, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6 hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                      {tech.icon}
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                {[
+                  {
+                    title: 'Amazon Ads Platform',
+                    description: 'Complete Amazon Advertising platform management and optimization',
+                    icon: <Target className="h-8 w-8" />,
+                    features: ['Sponsored Products', 'Sponsored Brands', 'Sponsored Display', 'DSP & Retargeting', 'Campaign Management']
+                  },
+                  {
+                    title: 'Keyword & Search Intelligence',
+                    description: 'Advanced keyword research and search term optimization tools',
+                    icon: <Search className="h-8 w-8" />,
+                    features: ['Search Term Analysis', 'Keyword Research Tools', 'Negative Keyword Management', 'Competitor Keyword Tracking', 'Search Volume Data']
+                  },
+                  {
+                    title: 'Bid & Budget Management',
+                    description: 'Intelligent bid optimization and budget allocation systems',
+                    icon: <TrendingUp className="h-8 w-8" />,
+                    features: ['Automated Bidding', 'Budget Optimization', 'Bid Strategy Management', 'ACOS Control', 'ROAS Optimization']
+                  },
+                  {
+                    title: 'Analytics & Reporting',
+                    description: 'Comprehensive analytics and performance reporting solutions',
+                    icon: <BarChart3 className="h-8 w-8" />,
+                    features: ['Amazon Analytics Integration', 'Custom Dashboards', 'ROAS Tracking', 'Performance Reports', 'Attribution Analysis']
+                  },
+                  {
+                    title: 'Competitive Intelligence',
+                    description: 'Market and competitor analysis for strategic advantage',
+                    icon: <Eye className="h-8 w-8" />,
+                    features: ['Competitor Monitoring', 'Market Share Analysis', 'Pricing Intelligence', 'Ad Strategy Development', 'Performance Benchmarking']
+                  },
+                  {
+                    title: 'Inventory & Catalog Sync',
+                    description: 'Seamless integration with inventory and product catalog',
+                    icon: <Database className="h-8 w-8" />,
+                    features: ['Catalog Integration', 'Inventory Sync', 'Product Feed Management', 'Automated Campaign Updates', 'Stock-Based Optimization']
+                  }
+                ].map((tech, index) => (
+                  <div
+                    key={index}
+                    className="bg-gray-900/60 rounded-2xl border border-purple-500/20 p-6 hover:border-purple-500/40 hover:shadow-2xl hover:shadow-purple-500/20 transition-all duration-300"
+                  >
+                    <div className="flex items-center space-x-4 mb-4">
+                      <div className="p-3 rounded-xl bg-purple-500/10 text-purple-300 border border-purple-500/30">
+                        {tech.icon}
+                      </div>
+                      <h3 className="text-xl font-semibold text-purple-300">{tech.title}</h3>
                     </div>
-                    <h3 className="text-xl font-semibold text-purple-300">{tech.title}</h3>
+                    <p className="text-gray-300 mb-4">{tech.description}</p>
+                    <ul className="space-y-2">
+                      {tech.features.map((feature, featureIndex) => (
+                        <li key={featureIndex} className="flex items-center space-x-2 whitespace-nowrap flex-shrink-0">
+                          <div className="w-2 h-2 bg-purple-500 rounded-full flex-shrink-0"></div>
+                          <span className="text-gray-400 text-sm">{feature}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <p className="text-gray-300 mb-4">{tech.description}</p>
-                  <ul className="space-y-2">
-                    {tech.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-gray-400 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </section>
 
           {/* Case Studies Section */}
-          <section id="case-studies" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Advertising Management for Amazon Case Studies
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Real results from Google Local Services Ads campaigns. Best local services agency in Delhi NCR 
-                delivering measurable ROI for businesses.
-              </p>
-            </div>
+          <section
+            id="case-studies"
+            className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"
+          >
+            <div className="max-w-7xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mb-6 shadow-lg shadow-purple-500/25">
+                  <Trophy className="h-8 w-8 text-white" />
+                </div>
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                  Success Stories That Speak
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Real results from our Amazon Ads management campaigns. See how we&apos;ve scaled profitable growth
+                  and maximized marketplace ROI.
+                </p>
+              </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'Plumbing Services Success',
-                  description: '300% increase in local leads through Google Local Services Ads',
-                  metrics: ['300% Lead Increase', '450% ROI Growth', '6 Months'],
-                  image: '/images/case-studies/plumbing-local.webp'
-                },
-                {
-                  title: 'Electrical Services Growth',
-                  description: '500% increase in qualified local leads for electrical company',
-                  metrics: ['500% Lead Increase', '250% Conversion Rate', '8 Months'],
-                  image: '/images/case-studies/electrical-local.webp'
-                },
-                {
-                  title: 'HVAC Services Expansion',
-                  description: '400% increase in local service calls and bookings',
-                  metrics: ['400% Service Calls', '300% Revenue Growth', '12 Months'],
-                  image: '/images/case-studies/hvac-local.webp'
-                },
-                {
-                  title: 'Cleaning Services Success',
-                  description: '600% increase in local bookings and customer acquisition',
-                  metrics: ['600% Bookings', '350% Revenue Growth', '10 Months'],
-                  image: '/images/case-studies/cleaning-local.webp'
-                }
-              ].map((study, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                    <Trophy className="h-16 w-16 text-white" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
-                    <p className="text-gray-300 mb-4">{study.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {study.metrics.map((metric, metricIndex) => (
-                        <span key={metricIndex} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                          {metric}
-                        </span>
-                      ))}
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                {[
+                  {
+                    title: 'D2C Brand Performance Surge',
+                    description:
+                      'Scaled a D2C brand on Amazon with full-funnel ad strategy across Sponsored Products, Brands, and Display.',
+                    metrics: [
+                      {
+                        label: 'Ad Revenue',
+                        value: '320%',
+                        icon: <TrendingUp className="h-5 w-5" />,
+                        color: 'from-green-500 to-emerald-600',
+                      },
+                      {
+                        label: 'ACOS Improvement',
+                        value: '40%',
+                        icon: <Percent className="h-5 w-5" />,
+                        color: 'from-purple-500 to-pink-600',
+                      },
+                      {
+                        label: 'Timeframe',
+                        value: '6 Months',
+                        icon: <Clock className="h-5 w-5" />,
+                        color: 'from-blue-500 to-cyan-600',
+                      },
+                    ],
+                    highlight: 'Top Performer',
+                    gradient: 'from-purple-600/20 to-blue-600/20',
+                  },
+                  {
+                    title: 'Category Domination for Retailer',
+                    description:
+                      'Helped a mid-market retailer own top-of-search placements and category share with structured campaigns.',
+                    metrics: [
+                      {
+                        label: 'Category Share',
+                        value: '280%',
+                        icon: <BarChart3 className="h-5 w-5" />,
+                        color: 'from-blue-500 to-indigo-600',
+                      },
+                      {
+                        label: 'ROAS',
+                        value: '4.5x',
+                        icon: <DollarSign className="h-5 w-5" />,
+                        color: 'from-yellow-500 to-amber-600',
+                      },
+                      {
+                        label: 'Timeframe',
+                        value: '4 Months',
+                        icon: <Clock className="h-5 w-5" />,
+                        color: 'from-blue-500 to-cyan-600',
+                      },
+                    ],
+                    highlight: 'Best ROI',
+                    gradient: 'from-blue-600/20 to-indigo-600/20',
+                  },
+                  {
+                    title: 'New Brand Launch Acceleration',
+                    description:
+                      'Launched a new brand on Amazon and built profitable velocity with launch-specific ad strategy.',
+                    metrics: [
+                      {
+                        label: 'Launch Velocity',
+                        value: '5x',
+                        icon: <Rocket className="h-5 w-5" />,
+                        color: 'from-purple-500 to-violet-600',
+                      },
+                      {
+                        label: 'Review Volume',
+                        value: '260%',
+                        icon: <Star className="h-5 w-5" />,
+                        color: 'from-yellow-500 to-amber-600',
+                      },
+                      {
+                        label: 'Timeframe',
+                        value: '3 Months',
+                        icon: <Clock className="h-5 w-5" />,
+                        color: 'from-blue-500 to-cyan-600',
+                      },
+                    ],
+                    highlight: 'Launch Success',
+                    gradient: 'from-purple-600/20 to-pink-600/20',
+                  },
+                  {
+                    title: 'Mature Account Profitability Lift',
+                    description:
+                      'Turned around a mature account with high spend but low profitability using deep optimization.',
+                    metrics: [
+                      {
+                        label: 'Wasted Spend Cut',
+                        value: '55%',
+                        icon: <Scissors className="h-5 w-5" />,
+                        color: 'from-red-500 to-rose-600',
+                      },
+                      {
+                        label: 'Profit Margin',
+                        value: '30%',
+                        icon: <Activity className="h-5 w-5" />,
+                        color: 'from-green-500 to-emerald-600',
+                      },
+                      {
+                        label: 'Timeframe',
+                        value: '5 Months',
+                        icon: <Clock className="h-5 w-5" />,
+                        color: 'from-blue-500 to-cyan-600',
+                      },
+                    ],
+                    highlight: 'Profit Focused',
+                    gradient: 'from-purple-600/20 to-violet-600/20',
+                  },
+                ].map((study, index) => (
+                  <div
+                    key={index}
+                    className="group relative bg-gradient-to-br from-gray-900 via-gray-900 to-gray-800 rounded-3xl border border-purple-500/20 overflow-hidden hover:border-purple-500/60 hover:shadow-2xl hover:shadow-purple-500/40 transition-all duration-500 transform hover:-translate-y-3"
+                  >
+                    {/* Animated Background Gradient */}
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-br ${study.gradient} opacity-0 group-hover:opacity-100 transition-opacity duration-500`}
+                    ></div>
+
+                    {/* Decorative Corner Elements */}
+                    <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-purple-500/10 to-transparent rounded-bl-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+                    <div className="absolute bottom-0 left-0 w-24 h-24 bg-gradient-to-tr from-purple-600/10 to-transparent rounded-tr-full opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+
+                    {/* Highlight Badge */}
+                    {study.highlight && (
+                      <div className="absolute top-5 right-5 z-10">
+                        <div className="relative">
+                          <span className="relative px-4 py-1.5 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-500 text-white text-xs font-bold rounded-full shadow-lg shadow-purple-500/50 backdrop-blur-sm">
+                            {study.highlight}
+                          </span>
+                          <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-500 rounded-full blur opacity-50 animate-pulse"></div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Content Container */}
+                    <div className="relative z-10">
+                      {/* Header Section */}
+                      <div className="p-8 pb-6">
+                        <div className="flex items-start gap-5 mb-6">
+                          <div className="relative">
+                            <div className="p-4 bg-gradient-to-br from-purple-500/30 to-purple-600/30 rounded-2xl border-2 border-purple-400/40 group-hover:scale-110 group-hover:rotate-6 transition-all duration-300 shadow-lg shadow-purple-500/20">
+                              <Trophy className="h-7 w-7 text-purple-200" />
+                            </div>
+                            <div className="absolute -top-1 -right-1 w-4 h-4 bg-yellow-400 rounded-full border-2 border-gray-900 animate-pulse"></div>
+                          </div>
+                          <div className="flex-1 pt-1">
+                            <h3 className="text-2xl md:text-3xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-purple-300 group-hover:to-purple-100 transition-all duration-300">
+                              {study.title}
+                            </h3>
+                            <p className="text-gray-300 leading-relaxed text-sm md:text-base">
+                              {study.description}
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Metrics Section */}
+                      <div className="px-8 pb-8">
+                        <div className="grid grid-cols-3 gap-3">
+                          {study.metrics.map((metric, metricIndex) => (
+                            <div
+                              key={metricIndex}
+                              className="relative group/metric overflow-hidden bg-gradient-to-br from-gray-800/80 to-gray-800/60 rounded-xl p-4 border border-purple-500/20 group-hover:border-purple-500/40 transition-all duration-300 hover:scale-105"
+                            >
+                              {/* Metric Gradient Background */}
+                              <div
+                                className={`absolute inset-0 bg-gradient-to-br ${metric.color} opacity-0 group-hover/metric:opacity-10 transition-opacity duration-300`}
+                              ></div>
+
+                              {/* Icon */}
+                              <div
+                                className={`relative flex items-center justify-center mb-3 p-2 rounded-lg border ${
+                                  metric.color.includes('green')
+                                    ? 'bg-green-500/20 border-green-500/30'
+                                    : metric.color.includes('yellow')
+                                    ? 'bg-yellow-500/20 border-yellow-500/30'
+                                    : metric.color.includes('blue') && !metric.color.includes('cyan')
+                                    ? 'bg-blue-500/20 border-blue-500/30'
+                                    : metric.color.includes('cyan')
+                                    ? 'bg-cyan-500/20 border-cyan-500/30'
+                                    : metric.color.includes('purple')
+                                    ? 'bg-purple-500/20 border-purple-500/30'
+                                    : metric.color.includes('pink')
+                                    ? 'bg-pink-500/20 border-pink-500/30'
+                                    : metric.color.includes('indigo')
+                                    ? 'bg-indigo-500/20 border-indigo-500/30'
+                                    : 'bg-violet-500/20 border-violet-500/30'
+                                }`}
+                              >
+                                <div
+                                  className={
+                                    metric.color.includes('green')
+                                      ? 'text-green-300'
+                                      : metric.color.includes('yellow')
+                                      ? 'text-yellow-300'
+                                      : metric.color.includes('blue') && !metric.color.includes('cyan')
+                                      ? 'text-blue-300'
+                                      : metric.color.includes('cyan')
+                                      ? 'text-cyan-300'
+                                      : metric.color.includes('purple')
+                                      ? 'text-purple-300'
+                                      : metric.color.includes('pink')
+                                      ? 'text-pink-300'
+                                      : metric.color.includes('indigo')
+                                      ? 'text-indigo-300'
+                                      : 'text-violet-300'
+                                  }
+                                >
+                                  {metric.icon}
+                                </div>
+                              </div>
+
+                              {/* Value */}
+                              <div className="relative">
+                                <div className="text-2xl md:text-3xl font-bold text-white mb-1 group-hover/metric:text-transparent group-hover/metric:bg-clip-text group-hover/metric:bg-gradient-to-r group-hover/metric:from-purple-300 group-hover/metric:to-purple-100 transition-all duration-300">
+                                  {metric.value}
+                                </div>
+                                <div className="text-xs text-gray-400 font-medium">{metric.label}</div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* Bottom Accent Bar */}
+                      <div className="relative h-1.5 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-500 group-hover:from-purple-400 group-hover:via-purple-500 group-hover:to-purple-400 transition-all duration-500 overflow-hidden">
+                        <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+                      </div>
                     </div>
                   </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </section>
 
           {/* Approach Section */}
-          <section id="approach" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Advertising Management for Amazon Approach
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Proven methodology for Google Local Services success. Local services experts in Delhi NCR 
-                delivering comprehensive solutions for business growth.
-              </p>
+          <section
+            id="approach"
+            className="py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+          >
+            {/* Background Elements */}
+            <div className="absolute inset-0 overflow-hidden pointer-events-none">
+              <div className="absolute top-1/4 left-0 w-96 h-96 bg-purple-500/5 rounded-full blur-3xl"></div>
+              <div className="absolute bottom-1/4 right-0 w-96 h-96 bg-purple-600/5 rounded-full blur-3xl"></div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: '01',
-                  title: 'Account Setup',
-                  description: 'Complete Google Local Services account setup and verification',
-                  icon: <Target className="h-8 w-8" />
-                },
-                {
-                  step: '02',
-                  title: 'Campaign Launch',
-                  description: 'Launch and optimize Local Services Ads campaigns',
-                  icon: <Rocket className="h-8 w-8" />
-                },
-                {
-                  step: '03',
-                  title: 'Lead Management',
-                  description: 'Implement comprehensive lead management and follow-up',
-                  icon: <TrendingUp className="h-8 w-8" />
-                },
-                {
-                  step: '04',
-                  title: 'Scale & Optimize',
-                  description: 'Scale successful campaigns and optimize for growth',
-                  icon: <Zap className="h-8 w-8" />
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-xl">{step.step}</span>
-                    </div>
-                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                      <div className="text-purple-300">
-                        {step.icon}
-                      </div>
-                    </div>
-                  </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
+            <div className="max-w-7xl mx-auto relative z-10">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mb-6 shadow-lg shadow-purple-500/25">
+                  <Rocket className="h-8 w-8 text-white" />
                 </div>
-              ))}
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                  Our Proven Amazon Ads Approach
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  A structured Amazon advertising methodology that protects margins while scaling revenue. From
+                  foundation to optimization, every step is engineered for performance.
+                </p>
+              </div>
+
+              {/* Timeline Container */}
+              <div className="relative">
+                {/* Connecting Line - Desktop Only */}
+                <div className="hidden lg:block absolute top-24 left-0 right-0 h-0.5 bg-gradient-to-r from-transparent via-purple-500/30 to-transparent"></div>
+
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
+                  {[
+                    {
+                      step: '01',
+                      title: 'Foundation & Structure',
+                      description:
+                        'Audit your catalog, structure campaigns by intent and match types, and set up tracking for clean data.',
+                      icon: <Target className="h-6 w-6" />,
+                      color: 'from-blue-500 to-blue-600',
+                    },
+                    {
+                      step: '02',
+                      title: 'Launch & Scale',
+                      description:
+                        'Launch Sponsored Products, Brands, and Display campaigns with smart bids and keyword selection.',
+                      icon: <Rocket className="h-6 w-6" />,
+                      color: 'from-purple-500 to-purple-600',
+                    },
+                    {
+                      step: '03',
+                      title: 'Optimize & Expand',
+                      description:
+                        'Continuously optimize bids, search terms, and placements while expanding winning segments.',
+                      icon: <TrendingUp className="h-6 w-6" />,
+                      color: 'from-green-500 to-green-600',
+                    },
+                    {
+                      step: '04',
+                      title: 'Profit & Brand Growth',
+                      description:
+                        'Align ads with inventory, pricing, and brand goals to scale profitably across marketplaces.',
+                      icon: <Zap className="h-6 w-6" />,
+                      color: 'from-orange-500 to-orange-600',
+                    },
+                  ].map((step, index) => (
+                    <div key={index} className="relative group">
+                      {/* Step Card */}
+                      <div className="relative bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-2xl p-8 border border-purple-500/20 hover:border-purple-500/60 transition-all duration-300 hover:shadow-2xl hover:shadow-purple-500/20 transform hover:-translate-y-2">
+                        {/* Step Number Badge */}
+                        <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                          <div
+                            className={`w-12 h-12 bg-gradient-to-br ${step.color} rounded-full flex items-center justify-center shadow-lg border-4 border-gray-900 group-hover:scale-110 transition-transform duration-300`}
+                          >
+                            <span className="text-white font-bold text-lg">{step.step}</span>
+                          </div>
+                        </div>
+
+                        {/* Icon Container */}
+                        <div className="flex justify-center mb-6 mt-4">
+                          <div
+                            className={`p-4 rounded-2xl border border-purple-500/30 group-hover:scale-110 transition-transform duration-300 ${
+                              step.color === 'from-blue-500 to-blue-600'
+                                ? 'bg-blue-500/20'
+                                : step.color === 'from-purple-500 to-purple-600'
+                                ? 'bg-purple-500/20'
+                                : step.color === 'from-green-500 to-green-600'
+                                ? 'bg-green-500/20'
+                                : 'bg-orange-500/20'
+                            }`}
+                          >
+                            <div
+                              className={`${
+                                step.color === 'from-blue-500 to-blue-600'
+                                  ? 'text-blue-300'
+                                  : step.color === 'from-purple-500 to-purple-600'
+                                  ? 'text-purple-300'
+                                  : step.color === 'from-green-500 to-green-600'
+                                  ? 'text-green-300'
+                                  : 'text-orange-300'
+                              }`}
+                            >
+                              {step.icon}
+                            </div>
+                          </div>
+                        </div>
+
+                        {/* Content */}
+                        <div className="text-center">
+                          <h3 className="text-xl font-bold text-white mb-3 group-hover:text-purple-300 transition-colors duration-300">
+                            {step.title}
+                          </h3>
+                          <p className="text-gray-300 text-sm leading-relaxed">{step.description}</p>
+                        </div>
+
+                        {/* Hover Effect */}
+                        <div className="absolute inset-0 bg-gradient-to-br from-purple-500/5 to-purple-600/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      </div>
+
+                      {/* Arrow Connector - Desktop Only */}
+                      {index < 3 && (
+                        <div className="hidden lg:block absolute top-24 -right-3 z-20">
+                          <ArrowRight className="h-6 w-6 text-purple-500/50" />
+                        </div>
+                      )}
+                    </div>
+                  ))}
+                </div>
+              </div>
             </div>
           </section>
 
           {/* FAQs Section */}
-          <section id="faqs" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Advertising Management for Amazon FAQs
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Common questions about Google Local Services Ads. Best local services agency in Delhi 
-                providing transparent answers and solutions.
-              </p>
-            </div>
-
-            <div className="max-w-4xl mx-auto space-y-6">
-              {[
-                {
-                  question: 'What are Google Local Services Ads and how do they work?',
-                  answer: 'Google Local Services Ads are pay-per-lead advertising that connects local service businesses with customers searching for their services. They appear at the top of Google search results and only charge for qualified leads that contact your business.'
-                },
-                {
-                  question: 'How long does it take to get approved for Local Services Ads?',
-                  answer: 'The approval process typically takes 1-2 weeks. We handle the entire setup process including business verification, background checks, and insurance verification to ensure quick approval.'
-                },
-                {
-                  question: 'What is the typical investment for Local Services Ads?',
-                  answer: 'Local Services Ads typically range from ₹45,000 to ₹1,50,000 per month depending on service type, location, and competition. We provide custom quotes based on your specific business and goals.'
-                },
-                {
-                  question: 'Do you work with businesses outside Delhi NCR?',
-                  answer: 'Yes, we work with businesses across India. Our Local Services Ads management is not limited by geography and can be delivered remotely with excellent results.'
-                },
-                {
-                  question: 'How do you measure Local Services Ads success?',
-                  answer: 'We track comprehensive KPIs including lead volume, lead quality, cost per lead, conversion rates, ROI, and customer lifetime value. We provide detailed monthly reports with actionable insights.'
-                },
-                {
-                  question: 'What service categories do you specialize in for Local Services Ads?',
-                  answer: 'We specialize in all major Local Services categories including plumbing, electrical, HVAC, cleaning, landscaping, locksmith, and more. We have expertise in optimizing campaigns for any service category.'
-                }
-              ].map((faq, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6">
-                  <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
+          <section
+            id="faqs"
+            className="py-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-transparent via-purple-900/10 to-transparent"
+          >
+            <div className="max-w-4xl mx-auto">
+              <div className="text-center mb-16">
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-purple-500 to-purple-600 rounded-2xl mb-6 shadow-lg shadow-purple-500/25">
+                  <MessageSquare className="h-8 w-8 text-white" />
                 </div>
-              ))}
+                <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                  Frequently Asked Questions
+                </h2>
+                <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                  Everything you need to know about Amazon Ads management. Get clear answers before you invest
+                  heavily in the marketplace.
+                </p>
+              </div>
+
+              <div className="space-y-4">
+                {[
+                  {
+                    question: 'How does Amazon advertising work and what formats do you manage?',
+                    answer:
+                      'We manage all core Amazon ad formats including Sponsored Products, Sponsored Brands, Sponsored Display, and retargeting solutions. We structure campaigns around keywords, products, and audiences to capture high-intent shoppers, while using negative keywords, bid strategies, and placement controls to protect your margins and ensure your ads show where they convert best.',
+                  },
+                  {
+                    question: 'How long does it take to see results from Amazon Ads?',
+                    answer:
+                      'Most accounts begin to see clear performance trends within 4–6 weeks, with strong optimization impact in 2–3 months. Launch and learning phases depend on your catalog size, competition level, and budget. We move quickly to establish baselines, cut wasted spend, and double down on profitable campaigns as soon as statistically valid data is available.',
+                  },
+                  {
+                    question: 'What is the typical investment for Amazon Ads management?',
+                    answer:
+                      'Management fees for Amazon Ads typically range from ₹35,000 to ₹1,50,000 per month depending on ad spend, catalog complexity, and reporting needs. We usually recommend ad budgets that align with your category competitiveness and growth goals, and we design fee structures that make sense relative to your revenue targets and margins.',
+                  },
+                  {
+                    question: 'Do you work with brands outside Delhi NCR or India?',
+                    answer:
+                      'Yes. We work with brands across India and internationally that sell on Amazon in multiple marketplaces. Our systems, reporting, and calls are all designed to be remote-friendly. Whether you are selling in India, the US, UK, EU, or other regions, we can manage your campaigns with localized strategies and performance goals.',
+                  },
+                  {
+                    question: 'How do you measure Amazon Ads success?',
+                    answer:
+                      'We track ROAS, ACOS, TACOS, ordered revenue, new-to-brand metrics, share of voice, and keyword-level performance. Beyond numbers, we align reporting to your specific business goals such as profitable scale, inventory movement, or category dominance. You receive clear monthly reports and can access performance dashboards for real-time visibility.',
+                  },
+                  {
+                    question: 'Can you work with both launch-stage and mature Amazon accounts?',
+                    answer:
+                      'Absolutely. For launch-stage brands we focus on fast learnings, review generation support, and ranking for priority keywords. For mature accounts we prioritize profitability, waste reduction, scaling top performers, and strategic category expansion. Our playbooks are adapted to your current stage and resources.',
+                  },
+                  {
+                    question: 'Do you coordinate Amazon Ads with organic and off-Amazon marketing?',
+                    answer:
+                      'Yes. Amazon Ads perform best when coordinated with SEO, pricing, promotions, and off-Amazon campaigns. We can align with your internal or external teams to ensure that traffic from other channels is supported by smart on-Amazon ad strategies, creating a flywheel effect for your brand.',
+                  },
+                  {
+                    question: 'What do you need from us to get started?',
+                    answer:
+                      'We typically need access to your Amazon Seller or Vendor account, historical campaign data, product and margin details, and clarity on your growth and profitability targets. From there we run an in-depth audit, propose a roadmap, and begin implementation with clear timelines and expectations.',
+                  },
+                ].map((faq, index) => (
+                  <div
+                    key={index}
+                    className={`group bg-gradient-to-br from-gray-900/90 to-gray-800/90 rounded-xl border transition-all duration-300 overflow-hidden ${
+                      expandedFaq === index
+                        ? 'border-purple-500/60 shadow-xl shadow-purple-500/20'
+                        : 'border-purple-500/20 hover:border-purple-500/40'
+                    }`}
+                  >
+                    <button
+                      onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                      className="w-full p-6 text-left flex items-center justify-between focus:outline-none"
+                    >
+                      <h3
+                        className={`text-lg font-semibold pr-8 transition-colors duration-300 ${
+                          expandedFaq === index ? 'text-purple-300' : 'text-white group-hover:text-purple-300'
+                        }`}
+                      >
+                        {faq.question}
+                      </h3>
+                      <div
+                        className={`flex-shrink-0 w-8 h-8 rounded-full bg-purple-500/10 border border-purple-500/30 flex items-center justify-center transition-all duration-300 ${
+                          expandedFaq === index
+                            ? 'bg-purple-500/20 border-purple-500/50 rotate-180'
+                            : 'group-hover:bg-purple-500/15 group-hover:border-purple-500/40'
+                        }`}
+                      >
+                        <ChevronDown
+                          className={`h-5 w-5 text-purple-300 transition-transform duration-300 ${
+                            expandedFaq === index ? 'rotate-180' : ''
+                          }`}
+                        />
+                      </div>
+                    </button>
+
+                    <div
+                      className={`overflow-hidden transition-all duration-300 ${
+                        expandedFaq === index ? 'max-h-96 opacity-100' : 'max-h-0 opacity-0'
+                      }`}
+                    >
+                      <div className="px-6 pb-6">
+                        <div className="pt-2 border-t border-purple-500/20">
+                          <p className="text-gray-300 leading-relaxed mt-4">{faq.answer}</p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* Bottom Accent */}
+                    {expandedFaq === index && (
+                      <div className="h-1 bg-gradient-to-r from-purple-500 via-purple-600 to-purple-500"></div>
+                    )}
+                  </div>
+                ))}
+              </div>
             </div>
           </section>
 

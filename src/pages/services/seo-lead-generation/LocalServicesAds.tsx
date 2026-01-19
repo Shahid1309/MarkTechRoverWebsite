@@ -91,9 +91,7 @@ const LocalServicesAds = () => {
   const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Local Services Ads Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Local Services Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'Local Services Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'case-studies', label: 'Local Services Case Studies', icon: <Trophy className="h-4 w-4" /> },
     { id: 'approach', label: 'Local Services Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
@@ -254,59 +252,6 @@ const LocalServicesAds = () => {
     }
   ];
 
-  const localServicesPackages = [
-    {
-      name: 'Local Services Starter',
-      price: '₹45,000',
-      period: '/month',
-      description: 'Perfect for small businesses starting with Local Services Ads',
-      features: [
-        'Local Services Ads setup',
-        'Basic campaign management',
-        'Lead tracking and reporting',
-        'Monthly optimization',
-        'Email support',
-        'Basic analytics dashboard'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
-    },
-    {
-      name: 'Local Services Professional',
-      price: '₹85,000',
-      period: '/month',
-      description: 'Comprehensive Local Services management for growing businesses',
-      features: [
-        'Everything in Starter, plus:',
-        'Advanced campaign optimization',
-        'Daily monitoring and management',
-        'Lead quality optimization',
-        'Competitive analysis',
-        'Weekly progress calls',
-        'Priority support'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
-    },
-    {
-      name: 'Local Services Enterprise',
-      price: '₹1,50,000',
-      period: '/month',
-      description: 'Full-service Local Services management for large businesses',
-      features: [
-        'Everything in Professional, plus:',
-        'Multi-location management',
-        'Advanced analytics and reporting',
-        'Custom lead management systems',
-        'Strategic consulting',
-        'Dedicated account manager',
-        '24/7 priority support'
-      ],
-      highlighted: false,
-      cta: 'Contact Sales'
-    }
-  ];
-
   return (
     <>
       <PageSEO config={seoConfig} />
@@ -332,7 +277,7 @@ const LocalServicesAds = () => {
 
             {/* Animated Title */}
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000">
-              Marktechrover: Best <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">Local Services Ads</span> in Delhi, NCR & India
+              Hire Google LSA Management
             </h1>
 
             {/* Animated Description */}
@@ -403,7 +348,7 @@ const LocalServicesAds = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <button
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection()}
                 className="group inline-flex items-center px-8 py-4 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
               >
                 <span className="relative z-10">View Packages</span>
@@ -438,15 +383,15 @@ const LocalServicesAds = () => {
           
           {/* Main Navigation Container */}
           <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-            <nav className="flex items-center space-x-1 px-6 py-3">
+            <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
               {navItems.map((item) => (
                 <button
                   key={item.id}
                   onClick={() => scrollToSection(item.id)}
-                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  className={`${activeSection === item.id ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'} px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg whitespace-nowrap flex-shrink-0`}
                 >
                   {item.icon}
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                 </button>
               ))}
             </nav>
@@ -516,68 +461,7 @@ const LocalServicesAds = () => {
             </div>
           </section>
 
-          {/* Local Services Packages Section */}
-          <section id="packages" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                Local Services Ads Packages
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive Google Local Services Ads management. Best local services agency in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {localServicesPackages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500">{pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
+          
 
           {/* Technology Section */}
           <section id="technology" className="mb-20">

@@ -65,7 +65,7 @@ const IDesignCaseStudy = () => {
   return (
     <div>
       <CaseStudyHero
-        title="iDesign.market Platform Transformation"
+        title="iDesign Website Traffic and Conversion Results"
         subtitle="Revolutionizing the digital presence of India's leading interior design marketplace through development and SEO optimization"
         category="Development & SEO"
         services={['Web Development', 'SEO Optimization', 'UI/UX Design']}

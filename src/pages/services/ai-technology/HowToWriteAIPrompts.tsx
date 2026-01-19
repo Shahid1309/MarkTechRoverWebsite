@@ -80,49 +80,87 @@ import {
   Smartphone as MobileIcon,
   Monitor as DesktopIcon,
   Palette as DesignIcon,
-  Server
+  Server,
+  Building2,
+  Briefcase,
+  Network,
+  Link2,
+  Workflow,
+  Filter,
+  Bell,
+  Mail as MailIcon,
+  Repeat,
+  RefreshCcw as RefreshIcon,
+  MousePointerClick,
+  Eye as EyeIcon,
+  Info,
+  Book,
+  GraduationCap,
+  PenTool as PenToolIcon,
+  Type,
+  Command
 } from 'lucide-react';
 import PageSEO from '../../../components/seo/PageSEO';
 
 const HowToWriteAIPrompts = () => {
-  const [activeSection, setActiveSection] = useState('deliverables');
+  const [activeSection, setActiveSection] = useState('overview');
   const [isNavSticky, setIsNavSticky] = useState(false);
-  const [expandedDeliverable, setExpandedDeliverable] = useState<number>(0);
+  const [expandedFeature, setExpandedFeature] = useState<number>(0);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Design Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Design Technology', icon: <Cpu className="h-4 w-4" /> },
-    { id: 'case-studies', label: 'Design Case Studies', icon: <Trophy className="h-4 w-4" /> },
-    { id: 'approach', label: 'Design Approach', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'overview', label: 'Overview', icon: <Rocket className="h-4 w-4" /> },
+    { id: 'features', label: 'Key Principles', icon: <Zap className="h-4 w-4" /> },
+    { id: 'benefits', label: 'Benefits', icon: <TrendingUp className="h-4 w-4" /> },
+    { id: 'types', label: 'Prompt Types', icon: <Layers className="h-4 w-4" /> },
+    { id: 'implementation', label: 'Best Practices', icon: <Settings className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
   ];
 
+  // Scroll to top on mount
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    requestAnimationFrame(() => {
+      window.scrollTo(0, 0);
+      document.documentElement.scrollTop = 0;
+      document.body.scrollTop = 0;
+    });
+  }, []);
+
   // Handle scroll for sticky navigation and active section detection
   useEffect(() => {
+    const sectionIds = ['overview', 'features', 'benefits', 'types', 'implementation', 'faqs'];
+    
     const handleScroll = () => {
       const scrollPosition = window.scrollY;
-      const heroHeight = 800;
+      const heroHeight = 600;
       setIsNavSticky(scrollPosition > heroHeight);
 
-      // Update active section based on scroll position
-      const sections = navItems.map(item => item.id);
-      const currentSection = sections.find(sectionId => {
-        const element = document.getElementById(sectionId);
+      let currentSection = sectionIds[0];
+      
+      for (let i = sectionIds.length - 1; i >= 0; i--) {
+        const element = document.getElementById(sectionIds[i]);
         if (element) {
           const rect = element.getBoundingClientRect();
-          return rect.top <= 100 && rect.bottom >= 100;
+          const offset = 150;
+          if (rect.top <= offset) {
+            currentSection = sectionIds[i];
+            break;
+          }
         }
-        return false;
-      });
-      
-      if (currentSection) {
-        setActiveSection(currentSection);
       }
+      
+      setActiveSection(currentSection);
     };
 
-    window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    const timeoutId = setTimeout(() => {
+      handleScroll();
+    }, 100);
+    
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    return () => {
+      clearTimeout(timeoutId);
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const scrollToSection = (sectionId: string) => {
@@ -136,227 +174,383 @@ const HowToWriteAIPrompts = () => {
   };
 
   const seoConfig = {
-    title: "How To Write A I Prompts Services | MarkTechRover",
-    description: "Professional how to write a i prompts services. Expert solutions for your business needs. Get started today.",
-    keywords: ["how to write a i prompts","services","professional","expert","business"],
-    url: "/services/ai-technology/how-to-write-a-i-prompts",
-    type: "website" as const,
-    publishedAt: "2025-08-05T06:37:20.483Z",
-    modifiedAt: "2025-08-05T06:37:20.483Z",
-    author: "MarkTechRover",
-    section: "Services",
-    tags: ["how to write a i prompts","services"],
-    image: "/images/services/how-to-write-a-i-prompts.jpg"
+    title: 'How to Write AI Prompts | Complete Guide to AI Prompt Writing | MarkTechRover',
+    description: 'Learn how to write effective AI prompts that get better results. Complete guide to AI prompt engineering, best practices, techniques, and examples. Best AI prompt writing guide in Delhi NCR & India.',
+    keywords: [
+      'How to Write AI Prompts', 'AI Prompt Writing', 'Prompt Engineering', 'AI Prompts Guide',
+      'Writing AI Prompts', 'AI Prompt Best Practices', 'Prompt Engineering Techniques', 'AI Prompt Examples',
+      'AI Prompts India', 'Prompt Writing Delhi', 'Best AI Prompt Guide', 'ChatGPT Prompts',
+      'AI Prompt Optimization', 'Effective AI Prompts', 'AI Prompt Writing Tips'
+    ],
+    url: '/services/ai-technology/how-to-write-ai-prompts',
+    type: 'website' as const,
+    publishedAt: '2024-01-01',
+    modifiedAt: '2024-12-01',
+    author: 'MarkTechRover',
+    section: 'AI & Technology',
+    tags: ['AI Prompts', 'Prompt Engineering', 'AI Guide', 'AI Writing'],
+    image: '/images/how-to-write-ai-prompts.webp'
   };
 
-  const deliverables = [
+  const keyPrinciples = [
     {
       id: 1,
-      title: 'Custom how-to-write-a-i-prompts',
-      description: 'Bespoke how-to-write-a-i-prompts tailored to your brand and business objectives',
-      icon: <DesignIcon className="h-6 w-6" />,
+      title: 'Be Specific and Clear',
+      description: 'Provide clear, specific instructions to get the exact output you need',
+      icon: <Target className="h-8 w-8" />,
       features: [
-        'Custom how-to-write-a-i-prompts and layout',
-        'Brand-consistent visual design',
-        'User experience (UX) optimization',
-        'Mobile-first responsive design',
-        'Interactive elements and animations',
-        'Cross-browser compatibility'
+        'Use specific language and terms',
+        'Define the desired output format',
+        'Specify length, tone, and style',
+        'Include relevant context',
+        'Avoid vague or ambiguous terms',
+        'Provide concrete examples'
       ],
-      expanded: true
+      color: 'from-blue-500 to-blue-600',
+      bgColor: 'from-blue-500/10 to-blue-400/10',
+      borderColor: 'border-blue-500/20',
+      textColor: 'text-blue-300'
     },
     {
       id: 2,
-      title: 'Responsive Web Development',
-      description: 'Modern, responsive website development using latest technologies',
-      icon: <Code className="h-6 w-6" />,
+      title: 'Provide Context',
+      description: 'Give AI enough context to understand the task and generate relevant responses',
+      icon: <Info className="h-8 w-8" />,
       features: [
-        'HTML5, CSS3, and JavaScript development',
-        'React.js and Next.js frameworks',
-        'Progressive Web App (PWA) features',
-        'SEO-optimized code structure',
-        'Fast loading and performance optimization',
-        'Security and SSL implementation'
+        'Explain the background',
+        'Define the target audience',
+        'Specify the purpose',
+        'Include relevant information',
+        'Set the scenario',
+        'Provide necessary details'
       ],
-      expanded: false
+      color: 'from-purple-500 to-purple-600',
+      bgColor: 'from-purple-500/10 to-purple-400/10',
+      borderColor: 'border-purple-500/20',
+      textColor: 'text-purple-300'
     },
     {
       id: 3,
-      title: 'E-commerce how-to-write-a-i-prompts',
-      description: 'Professional e-commerce how-to-write-a-i-prompts for online stores',
-      icon: <ShoppingCart className="h-6 w-6" />,
+      title: 'Use Examples',
+      description: 'Include examples to show AI the desired format, style, or structure',
+      icon: <FileText className="h-8 w-8" />,
       features: [
-        'E-commerce platform integration',
-        'Product catalog and inventory management',
-        'Secure payment gateway integration',
-        'Shopping cart and checkout optimization',
-        'Order management and tracking',
-        'Customer account and review systems'
+        'Show desired output format',
+        'Provide style examples',
+        'Demonstrate structure',
+        'Include sample responses',
+        'Show tone and voice',
+        'Illustrate complexity level'
       ],
-      expanded: false
+      color: 'from-emerald-500 to-emerald-600',
+      bgColor: 'from-emerald-500/10 to-emerald-400/10',
+      borderColor: 'border-emerald-500/20',
+      textColor: 'text-emerald-300'
     },
     {
       id: 4,
-      title: 'Content Management System',
-      description: 'Easy-to-use CMS for content management and updates',
-      icon: <FileText className="h-6 w-6" />,
+      title: 'Set Constraints',
+      description: 'Define constraints and limitations to guide AI output',
+      icon: <Lock className="h-8 w-8" />,
       features: [
-        'Custom CMS development',
-        'WordPress or other CMS integration',
-        'Content editing and management tools',
-        'Media library and asset management',
-        'User role and permission management',
-        'Content versioning and backup'
+        'Specify word or character limits',
+        'Define format requirements',
+        'Set style guidelines',
+        'Include do\'s and don\'ts',
+        'Specify tone requirements',
+        'Define quality standards'
       ],
-      expanded: false
+      color: 'from-rose-500 to-rose-600',
+      bgColor: 'from-rose-500/10 to-rose-400/10',
+      borderColor: 'border-rose-500/20',
+      textColor: 'text-rose-300'
     },
     {
       id: 5,
-      title: 'SEO-Optimized Design',
-      description: 'how-to-write-a-i-prompts optimized for search engine visibility',
-      icon: <Search className="h-6 w-6" />,
+      title: 'Iterate and Refine',
+      description: 'Refine prompts through iteration to improve results',
+      icon: <RefreshCw className="h-8 w-8" />,
       features: [
-        'SEO-friendly URL structure',
-        'Meta tags and schema markup',
-        'Fast loading speed optimization',
-        'Mobile-friendly design',
-        'Structured data implementation',
-        'XML sitemap generation'
+        'Test different phrasings',
+        'Adjust specificity',
+        'Add or remove details',
+        'Modify tone and style',
+        'Experiment with structure',
+        'Learn from outputs'
       ],
-      expanded: false
+      color: 'from-amber-500 to-amber-600',
+      bgColor: 'from-amber-500/10 to-amber-400/10',
+      borderColor: 'border-amber-500/20',
+      textColor: 'text-amber-300'
     },
     {
       id: 6,
-      title: 'Website Maintenance & Support',
-      description: 'Ongoing website maintenance and technical support',
-      icon: <Wrench className="h-6 w-6" />,
+      title: 'Use Role-Playing',
+      description: 'Assign roles to AI to get specialized, expert-level responses',
+      icon: <Users className="h-8 w-8" />,
       features: [
-        'Regular website updates and maintenance',
-        'Security monitoring and updates',
-        'Performance optimization',
-        'Content updates and management',
-        'Technical support and troubleshooting',
-        'Backup and disaster recovery'
+        'Define AI\'s role or expertise',
+        'Specify perspective',
+        'Set professional level',
+        'Assign character traits',
+        'Define knowledge domain',
+        'Specify communication style'
       ],
-      expanded: false
+      color: 'from-violet-500 to-violet-600',
+      bgColor: 'from-violet-500/10 to-violet-400/10',
+      borderColor: 'border-violet-500/20',
+      textColor: 'text-violet-300'
     }
   ];
 
-  const designPackages = [
+  const benefits = [
     {
-      name: 'Basic how-to-write-a-i-prompts',
-      price: '₹45,000',
-      period: 'one-time',
-      description: 'Perfect for small businesses and startups',
-      features: [
-        '5-page custom how-to-write-a-i-prompts',
-        'Responsive mobile design',
-        'Basic SEO optimization',
-        'Contact form integration',
-        'Social media integration',
-        'Basic CMS setup',
-        '1 month of support'
-      ],
-      highlighted: false,
-      cta: 'Get Started'
+      title: 'Better AI Output Quality',
+      description: 'Get higher quality, more relevant responses from AI systems',
+      icon: <Star className="h-8 w-8" />,
+      metric: '85%',
+      label: 'Quality Improvement'
     },
     {
-      name: 'Professional how-to-write-a-i-prompts',
-      price: '₹85,000',
-      period: 'one-time',
-      description: 'Comprehensive how-to-write-a-i-prompts for growing businesses',
-      features: [
-        '10-page custom how-to-write-a-i-prompts',
-        'Advanced responsive design',
-        'E-commerce functionality',
-        'Advanced SEO optimization',
-        'Custom animations and interactions',
-        'Advanced CMS with admin panel',
-        '3 months of support',
-        'Performance optimization'
-      ],
-      highlighted: true,
-      cta: 'Most Popular'
+      title: 'Time Savings',
+      description: 'Reduce time spent on revisions and iterations',
+      icon: <Clock className="h-8 w-8" />,
+      metric: '70%',
+      label: 'Time Saved'
     },
     {
-      name: 'Enterprise how-to-write-a-i-prompts',
-      price: '₹1,50,000',
-      period: 'one-time',
-      description: 'Full-featured how-to-write-a-i-prompts for large businesses',
-      features: [
-        'Unlimited page custom design',
-        'Advanced e-commerce platform',
-        'Custom functionality development',
-        'Advanced SEO and analytics',
-        'Multi-language support',
-        'Advanced security features',
-        '6 months of support',
-        'Performance monitoring',
-        'Custom integrations'
+      title: 'More Accurate Results',
+      description: 'Achieve more accurate and relevant AI-generated content',
+      icon: <Target className="h-8 w-8" />,
+      metric: '78%',
+      label: 'Accuracy Increase'
+    },
+    {
+      title: 'Enhanced Productivity',
+      description: 'Increase productivity by getting better results faster',
+      icon: <Zap className="h-8 w-8" />,
+      metric: '65%',
+      label: 'Productivity Boost'
+    }
+  ];
+
+  const promptTypes = [
+    {
+      type: 'Instructional Prompts',
+      description: 'Direct instructions that tell AI exactly what to do',
+      icon: <Command className="h-8 w-8" />,
+      examples: [
+        'Write a 500-word blog post about digital marketing',
+        'Create a marketing plan for a new product launch',
+        'Generate 10 social media post ideas',
+        'Summarize this article in 3 bullet points',
+        'Translate this text to Spanish',
+        'Format this data as a table'
       ],
-      highlighted: false,
-      cta: 'Contact Sales'
+      bestFor: 'Simple, straightforward tasks'
+    },
+    {
+      type: 'Creative Prompts',
+      description: 'Prompts that encourage creative and original output',
+      icon: <Lightbulb className="h-8 w-8" />,
+      examples: [
+        'Write a creative story about a time traveler',
+        'Design a logo concept for a tech startup',
+        'Create a catchy tagline for a product',
+        'Generate creative marketing campaign ideas',
+        'Write a poem about innovation',
+        'Brainstorm unique product names'
+      ],
+      bestFor: 'Creative content generation'
+    },
+    {
+      type: 'Analytical Prompts',
+      description: 'Prompts that require analysis, comparison, or evaluation',
+      icon: <BarChart className="h-8 w-8" />,
+      examples: [
+        'Analyze the pros and cons of remote work',
+        'Compare two marketing strategies',
+        'Evaluate the effectiveness of this campaign',
+        'Identify trends in this data',
+        'Break down this complex topic',
+        'Assess the risks and benefits'
+      ],
+      bestFor: 'Analysis and evaluation tasks'
+    },
+    {
+      type: 'Conversational Prompts',
+      description: 'Prompts that engage AI in a dialogue or conversation',
+      icon: <MessageSquare className="h-8 w-8" />,
+      examples: [
+        'Act as a marketing consultant and advise me',
+        'Help me understand this concept',
+        'Explain this like I\'m a beginner',
+        'Have a conversation about industry trends',
+        'Guide me through this process',
+        'Answer my questions about this topic'
+      ],
+      bestFor: 'Interactive learning and guidance'
+    }
+  ];
+
+  const bestPractices = [
+    {
+      step: '01',
+      title: 'Start with Clear Intent',
+      description: 'Define what you want to achieve with your prompt',
+      icon: <Target className="h-6 w-6" />,
+      details: [
+        'Identify your goal',
+        'Define success criteria',
+        'Consider the output format',
+        'Plan the prompt structure'
+      ]
+    },
+    {
+      step: '02',
+      title: 'Structure Your Prompt',
+      description: 'Organize your prompt with clear sections and logical flow',
+      icon: <Layers className="h-6 w-6" />,
+      details: [
+        'Use clear headings',
+        'Separate instructions',
+        'Organize information logically',
+        'Use formatting for clarity'
+      ]
+    },
+    {
+      step: '03',
+      title: 'Add Context and Examples',
+      description: 'Provide relevant context and examples to guide AI',
+      icon: <FileText className="h-6 w-6" />,
+      details: [
+        'Include background information',
+        'Provide relevant examples',
+        'Show desired format',
+        'Set expectations'
+      ]
+    },
+    {
+      step: '04',
+      title: 'Specify Requirements',
+      description: 'Clearly state all requirements and constraints',
+      icon: <Settings className="h-6 w-6" />,
+      details: [
+        'Define length limits',
+        'Specify style and tone',
+        'Set quality standards',
+        'Include do\'s and don\'ts'
+      ]
+    },
+    {
+      step: '05',
+      title: 'Test and Iterate',
+      description: 'Test your prompt and refine based on results',
+      icon: <RefreshCw className="h-6 w-6" />,
+      details: [
+        'Test with sample inputs',
+        'Evaluate outputs',
+        'Identify improvements',
+        'Refine and optimize'
+      ]
+    },
+    {
+      step: '06',
+      title: 'Document and Share',
+      description: 'Document successful prompts for future use',
+      icon: <Book className="h-6 w-6" />,
+      details: [
+        'Save effective prompts',
+        'Document what works',
+        'Share with team',
+        'Build prompt library'
+      ]
     }
   ];
 
   return (
     <PageSEO config={seoConfig}>
-      <div className="min-h-screen ">
+      <div className="min-h-screen bg-gradient-to-br from-black via-gray-900 to-black text-white relative">
         {/* Hero Section */}
-        <section className="relative overflow-hidden bg-gradient-to-br from-black via-purple-900 to-black text-white">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_30%_20%,rgba(147,51,234,0.3),transparent_50%)]"></div>
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(147,51,234,0.2),transparent_50%)]"></div>
-          
-          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-32 pb-20">
-            <div className="text-center">
-              <div className="inline-flex items-center px-4 py-2 rounded-full bg-purple-500/20 border border-purple-400/30 text-purple-200 text-sm font-medium mb-6">
-                <Layout className="h-4 w-4 mr-2" />
-                how-to-write-a-i-prompts Services
+        <section className="relative pt-24 pb-20 overflow-visible">
+          {/* Animated Background */}
+          <div className="absolute inset-0 pointer-events-none" style={{ zIndex: 0, opacity: 0.5 }}>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,rgba(147,51,234,0.15),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_80%,rgba(59,130,246,0.1),transparent_50%)]"></div>
+            <div className="absolute inset-0 bg-[linear-gradient(45deg,transparent_30%,rgba(147,51,234,0.02)_50%,transparent_70%)] bg-[length:100px_100px] animate-pulse"></div>
+          </div>
+
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" style={{ position: 'relative', zIndex: 10, isolation: 'isolate' }}>
+            <div className="text-center max-w-5xl mx-auto" style={{ position: 'relative', zIndex: 10 }}>
+              <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gradient-to-r from-purple-500/20 to-blue-500/20 border border-purple-500/30 backdrop-blur-sm mb-8" style={{ position: 'relative', zIndex: 10 }}>
+                <PenToolIcon className="h-4 w-4 text-purple-300" />
+                <span className="text-sm font-medium text-purple-200">Complete AI Prompt Writing Guide</span>
               </div>
               
-              <h1 className="text-5xl md:text-7xl font-bold mb-6 bg-gradient-to-r from-white via-purple-100 to-white bg-clip-text text-transparent">
-                how-to-write-a-i-prompts Services in Delhi
+              {/* Main Heading */}
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold mb-6 leading-tight">
+                <span className="block bg-gradient-to-r from-white via-purple-200 to-blue-200 bg-clip-text text-transparent" style={{ WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  AI Prompt Writing Guide for Marketing
+                </span>
               </h1>
               
-              <p className="text-xl md:text-2xl text-purple-200 mb-8 max-w-4xl mx-auto leading-relaxed">
-                Best how-to-write-a-i-prompts company in Delhi NCR offering custom how-to-write-a-i-prompts. 
-                Professional how-to-write-a-i-prompts services India with modern, responsive designs.
+              <p className="text-xl md:text-2xl text-gray-300 mb-12 max-w-3xl mx-auto leading-relaxed">
+                Learn how to write effective AI prompts that get better results. Master prompt engineering, 
+                best practices, and techniques to maximize AI output quality.
               </p>
-              
-              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
+
+              {/* CTA Buttons */}
+              <div className="flex flex-col sm:flex-row gap-4 justify-center mb-16">
                 <Link
                   to="/contact"
-                  className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-purple-600 to-purple-700 hover:from-purple-700 hover:to-purple-800 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg hover:shadow-purple-500/25"
+                  className="group inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-purple-600 to-blue-600 hover:from-purple-700 hover:to-blue-700 text-white font-semibold rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-purple-500/25 hover:shadow-xl hover:shadow-purple-500/40"
                 >
-                  <Target className="h-5 w-5 mr-2" />
-                  Get how-to-write-a-i-prompts Quote
-                  <ArrowRight className="h-5 w-5 ml-2" />
+                  <Rocket className="h-5 w-5 mr-2" />
+                  Get AI Consultation
+                  <ArrowRight className="h-5 w-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </Link>
                 
-                <button className="inline-flex items-center px-8 py-4 bg-gray-900/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-gray-900/20 hover:scale-105">
-                  <Play className="h-5 w-5 mr-2" />
-                  View Portfolio
+                <button className="inline-flex items-center justify-center px-8 py-4 bg-white/10 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl transition-all duration-300 hover:bg-white/20 hover:scale-105">
+                  <Book className="h-5 w-5 mr-2" />
+                  Read More
                 </button>
+              </div>
+
+              {/* Key Stats */}
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-4xl mx-auto">
+                {[
+                  { value: '85%', label: 'Quality Improvement' },
+                  { value: '70%', label: 'Time Saved' },
+                  { value: '78%', label: 'Accuracy Increase' },
+                  { value: '65%', label: 'Productivity Boost' }
+                ].map((stat, index) => (
+                  <div key={index} className="text-center p-4 rounded-xl bg-gradient-to-br from-gray-800/50 to-gray-900/50 border border-gray-800 backdrop-blur-sm">
+                    <div className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-purple-400 to-blue-400 bg-clip-text text-transparent mb-2">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-gray-400">{stat.label}</div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
         </section>
 
         {/* Stats Section */}
-        <section className="py-16 bg-gray-900">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <section className="relative py-16 bg-gradient-to-r from-gray-900 via-purple-900/20 to-gray-900 border-y border-purple-500/10">
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">500+</div>
-                <div className="text-gray-300">Websites Designed & Developed</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent mb-2">92%</div>
+                <div className="text-gray-300">Better Results with Good Prompts</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">98%</div>
-                <div className="text-gray-300">Client Satisfaction Rate</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent mb-2">3x</div>
+                <div className="text-gray-300">Faster Output Generation</div>
               </div>
               <div className="text-center">
-                <div className="text-4xl font-bold text-purple-300 mb-2">24/7</div>
-                <div className="text-gray-300">Support & Maintenance</div>
+                <div className="text-4xl font-bold bg-gradient-to-r from-purple-300 to-purple-400 bg-clip-text text-transparent mb-2">500+</div>
+                <div className="text-gray-300">Prompt Templates Available</div>
               </div>
             </div>
           </div>
@@ -364,21 +558,21 @@ const HowToWriteAIPrompts = () => {
 
         {/* Sticky Navigation */}
         {isNavSticky && (
-          <div className="sticky top-20 z-40 bg-gray-900/95 backdrop-blur-md border-b border-gray-700 shadow-sm">
+          <div className="fixed top-20 left-0 right-0 z-40 bg-gray-900/95 backdrop-blur-md border-b border-purple-500/20 shadow-lg">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-              <nav className="flex space-x-8 overflow-x-auto py-4">
+              <nav className="flex space-x-2 overflow-x-auto py-3 scrollbar-hide">
                 {navItems.map((item) => (
                   <button
                     key={item.id}
                     onClick={() => scrollToSection(item.id)}
                     className={`flex items-center space-x-2 px-4 py-2 rounded-lg font-medium transition-all duration-300 whitespace-nowrap ${
                       activeSection === item.id
-                        ? 'bg-purple-100 text-purple-700'
-                        : 'text-gray-300 hover:text-purple-300 hover:bg-purple-50'
+                        ? 'bg-gradient-to-r from-purple-600 to-purple-700 text-white shadow-lg shadow-purple-500/25 scale-105'
+                        : 'text-gray-300 hover:text-purple-300 hover:bg-purple-500/10'
                     }`}
                   >
                     {item.icon}
-                    <span>{item.label}</span>
+                    <span className="text-sm">{item.label}</span>
                   </button>
                 ))}
               </nav>
@@ -387,54 +581,144 @@ const HowToWriteAIPrompts = () => {
         )}
 
         {/* Main Content */}
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-          {/* Deliverables Section */}
-          <section id="deliverables" className="mb-20">
+        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+          {/* Overview Section */}
+          <section id="overview" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                how-to-write-a-i-prompts Deliverables
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4 bg-gradient-to-r from-white to-purple-200 bg-clip-text text-transparent">
+                What is AI Prompt Writing?
+              </h2>
+              <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+                AI prompt writing is the art and science of crafting effective instructions for AI systems to 
+                generate desired outputs. A well-written prompt can dramatically improve the quality, relevance, 
+                and accuracy of AI-generated content, making it a crucial skill in the age of AI.
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-purple-500/20 p-8 hover:border-purple-500/40 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <PenToolIcon className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Clear Instructions</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Write clear, specific instructions that tell AI exactly what you want.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-purple-500/20 p-8 hover:border-purple-500/40 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <Info className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Provide Context</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Give AI enough context to understand the task and generate relevant responses.
+                </p>
+              </div>
+              
+              <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-purple-500/20 p-8 hover:border-purple-500/40 transition-all duration-300">
+                <div className="w-12 h-12 bg-gradient-to-br from-purple-500 to-purple-600 rounded-xl flex items-center justify-center mb-4">
+                  <FileText className="h-6 w-6 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-white mb-3">Use Examples</h3>
+                <p className="text-gray-300 leading-relaxed">
+                  Include examples to show AI the desired format, style, or structure.
+                </p>
+              </div>
+            </div>
+
+            <div className="bg-gradient-to-br from-purple-900/40 via-purple-800/30 to-purple-900/40 rounded-2xl border border-purple-500/30 p-8 md:p-12 backdrop-blur-sm">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+                <div>
+                  <h3 className="text-2xl font-bold text-white mb-4">Why Prompt Writing Matters</h3>
+                  <ul className="space-y-3">
+                    {[
+                      'Get better quality AI-generated content',
+                      'Save time on revisions and iterations',
+                      'Achieve more accurate and relevant results',
+                      'Increase productivity and efficiency',
+                      'Reduce costs by getting it right the first time',
+                      'Unlock the full potential of AI tools'
+                    ].map((benefit, index) => (
+                      <li key={index} className="flex items-start space-x-3">
+                        <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0 mt-0.5" />
+                        <span className="text-gray-300">{benefit}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="relative">
+                  <div className="bg-gradient-to-br from-purple-600/20 to-purple-500/20 rounded-xl p-6 border border-purple-500/30">
+                    <div className="grid grid-cols-2 gap-4">
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-purple-300 mb-1">92%</div>
+                        <div className="text-xs text-gray-400">Better Results</div>
+                      </div>
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-purple-300 mb-1">85%</div>
+                        <div className="text-xs text-gray-400">Quality Improvement</div>
+                      </div>
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-purple-300 mb-1">70%</div>
+                        <div className="text-xs text-gray-400">Time Saved</div>
+                      </div>
+                      <div className="text-center p-4 bg-black/30 rounded-lg">
+                        <div className="text-3xl font-bold text-purple-300 mb-1">78%</div>
+                        <div className="text-xs text-gray-400">Accuracy Increase</div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          {/* Features Section */}
+          <section id="features" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Key Prompt Writing Principles
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive how-to-write-a-i-prompts services designed for business growth. 
-                Best how-to-write-a-i-prompts company in Delhi NCR delivering modern, responsive websites.
+                Essential principles for writing effective AI prompts
               </p>
             </div>
 
             <div className="space-y-6">
-              {deliverables.map((deliverable, index) => (
+              {keyPrinciples.map((principle, index) => (
                 <div
-                  key={deliverable.id}
-                  className="bg-gray-900 rounded-2xl border border-gray-700 shadow-sm hover:shadow-md transition-all duration-300"
+                  key={principle.id}
+                  className={`bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border ${principle.borderColor} shadow-lg hover:shadow-xl transition-all duration-300 overflow-hidden`}
                 >
                   <button
-                    onClick={() => setExpandedDeliverable(expandedDeliverable === index ? -1 : index)}
+                    onClick={() => setExpandedFeature(expandedFeature === index ? -1 : index)}
                     className="w-full px-8 py-6 flex items-center justify-between text-left"
                   >
-                    <div className="flex items-center space-x-4">
-                      <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                        {deliverable.icon}
+                    <div className="flex items-center space-x-4 flex-1">
+                      <div className={`p-4 rounded-xl bg-gradient-to-br ${principle.color} shadow-lg`}>
+                        {principle.icon}
                       </div>
-                      <div>
-                        <h3 className="text-xl font-semibold text-white mb-1">
-                          {deliverable.title}
+                      <div className="flex-1">
+                        <h3 className="text-xl font-semibold text-white mb-2">
+                          {principle.title}
                         </h3>
-                        <p className="text-gray-300">{deliverable.description}</p>
+                        <p className="text-gray-300">{principle.description}</p>
                       </div>
                     </div>
                     <ChevronDown
-                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 ${
-                        expandedDeliverable === index ? 'rotate-180' : ''
+                      className={`h-6 w-6 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
+                        expandedFeature === index ? 'rotate-180' : ''
                       }`}
                     />
                   </button>
                   
-                  {expandedDeliverable === index && (
-                    <div className="px-8 pb-6">
+                  {expandedFeature === index && (
+                    <div className="px-8 pb-6 border-t border-gray-700 pt-6">
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {deliverable.features.map((feature, featureIndex) => (
-                          <div key={featureIndex} className="flex items-center space-x-3">
-                            <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0" />
-                            <span className="text-gray-400">{feature}</span>
+                        {principle.features.map((item, itemIndex) => (
+                          <div key={itemIndex} className="flex items-start space-x-3">
+                            <CheckCircle className={`h-5 w-5 ${principle.textColor} flex-shrink-0 mt-0.5`} />
+                            <span className="text-gray-300">{item}</span>
                           </div>
                         ))}
                       </div>
@@ -445,299 +729,173 @@ const HowToWriteAIPrompts = () => {
             </div>
           </section>
 
-          {/* Design Packages Section */}
-          <section id="packages" className="mb-20">
+          {/* Benefits Section */}
+          <section id="benefits" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                how-to-write-a-i-prompts Packages
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Benefits of Good Prompt Writing
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Comprehensive how-to-write-a-i-prompts solutions. Best how-to-write-a-i-prompts services in India with flexible packages 
-                designed for businesses of all sizes.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {designPackages.map((pkg, index) => (
-                <div
-                  key={index}
-                  className={`relative bg-gray-900 rounded-2xl border-2 p-8 transition-all duration-300 hover:shadow-xl ${
-                    pkg.highlighted
-                      ? 'border-purple-500 shadow-lg scale-105'
-                      : 'border-gray-700 hover:border-purple-300'
-                  }`}
-                >
-                  {pkg.highlighted && (
-                    <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                      <span className="bg-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold">
-                        {pkg.cta}
-                      </span>
-                    </div>
-                  )}
-                  
-                  <div className="text-center mb-6">
-                    <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                    <div className="mb-4">
-                      <span className="text-4xl font-bold text-purple-300">{pkg.price}</span>
-                      <span className="text-gray-500"> {pkg.period}</span>
-                    </div>
-                    <p className="text-gray-300">{pkg.description}</p>
-                  </div>
-                  
-                  <ul className="space-y-3 mb-8">
-                    {pkg.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-start space-x-3">
-                        <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
-                        <span className="text-gray-400">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link
-                    to="/contact"
-                    className={`w-full py-3 px-6 rounded-xl font-semibold transition-all duration-300 ${
-                      pkg.highlighted
-                        ? 'bg-purple-600 text-white hover:bg-purple-700'
-                        : 'bg-gray-100 text-white hover:bg-gray-200'
-                    }`}
-                  >
-                    {pkg.cta}
-                  </Link>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Technology Section */}
-          <section id="technology" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                how-to-write-a-i-prompts Technology
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Advanced how-to-write-a-i-prompts technology stack powering modern websites. 
-                Professional how-to-write-a-i-prompts services India with cutting-edge tools and frameworks.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {[
-                {
-                  title: 'Frontend Technologies',
-                  description: 'Modern frontend frameworks and technologies',
-                  icon: <DesktopIcon className="h-8 w-8" />,
-                  features: ['React.js', 'Next.js', 'Vue.js', 'TypeScript', 'Tailwind CSS', 'Sass/SCSS']
-                },
-                {
-                  title: 'Design Tools',
-                  description: 'Professional design and prototyping tools',
-                  icon: <DesignIcon className="h-8 w-8" />,
-                  features: ['Figma', 'Adobe XD', 'Sketch', 'InVision', 'Adobe Creative Suite', 'Protopie']
-                },
-                {
-                  title: 'Backend Technologies',
-                  description: 'Robust backend development technologies',
-                  icon: <Server className="h-8 w-8" />,
-                  features: ['Node.js', 'Python/Django', 'PHP/Laravel', 'Ruby on Rails', 'Java/Spring', 'C#/.NET']
-                },
-                {
-                  title: 'CMS Platforms',
-                  description: 'Content management system platforms',
-                  icon: <FileText className="h-8 w-8" />,
-                  features: ['WordPress', 'Drupal', 'Joomla', 'Strapi', 'Contentful', 'Sanity']
-                },
-                {
-                  title: 'E-commerce Platforms',
-                  description: 'E-commerce and online store platforms',
-                  icon: <ShoppingCart className="h-8 w-8" />,
-                  features: ['Shopify', 'WooCommerce', 'Magento', 'BigCommerce', 'PrestaShop', 'OpenCart']
-                },
-                {
-                  title: 'Performance Tools',
-                  description: 'Website performance and optimization tools',
-                  icon: <Zap className="h-8 w-8" />,
-                  features: ['Google PageSpeed', 'GTmetrix', 'WebPageTest', 'Lighthouse', 'Core Web Vitals', 'CDN']
-                }
-              ].map((tech, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6 hover:shadow-md transition-all duration-300">
-                  <div className="flex items-center space-x-4 mb-4">
-                    <div className="p-3 rounded-xl bg-purple-100 text-purple-300">
-                      {tech.icon}
-                    </div>
-                    <h3 className="text-xl font-semibold text-purple-300">{tech.title}</h3>
-                  </div>
-                  <p className="text-gray-300 mb-4">{tech.description}</p>
-                  <ul className="space-y-2">
-                    {tech.features.map((feature, featureIndex) => (
-                      <li key={featureIndex} className="flex items-center space-x-2">
-                        <div className="w-2 h-2 bg-purple-500 rounded-full"></div>
-                        <span className="text-gray-400 text-sm">{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Case Studies Section */}
-          <section id="case-studies" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                how-to-write-a-i-prompts Case Studies
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Real results from how-to-write-a-i-prompts projects. Best how-to-write-a-i-prompts company in Delhi NCR 
-                delivering modern, high-performing websites.
-              </p>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-              {[
-                {
-                  title: 'E-commerce Website',
-                  description: 'Modern e-commerce website with 300% increase in sales',
-                  metrics: ['300% Sales Increase', '450% Traffic Growth', '6 Months'],
-                  image: '/images/case-studies/ecommerce-design.webp'
-                },
-                {
-                  title: 'Corporate Website',
-                  description: 'Professional corporate website with 500% lead generation increase',
-                  metrics: ['500% Lead Increase', '250% Engagement', '8 Months'],
-                  image: '/images/case-studies/corporate-design.webp'
-                },
-                {
-                  title: 'Restaurant Website',
-                  description: 'Beautiful restaurant website with 400% online orders increase',
-                  metrics: ['400% Online Orders', '300% Brand Awareness', '4 Months'],
-                  image: '/images/case-studies/restaurant-design.webp'
-                },
-                {
-                  title: 'SaaS Platform',
-                  description: 'Modern SaaS platform with 600% user registration increase',
-                  metrics: ['600% User Registration', '350% Conversion Rate', '12 Months'],
-                  image: '/images/case-studies/saas-design.webp'
-                }
-              ].map((study, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 overflow-hidden hover:shadow-lg transition-all duration-300">
-                  <div className="h-48 bg-gradient-to-br from-purple-500 to-purple-700 flex items-center justify-center">
-                    <Trophy className="h-16 w-16 text-white" />
-                  </div>
-                  <div className="p-6">
-                    <h3 className="text-xl font-semibold text-white mb-2">{study.title}</h3>
-                    <p className="text-gray-300 mb-4">{study.description}</p>
-                    <div className="flex flex-wrap gap-2">
-                      {study.metrics.map((metric, metricIndex) => (
-                        <span key={metricIndex} className="px-3 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium">
-                          {metric}
-                        </span>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          {/* Approach Section */}
-          <section id="approach" className="mb-20">
-            <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                how-to-write-a-i-prompts Approach
-              </h2>
-              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Proven methodology for how-to-write-a-i-prompts success. how-to-write-a-i-prompts experts in Delhi NCR 
-                delivering comprehensive solutions for business growth.
+                How effective prompt writing transforms AI interactions
               </p>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-              {[
-                {
-                  step: '01',
-                  title: 'Discovery & Planning',
-                  description: 'Comprehensive analysis and website planning',
-                  icon: <Search className="h-8 w-8" />
-                },
-                {
-                  step: '02',
-                  title: 'Design & Prototyping',
-                  description: 'Creative design and interactive prototyping',
-                  icon: <Palette className="h-8 w-8" />
-                },
-                {
-                  step: '03',
-                  title: 'Development',
-                  description: 'Professional website development and coding',
-                  icon: <Code className="h-8 w-8" />
-                },
-                {
-                  step: '04',
-                  title: 'Launch & Support',
-                  description: 'Website launch and ongoing support',
-                  icon: <Rocket className="h-8 w-8" />
-                }
-              ].map((step, index) => (
-                <div key={index} className="text-center">
-                  <div className="relative mb-6">
-                    <div className="w-16 h-16 bg-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
-                      <span className="text-white font-bold text-xl">{step.step}</span>
-                    </div>
-                    <div className="absolute top-8 left-1/2 transform -translate-x-1/2 w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center">
-                      <div className="text-purple-300">
-                        {step.icon}
+              {benefits.map((benefit, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-purple-500/20 p-6 hover:border-purple-500/40 transition-all duration-300 hover:shadow-xl"
+                >
+                  <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-400/20 border border-purple-500/30 mb-4 inline-block">
+                    {benefit.icon}
+                  </div>
+                  <div className="text-right mb-3">
+                    <div className="text-2xl font-bold text-purple-300">{benefit.metric}</div>
+                    <div className="text-xs text-gray-400">{benefit.label}</div>
+                  </div>
+                  <h3 className="text-xl font-bold text-white mb-3">{benefit.title}</h3>
+                  <p className="text-gray-300 text-sm leading-relaxed">{benefit.description}</p>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Prompt Types Section */}
+          <section id="types" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Types of AI Prompts
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Different types of prompts for various use cases
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+              {promptTypes.map((promptType, index) => (
+                <div
+                  key={index}
+                  className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-purple-500/20 p-8 hover:border-purple-500/40 transition-all duration-300 hover:shadow-xl"
+                >
+                  <div className="p-4 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-400/20 border border-purple-500/30 mb-6 inline-block">
+                    {promptType.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-white mb-3">{promptType.type}</h3>
+                  <p className="text-gray-300 mb-6 leading-relaxed">{promptType.description}</p>
+                  
+                  <div className="mb-6">
+                    <h4 className="text-sm font-semibold text-purple-300 mb-3">Examples:</h4>
+                    <ul className="space-y-2">
+                      {promptType.examples.map((example, exampleIndex) => (
+                        <li key={exampleIndex} className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-400 text-sm italic">"{example}"</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                  
+                  <div className="pt-4 border-t border-gray-700">
+                    <p className="text-sm text-gray-400">
+                      <span className="font-semibold text-purple-300">Best for: </span>
+                      {promptType.bestFor}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </section>
+
+          {/* Best Practices Section */}
+          <section id="implementation" className="relative mb-20 scroll-mt-24">
+            <div className="text-center mb-12">
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Prompt Writing Best Practices
+              </h2>
+              <p className="text-xl text-gray-300 max-w-3xl mx-auto">
+                Step-by-step guide to writing effective AI prompts
+              </p>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {bestPractices.map((practice, index) => (
+                <div key={index} className="relative">
+                  <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl border border-purple-500/20 p-6 hover:border-purple-500/40 transition-all duration-300 hover:shadow-xl">
+                    <div className="flex items-center justify-between mb-4">
+                      <div className="w-16 h-16 bg-gradient-to-br from-purple-600 to-purple-700 rounded-xl flex items-center justify-center shadow-lg">
+                        <span className="text-white font-bold text-xl">{practice.step}</span>
+                      </div>
+                      <div className="p-3 rounded-xl bg-gradient-to-br from-purple-500/20 to-purple-400/20 border border-purple-500/30">
+                        <div className="text-purple-300">
+                          {practice.icon}
+                        </div>
                       </div>
                     </div>
+                    <h3 className="text-xl font-bold text-white mb-3">{practice.title}</h3>
+                    <p className="text-gray-300 mb-4 text-sm leading-relaxed">{practice.description}</p>
+                    <ul className="space-y-2">
+                      {practice.details.map((detail, detailIndex) => (
+                        <li key={detailIndex} className="flex items-start space-x-2">
+                          <CheckCircle className="h-4 w-4 text-purple-400 flex-shrink-0 mt-0.5" />
+                          <span className="text-gray-400 text-sm">{detail}</span>
+                        </li>
+                      ))}
+                    </ul>
                   </div>
-                  <h3 className="text-xl font-semibold text-white mb-2">{step.title}</h3>
-                  <p className="text-gray-300">{step.description}</p>
                 </div>
               ))}
             </div>
           </section>
 
           {/* FAQs Section */}
-          <section id="faqs" className="mb-20">
+          <section id="faqs" className="relative mb-20 scroll-mt-24">
             <div className="text-center mb-12">
-              <h2 className="text-4xl font-bold text-white mb-4">
-                how-to-write-a-i-prompts FAQs
+              <h2 className="text-4xl md:text-5xl font-bold text-white mb-4">
+                Frequently Asked Questions
               </h2>
               <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-                Common questions about how-to-write-a-i-prompts services. Best how-to-write-a-i-prompts company in Delhi 
-                providing transparent answers and solutions.
+                Common questions about AI prompt writing
               </p>
             </div>
 
             <div className="max-w-4xl mx-auto space-y-6">
               {[
                 {
-                  question: 'How long does it take to design and develop a website?',
-                  answer: 'how-to-write-a-i-prompts and development typically takes 4-8 weeks depending on complexity, number of pages, and features required. Simple websites can be completed in 2-3 weeks, while complex e-commerce or custom applications may take 8-12 weeks.'
+                  question: 'What makes a good AI prompt?',
+                  answer: 'A good AI prompt is clear, specific, provides context, includes examples when helpful, sets constraints, and defines the desired output format. It should be well-structured and leave little room for ambiguity.'
                 },
                 {
-                  question: 'What is the typical cost for how-to-write-a-i-prompts services?',
-                  answer: 'how-to-write-a-i-prompts costs typically range from ₹45,000 to ₹1,50,000 depending on complexity, features, and scope of work. We provide detailed quotes based on your specific requirements and business goals.'
+                  question: 'How long should an AI prompt be?',
+                  answer: 'Prompt length varies based on complexity. Simple tasks may need 1-2 sentences, while complex tasks might require several paragraphs. The key is including all necessary information without being unnecessarily verbose.'
                 },
                 {
-                  question: 'Do you provide website maintenance and support?',
-                  answer: 'Yes, we provide ongoing website maintenance and support services including regular updates, security monitoring, performance optimization, content updates, and technical support. We offer various maintenance packages to suit your needs.'
+                  question: 'Should I use examples in prompts?',
+                  answer: 'Yes, examples are highly effective. They show AI the desired format, style, tone, and complexity level. Examples help AI understand exactly what you want, leading to better results.'
                 },
                 {
-                  question: 'Do you work with businesses outside Delhi NCR?',
-                  answer: 'Yes, we work with businesses across India and internationally. Our how-to-write-a-i-prompts services are not limited by geography and can be delivered remotely with excellent results.'
+                  question: 'How do I improve my prompts?',
+                  answer: 'Improve prompts by testing different phrasings, adding more context, being more specific, including examples, setting clear constraints, and iterating based on results. Learn from what works and refine accordingly.'
                 },
                 {
-                  question: 'What technologies do you use for website development?',
-                  answer: 'We use modern technologies including React.js, Next.js, Node.js, WordPress, and other industry-standard frameworks. We choose the best technology stack based on your specific requirements and business goals.'
+                  question: 'Can I reuse prompts?',
+                  answer: 'Yes, you can reuse and adapt prompts. Create templates for common tasks, save effective prompts, and modify them for similar use cases. Building a prompt library can save significant time.'
                 },
                 {
-                  question: 'Do you provide SEO optimization with how-to-write-a-i-prompts?',
-                  answer: 'Yes, we include basic SEO optimization with all how-to-write-a-i-prompts packages. This includes SEO-friendly URL structure, meta tags, schema markup, fast loading speed, mobile optimization, and other SEO best practices.'
+                  question: 'What if AI doesn\'t understand my prompt?',
+                  answer: 'If AI doesn\'t understand, try: being more specific, adding context, using simpler language, providing examples, breaking down complex tasks, or rephrasing the prompt. Iteration is key to improvement.'
+                },
+                {
+                  question: 'Should I use technical jargon in prompts?',
+                  answer: 'Use technical jargon only when necessary and when AI understands it. If using specialized terms, provide definitions or context. Balance technical accuracy with clarity.'
+                },
+                {
+                  question: 'How do I get consistent results from AI?',
+                  answer: 'Get consistent results by: being specific and detailed, setting clear constraints, providing examples, using consistent formatting, testing and refining prompts, and documenting what works.'
                 }
               ].map((faq, index) => (
-                <div key={index} className="bg-gray-900 rounded-xl border border-gray-700 p-6">
+                <div key={index} className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-xl border border-purple-500/20 p-6 hover:border-purple-500/40 transition-all duration-300">
                   <h3 className="text-lg font-semibold text-white mb-3">{faq.question}</h3>
-                  <p className="text-gray-300">{faq.answer}</p>
+                  <p className="text-gray-300 leading-relaxed">{faq.answer}</p>
                 </div>
               ))}
             </div>
@@ -745,27 +903,46 @@ const HowToWriteAIPrompts = () => {
         </div>
 
         {/* CTA Section */}
-        <section className="bg-gradient-to-r from-purple-600 to-purple-800 text-white py-20">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-            <h2 className="text-4xl font-bold mb-4">
-              Ready to Create Your Dream Website?
+        <section className="relative bg-gradient-to-r from-purple-600 via-purple-700 to-purple-800 text-white py-20 overflow-hidden">
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.1),transparent_70%)]"></div>
+          <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
+              Ready to Master AI Prompt Writing?
             </h2>
             <p className="text-xl text-purple-100 mb-8 max-w-3xl mx-auto">
-              Best how-to-write-a-i-prompts company in Delhi NCR offering comprehensive how-to-write-a-i-prompts services. 
-              Get started with professional how-to-write-a-i-prompts services India today.
+              Get expert AI prompt writing consultation and training. Learn to write effective prompts 
+              that get better results from AI systems.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
                 to="/contact"
-                className="inline-flex items-center px-8 py-4 bg-gray-900 text-purple-300 font-semibold rounded-xl hover:bg-gray-800 transition-all duration-300"
+                className="inline-flex items-center px-8 py-4 bg-white text-purple-700 font-semibold rounded-xl hover:bg-purple-50 transition-all duration-300 shadow-lg hover:scale-105"
               >
-                <Phone className="h-5 w-5 mr-2" />
-                Get how-to-write-a-i-prompts Quote
+                <Rocket className="h-5 w-5 mr-2" />
+                Get AI Consultation
+                <ArrowRight className="h-5 w-5 ml-2" />
               </Link>
-              <button className="inline-flex items-center px-8 py-4 bg-purple-700 text-white font-semibold rounded-xl hover:bg-purple-600 transition-all duration-300">
+              <Link
+                to="/contact"
+                className="inline-flex items-center px-8 py-4 bg-purple-900/50 backdrop-blur-sm border border-white/20 text-white font-semibold rounded-xl hover:bg-purple-900/70 transition-all duration-300"
+              >
                 <Calendar className="h-5 w-5 mr-2" />
-                Schedule Consultation
-              </button>
+                Schedule Training
+              </Link>
+            </div>
+            <div className="mt-12 flex flex-wrap justify-center gap-8 text-purple-100">
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Free consultation</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Expert guidance</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <CheckCircle className="h-5 w-5" />
+                <span>Ongoing support</span>
+              </div>
             </div>
           </div>
         </section>
@@ -774,4 +951,4 @@ const HowToWriteAIPrompts = () => {
   );
 };
 
-export default HowToWriteAIPrompts; 
+export default HowToWriteAIPrompts;

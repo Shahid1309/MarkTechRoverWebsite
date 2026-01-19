@@ -1,0 +1,450 @@
+{
+  "/": {
+    "title": "MarkTechRover - Digital Marketing Agency India | India",
+    "description": "MarkTechRover is a leading growth marketing agency in India. We help startups and businesses achieve digital transformation with proven results."
+  },
+  "/services": {
+    "title": "Hire Digital Marketing Agency - Services & Pricing",
+    "description": "Hire digital marketing agency with comprehensive services. Get digital marketing packages tailored for your business growth. Book marketing consultation now."
+  },
+  "/services/seo-lead-generation": {
+    "title": "Hire SEO Lead Generation Agency - Get Organic Leads",
+    "description": "Hire SEO lead generation agency to get organic leads through SEO. Proven strategies for sustainable business growth. Get SEO services pricing India."
+  },
+  "/services/seo-lead-generation/seo-services": {
+    "title": "Hire SEO Agency India - Professional SEO Services | India",
+    "description": "Hire SEO agency India for professional SEO services. Get SEO services pricing and boost your rankings. SEO company for startups. Book SEO consultation."
+  },
+  "/services/enterprise-seo": {
+    "title": "Hire Enterprise SEO Agency - Large Scale SEO | India",
+    "description": "Hire enterprise SEO agency for large scale SEO packages. Get enterprise SEO pricing and corporate SEO services. Enterprise SEO consultation available."
+  },
+  "/services/digital-marketing": {
+    "title": "Hire Full Service Digital Marketing Agency - India",
+    "description": "Hire full service digital marketing agency. Get digital marketing packages and integrated marketing services. Book marketing strategy consultation today."
+  },
+  "/services/local-seo": {
+    "title": "Hire Local SEO Agency - Google My Business | India",
+    "description": "Hire local SEO agency for small business growth. Get local SEO services pricing and Google My Business optimization. Book local SEO consultation."
+  },
+  "/services/local-seo-services": {
+    "title": "Get Local SEO Optimization - Local Business SEO | India",
+    "description": "Get local SEO optimization services. Hire local business SEO expert for better rankings. Local SEO services cost and packages available. Get started today."
+  },
+  "/services/local-services-ads": {
+    "title": "Hire Google LSA Management - Local Services Ads | India",
+    "description": "Hire Google LSA management for local services ads setup. Get local services ads optimization and pricing. Book local ads consultation now. Get started today."
+  },
+  "/services/seo-audits": {
+    "title": "Hire SEO Audit Services - Website SEO Analysis | India",
+    "description": "Hire SEO audit services for comprehensive website SEO analysis. Get technical SEO audit and pricing. Book SEO health check today. Get started today."
+  },
+  "/services/chat-optimization": {
+    "title": "Hire Chat Optimization Services - Chatbot Conversion",
+    "description": "Hire chat optimization services to boost conversions. Get chatbot conversion optimization and live chat setup. Chat optimization pricing available."
+  },
+  "/services/seo-lead-generation/ppc-management": {
+    "title": "Hire PPC Management Agency - Google Ads Management",
+    "description": "Hire PPC management agency for expert Google Ads management pricing. Buy PPC campaign management services. Book PPC consultation today. Get started today."
+  },
+  "/services/seo-lead-generation/enterprise-ppc": {
+    "title": "Hire Enterprise PPC Agency - Corporate Google Ads | India",
+    "description": "Hire enterprise PPC agency for large scale campaigns. Get enterprise PPC pricing and corporate Google Ads management. Enterprise consultation available."
+  },
+  "/services/seo-lead-generation/social-media-ads": {
+    "title": "Hire Social Media Ads Agency - Facebook Instagram | India",
+    "description": "Hire social media ads agency for Facebook Instagram ads pricing. Buy social media advertising services. Book social media ads consultation. Get started today."
+  },
+  "/services/seo-lead-generation/enterprise-social-ads": {
+    "title": "Hire Enterprise Social Ads Agency - Large Scale | India",
+    "description": "Hire enterprise social ads agency for large scale campaigns. Get enterprise social media ads pricing and corporate social advertising. Consultation available."
+  },
+  "/services/programmatic-ads": {
+    "title": "Hire Programmatic Advertising Agency - Automated Ads",
+    "description": "Hire programmatic advertising agency for automated advertising. Get programmatic ads pricing and media buying services. Consultation available."
+  },
+  "/services/geofencing": {
+    "title": "Hire Geofencing Marketing Agency - Location Ads | India",
+    "description": "Hire geofencing marketing agency for location based advertising pricing. Buy geofencing ad campaigns and proximity marketing. Setup consultation available."
+  },
+  "/services/connected-tv": {
+    "title": "Hire Connected TV Advertising Agency - CTV Ads | India",
+    "description": "Hire connected TV advertising agency for CTV ad campaign pricing. Buy streaming TV advertising and OTT services. Smart TV ads consultation available."
+  },
+  "/services/seo-lead-generation/ecommerce-seo": {
+    "title": "Hire Ecommerce SEO Agency - Online Store SEO | India",
+    "description": "Hire ecommerce SEO agency for online store SEO pricing. Buy product page SEO services and boost sales. Book ecommerce SEO consultation. Get started today."
+  },
+  "/services/seo-lead-generation/ecommerce-ppc": {
+    "title": "Hire Ecommerce PPC Agency - Online Store Ads | India",
+    "description": "Hire ecommerce PPC agency for online store Google Ads management. Get ecommerce PPC pricing and product advertising. Consultation available."
+  },
+  "/services/seo-lead-generation/ecommerce-social": {
+    "title": "Hire Ecommerce Social Media Agency - Social Ads | India",
+    "description": "Hire ecommerce social media agency for online store social advertising. Get ecommerce social ads pricing and product marketing. Consultation available."
+  },
+  "/services/seo-lead-generation/b2b-ecommerce": {
+    "title": "Hire B2B Ecommerce Marketing Agency - B2B SEO | India",
+    "description": "Hire B2B ecommerce marketing agency for B2B online store SEO. Get B2B ecommerce marketing pricing and advertising. B2B digital commerce consultation."
+  },
+  "/services/shopping-feeds": {
+    "title": "Hire Shopping Feed Optimization Agency - Google | India",
+    "description": "Hire shopping feed optimization agency for Google Shopping feed pricing. Buy product feed optimization and shopping ads setup. Consultation available."
+  },
+  "/services/ecommerce-marketing": {
+    "title": "Hire Ecommerce Marketing Agency - Online Store | India",
+    "description": "Hire ecommerce marketing agency for complete online store marketing. Get ecommerce marketing packages and growth strategies. Book consultation today."
+  },
+  "/services/ecommerce-resources": {
+    "title": "Ecommerce Marketing Resources Guide - Tips & Best | India",
+    "description": "Ecommerce marketing resources guide with online store marketing tips and best practices. Learn ecommerce growth strategies and marketing insights."
+  },
+  "/services/web-channel-call-tracking": {
+    "title": "Hire Call Tracking Services - Website Call Tracking",
+    "description": "Hire call tracking services for website call tracking software pricing. Buy website call tracking and attribution setup. Integration consultation available."
+  },
+  "/services/seo-reporting-forecasting": {
+    "title": "Hire SEO Reporting Services - Analytics & Forecasting",
+    "description": "Hire SEO reporting services for SEO analytics reporting pricing. Buy SEO performance forecasting and metrics dashboards. ROI reporting consultation."
+  },
+  "/services/channel-attribution": {
+    "title": "Hire Marketing Attribution Services - Multi Channel",
+    "description": "Hire marketing attribution services for channel attribution pricing. Buy multi channel attribution analysis and modeling. Attribution consultation available."
+  },
+  "/services/competitor-analysis": {
+    "title": "Hire Competitor Analysis Services - SEO Analysis | India",
+    "description": "Hire competitor analysis services for competitor SEO analysis pricing. Buy competitive marketing research and strategy analysis. Consultation available."
+  },
+  "/services/conversion-rate-optimization": {
+    "title": "Hire CRO Agency India - Conversion Optimization | India",
+    "description": "Hire CRO agency India for conversion optimization pricing. Buy CRO testing services and landing page optimization. CRO consultation services available."
+  },
+  "/services/email-marketing-management": {
+    "title": "Hire Email Marketing Agency - Campaign Management | India",
+    "description": "Hire email marketing agency for email marketing pricing. Buy email campaign management and automation setup. Email marketing consultation available."
+  },
+  "/services/facebook-marketplace": {
+    "title": "Hire Facebook Marketplace Agency - Shop Management",
+    "description": "Hire Facebook Marketplace agency for Facebook Marketplace pricing. Buy Facebook shop management and Marketplace optimization. Consultation available."
+  },
+  "/services/influencer-marketing": {
+    "title": "Hire Influencer Marketing Agency - Campaigns | India",
+    "description": "Hire influencer marketing agency for influencer campaign pricing. Buy influencer partnership services and social media campaigns. Consultation available."
+  },
+  "/services/landing-pages-funnels": {
+    "title": "Hire Landing Page Design Agency - Conversion Funnels",
+    "description": "Hire landing page design agency for landing page pricing. Buy conversion funnel development and sales funnel creation. Landing page consultation."
+  },
+  "/services/lead-nurture-email": {
+    "title": "Hire Lead Nurturing Services - Email Drip Campaigns",
+    "description": "Hire lead nurturing services for lead nurture email pricing. Buy automated drip campaigns and lead nurturing automation. Email nurture consultation."
+  },
+  "/services/microsoft-dynamics-automation": {
+    "title": "Hire Dynamics Marketing Automation - CRM Integration",
+    "description": "Hire Dynamics marketing automation for Dynamics CRM integration pricing. Buy marketing automation setup and Dynamics cloud. Automation consultation."
+  },
+  "/services/online-review-acceleration": {
+    "title": "Hire Review Management Services - Google Reviews | India",
+    "description": "Hire review management services for Google reviews generation pricing. Buy review acceleration strategies and reputation management. Consultation available."
+  },
+  "/services/private-equity-due-diligence": {
+    "title": "Hire Marketing Due Diligence Services - PE Assessment",
+    "description": "Hire marketing due diligence services for PE marketing assessment pricing. Buy marketing audit for acquisitions and investment evaluation. Consultation."
+  },
+  "/services/recruiting-marketing": {
+    "title": "Hire Recruitment Marketing Agency - Talent Acquisition",
+    "description": "Hire recruitment marketing agency for talent acquisition marketing pricing. Buy employer branding services and recruitment advertising. Consultation available."
+  },
+  "/services/revenue-operations": {
+    "title": "Hire RevOps Consulting Services - Revenue Operations",
+    "description": "Hire RevOps consulting services for revenue operations pricing. Buy RevOps optimization and revenue operations strategy. RevOps consultation India."
+  },
+  "/services/salesforce-marketing-automation": {
+    "title": "Hire Salesforce Marketing Cloud Agency - Pardot | India",
+    "description": "Hire Salesforce Marketing Cloud agency for Salesforce Pardot pricing. Buy Marketing Cloud implementation and automation setup. Salesforce consultation."
+  },
+  "/services/shopify-optimization": {
+    "title": "Hire Shopify Optimization Agency - SEO & CRO | India",
+    "description": "Hire Shopify optimization agency for Shopify SEO pricing. Buy Shopify conversion optimization and store performance. Shopify optimization consultation."
+  },
+  "/services/ux-testing": {
+    "title": "Hire UX Testing Services - Usability Testing | India",
+    "description": "Hire UX testing services for UX usability testing pricing. Buy website UX testing and user testing services. UX testing consultation available."
+  },
+  "/services/walmart-marketplace": {
+    "title": "Hire Walmart Marketplace Agency - Seller Optimization",
+    "description": "Hire Walmart Marketplace agency for Walmart Marketplace pricing. Buy Walmart seller optimization and Marketplace advertising. Ecommerce consultation."
+  },
+  "/services/website-personalization": {
+    "title": "Hire Website Personalization Services - Dynamic | India",
+    "description": "Hire website personalization services for website personalization pricing. Buy dynamic personalization and personalized web experience. Consultation available."
+  },
+  "/services/account-based-marketing": {
+    "title": "Hire ABM Agency India - Account Based Marketing | India",
+    "description": "Hire ABM agency India for ABM services pricing. Buy account based marketing strategy and ABM campaign management. B2B ABM consultation available."
+  },
+  "/services/amazon-advertising": {
+    "title": "Hire Amazon Advertising Agency - PPC Management | India",
+    "description": "Hire Amazon advertising agency for Amazon PPC pricing. Buy Amazon sponsored ads management and advertising optimization. Seller consultation available."
+  },
+  "/services/amazon-seo": {
+    "title": "Hire Amazon SEO Agency - Listing Optimization | India",
+    "description": "Hire Amazon SEO agency for Amazon listing optimization pricing. Buy Amazon product SEO and search ranking optimization. Amazon SEO consultation."
+  },
+  "/services/channel-partner-pipeline": {
+    "title": "Hire Channel Partner Marketing Agency - Pipeline | India",
+    "description": "Hire channel partner marketing agency for partner pipeline pricing. Buy channel partner enablement and partner marketing programs. Consultation available."
+  },
+  "/services/ai-technology": {
+    "title": "Hire AI Marketing Agency - AI Technology Services | India",
+    "description": "Hire AI marketing agency for AI marketing technology pricing. Buy AI powered marketing solutions and artificial intelligence marketing. AI consultation."
+  },
+  "/services/ai-ad-editing": {
+    "title": "Hire AI Ad Editing Services - Automated Creative | India",
+    "description": "Hire AI ad editing services for AI ad editing pricing. Buy automated ad creative editing and AI ad optimization. AI ad design consultation available."
+  },
+  "/services/ai-ad-generation": {
+    "title": "Hire AI Ad Generation Services - Automated Creation",
+    "description": "Hire AI ad generation services for AI ad creation pricing. Buy automated ad generation and AI ad copywriting. AI advertising consultation available."
+  },
+  "/services/ai-consulting": {
+    "title": "Hire AI Marketing Consulting - Strategy & Implementation",
+    "description": "Hire AI marketing consulting for AI consulting pricing. Buy AI strategy consulting and AI implementation. AI transformation consultation available."
+  },
+  "/services/ai-content-creation": {
+    "title": "Hire AI Content Creation Services - Automated Writing",
+    "description": "Hire AI content creation services for AI content writing pricing. Buy automated content generation and AI content marketing. AI content consultation."
+  },
+  "/services/ai-cost-guide": {
+    "title": "AI Marketing Implementation Cost Guide - Pricing | India",
+    "description": "AI marketing implementation cost guide with AI marketing pricing guide and technology costs. Learn AI implementation expenses and investment strategies."
+  },
+  "/services/ai-digital-marketing": {
+    "title": "Hire AI Digital Marketing Agency - AI Powered | India",
+    "description": "Hire AI digital marketing agency for AI marketing services pricing. Buy AI powered marketing and intelligent marketing automation. AI solutions consultation."
+  },
+  "/services/ai-gpt-integration-tech": {
+    "title": "Hire GPT Integration Services - ChatGPT Marketing | India",
+    "description": "Hire GPT integration services for ChatGPT integration pricing. Buy GPT API integration and AI chatbot integration. GPT marketing tools consultation."
+  },
+  "/services/ai-seo-services": {
+    "title": "Hire AI SEO Agency - AI Powered SEO Services | India",
+    "description": "Hire AI SEO agency for AI SEO pricing. Buy AI powered SEO and intelligent SEO services. AI SEO consultation available for better rankings. Get started today."
+  },
+  "/services/ai-software-development": {
+    "title": "Hire AI Software Development Agency - Custom AI | India",
+    "description": "Hire AI software development agency for AI software pricing. Buy custom AI development and AI application development. AI platform consultation available."
+  },
+  "/services/ai-video-production": {
+    "title": "Hire AI Video Production Services - Automated Video",
+    "description": "Hire AI video production services for AI video pricing. Buy automated video creation and AI video editing. AI video production consultation available."
+  },
+  "/services/ai-website-generation": {
+    "title": "Hire AI Website Generation Services - Automated | India",
+    "description": "Hire AI website generation services for AI website pricing. Buy automated website creation and AI website builder. AI web design consultation available."
+  },
+  "/services/closed-loop-analytics": {
+    "title": "Hire Closed Loop Analytics Services - Attribution | India",
+    "description": "Hire closed loop analytics services for closed loop analytics pricing. Buy marketing attribution analytics and revenue attribution tracking."
+  },
+  "/services/contact-enrichment": {
+    "title": "Hire Contact Enrichment Services - Lead Data | India",
+    "description": "Hire contact enrichment services for contact enrichment pricing. Buy lead data enrichment and contact database enrichment. Data enrichment consultation."
+  },
+  "/services/crm-integrations": {
+    "title": "Hire CRM Integration Services - Marketing CRM | India",
+    "description": "Hire CRM integration services for CRM integration pricing. Buy marketing CRM integration and CRM automation integration. CRM integration consultation."
+  },
+  "/services/crm-retargeting": {
+    "title": "Hire CRM Retargeting Services - Customer Retargeting",
+    "description": "Hire CRM retargeting services for CRM retargeting pricing. Buy customer retargeting campaigns and CRM audience retargeting. Retargeting consultation."
+  },
+  "/services/customer-data-platform": {
+    "title": "Hire CDP Implementation Services - Data Platform | India",
+    "description": "Hire CDP implementation services for CDP setup pricing. Buy customer data platform and CDP integration. CDP implementation consultation available."
+  },
+  "/services/data-driven-marketing-guide": {
+    "title": "Data Driven Marketing Strategy Guide - Best Practices",
+    "description": "Data driven marketing strategy guide with data based marketing approach and analytics driven marketing. Learn data marketing best practices and analysis."
+  },
+  "/services/how-to-write-ai-prompts": {
+    "title": "AI Prompt Writing Guide for Marketing - Tutorial | India",
+    "description": "AI prompt writing guide for marketing with marketing AI prompts tutorial and effective AI prompt writing. Learn AI prompt engineering for marketing."
+  },
+  "/services/lead-management-scheduling": {
+    "title": "Hire Lead Management Services - Automated Scheduling",
+    "description": "Hire lead management services for lead scheduling pricing. Buy automated lead scheduling and lead management software. Appointment scheduling consultation."
+  },
+  "/services/revenue-cloud-fx-platform": {
+    "title": "Hire Revenue Cloud FX Services - Revenue Platform | India",
+    "description": "Hire Revenue Cloud FX services for Revenue Cloud FX pricing. Buy revenue marketing platform and Revenue Cloud implementation. Revenue platform consultation."
+  },
+  "/services/track-ai-search-visibility": {
+    "title": "Hire AI Search Tracking Services - Visibility Monitor",
+    "description": "Hire AI search tracking services for AI visibility tracking pricing. Buy AI search ranking tracking and AI visibility monitoring. Search tracking consultation."
+  },
+  "/services/what-are-crm-integrations": {
+    "title": "What Are CRM Integrations Explained - Guide | India",
+    "description": "What are CRM integrations explained with CRM integration guide and understanding CRM integrations. Learn CRM marketing integrations and benefits."
+  },
+  "/services/what-is-ai-marketing": {
+    "title": "What Is AI Marketing Explained - Definition & Guide",
+    "description": "What is AI marketing explained with AI marketing definition and artificial intelligence in marketing. Learn AI marketing guide and understand AI marketing."
+  },
+  "/services/what-is-crm": {
+    "title": "What Is CRM System Explained - Definition Guide | India",
+    "description": "What is CRM system explained with CRM definition guide and customer relationship management explained. Learn CRM software overview and CRM systems."
+  },
+  "/services/ux-interactive": {
+    "title": "Hire UX Design Agency - Interactive Web Design | India",
+    "description": "Hire UX design agency for UX design pricing. Buy interactive web design and UX UI design services. UX design consultation available for your project."
+  },
+  "/services/ux-interactive/website-design": {
+    "title": "Hire Website Design Agency India - Custom Design | India",
+    "description": "Hire website design agency India for website design pricing. Buy custom website design and responsive web design. Website design consultation available."
+  },
+  "/services/ux-interactive/website-redesign": {
+    "title": "Hire Website Redesign Agency - Website Makeover | India",
+    "description": "Hire website redesign agency for website redesign pricing. Buy website makeover services and modern redesign. Website redesign consultation available."
+  },
+  "/services/ux-interactive/rapid-web-design": {
+    "title": "Hire Rapid Web Design Agency - Fast Website Design",
+    "description": "Hire rapid web design agency for rapid web design pricing. Buy fast website design and quick web design services. Rapid design consultation available."
+  },
+  "/services/ux-interactive/social-media-design": {
+    "title": "Hire Social Media Design Agency - Graphics & Creative",
+    "description": "Hire social media design agency for social media design pricing. Buy social media graphics and creative design. Social media design consultation available."
+  },
+  "/services/ux-interactive/seo-copywriting": {
+    "title": "Hire SEO Copywriting Services - Content Writing | India",
+    "description": "Hire SEO copywriting services for SEO copywriting pricing. Buy SEO content writing and search optimized copywriting. SEO copywriting consultation available."
+  },
+  "/services/ux-interactive/content-marketing": {
+    "title": "Hire Content Marketing Agency - Content Creation | India",
+    "description": "Hire content marketing agency for content marketing pricing. Buy content creation services and content marketing strategy. Content marketing consultation."
+  },
+  "/services/ux-interactive/social-media-management": {
+    "title": "Hire Social Media Management Agency - SMM Services",
+    "description": "Hire social media management agency for SMM services pricing. Buy social media management and social media packages. SMM consultation available."
+  },
+  "/services/ux-interactive/infographics-motion-graphics": {
+    "title": "Hire Infographic Design Agency - Motion Graphics | India",
+    "description": "Hire infographic design agency for infographic design pricing. Buy motion graphics services and animated infographic design. Visual content consultation."
+  },
+  "/services/ux-interactive/digital-experience-development": {
+    "title": "Hire Digital Experience Agency - DX Development | India",
+    "description": "Hire digital experience agency for DX development pricing. Buy digital experience platform and customer experience development. DX development consultation."
+  },
+  "/services/ux-interactive/shopify-ecommerce-development": {
+    "title": "Hire Shopify Development Agency - Store Development",
+    "description": "Hire Shopify development agency for Shopify development pricing. Buy Shopify store development and Shopify customization. Shopify development consultation."
+  },
+  "/services/ux-interactive/web-infrastructure-maintenance": {
+    "title": "Hire Website Maintenance Services - Infrastructure",
+    "description": "Hire website maintenance services for website maintenance pricing. Buy web infrastructure support and website maintenance packages. Maintenance consultation."
+  },
+  "/services/ux-interactive/content-management-systems": {
+    "title": "Hire CMS Development Agency - WordPress Development",
+    "description": "Hire CMS development agency for CMS development pricing. Buy WordPress development and CMS customization. CMS implementation consultation available."
+  },
+  "/services/ux-interactive/website-lead-generation": {
+    "title": "Hire Website Lead Generation Services - Conversion",
+    "description": "Hire website lead generation services for lead generation website pricing. Buy website conversion optimization and lead capture website. Consultation available."
+  },
+  "/services/ux-interactive/website-traffic-recovery": {
+    "title": "Hire Traffic Recovery Services - Website Traffic | India",
+    "description": "Hire traffic recovery services for traffic recovery pricing. Buy website traffic restoration and traffic drop recovery. Traffic recovery consultation available."
+  },
+  "/services/ux-interactive/website-conversion-optimization": {
+    "title": "Hire Conversion Optimization Agency - CRO Services",
+    "description": "Hire conversion optimization agency for CRO services pricing. Buy website conversion optimization and conversion rate improvement. CRO consultation available."
+  },
+  "/services/ux-interactive/website-roi-improvement": {
+    "title": "Hire Website ROI Improvement Services - Performance",
+    "description": "Hire website ROI improvement services for website ROI pricing. Buy website performance optimization and website revenue optimization. ROI consultation."
+  },
+  "/portfolio": {
+    "title": "Digital Marketing Results and Case Studies - Portfolio",
+    "description": "Digital marketing results and case studies showcasing marketing agency proven results and client success metrics. See real marketing campaign performance data."
+  },
+  "/portfolio/:id": {
+    "title": "Marketing Campaign Results and Metrics - Case Study",
+    "description": "Marketing campaign results and metrics with client ROI results and marketing performance data. View campaign success metrics and proven marketing results."
+  },
+  "/case-studies": {
+    "title": "Digital Marketing Success Stories with Results - Portfolio",
+    "description": "Digital marketing success stories with results featuring marketing ROI case studies and proven marketing results. See client success metrics."
+  },
+  "/case-studies/chumbak": {
+    "title": "Chumbak Ecommerce Growth Results - Case Study | India",
+    "description": "Chumbak ecommerce growth results showing lifestyle brand sales increase and ecommerce revenue growth metrics. See Chumbak marketing ROI and sales improvements."
+  },
+  "/case-studies/dentinics": {
+    "title": "Dentinics Local SEO Results and Metrics - Case Study",
+    "description": "Dentinics local SEO results and metrics featuring dental practice patient increase and healthcare SEO traffic growth. See local SEO ranking improvements."
+  },
+  "/case-studies/idesign": {
+    "title": "iDesign Website Traffic & Conversion Results - Case Study",
+    "description": "iDesign website traffic and conversion results showing architecture firm organic traffic growth and interior design inquiry increase. See improvements."
+  },
+  "/case-studies/seo-results": {
+    "title": "SEO Ranking Improvements & Traffic Growth - Results",
+    "description": "SEO ranking improvements and traffic growth with SEO performance metrics and organic traffic increase results. See SEO ROI data and ranking success stories."
+  },
+  "/about": {
+    "title": "About Digital Marketing Agency India - Our Story | India",
+    "description": "About digital marketing agency India with our digital marketing company story and marketing agency team. Learn about our marketing agency background."
+  },
+  "/who-are-we": {
+    "title": "Who We Are Digital Marketing Agency - Introduction",
+    "description": "Who we are digital marketing agency with marketing agency introduction and our company story. Meet our marketing agency team and learn about our agency."
+  },
+  "/contact": {
+    "title": "Contact Digital Marketing Agency India - Get In Touch",
+    "description": "Contact digital marketing agency India to get in touch with our marketing agency. Get digital marketing consultation and submit marketing agency inquiry."
+  },
+  "/blog": {
+    "title": "Digital Marketing Blog India - Tips & Insights | India",
+    "description": "Digital marketing blog India with marketing tips and insights, digital marketing articles, and marketing blog posts. Read SEO and marketing blog content."
+  },
+  "/blog/how-to-optimize-react-websites-for-seo": {
+    "title": "React SEO Optimization Guide - React Website SEO | India",
+    "description": "React SEO optimization guide with React website SEO tips and React SSR for SEO. Learn React SEO best practices and optimizing React apps for search."
+  },
+  "/blog/local-vs-regional-seo-comparison": {
+    "title": "Local vs Regional SEO Comparison - Which Strategy | India",
+    "description": "Local vs regional SEO comparison showing local SEO vs regional SEO strategies. Learn which SEO strategy is better with local SEO benefits and advantages."
+  },
+  "/blog/content-marketing-strategies-digital-agencies": {
+    "title": "Content Marketing Strategies for Agencies - Guide | India",
+    "description": "Content marketing strategies for agencies with digital agency content marketing and agency content strategy. Learn content marketing for agencies and creation."
+  },
+  "/blog/build-strong-brand-presence-online": {
+    "title": "Build Online Brand Presence Guide - Branding Strategies",
+    "description": "Build online brand presence guide with online branding strategies and digital brand building. Learn online brand visibility and building brand online."
+  },
+  "/blog/leveraging-ai-marketing-automation": {
+    "title": "AI Marketing Automation Guide - AI in Marketing | India",
+    "description": "AI marketing automation guide with AI in marketing automation and artificial intelligence marketing. Learn AI marketing tools and automated marketing with AI."
+  },
+  "/pricing": {
+    "title": "Digital Marketing Pricing India - Agency Pricing | India",
+    "description": "Digital marketing pricing India with marketing agency pricing and digital marketing packages. Get marketing services cost and affordable marketing services."
+  },
+  "/cart": {
+    "title": "Marketing Services Cart - Service Selection | India",
+    "description": "Marketing services cart for service selection cart and marketing package cart. Complete service checkout and marketing services order process."
+  },
+  "/privacy-policy": {
+    "title": "Privacy Policy - Data Privacy Policy & Statement Info",
+    "description": "Privacy policy with data privacy policy and privacy statement. Learn about user privacy policy and website privacy policy for our services. Get started today."
+  },
+  "/learn/what-is-seo-company": {
+    "title": "What Is SEO Company Explained - Definition Guide | India",
+    "description": "What is SEO company explained with SEO company definition and understanding SEO companies. Learn what does SEO company do and SEO agency explained."
+  },
+  "/learn/best-seo-companies": {
+    "title": "Best SEO Companies in India - Top SEO Agencies | India",
+    "description": "Best SEO companies in India featuring top SEO agencies India and leading SEO companies. Find best SEO services India and top rated SEO agencies."
+  }
+}

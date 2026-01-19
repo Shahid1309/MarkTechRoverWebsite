@@ -2,6 +2,7 @@ import { useParams, Link } from 'react-router-dom';
 import { Calendar, Clock, Share2, ChevronLeft } from 'lucide-react';
 import { getPostBySlug, getRelatedPosts } from '../data/blog-data';
 import BlogCard from '../components/ui/BlogCard';
+import { renderBlogContentWithLinks } from '../components/blog/BlogContentRenderer';
 
 const BlogPostPage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -11,7 +12,7 @@ const BlogPostPage = () => {
   if (!post) {
     return (
       <div className="container mx-auto px-4 py-16">
-        <h1 className="text-3xl font-bold">Post not found</h1>
+        <h2 className="text-3xl font-bold">Post not found</h2>
       </div>
     );
   }
@@ -87,7 +88,7 @@ const BlogPostPage = () => {
 
         {/* Content */}
         <div className="prose prose-lg max-w-none">
-          <p className="lead">{post.content.introduction}</p>
+          <p className="lead">{renderBlogContentWithLinks(post.content.introduction)}</p>
           
           {post.content.sections.map((section, index) => (
             <div key={index} className="my-12">
@@ -102,13 +103,13 @@ const BlogPostPage = () => {
                   className="w-full rounded-lg my-6"
                 />
               )}
-              <div className="mt-4">{section.content}</div>
+              <div className="mt-4">{renderBlogContentWithLinks(section.content)}</div>
             </div>
           ))}
 
           <div className="my-12">
             <h2 className="text-2xl font-semibold mb-4">Conclusion</h2>
-            <p>{post.content.conclusion}</p>
+            <p>{renderBlogContentWithLinks(post.content.conclusion)}</p>
           </div>
 
           {/* Keywords */}

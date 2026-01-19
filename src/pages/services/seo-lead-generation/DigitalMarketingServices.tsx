@@ -100,7 +100,6 @@ const DigitalMarketingServices = () => {
   const [revealStats, setRevealStats] = useState(false);
   const [revealWhy, setRevealWhy] = useState(false);
   const [revealDeliverables, setRevealDeliverables] = useState(false);
-  const [revealPackages, setRevealPackages] = useState(false);
   const [revealTechnology, setRevealTechnology] = useState(false);
   const [revealCaseStudies, setRevealCaseStudies] = useState(false);
   const [revealApproach, setRevealApproach] = useState(false);
@@ -116,7 +115,6 @@ const DigitalMarketingServices = () => {
   const refWhy = useRef<HTMLDivElement>(null);
   const refStats = useRef<HTMLDivElement>(null);
   const refDeliverables = useRef<HTMLDivElement>(null);
-  const refPackages = useRef<HTMLDivElement>(null);
   const refTechnology = useRef<HTMLDivElement>(null);
   const refCaseStudies = useRef<HTMLDivElement>(null);
   const refApproach = useRef<HTMLDivElement>(null);
@@ -124,9 +122,7 @@ const DigitalMarketingServices = () => {
   const refCta = useRef<HTMLDivElement>(null);
 
   const navItems = [
-    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },
-    { id: 'packages', label: 'Digital Marketing Packages', icon: <DollarSign className="h-4 w-4" /> },
-    { id: 'technology', label: 'Digital Marketing Technology', icon: <Cpu className="h-4 w-4" /> },
+    { id: 'deliverables', label: 'Deliverables', icon: <CheckCircle className="h-4 w-4" /> },{ id: 'technology', label: 'Digital Marketing Technology', icon: <Cpu className="h-4 w-4" /> },
     { id: 'case-studies', label: 'Digital Marketing Case Studies', icon: <Trophy className="h-4 w-4" /> },
     { id: 'approach', label: 'Digital Marketing Approach', icon: <Rocket className="h-4 w-4" /> },
     { id: 'faqs', label: 'FAQs', icon: <MessageSquare className="h-4 w-4" /> }
@@ -183,7 +179,6 @@ const DigitalMarketingServices = () => {
       [refStats, setRevealStats],
       [refWhy, setRevealWhy],
       [refDeliverables, setRevealDeliverables],
-      [refPackages, setRevealPackages],
       [refTechnology, setRevealTechnology],
       [refCaseStudies, setRevealCaseStudies],
       [refApproach, setRevealApproach],
@@ -273,8 +268,7 @@ const DigitalMarketingServices = () => {
         'SEO performance tracking',
         'Monthly SEO reports'
       ],
-      duration: '3-6 months',
-      price: '₹25,000/month'
+      duration: '3-6 months'
     },
     {
       id: 2,
@@ -291,8 +285,7 @@ const DigitalMarketingServices = () => {
         'Performance tracking and reporting',
         'ROI optimization'
       ],
-      duration: '1-2 months',
-      price: '₹15,000/month + ad spend'
+      duration: '1-2 months'
     },
     {
       id: 3,
@@ -309,8 +302,7 @@ const DigitalMarketingServices = () => {
         'Brand monitoring',
         'Crisis management'
       ],
-      duration: 'Ongoing',
-      price: '₹20,000/month'
+      duration: 'Ongoing'
     },
     {
       id: 4,
@@ -327,8 +319,7 @@ const DigitalMarketingServices = () => {
         'Content performance tracking',
         'SEO-optimized content'
       ],
-      duration: 'Ongoing',
-      price: '₹18,000/month'
+      duration: 'Ongoing'
     },
     {
       id: 5,
@@ -345,8 +336,7 @@ const DigitalMarketingServices = () => {
         'Compliance management',
         'ROI tracking'
       ],
-      duration: '1-2 months',
-      price: '₹12,000/month'
+      duration: '1-2 months'
     },
     {
       id: 6,
@@ -363,64 +353,11 @@ const DigitalMarketingServices = () => {
         'Recommendations and insights',
         'Goal tracking and optimization'
       ],
-      duration: 'Ongoing',
-      price: '₹8,000/month'
+      duration: 'Ongoing'
     }
   ];
 
-  const packages = [
-    {
-      name: 'Starter Package',
-      price: '₹35,000',
-      duration: 'per month',
-      description: 'Perfect for small businesses starting their digital marketing journey',
-      features: [
-        'Basic SEO optimization',
-        'Google Ads management (₹10,000 ad spend)',
-        'Social media posting (3 platforms)',
-        'Monthly content creation (4 blog posts)',
-        'Basic analytics reporting',
-        'Email support'
-      ],
-      popular: false
-    },
-    {
-      name: 'Growth Package',
-      price: '₹65,000',
-      duration: 'per month',
-      description: 'Ideal for growing businesses looking to scale their online presence',
-      features: [
-        'Comprehensive SEO strategy',
-        'Google Ads + Facebook Ads management',
-        'Social media management (5 platforms)',
-        'Content marketing (8 blog posts)',
-        'Email marketing campaigns',
-        'Advanced analytics and reporting',
-        'Priority support',
-        'Monthly strategy calls'
-      ],
-      popular: true
-    },
-    {
-      name: 'Enterprise Package',
-      price: '₹1,25,000',
-      duration: 'per month',
-      description: 'Complete digital marketing solution for large enterprises',
-      features: [
-        'Full-service digital marketing',
-        'Multi-channel advertising',
-        'Advanced SEO and content strategy',
-        'Social media management (all platforms)',
-        'Video content production',
-        'Influencer marketing',
-        'Advanced analytics and automation',
-        'Dedicated account manager',
-        'Weekly strategy calls',
-        'Custom reporting dashboard'
-      ],
-      popular: false
-    }
-  ];
+  
 
   const technologies = [
     {
@@ -611,7 +548,7 @@ const DigitalMarketingServices = () => {
 
             {/* Animated Title */}
             <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 transition-all duration-1000">
-              MarkTechRover: India’s <span className="bg-gradient-to-r from-purple-300 via-purple-400 to-purple-500 bg-clip-text text-transparent font-extrabold">Digital Marketing Agency</span> for Revenue Growth
+              Hire Full Service Digital Marketing Agency
             </h1>
 
             {/* Animated Description */}
@@ -682,7 +619,7 @@ const DigitalMarketingServices = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-400 to-purple-600 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
               </Link>
               <button
-                onClick={() => scrollToSection('packages')}
+                onClick={() => scrollToSection()}
                 className="group inline-flex items-center px-8 py-4 border border-purple-500/30 text-purple-300 hover:text-white hover:bg-purple-500/20 rounded-xl font-semibold transition-all duration-300 relative overflow-hidden"
               >
                 <span className="relative z-10">View Packages</span>
@@ -749,7 +686,7 @@ const DigitalMarketingServices = () => {
           
           {/* Main Navigation Container */}
           <div className="relative bg-black/20 backdrop-blur-xl border border-purple-500/30 rounded-full shadow-2xl shadow-purple-500/20">
-            <nav className="flex items-center space-x-1 px-6 py-3">
+            <nav className="flex items-center space-x-1 px-6 py-3 overflow-x-auto flex-nowrap">
               {navItems.map((item) => (
                 <button
                   key={item.id}
@@ -758,10 +695,10 @@ const DigitalMarketingServices = () => {
                     activeSection === item.id
                       ? 'text-purple-300 bg-gradient-to-r from-purple-500/30 to-purple-400/30 border border-purple-400/50 shadow-lg shadow-purple-500/25' 
                       : 'text-gray-300 hover:text-purple-300 hover:bg-gradient-to-r from-purple-500/20 to-purple-400/20 hover:border-purple-300/30'
-                  } px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg`}
+                  } px-4 py-2 text-sm font-semibold transition-all duration-300 flex items-center space-x-2 rounded-full backdrop-blur-sm border border-transparent hover:scale-105 hover:shadow-lg whitespace-nowrap flex-shrink-0`}
                 >
                   {item.icon}
-                  <span className="hidden sm:inline">{item.label}</span>
+                  <span className="hidden sm:inline whitespace-nowrap">{item.label}</span>
                 </button>
               ))}
             </nav>
@@ -847,78 +784,13 @@ const DigitalMarketingServices = () => {
                     </div>
                   ))}
                 </div>
-                
-                <div className="border-t border-purple-500/20 pt-4">
-                  <div className="text-2xl font-bold text-purple-400">{deliverable.price}</div>
-                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Packages Section */}
-      <section ref={refPackages} id="packages" className={`py-20 px-4 sm:px-6 lg:px-8 transition-all duration-700 ${revealPackages ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}> 
-        <div className="max-w-7xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Digital Marketing Packages
-            </h2>
-            <p className="text-xl text-gray-300 max-w-3xl mx-auto">
-              Choose the perfect package for your business needs and budget. 
-              All packages include comprehensive reporting and dedicated support.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {packages.map((pkg, index) => (
-              <div
-                key={index}
-                className={`bg-gray-900/50 backdrop-blur-sm rounded-2xl p-8 border-2 transition-all duration-300 transform hover:-translate-y-2 hover:shadow-2xl hover:shadow-purple-500/20 ${
-                  pkg.popular
-                    ? 'border-purple-500 relative shadow-lg shadow-purple-500/25'
-                    : 'border-purple-500/20 hover:border-purple-500/40'
-                }`}
-              >
-                {pkg.popular && (
-                  <div className="absolute -top-4 left-1/2 transform -translate-x-1/2">
-                    <span className="bg-gradient-to-r from-purple-500 to-purple-600 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg">
-                      Most Popular
-                    </span>
-                  </div>
-                )}
-                
-                <div className="text-center mb-8">
-                  <h3 className="text-2xl font-bold text-white mb-2">{pkg.name}</h3>
-                  <div className="text-4xl font-bold text-purple-400 mb-1">{pkg.price}</div>
-                  <div className="text-gray-400 mb-4">{pkg.duration}</div>
-                  <p className="text-gray-300">{pkg.description}</p>
-                </div>
-                
-                <div className="space-y-4 mb-8">
-                  {pkg.features.map((feature, featureIndex) => (
-                    <div key={featureIndex} className="flex items-center gap-3">
-                      <CheckCircle className="h-5 w-5 text-purple-400 flex-shrink-0" />
-                      <span className="text-gray-300">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-                
-                <Link
-                  to="/contact"
-                  className={`w-full text-center py-3 px-6 rounded-lg font-semibold transition-all duration-300 ${
-                    pkg.popular
-                      ? 'bg-gradient-to-r from-purple-600 to-purple-500 text-white hover:from-purple-500 hover:to-purple-400 shadow-lg hover:shadow-xl'
-                      : 'bg-gray-800/50 text-gray-300 hover:bg-gray-700/50 hover:text-white border border-purple-500/30'
-                  }`}
-                >
-                  Get Started
-                </Link>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      
 
       {/* Technology Section */}
       <section ref={refTechnology} id="technology" className={`py-20 px-4 sm:px-6 lg:px-8 transition-all duration-700 ${revealTechnology ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
