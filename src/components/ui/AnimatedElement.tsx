@@ -1,3 +1,5 @@
+
+import React from 'react';
 import { motion, HTMLMotionProps } from 'framer-motion';
 import { ReactNode } from 'react';
 

@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { motion, Variants } from 'framer-motion';
 import { ArrowRight, Zap, Rocket, Target, TrendingUp, Sparkles, CheckCircle, Users, Shield, BarChart3, Globe, Play } from 'lucide-react';
 import { Link } from 'react-router-dom';

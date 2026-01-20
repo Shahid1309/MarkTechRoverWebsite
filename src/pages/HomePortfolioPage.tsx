@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { useState, useEffect } from 'react';
 import { Building2, Home, ShoppingBag, Heart, PiggyBank, Plane, Laptop, GraduationCap, Scale, MoreHorizontal, Globe, ChevronDown, ChevronUp, Award, Star } from 'lucide-react';
 import ProjectCard from '../components/ui/ProjectCard';

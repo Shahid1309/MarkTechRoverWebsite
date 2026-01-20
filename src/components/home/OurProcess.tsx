@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Search, BarChart, Rocket, Target, Settings, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';

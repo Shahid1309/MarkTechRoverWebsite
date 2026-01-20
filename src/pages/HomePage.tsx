@@ -1,3 +1,5 @@
+import React from 'react';
+
 import { motion } from 'framer-motion';
 import { Target, Users, Palette, Cpu, Trophy, MessageSquare, Rocket, BarChart3 } from 'lucide-react';
 import HeroSection from '../components/home/HeroSection';
