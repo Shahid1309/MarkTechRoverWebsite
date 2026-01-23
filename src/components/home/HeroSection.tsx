@@ -101,7 +101,7 @@ const HeroSection: React.FC = () => {
               <span className="text-white">MarkTechRover</span>
               <br />
               <span className="bg-gradient-to-r from-pink-400 via-purple-400 to-purple-500 bg-clip-text text-transparent relative inline-block">
-                Your Growth Marketing Agency is Here
+                Your Growth Marketing Agency
                 <span className="absolute bottom-0 left-0 w-full h-0.5 bg-white"></span>
               </span>
             </motion.h1>
